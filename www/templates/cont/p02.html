@@ -1,0 +1,14 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P2 – NEUROLOGICAL</ion-checkbox>
+        <div class="item item-divider">
+          Select the nearest neorological condition of patient
+        </div>
+        <ion-item>
+            <ion-radio class="positive" ng-model="radio.p2" name="p2">A - Alert</ion-radio>
+            <ion-radio name="p2" ng-model="radio.p2">O - Oriented</ion-radio>
+            <ion-radio name="p2" class="assertive" ng-model="radio.p2" ng-value="GSC">GSC - Glasgow Coma Scale</ion-radio>
+            <ion-radio name="p2" ng-model="radio.p2" ng-value="S">S - Seizures</ion-radio>
+        </ion-item>
+    </ion-content>
+</ion-view>

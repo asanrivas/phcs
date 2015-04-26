@@ -1,0 +1,21 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P3 – Emotional</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest emotional condition of patient
+          </div>
+          <ion-item>
+              <ion-radio name="p3" class="positive" ng-model="radio.p3" ng-value="C">C-Calm</ion-radio>
+              <ion-radio name="p3" class="" ng-model="radio.p3" ng-value="H">H-Happy</ion-radio>
+              <ion-radio name="p3" ng-model="radio.p3" ng-value="F">F-Fearful</ion-radio>
+              <ion-radio name="p3" class="assertive" ng-model="radio.p3" ng-value="Dp">Dp-Depressed</ion-radio>
+              <!-- -Widrawn
+              - Quite -->
+              <ion-radio name="p3" ng-model="radio.p3" ng-value="Sr">Sr-Suicide</ion-radio>
+              <ion-radio name="p3" ng-model="radio.p3" ng-value="An">An-Anxious</ion-radio>
+              <ion-radio name="p3" ng-model="radio.p3" ng-value="S">S-Sad</ion-radio>
+              <ion-radio name="p3" ng-model="radio.p3" ng-value="Ag">Ag-Angry</ion-radio>
+              <ion-radio name="p3" ng-model="radio.p3" ng-value="Dn">Dn-Denial</ion-radio>
+          </ion-item>
+    </ion-content>
+</ion-view>
