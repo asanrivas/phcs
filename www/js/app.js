@@ -97,11 +97,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.f07', {
+    url: '/f07',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/cont/f07.html'
+      }
+    }
+  })
+  .state('tab.p02', { url: '/p02', views: { 'tab-continous': { templateUrl: 'templates/cont/p02.html'}}})
+  .state('tab.p03', { url: '/p03', views: { 'tab-continous': { templateUrl: 'templates/cont/p03.html'}}})
+  .state('tab.p04', { url: '/p04', views: { 'tab-continous': { templateUrl: 'templates/cont/p04.html'}}})
   .state('tab.eol', {
     url: '/eol',
     views: {
       'tab-eol': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'templates/eol.html',
         controller: 'AccountCtrl'
       }
     }
@@ -110,7 +121,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/equipment',
     views: {
       'tab-equipment': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'templates/equip.html',
         controller: 'AccountCtrl'
       }
     }
