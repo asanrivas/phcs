@@ -13,12 +13,12 @@ navigation history that also transitions its views in and out.
         <ion-nav-view name="tab-gallery"></ion-nav-view>
     </ion-tab>
 
-    <ion-tab title="First Visit" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/tab/{{patientID}}/firsttime">
+    <ion-tab title="First Visit" icon-off="ion-ios-chatbubble-outline" icon-on="ion-ios-chatbubble" href="#/tab/{{patientID}}/firsttime" badge="$parent.setting.eol?'X':''">
         <ion-nav-back-button class="button-icon ion-arrow-left-c">
         </ion-nav-back-button>
         <ion-nav-view name="tab-firsttime"></ion-nav-view>
     </ion-tab>
-    <ion-tab title="Continous Visit" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/{{patientID}}/continous">
+    <ion-tab title="Continous Visit" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/{{patientID}}/continous" badge="$parent.setting.eol?'X':''">
         <ion-nav-back-button class="button-icon ion-arrow-left-c">
         </ion-nav-back-button>
         <ion-nav-view name="tab-continous"></ion-nav-view>
