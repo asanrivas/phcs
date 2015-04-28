@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('FirstTimeCtrl', function($scope) {})
-.controller('TabGalleryCtrl', function($scope) {
+.controller('TabGalleryCtrl', function($scope, Camera) {
     $scope.items = [
         { id: 0 },
         { id: 1 },
@@ -64,6 +64,21 @@ angular.module('starter.controllers', [])
         { id: 49 },
         { id: 50 }
     ];
+
+    $scope.getPhoto = function() {
+        console.log('Getting camera');
+        Camera.getPicture({
+            quality: 75,
+            targetWidth: 640,
+            targetHeight: 640,
+            saveToPhotoAlbum: false
+        }).then(function(imageURI) {
+            console.log(imageURI);
+            $scope.lastPhoto = imageURI;
+        }, function(err) {
+            console.err(err);
+        });
+    }
 })
 .controller('TabCtrl', function($scope, $stateParams, RandomUser, $rootScope) {
     $scope.patientID = $stateParams.patientID;

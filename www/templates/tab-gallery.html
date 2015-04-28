@@ -1,7 +1,10 @@
 <ion-view view-title="Gallery">
     <ion-content>
         <div class="row">
-            
+            <button class="button button-large button-block button-calm" ng-click="getPhoto()"><i class="icon ion-camera"></i> Capture Photo</button>
+        </div>
+        <div class="row padding" ng-show="lastPhoto">
+            <img ng-src="{{lastPhoto}}" style="max-width: 100%">
         </div>
         <div class="row row-wrap">
 
