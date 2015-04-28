@@ -1,22 +1,33 @@
 <ion-view view-title="Sign-In">
-        <ion-content>
-          <div class="list">
+    <ion-content>
+        <div class="row">
+            <div class="col col-33 col-offset-33 text-center">
+                <img src="img/logo_PPCS.gif" class="padding"/>
+            </div>
+        </div>
+        <div class="list">
             <label class="item item-input">
-              <span class="input-label">Username</span>
-              <input type="text" ng-model="user.username">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="user.username">
             </label>
             <label class="item item-input">
-              <span class="input-label">Password</span>
-              <input type="password" ng-model="user.password">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="user.password">
             </label>
-          </div>
-          <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
-              Sign-In
+        </div>
+        <div class="padding">
+            <button class="button-block button " ng-click="signIn(user)">
+                Sign-In
             </button>
             <p class="text-center">
-              <a href="#/forgot-password">Forgot password</a>
+                <a href="#/forgot-password">Forgot password</a>
             </p>
-          </div>
-        </ion-content>
-      </ion-view>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                <button class="button button-large button-block button-balanced"><i class="icon ion-loop"></i> Sync</button>
+                <p>Last update: 11:00AM 30 Apr 2015</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

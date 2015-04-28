@@ -47,4 +47,28 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('RandomUser', function($resource){
+    var userList;
+
+    return {
+        setPatients: function(data) {
+            userList = data;
+            window.localStorage['userList'] = JSON.stringify(userList);
+        },
+        getPatients: function() {
+            return userList;
+        },
+        getPatientById: function(userid)
+        {
+            if(!userList)
+            {
+                userList = JSON.parse(localStorage.getItem('userList')) || [];
+                return userList[userid];
+            }
+            else
+                return userList[userid];
+        }
+    };
 });
