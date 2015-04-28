@@ -1,5 +1,5 @@
 <ion-view view-title="Continue Visit">
-  <ion-content class="padding">
+  <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
     <div class="list card">
       <div class="item item-divider">Introduction</div>
       <div class="item item-body">
@@ -14,22 +14,31 @@
         </div>
       </div>
     </div>
-    <div class="item item-divider">Initial Assessment Check List</div>
-    <ion-checkbox ng-model="data.f07" class="checkbox-balanced" checked="true" disabled="true">F-07  Perak Palliative Care Society Initial Assessment Form</ion-checkbox>
-    <ion-checkbox ng-model="data.f08" disabled="true">F-07 Perak Palliative Care Society Initial Assessment Form</ion-checkbox>
+    <div class="item item-divider" ng-init="data = {f07:true, f08:true}">Initial Assessment Check List</div>
+    <ion-checkbox ng-model="data.f07" disabled="true">F-07 Perak Palliative Care Society Initial Assessment Form</ion-checkbox>
     <ion-checkbox ng-model="data.f08" disabled="true">F-08 Physical Systoms (Patient’s Complaint)</ion-checkbox>
-    <ion-checkbox ng-model="data.f08" disabled="true">F-08 A - Social Assessment</ion-checkbox>
-    <ion-checkbox ng-model="data.f08" disabled="true">F-08 B - Current Medication Chart</ion-checkbox>
-    <ion-checkbox ng-model="data.f08" disabled="true">F-09 P1 – GENERAL EXAMINATION</ion-checkbox>
-    <ion-checkbox ng-model="data.f08" disabled="true">F-10 GENERAL EXAMINATION</ion-checkbox>
+    <ion-checkbox ng-model="data.f09" disabled="true">F-08 A - Social Assessment</ion-checkbox>
+    <ion-checkbox ng-model="data.f10" disabled="true">F-08 B - Current Medication Chart</ion-checkbox>
+    <ion-checkbox ng-model="data.f11" disabled="true">F-09 P1 – GENERAL EXAMINATION</ion-checkbox>
+    <ion-checkbox ng-model="data.f12" disabled="true">F-10 GENERAL EXAMINATION</ion-checkbox>
     <div class="item item-divider">Multidisciplinary PT20 point check List</div>
-    <ion-list ng-init="data.f01 = true;">
-        <ion-checkbox ng-model="data.p01" class="checkbox-balanced" checked="true" disabled="true">P2 – NEUROLOGICAL</ion-checkbox>
-        <ion-checkbox ng-model="data.p02" class="checkbox-balanced"  disabled="true">P3 – EMOTIONAL</ion-checkbox>
-        <ion-checkbox ng-model="data.p03" class="checkbox-balanced"  disabled="true">P4 – SPIRITUAL</ion-checkbox>
-        <ion-checkbox ng-model="data.f04" class="checkbox-balanced"  disabled="true">P5- COMFORT</ion-checkbox>
-        <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">P6- SLEEPING</ion-checkbox>
-        <ion-checkbox ng-model="data.f06" class="checkbox-balanced"  disabled="true">F-06 - Project Cendawan</ion-checkbox>
+    <ion-list ng-init="data.f01 = true;" class="capital">
+        <ion-checkbox ng-model="data.p01" class="checkbox-balanced" checked="true" disabled="true">p2 – neurological</ion-checkbox>
+        <ion-checkbox ng-model="data.p02" class="checkbox-balanced"  disabled="true">p3 – emotional</ion-checkbox>
+        <ion-checkbox ng-model="data.p03" class="checkbox-balanced"  disabled="true">p4 – spiritual</ion-checkbox>
+        <ion-checkbox ng-model="data.f04" class="checkbox-balanced"  disabled="true">p5 - comfort</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">p6 - sleeping</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">p7 - breathing</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced ">p9 - temperature</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p8 - circulation</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p10 - oral (mouth)</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p11 - nutrition</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p12 - elimination bowel</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p13 - elimination bladder</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p14 - wound</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p15 - activities for daily living and sexuality</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p16 - end of life issue</ion-checkbox>
+        <ion-checkbox ng-model="data.f05" class="checkbox-balanced">p17 - client support issues</ion-checkbox>
     </ion-list>
   </ion-content>
 </ion-view>

@@ -66,3 +66,11 @@
 .capital {
     text-transform: capitalize;
 }
+.item-note.black {
+    color: black;
+    font-weight: bold;
+}
+.is-disabled {
+    opacity: .5;
+    pointer-events: none;
+}

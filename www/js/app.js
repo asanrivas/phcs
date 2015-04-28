@@ -79,11 +79,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('tab.firsttime-f01', {
-      url: '/firsttime-f01',
+    .state('tab.firsttime-f04', {
+      url: '/firsttime-f04',
       views: {
         'tab-firsttime': {
-          templateUrl: 'templates/tab-firsttime-f01.html'
+          templateUrl: 'templates/tab-firsttime-f04.html'
         }
       }
     })

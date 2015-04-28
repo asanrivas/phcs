@@ -5,7 +5,7 @@
             <div id="profile-info">
                 <img id="profile-image" ng-src="{{patient.user.picture.medium}}">
                 <h3 id="profile-name" class="capital">{{patient.user.name.title}} {{patient.user.name.first}} {{patient.user.name.last}}</h3>
-                <span id="profile-description">"My happiness is yours"
+                <span id="profile-description" class="capital"><h4 style="font-style: italic;">"{{patient.user.name.first}}"</h4>67 years old, {{patient.user.location.state}}
                 </div>
                 <div class="row">
                     <a class="button button-block col" href="#/patient">Change Patient</a>
@@ -14,15 +14,24 @@
             </div>
             <div class="list card">
                 <div class="item item-divider">Patient Profile</div>
-                <div class="item item-body">
+                <div class="item item-body list">
                         <div class="item">
-                            Raiders of the Lost Ark
+                            PPCS Reg No  <span class="item-note black">{{patient.seed}}</span>
                         </div>
                         <div class="item">
-                            Raiders of the Lost Ark
+                            Name <span class="item-note black capital">{{patient.user.name.title}} {{patient.user.name.first}} {{patient.user.name.last}}</span>
                         </div>
                         <div class="item">
-                            Raiders of the Lost Ark
+                            Date Of Birth
+                        </div>
+                        <div class="item">
+                            Marital Status
+                        </div>
+                        <div class="item">
+                            Address <span class="item-note black capital">{{patient.user.location.street}} {{patient.user.location.city}} <br/> {{patient.user.location.state}} {{patient.user.location.zip}}</span>
+                        </div>
+                        <div class="item">
+                            <a class="button button-block">More Details...</a>
                         </div>
                 </div>
             </div>

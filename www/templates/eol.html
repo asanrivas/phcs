@@ -4,25 +4,22 @@
       <div class="item item-divider">End of Life Care Plan (EOLCP)</div>
       <div class="item item-body">
         <div>
-            From the EOLCP data if the patient need to be refer to the hospital/doctor this form should be filled up.
+            This section will be applied such as situation as follows
+            <ol>
+                <li>1. Death</li>
+                <li>2. Referring to doctor</li>
+                <li>And so on</li>
+            </ol>
+            EOLCP data if the patient need to be refer to the hospital/doctor this form should be filled up.
         </div>
+        <a class="button button-assertive button-outline button-block" href="#/tab/{{$parent.patientID}}/firsttime">Fill up EOL Form</a>
+
       </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
+      <div class="item item-footer">
+          <ion-toggle ng-model="$parent.setting.eol" toggle-class="toggle-assertive">
+              I consent that this patient will under EOL Care Plan</a>
+          </ion-toggle>
+     </div>
     </div>
   </ion-content>
 </ion-view>

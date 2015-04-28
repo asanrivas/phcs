@@ -1,20 +1,22 @@
 <ion-view view-title="First Time Visit">
-  <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Introduction</div>
-      <div class="item item-body">
-        <div>
-            <p>On the First Visit the nurse will consider As either needed as a Homecare or Stable.
-                If the status is Homecare one more status to be consider either it’s a
-                <strong>Local</strong> or <strong>Cendawan</strong>. Local means
-                the patient address is beyond 20km away from the Palliative
-                Care Office and if it more than 20km  it will travel as Chendawan.</p>
+    <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
+        <div class="list card">
+            <div class="item item-divider">Introduction</div>
+            <div class="item item-body">
+                <div>
+                    <p>The First Visit will start with :</p>
+                    <a class="button button-full button-positive" href="#/tab/{{$parent.patientID}}/firsttime-f04">
+                        F-04 – Consent of  Addmission Release &amp; Indeminity Form
+                    </a>
+                    <a class="button button-full button-positive">
+                        F-05 - Declaration of Photographic/media consent
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <ion-list ng-init="data.f01 = true;">
-        <ion-checkbox ng-model="data.f04" class="checkbox-balanced"  disabled="true">F-04 – Consent of  Addmission Release &amp; Indeminity Form</ion-checkbox>
-        <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">F-05 -  Declaration of Photographic/media consent</ion-checkbox>
-    </ion-list>
-  </ion-content>
+        <ion-list ng-init="data.f01 = true;">
+            <ion-checkbox ng-model="data.f04" class="checkbox-balanced"  disabled="true">F-04 – Consent of  Addmission Release &amp; Indeminity Form</ion-checkbox>
+            <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">F-05 - Declaration of Photographic/media consent</ion-checkbox>
+        </ion-list>
+    </ion-content>
 </ion-view>

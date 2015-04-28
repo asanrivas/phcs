@@ -75,6 +75,8 @@ angular.module('starter.controllers', [])
             $scope.patient = RandomUser.getPatientById(toParams.patientID);
         }
     });
+
+    $scope.setting = {eol: false};
 })
 
 .controller('PatientCtrl', function($scope, RandomUser, $http) {
