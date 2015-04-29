@@ -1,0 +1,28 @@
+<ion-view view-title="Palliative Massage Therapy">
+  <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
+    <div class="list card">
+      <div class="item item-divider">Palliative Massage Therapy (PMT)</div>
+      <div class="item item-body">
+        <div>
+            <p>If problem noted from P2, P3, P4, P5, P6, P8, P15 massage therapy <b>maybe</b> appropriate.</p>
+            <!-- <p>This form will be used for two type of situation
+1. On first visit – found the
+patient is not suitable for continue visit
+2. On repeating visit – found
+the patient need consultation of a doctor</p> -->
+                <a class="button button-full button-positive" href="#/tab/{{$parent.patientID}}/f07">
+                    F18 - Complementary therapy for Palliative Massage Referral
+                </a>
+        </div>
+      </div>
+    </div>
+    <div class="item item-divider" ng-init="data = {f07:true, f08:true}">Initial Assessment Check List</div>
+
+    <ion-checkbox ng-model="data.f07" disabled="true">Check box 1</ion-checkbox>
+    <ion-checkbox ng-model="data.f08" disabled="true">Check box 2</ion-checkbox>
+    <ion-checkbox ng-model="data.f09" disabled="true">Check box 3</ion-checkbox>
+    <ion-checkbox ng-model="data.f10" disabled="true">Check box 4</ion-checkbox>
+    <ion-checkbox ng-model="data.f11" disabled="true">Check box 5</ion-checkbox>
+    </ion-list>
+  </ion-content>
+</ion-view>

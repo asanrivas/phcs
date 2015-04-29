@@ -1,0 +1,68 @@
+<ion-view view-title="F-07 – Initial Assessment">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">Criteria for EOLCP</div>
+            <div class="item item-body">
+                <div>
+                    To activate EOLCP, patient must be presented with at least TWO of the following and in consultation of a doctor
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <ion-checkbox ng-model="data.eol01" disabled="true">Terminal discharge from hospital</ion-checkbox>
+            <ion-checkbox ng-model="data.eol02" disabled="true">Terminal condition had been informed by doctor</ion-checkbox>
+            <ion-checkbox ng-model="data.eol03" disabled="true">Irreversible condition</ion-checkbox>
+            <ion-checkbox ng-model="data.eol04" disabled="true">Poor conscious level</ion-checkbox>
+            <ion-checkbox ng-model="data.eol05" disabled="true">Unable to take orally/Only able to take sips of fluid</ion-checkbox>
+            <ion-checkbox ng-model="data.eol06" disabled="true">Deteriorating vital signs</ion-checkbox>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Initial Patient Assessment</div>
+            <div class="item item-body">
+                <div>
+                    Physical Condition to be completed by a doctor or a nurse
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <ion-toggle ng-model="feolcp.f01">
+                Unable to swallow
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f02">
+                Conscious
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f03">
+                Confused
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f04">
+                Restless
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f05">
+                Nausea
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f06">
+                Vomiting
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f07">
+                Distended Bladder
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f08">
+                * Diarrhea / Constipation
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f09">
+                Fever
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f10">
+                * Respiratory tract secretion / Death Rattle
+            </ion-toggle>
+            <ion-toggle ng-model="feolcp.f11">
+                Peripheral cyanosis
+            </ion-toggle>
+            <label class="item item-input">
+                <span class="input-label">Other (Please specify)</span>
+                <input type="text">
+            </label>
+            <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/pmt">Sign and Save</a>
+        </div>
+    </ion-content>
+</ion-view>
