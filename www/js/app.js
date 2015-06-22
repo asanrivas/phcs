@@ -130,7 +130,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/f07',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/cont/f07.html'
+        templateUrl: 'templates/forms/f07.html'
       }
     }
   })
@@ -140,7 +140,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/f08',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/cont/f08.html'
+        templateUrl: 'templates/forms/f08.html'
       }
     }
   })
@@ -149,7 +149,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/f09',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/cont/f09.html'
+        templateUrl: 'templates/forms/f09.html'
       }
     }
   })
@@ -159,7 +159,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/f13',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/cont/f13.html'
+        templateUrl: 'templates/forms/f13.html'
       }
     }
   })
@@ -169,7 +169,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     url: '/f14',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/cont/f14.html'
+        templateUrl: 'templates/forms/f14.html'
       }
     }
   })
