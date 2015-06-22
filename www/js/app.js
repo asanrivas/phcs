@@ -91,14 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
-    .state('tab.f07', {
-        url: '/f07',
-        views: {
-            'tab-continous': {
-                templateUrl: 'templates/forms/f07.html'
-            }
-        }
-    })
+
     .state('tab.p02', { url: '/p02', views: { 'tab-continous': { templateUrl: 'templates/forms/p02.html'}}})
     .state('tab.p03', { url: '/p03', views: { 'tab-continous': { templateUrl: 'templates/forms/p03.html'}}})
     .state('tab.p04', { url: '/p04', views: { 'tab-continous': { templateUrl: 'templates/forms/p04.html'}}})
@@ -130,7 +123,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 controller: 'AccountCtrl'
             }
         }
-    });
+    })
 
 
   .state('tab.f07', {
