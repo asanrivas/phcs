@@ -5,11 +5,14 @@
             <div class="item item-body">
                 <div>
                     <p>The First Visit will start with :</p>
-                    <a class="button button-full button-positive" href="#/tab/{{$parent.patientID}}/firsttime-f04">
+                    <a class="button button-full button-positive" ui-sref="tab.f04">
                         F-04 – Consent of  Addmission Release &amp; Indeminity Form
                     </a>
-                    <a class="button button-full button-positive">
+                    <a class="button button-full button-positive" ui-sref="tab.f04">
                         F-05 - Declaration of Photographic/media consent
+                    </a>
+                    <a class="button button-full button-positive" ui-sref="tab.f04">
+                        Initial Assessment Forms
                     </a>
                 </div>
             </div>
@@ -17,6 +20,7 @@
         <ion-list ng-init="data.f01 = true;">
             <ion-checkbox ng-model="data.f04" class="checkbox-balanced"  disabled="true">F-04 – Consent of  Addmission Release &amp; Indeminity Form</ion-checkbox>
             <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">F-05 - Declaration of Photographic/media consent</ion-checkbox>
+            <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  disabled="true">Initial Assessment Forms</ion-checkbox>
         </ion-list>
     </ion-content>
 </ion-view>
