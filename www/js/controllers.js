@@ -94,14 +94,16 @@ angular.module('starter.controllers', [])
     $scope.setting = {eol: false};
 })
 
-.controller('PatientCtrl', function($scope, RandomUser, $http) {
+.controller('PatientCtrl', function($scope, RandomUser, $http, LocalDB) {
     $http.get('http://api.randomuser.me/', {params: {'results': 10}}).success(function(data){
         $scope.patients = data.results;
-        RandomUser.setPatients(data.results);
+        LocalDB.setPatients(data.results);
+
     });
     $scope.remove = function(chat) {
         Chats.remove(chat);
     }
+
 
     $scope.ExcelDateToJSDate =  function (serial) {
         return serial/65536%100;

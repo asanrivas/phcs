@@ -74,3 +74,42 @@
     opacity: .5;
     pointer-events: none;
 }
+
+.ui.label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -.25em .25em 0;
+  background-color: #E8E8E8;
+  border-color: #E8E8E8;
+  padding: .5em .8em;
+  color: rgba(0,0,0,.65);
+  text-transform: uppercase;
+  font-weight: 400;
+  border-radius: .325em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: background .1s linear;
+  -moz-transition: background .1s linear;
+  transition: background .1s linear;
+}
+
+.ui.label {
+  font-size: .5rem;
+}
+
+.ui.circular.label, .ui.circular.labels .label {
+  min-height: 1em;
+  max-height: 2em;
+  padding: .5em!important;
+  line-height: 1em;
+  text-align: center;
+  border-radius: 500rem;
+}
+
+.ui.green.label, .ui.green.labels .label {
+  background-color: #A1CF64!important;
+  border-color: #A1CF64!important;
+  color: #FFF!important;
+}

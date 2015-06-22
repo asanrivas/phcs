@@ -49,6 +49,51 @@ angular.module('starter.services', [])
   };
 })
 
+.factory('LocalDB', function(){
+    var db;
+    var openRequest = indexedDB.open("pcis",1);
+    openRequest.onupgradeneeded = function(e) {
+        console.log("Upgrading...");
+        var thisDB = e.target.result;
+
+        if(!thisDB.objectStoreNames.contains("patients")) {
+            thisDB.createObjectStore("patients");
+        }
+    }
+
+    openRequest.onsuccess = function(e) {
+        console.log("Success!");
+        db = e.target.result;
+
+    }
+
+    openRequest.onerror = function(e) {
+        console.log("Error");
+        console.dir(e);
+    }
+
+
+    return {
+        setPatients:function (data) {
+            console.log('saving...');
+            var transaction = db.transaction(["patients"],"readwrite");
+            var patients = transaction.objectStore("patients");
+            for (var i = 0; i < data.length; i++) {
+                patients.add(data[i], i)
+            }
+            return true;
+        },
+        getPatients:function () {
+            console.log('initiating...');
+            var transaction = db.transaction(["patients"],"read");
+            return transaction.objectStore("patients");
+        },
+        getPatientById:function (id) {
+            return transaction.objectStore("patients")[id];
+        }
+    };
+
+})
 .factory('RandomUser', function($resource){
     var userList;
 
