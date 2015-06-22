@@ -1,0 +1,72 @@
+<ion-view view-title="F-09 – General Examination">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">General Examination</div>
+            <div class="item item-body">
+                <div>
+                    General Examination <b>sector F09</b>
+                </div>
+            </div>
+        </div>		
+		
+		<div class="list">
+	<label class="item item-input item-stacked-label">
+					<span class="input-label">Patient Name</span>
+						<input type="text" placeholder="Patient Name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">PPCS Reg. No</span>
+						<input type="text" placeholder="PPCS Reg. No">
+				</label>
+</div>
+				<ion-list ng-init="data.f01 = true;" class="capital">
+				<ion-checkbox ng-model="data.f07" disabled="true">Family Attitude</ion-checkbox>
+				<ion-checkbox ng-model="data.f08" disabled="true">Family Response</ion-checkbox>
+				<ion-checkbox ng-model="data.f09" disabled="true">Avail of caregiver</ion-checkbox>
+				<ion-checkbox ng-model="data.f10" disabled="true">Religion of Pt</ion-checkbox>
+				</ion-list>
+<span class="input-label">Home Assessment</span>
+				
+					<span class="input-label">Type of housing</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Kampung house</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Flats</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Shop lot</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Single story</ion-checkbox>
+						</ion-list>
+						
+					<span class="input-label">Home Enviroment</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Clean</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Cluttered</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Dirty</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Electricity</ion-checkbox>
+						
+						<ion-checkbox ng-model="data.f07" disabled="true">Municipal water supply</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Other water source</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Dark</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Poor Ventilation</ion-checkbox>
+						</ion-list>
+					
+					<span class="input-label">Stairs</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Stairs entering home</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Stairs inside home</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Split level</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Client using</ion-checkbox>
+						</ion-list>
+						
+					<span class="input-label">Sanitary</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Squat toilet</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Sit</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Attached toilet</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Commode</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Out House</ion-checkbox>
+						</ion-list>
+
+				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">Save and Next</a>
+			</div>
+
+	</ion-content>
+</ion-view>
