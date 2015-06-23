@@ -1,0 +1,22 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P18 – Mobilization And Activity</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest mobilization and activity condition of patient
+          </div>
+          <ion-item>
+              
+              <ion-radio name="p18">A-Ambulatory</ion-radio>
+              <ion-radio name="p18">WE-Weakness GSC</ion-radio>
+              <ion-radio name="p18">WA-Walking Aid</ion-radio>
+              <ion-radio name="p18">S-Sit in chair</ion-radio>
+              <ion-radio name="p18">WC-Wheelchair</ion-radio>
+              <ion-radio name="p18">B-Bed</ion-radio>
+              <ion-radio name="p18">PL-Patient location in home</ion-radio>
+              
+             
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p19">Save and Next</a>
+
+    </ion-content>
+</ion-view>

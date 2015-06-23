@@ -1,0 +1,18 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P17 – Client Support Issues</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest client support issues condition of patient
+          </div>
+          <ion-item>
+              
+              <ion-radio name="p17">S-Support need being met</ion-radio>
+              <ion-radio name="p17">F-Family</ion-radio>
+              <ion-radio name="p17">CF-Career fatigue</ion-radio>
+              <ion-radio name="p17">SF-Financial FORM 8 A</ion-radio>
+             
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p18">Save and Next</a>
+
+    </ion-content>
+</ion-view>

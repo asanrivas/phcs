@@ -1,0 +1,17 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P19 – Palliative Massage Therapy (PMT)</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest palliative massage therapy (PMT) condition of patient
+          </div>
+          <ion-item>
+              <ion-radio name="p19">Y-Patient referred for PMT</ion-radio>
+              <ion-radio class="positive" name="p19">N-Patient refused PMT</ion-radio>
+              <ion-radio name="p19">C-PMT contraindicated</ion-radio>
+              <ion-radio name="p19">NI-Not indicated for PMT</ion-radio>
+             
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/continuos">Save and Next</a>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P15 – Activities For Daily Living And Sexuality</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest activies for daily living and sexuality condition of patient
+          </div>
+          <ion-item>
+              <ion-radio class="positive" name="p15">S-Self</ion-radio>
+              <ion-radio name="p15">A-Assisted</ion-radio>
+              <ion-radio name="p15">D-Dependent</ion-radio>
+              <ion-radio name="p15">PP-Personal Preference(indicate in special instruction)</ion-radio>
+              <ion-radio name="p15">BI-Body image disturbance</ion-radio>
+              <ion-radio name="p15">SE-Low self esteem</ion-radio>
+   
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p16">Save and Next</a>
+
+    </ion-content>
+</ion-view>
