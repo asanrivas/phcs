@@ -15,27 +15,37 @@
             <div class="list card">
                 <div class="item item-divider">Patient Profile</div>
                 <div class="item item-body list">
-                        <div class="item">
-                            PPCS Reg No  <span class="item-note black">{{patient.seed}}</span>
-                        </div>
-                        <div class="item">
-                            Name <span class="item-note black capital">{{patient.user.name.title}} {{patient.user.name.first}} {{patient.user.name.last}}</span>
-                        </div>
-                        <div class="item ion-icon">
-                            Address <span class="item-note black capital">{{patient.user.location.street}} {{patient.user.location.city}} <br/> {{patient.user.location.state}} {{patient.user.location.zip}}</span>
-                        </div>
-                        <div class="item item-button-right">
-    Travel to address
-    <a class="button button-positive button-outline" href="geo:q={{patient.user.location.street}}" target="_blank">
-      <i class="icon ion-navigate"></i>
-  </a>
-  </div>
-                        <div class="item ">
-                            Travelling Status <span class="item-note black">Cendawan</span>
-                        </div>
-                        <div class="item">
-                            <a class="button button-block">More Details...</a>
-                        </div>
+                    <div class="item">
+                        PPCS Reg No  <span class="item-note black">{{patient.seed}}</span>
+                    </div>
+                    <div class="item">
+                        Name <span class="item-note black capital">{{patient.user.name.title}} {{patient.user.name.first}} {{patient.user.name.last}}</span>
+                    </div>
+                    <div class="item ion-icon">
+                        Address <span class="item-note black capital">{{patient.user.location.street}} {{patient.user.location.city}} <br/> {{patient.user.location.state}} {{patient.user.location.zip}}</span>
+                    </div>
+                    <div class="item item-button-right">
+                        Travel to address
+                        <a class="button button-positive button-outline" href="geo:q={{patient.user.location.street}}" target="_blank">
+                            <i class="icon ion-navigate"></i>
+                        </a>
+                    </div>
+                    <div class="item ">
+                        Travelling Status <span class="item-note black">Cendawan</span>
+                    </div>
+                    <div class="item">
+                        <a class="button button-block">More Details...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-divider">Upcoming Visit</div>
+                <div class="item item-body">
+                    <div>
+                        Patient next visit is on <strong>Sunday, 29 May 2015</strong>. Scheduled by hariyati.
+                    </div>
+                    <a class="button button-block button-positive">Schedule next visit</a>
+
                 </div>
             </div>
             <div class="list card">
@@ -55,14 +65,5 @@
                     </div>
                 </div>
             </div>
-            <div class="list card">
-                <div class="item item-divider">Upcoming</div>
-                <div class="item item-body">
-                    <div>
-                        You have <b>29</b> meetings on your calendar tomorrow.
-                    </div>
-                </div>
-            </div>
-
         </ion-content>
     </ion-view>

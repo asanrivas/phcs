@@ -1,6 +1,6 @@
 <ion-view view-title="Take Photo">
     <ion-nav-buttons side="right">
-      <button class="button" ng-click="save()">Save</button>
+      <button class="button button-clear" ng-click="save()">Save</button>
     </ion-nav-buttons>
     <ion-content>
         <div class="row">
@@ -9,6 +9,5 @@
         <div class="row padding" ng-show="lastPhoto">
             <img ng-src="{{lastPhoto}}" style="max-width: 100%">
         </div>
-    </div>
-</ion-content>
+    </ion-content>
 </ion-view>
