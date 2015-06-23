@@ -81,6 +81,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     .state('tab.f04', { url: '/f04', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f04.html'}}})
     .state('tab.f05', { url: '/f05', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f05.html'}}})
+    .state('tab.f07', { url: '/f07', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f07.html'}}})
+    .state('tab.f08', { url: '/f08', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f08.html'}}})
+    .state('tab.f09', { url: '/f09', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f09.html'}}})
+    .state('tab.f13', { url: '/f13', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f13.html'}}})
+    .state('tab.f14', { url: '/f14', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f14.html'}}})
+    .state('tab.f15', { url: '/f15', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f15.html'}}})
+    .state('tab.f16', { url: '/f16', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f16.html'}}})
 
     .state('tab.continous', {
         url: '/continous',
