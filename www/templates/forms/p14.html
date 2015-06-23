@@ -1,28 +1,17 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P14 – Wound</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P14 – Activities For Daily Living And Sexuality</ion-checkbox>
           <div class="item item-divider">
-            Select the nearest wound condition of patient
+            Select the nearest activies for daily living and sexuality condition of patient
           </div>
           <ion-item>
-              <ion-radio class="positive" name="p14">NW- No wound</ion-radio>
-              <ion-radio name="p14">PO-Post op wound</ion-radio>
-              <ion-radio name="p14">P-Pressure</ion-radio>
-              <ion-radio name="p14">F-Fumigating</ion-radio>
-              <ion-radio name="p14">S1-Redness</ion-radio>
-              <ion-radio name="p14">S2-Partial thickness</ion-radio>
-              <ion-radio name="p14">S3-Full thickness</ion-radio>
-              <ion-radio name="p14">S4-Cavity</ion-radio>
-              <ion-radio name="p14">S5-Unstageble</ion-radio>
-              <ion-radio name="p14">CL-Clean</ion-radio>
-              <ion-radio name="p14">G-Granulating</ion-radio>
-              <ion-radio name="p14">O-Odor</ion-radio>
-              <ion-radio name="p14">E-Exudations</ion-radio>
-              <ion-radio name="p14">B-Bleeding</ion-radio>
-              <ion-radio name="p14">Sl-Sloughs</ion-radio>
-              
-             
-           
+              <ion-radio class="positive" name="p14">S-Self</ion-radio>
+              <ion-radio name="p14">A-Assisted</ion-radio>
+              <ion-radio name="p14">D-Dependent</ion-radio>
+              <ion-radio name="p14">PP-Personal Preference(indicate in special instruction)</ion-radio>
+              <ion-radio name="p14">BI-Body image disturbance</ion-radio>
+              <ion-radio name="p14">SE-Low self esteem</ion-radio>
+   
           </ion-item>
           <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p15">Save and Next</a>
 

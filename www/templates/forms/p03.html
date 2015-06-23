@@ -1,21 +1,16 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P3 – Emotional</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P3 – Spiritual</ion-checkbox>
           <div class="item item-divider">
-            Select the nearest emotional condition of patient
+            Select the nearest spiritual condition of patient
           </div>
           <ion-item>
-              <ion-radio name="p3" class="positive" ng-model="radio.p3" ng-value="C">C-Calm</ion-radio>
-              <ion-radio name="p3" class="" ng-model="radio.p3" ng-value="H">H-Happy</ion-radio>
-              <ion-radio name="p3" ng-model="radio.p3" ng-value="F">F-Fearful</ion-radio>
-              <ion-radio name="p3" class="assertive" ng-model="radio.p3" ng-value="Dp">Dp-Depressed</ion-radio>
-              <!-- -Widrawn
-              - Quite -->
-              <ion-radio name="p3" ng-model="radio.p3" ng-value="Sr">Sr-Suicide</ion-radio>
-              <ion-radio name="p3" ng-model="radio.p3" ng-value="An">An-Anxious</ion-radio>
-              <ion-radio name="p3" ng-model="radio.p3" ng-value="S">S-Sad</ion-radio>
-              <ion-radio name="p3" ng-model="radio.p3" ng-value="Ag">Ag-Angry</ion-radio>
-              <ion-radio name="p3" ng-model="radio.p3" ng-value="Dn">Dn-Denial</ion-radio>
+              <ion-radio class="positive" name="p3">SpC- Spiritual Consolation</ion-radio>
+              <ion-radio name="p3">SpD- Spiritual Desolation</ion-radio>
+              <ion-radio name="p3">RLG- Visited by religious leader/group</ion-radio>
+              <ion-radio name="p3">PM- Prays/Meditates</ion-radio>
+              <ion-radio name="p3">R- Reads Religious/Spiritual books</ion-radio>
+              <ion-radio name="p3">RS- Display religious symbols</ion-radio>
           </ion-item>
           <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p04">Save and Next</a>
 

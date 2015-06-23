@@ -1,17 +1,17 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P8 – Circulation</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P8 – Temperature</ion-checkbox>
           <div class="item item-divider">
-            Select the nearest circulation condition of patient
+            Select the nearest temperature condition of patient
           </div>
           <ion-item>
-              <ion-radio class="positive" name="p8">N-Normal</ion-radio>
-              <ion-radio name="p8">Ox-Oxygen</ion-radio>
-              <ion-radio name="p8">T-Tracheostomy</ion-radio>
-              <ion-radio name="p8">D-Dyspnoea</ion-radio>
-              <ion-radio name="p8">O-Others</ion-radio>
+              <ion-radio class="positive" name="p8">A-Afebrile</ion-radio>
+              <ion-radio name="p8">F-Febrille</ion-radio>
+              <ion-radio name="p8">CC-Cold compress</ion-radio>
+              <ion-radio name="p8">TS-Tepid sponging</ion-radio>
+              <ion-radio name="p8">C-coo to touch</ion-radio>
           </ion-item>
-          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p09">Save and Next</a>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p9">Save and Next</a>
 
     </ion-content>
 </ion-view>

@@ -1,16 +1,14 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P4 – Spiritual</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P4 – Comfort</ion-checkbox>
           <div class="item item-divider">
-            Select the nearest spiritual condition of patient
+            Select the nearest comfort condition of patient
           </div>
           <ion-item>
-              <ion-radio class="positive" name="p4">SpC- Spiritual Consolation</ion-radio>
-              <ion-radio name="p4">SpD- Spiritual Desolation</ion-radio>
-              <ion-radio name="p4">RLG- Visited by religious leader/group</ion-radio>
-              <ion-radio name="p4">PM- Prays/Meditates</ion-radio>
-              <ion-radio name="p4">R- Reads Religious/Spiritual books</ion-radio>
-              <ion-radio name="p4">RS- Display religious symbols</ion-radio>
+              <ion-radio class="positive" name="p4">NP-No Pain</ion-radio>
+              <ion-radio name="p4">p- Pain</ion-radio>
+              <ion-radio name="p4">R- At rest</ion-radio>
+              <ion-radio name="p4">M- On movement</ion-radio>
           </ion-item>
           <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p05">Save and Next</a>
 

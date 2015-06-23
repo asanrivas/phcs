@@ -1,15 +1,15 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P6 – Sleeping</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P6 – Breathing</ion-checkbox>
           <div class="item item-divider">
-            Select the nearest sleeping condition of patient
+            Select the nearest breathing condition of patient
           </div>
           <ion-item>
-              <ion-radio class="positive" name="p6">G-Good</ion-radio>
-              <ion-radio name="p6">P-Poor</ion-radio>
-              <ion-radio name="p6">F-Fair</ion-radio>
-              <ion-radio name="p6">I-Interrupted</ion-radio>
-              <ion-radio name="p6">R-Restless</ion-radio>
+              <ion-radio class="positive" name="p6">N-Normal</ion-radio>
+              <ion-radio name="p6">Ox-Oxygen</ion-radio>
+              <ion-radio name="p6">T-Tracheostomy</ion-radio>
+              <ion-radio name="p6">D-Dyspnoea</ion-radio>
+              <ion-radio name="p6">O-Others</ion-radio>
           </ion-item>
           <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p07">Save and Next</a>
 

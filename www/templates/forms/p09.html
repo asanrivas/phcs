@@ -1,15 +1,19 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P9 – Temperature</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P9 – Oral (Mouth)</ion-checkbox>
           <div class="item item-divider">
-            Select the nearest temperature condition of patient
+            Select the nearest oral (mouth) condition of patient
           </div>
           <ion-item>
-              <ion-radio class="positive" name="p9">A-Afebrile</ion-radio>
-              <ion-radio name="p9">F-Febrille</ion-radio>
-              <ion-radio name="p9">CC-Cold compress</ion-radio>
-              <ion-radio name="p9">TS-Tepid sponging</ion-radio>
-              <ion-radio name="p9">C-coo to touch</ion-radio>
+              <ion-radio class="positive" name="p9">G-Good oral hygiene</ion-radio>
+              <ion-radio name="p9">p-particles</ion-radio>
+              <ion-radio name="p9">D-Dirty</ion-radio>
+              <ion-radio name="p9">T-Thrush</ion-radio>
+              <ion-radio name="p9">CT-Coated tongue</ion-radio>
+              <ion-radio name="p9">C-Caries or poor fitting dentures</ion-radio>
+              <ion-radio name="p9">U-Ulcers</ion-radio>
+              <ion-radio name="p9">D-Dry mouth</ion-radio>
+           
           </ion-item>
           <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p10">Save and Next</a>
 
