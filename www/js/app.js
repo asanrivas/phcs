@@ -191,6 +191,51 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+
+.state('tab.p05', {
+    url: '/p05',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/p05.html'
+      }
+    }
+  })
+
+.state('tab.p06', {
+    url: '/p06',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/p06.html'
+      }
+    }
+  })
+
+.state('tab.p07', {
+    url: '/p07',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/p07.html'
+      }
+    }
+  })
+
+.state('tab.p08', {
+    url: '/p08',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/p08.html'
+      }
+    }
+  })
+
+.state('tab.p09', {
+    url: '/p09',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/p09.html'
+      }
+    }
+  })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/');
 

@@ -1,0 +1,17 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P7 – Breathing</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest breathing condition of patient
+          </div>
+          <ion-item>
+              <ion-radio class="positive" name="p5">N-Normal</ion-radio>
+              <ion-radio name="p7">Ox-Oxygen</ion-radio>
+              <ion-radio name="p7">T-Tracheostomy</ion-radio>
+              <ion-radio name="p7">D-Dyspnoea</ion-radio>
+              <ion-radio name="p7">O-Others</ion-radio>
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p08">Save and Next</a>
+
+    </ion-content>
+</ion-view>
