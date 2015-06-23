@@ -177,11 +177,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-.state('tab.9', {
-    url: '/p9',
+.state('tab.p09', {
+    url: '/p09',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/forms/p9.html'
+        templateUrl: 'templates/forms/p09.html'
       }
     }
   })
