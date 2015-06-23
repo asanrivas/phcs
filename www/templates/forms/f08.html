@@ -12,7 +12,7 @@
 
 <!---------------------------------------- Checkbox )(INITIAL REASON FOR REFERRAL) ---------------------------------------->
 <span class="input-label">Physical Symptoms (Patient's complaints)</span>
-
+	<img src="img/f08.png" >
 <div class="row">
   <div class="col">
   <ion-list ng-init="data.f01 = true;" class="capital">
@@ -78,6 +78,38 @@
 					<label class="item item-input item-stacked-label">
 						<span class="input-label">Vomiting</span>
 							<input type="text" placeholder="Vomiting">
+					</label>
+				</ion-checkbox>
+				<ion-checkbox ng-model="data.f21" disabled="true">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Numbness</span>
+							<input type="text" placeholder="Numbness">
+					</label>
+				</ion-checkbox>
+				<ion-checkbox ng-model="data.f12" disabled="true">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Abnormal abdomen</span>
+							<input type="text" placeholder="Abnormal abdomen">
+					</label>
+				</ion-checkbox>
+				<ion-checkbox ng-model="data.f13" disabled="true">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Weakness</span>
+							<input type="text" placeholder="Weakness">
+					</label>
+				</ion-checkbox>
+				
+				
+				<ion-checkbox ng-model="data.f14" disabled="true">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Paraplegia</span>
+							<input type="text" placeholder="Paraplegia">
+					</label>
+				</ion-checkbox>
+				<ion-checkbox ng-model="data.f15" disabled="true">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Rashes</span>
+							<input type="text" placeholder="Rashes">
 					</label>
 				</ion-checkbox>
 				</ion-list>
@@ -148,42 +180,8 @@
 							<input type="text" placeholder="Pressure sores">
 					</label>
 				</ion-checkbox>
-				</ion-list>
-  </div>
-  <div class="col">
-  <ion-list ng-init="data.f01 = true;" class="capital">
-				<ion-checkbox ng-model="data.f21" disabled="true">
-					<label class="item item-input item-stacked-label">
-						<span class="input-label">Numbness</span>
-							<input type="text" placeholder="Numbness">
-					</label>
-				</ion-checkbox>
-				<ion-checkbox ng-model="data.f12" disabled="true">
-					<label class="item item-input item-stacked-label">
-						<span class="input-label">Abnormal abdomen</span>
-							<input type="text" placeholder="Abnormal abdomen">
-					</label>
-				</ion-checkbox>
-				<ion-checkbox ng-model="data.f13" disabled="true">
-					<label class="item item-input item-stacked-label">
-						<span class="input-label">Weakness</span>
-							<input type="text" placeholder="Weakness">
-					</label>
-				</ion-checkbox>
+
 				
-				
-				<ion-checkbox ng-model="data.f14" disabled="true">
-					<label class="item item-input item-stacked-label">
-						<span class="input-label">Paraplegia</span>
-							<input type="text" placeholder="Paraplegia">
-					</label>
-				</ion-checkbox>
-				<ion-checkbox ng-model="data.f15" disabled="true">
-					<label class="item item-input item-stacked-label">
-						<span class="input-label">Rashes</span>
-							<input type="text" placeholder="Rashes">
-					</label>
-				</ion-checkbox>
 				<ion-checkbox ng-model="data.f16" disabled="true">
 					<label class="item item-input item-stacked-label">
 						<span class="input-label">Itch</span>
@@ -216,8 +214,10 @@
 							<input type="text" placeholder="Others">
 					</label>
 				</ion-checkbox>
+
 				</ion-list>
   </div>
+ 
   </div>
   <div class="row">
 	<div class="col col-100">

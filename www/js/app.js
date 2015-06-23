@@ -173,6 +173,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+
+.state('tab.f15', {
+    url: '/f15',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/f15.html'
+      }
+    }
+  })
+
+.state('tab.f16', {
+    url: '/f16',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/f16.html'
+      }
+    }
+  })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/');
 
