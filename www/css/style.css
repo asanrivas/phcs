@@ -113,3 +113,10 @@
   border-color: #A1CF64!important;
   color: #FFF!important;
 }
+
+/*.checkbox input:disabled:checked:before, .checkbox input:disabled:checked + .checkbox-icon:before {
+    background: #33cd5f;
+}
+.checkbox input:disabled:before, .checkbox input:disabled + .checkbox-icon:before {
+    border-color: #33cd5f;
+}*/

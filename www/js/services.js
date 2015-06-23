@@ -56,8 +56,13 @@ angular.module('starter.services', [])
         console.log("Upgrading...");
         var thisDB = e.target.result;
 
-        if(!thisDB.objectStoreNames.contains("patients")) {
-            thisDB.createObjectStore("patients");
+        var tables = ['patients', 'visit', 'gallery', 'form_data', 'loan_equipment', 'eol'];
+
+        for (var i = 0; i < tables.length; i++) {
+
+            if(!thisDB.objectStoreNames.contains(tables[i])) {
+                thisDB.createObjectStore(tables[i]);
+            }
         }
     }
 
@@ -71,7 +76,6 @@ angular.module('starter.services', [])
         console.log("Error");
         console.dir(e);
     }
-
 
     return {
         setPatients:function (data) {
@@ -90,7 +94,11 @@ angular.module('starter.services', [])
         },
         getPatientById:function (id) {
             return transaction.objectStore("patients")[id];
-        }
+        },
+        getGallery:function (patient_id) {
+            return transaction.objectStore("patients")[id];
+        },
+
     };
 
 })

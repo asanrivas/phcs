@@ -81,6 +81,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     .state('tab.f04', { url: '/f04', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f04.html'}}})
     .state('tab.f05', { url: '/f05', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f05.html'}}})
+    .state('tab.f07', { url: '/f07', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f07.html'}}})
+    .state('tab.f08', { url: '/f08', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f08.html'}}})
+    .state('tab.f09', { url: '/f09', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f09.html'}}})
+    .state('tab.f13', { url: '/f13', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f13.html'}}})
+    .state('tab.f14', { url: '/f14', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f14.html'}}})
+    .state('tab.f15', { url: '/f15', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f15.html'}}})
+    .state('tab.f16', { url: '/f16', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f16.html'}}})
 
     .state('tab.continous', {
         url: '/continous',
@@ -95,7 +102,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.p02', { url: '/p02', views: { 'tab-continous': { templateUrl: 'templates/forms/p02.html'}}})
     .state('tab.p03', { url: '/p03', views: { 'tab-continous': { templateUrl: 'templates/forms/p03.html'}}})
     .state('tab.p04', { url: '/p04', views: { 'tab-continous': { templateUrl: 'templates/forms/p04.html'}}})
-    .state('tab.f10', { url: '/pf10', views: { 'tab-continous': { templateUrl: 'templates/forms/f10.html'}}})
+    .state('tab.f10', { url: '/pf10', views: { 'tab-continous': { templateUrl: 'templates/forms/f10.html', controller:'f10Controller'}}})
     .state('tab.eol', {
         url: '/eol',
         views: {
@@ -125,44 +132,47 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
     })
 
-
-  .state('tab.f07', {
-    url: '/f07',
+.state('tab.p05', {
+    url: '/p05',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/forms/f07.html'
+        templateUrl: 'templates/forms/p05.html'
       }
     }
   })
 
-
-.state('tab.f08', {
-    url: '/f08',
+.state('tab.p06', {
+    url: '/p06',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/forms/f08.html'
+        templateUrl: 'templates/forms/p06.html'
       }
     }
   })
 
-.state('tab.f09', {
-    url: '/f09',
+.state('tab.p07', {
+    url: '/p07',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/forms/f09.html'
+        templateUrl: 'templates/forms/p07.html'
       }
     }
   })
 
-
-
-
-
-.state('tab.f14', {
-    url: '/f14',
+.state('tab.p08', {
+    url: '/p08',
     views: {
       'tab-continous': {
-        templateUrl: 'templates/forms/f14.html'
+        templateUrl: 'templates/forms/p08.html'
+      }
+    }
+  })
+
+.state('tab.p09', {
+    url: '/p09',
+    views: {
+      'tab-continous': {
+        templateUrl: 'templates/forms/p09.html'
       }
     }
   })
