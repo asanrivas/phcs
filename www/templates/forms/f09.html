@@ -84,14 +84,82 @@
 						<ion-checkbox ng-model="data.f10" disabled="true">Poor Ventilation</ion-checkbox>
 						</ion-list>
 						<br>
+						
+						
+						
+						
 					<span class="input-label">Stairs</span>
-						<ion-list ng-init="data.f01 = true;" class="capital">
-						<ion-checkbox ng-model="data.f07" disabled="true">Stairs entering home</ion-checkbox>
-						<ion-checkbox ng-model="data.f08" disabled="true">Stairs inside home</ion-checkbox>
-						<ion-checkbox ng-model="data.f09" disabled="true">Split level</ion-checkbox>
-						<ion-checkbox ng-model="data.f10" disabled="true">Client using</ion-checkbox>
-						</ion-list>
-						<br>
+					<span class="input-label">Stairs entering home</span>
+					<div class="list">
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      Yes
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  <label class="item item-radio">
+    <input type="radio" name="group">
+    <div class="item-content">
+      No
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  </div>
+  
+  <span class="input-label">Stairs inside home</span>
+  <div class="list">
+  <label class="item item-radio">
+    <input type="radio" name="group1">
+    <div class="item-content">
+      Yes
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  <label class="item item-radio">
+    <input type="radio" name="group1">
+    <div class="item-content">
+      No
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  </div>
+  
+    <span class="input-label">Split level</span>
+  <div class="list">
+  <label class="item item-radio">
+    <input type="radio" name="group2">
+    <div class="item-content">
+      Yes
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  <label class="item item-radio">
+    <input type="radio" name="group2">
+    <div class="item-content">
+      No
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  </div>
+  
+    <span class="input-label">Client using</span>
+  <div class="list">
+  <label class="item item-radio">
+    <input type="radio" name="group3">
+    <div class="item-content">
+      Yes
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  <label class="item item-radio">
+    <input type="radio" name="group3">
+    <div class="item-content">
+      No
+    </div>
+    <i class="radio-icon ion-checkmark"></i>
+  </label>
+  </div>
 					<span class="input-label">Sanitary</span>
 						<ion-list ng-init="data.f01 = true;" class="capital">
 						<ion-checkbox ng-model="data.f07" disabled="true">Squat toilet</ion-checkbox>
@@ -100,6 +168,12 @@
 						<ion-checkbox ng-model="data.f10" disabled="true">Commode</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">Out House</ion-checkbox>
 						</ion-list>
+						
+	<br>
+						<span class="input-label">Remarks</span>
+				<label class="item item-input item-stacked-label">
+						<input type="text" placeholder="Remarks">
+				</label>
 				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">Save and Next</a>
 			</div>
 
