@@ -18,9 +18,16 @@
             </div>
         </div>
         <ion-list ng-init="data.f01 = true;">
+            <div class="item item-divider" ng-init="data = {f07:true, f08:true}">Initial Assessment Check List</div>
             <ion-checkbox ng-model="data.f04" class="checkbox-balanced"  ng-disabled="true">F-04 – Consent of  Addmission Release &amp; Indeminity Form</ion-checkbox>
             <ion-checkbox ng-model="data.f05" class="checkbox-balanced"  ng-disabled="true">F-05 - Declaration of Photographic/media consent</ion-checkbox>
             <ion-checkbox ng-model="data.f06" class="checkbox-balanced"  ng-disabled="true">Initial Assessment Forms</ion-checkbox>
+            <ion-checkbox ng-model="data.f07" disabled="true">F-07 Perak Palliative Care Society Initial Assessment Form</ion-checkbox>
+            <ion-checkbox ng-model="data.f08" disabled="true">F-08 Physical Systoms (Patient’s Complaint)</ion-checkbox>
+            <ion-checkbox ng-model="data.f09" disabled="true">F-08 A - Social Assessment</ion-checkbox>
+            <ion-checkbox ng-model="data.f10" disabled="true">F-08 B - Current Medication Chart</ion-checkbox>
+            <ion-checkbox ng-model="data.f11" disabled="true">F-09 P1 – General Examination</ion-checkbox>
+            <ion-checkbox ng-model="data.f12" disabled="true" class="item-button-right" ui-sref="tab.f10">F-10 General Examination Image <a class="button button-positive button-outline" href="#/tab/{{$parent.patientID}}/f10" target="_blank"><i class="icon ion-log-in"></i></a></ion-checkbox>
         </ion-list>
     </ion-content>
 </ion-view>
