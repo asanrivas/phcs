@@ -10,23 +10,59 @@
         </div>		
 		
 		<div class="list">
-	<label class="item item-input item-stacked-label">
-					<span class="input-label">Patient Name</span>
-						<input type="text" placeholder="Patient Name">
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">PPCS Reg. No</span>
-						<input type="text" placeholder="PPCS Reg. No">
-				</label>
-</div>
-				<ion-list ng-init="data.f01 = true;" class="capital">
-				<ion-checkbox ng-model="data.f07" disabled="true">Family Attitude</ion-checkbox>
-				<ion-checkbox ng-model="data.f08" disabled="true">Family Response</ion-checkbox>
-				<ion-checkbox ng-model="data.f09" disabled="true">Avail of caregiver</ion-checkbox>
-				<ion-checkbox ng-model="data.f10" disabled="true">Religion of Pt</ion-checkbox>
-				</ion-list>
-<span class="input-label">Home Assessment</span>
-				
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Patient Name</span>
+					<input type="text" placeholder="Patient Name">
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">PPCS Reg. No</span>
+					<input type="text" placeholder="PPCS Reg. No">
+			</label>
+		<br>
+		<span class="input-label">Family Attitude</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Supportive</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Rejection</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Empathic</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Others</ion-checkbox>
+						</ion-list>
+						<br>
+					<span class="input-label">Family Response</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Caring</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Stressful</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Not Supportive</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Witholding the truth</ion-checkbox>
+						
+						<ion-checkbox ng-model="data.f07" disabled="true">Angry</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Accepting</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Denying</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Anxious</ion-checkbox>
+						
+						<ion-checkbox ng-model="data.f07" disabled="true">Grieving</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Others</ion-checkbox>
+						</ion-list>
+						<br>
+					<span class="input-label">Avail of caregiver</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Day</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Night</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">All day</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">No Carer</ion-checkbox>
+						</ion-list>
+						<br>
+					<span class="input-label">Religion of Pt</span>
+						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-checkbox ng-model="data.f07" disabled="true">Buddism</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Christianity</ion-checkbox>
+						<ion-checkbox ng-model="data.f09" disabled="true">Hinduism</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Islam</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Taiosm</ion-checkbox>
+						<ion-checkbox ng-model="data.f08" disabled="true">Others</ion-checkbox>
+						</ion-list>
+						
+						<br>
+				<span class="input-label">Home Assessment</span>
 					<span class="input-label">Type of housing</span>
 						<ion-list ng-init="data.f01 = true;" class="capital">
 						<ion-checkbox ng-model="data.f07" disabled="true">Kampung house</ion-checkbox>
@@ -34,7 +70,7 @@
 						<ion-checkbox ng-model="data.f09" disabled="true">Shop lot</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">Single story</ion-checkbox>
 						</ion-list>
-						
+						<br>
 					<span class="input-label">Home Enviroment</span>
 						<ion-list ng-init="data.f01 = true;" class="capital">
 						<ion-checkbox ng-model="data.f07" disabled="true">Clean</ion-checkbox>
@@ -47,7 +83,7 @@
 						<ion-checkbox ng-model="data.f09" disabled="true">Dark</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">Poor Ventilation</ion-checkbox>
 						</ion-list>
-					
+						<br>
 					<span class="input-label">Stairs</span>
 						<ion-list ng-init="data.f01 = true;" class="capital">
 						<ion-checkbox ng-model="data.f07" disabled="true">Stairs entering home</ion-checkbox>
@@ -55,7 +91,7 @@
 						<ion-checkbox ng-model="data.f09" disabled="true">Split level</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">Client using</ion-checkbox>
 						</ion-list>
-						
+						<br>
 					<span class="input-label">Sanitary</span>
 						<ion-list ng-init="data.f01 = true;" class="capital">
 						<ion-checkbox ng-model="data.f07" disabled="true">Squat toilet</ion-checkbox>
@@ -64,7 +100,6 @@
 						<ion-checkbox ng-model="data.f10" disabled="true">Commode</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">Out House</ion-checkbox>
 						</ion-list>
-
 				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">Save and Next</a>
 			</div>
 

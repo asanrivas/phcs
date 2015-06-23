@@ -155,14 +155,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
 
-.state('tab.f13', {
-    url: '/f13',
-    views: {
-      'tab-continous': {
-        templateUrl: 'templates/forms/f13.html'
-      }
-    }
-  })
+
 
 
 .state('tab.f14', {
