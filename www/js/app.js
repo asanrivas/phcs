@@ -95,7 +95,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.p02', { url: '/p02', views: { 'tab-continous': { templateUrl: 'templates/forms/p02.html'}}})
     .state('tab.p03', { url: '/p03', views: { 'tab-continous': { templateUrl: 'templates/forms/p03.html'}}})
     .state('tab.p04', { url: '/p04', views: { 'tab-continous': { templateUrl: 'templates/forms/p04.html'}}})
-    .state('tab.f10', { url: '/pf10', views: { 'tab-continous': { templateUrl: 'templates/forms/f10.html'}}})
+    .state('tab.f10', { url: '/pf10', views: { 'tab-continous': { templateUrl: 'templates/forms/f10.html', controller:'f10Controller'}}})
     .state('tab.eol', {
         url: '/eol',
         views: {

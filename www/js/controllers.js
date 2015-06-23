@@ -113,6 +113,11 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
 })
+.controller('f10Controller', function($scope, $stateParams) {
+    $scope.editImage = function(){
+        handdrawing.openDraw('www/img/f10.png');
+    };
+})
 
 .controller('AccountCtrl', function($scope) {
     $scope.settings = {
