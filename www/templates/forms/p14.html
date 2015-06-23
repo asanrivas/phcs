@@ -1,0 +1,30 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P14 – Wound</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest wound condition of patient
+          </div>
+          <ion-item>
+              <ion-radio class="positive" name="p5">NW- No wound</ion-radio>
+              <ion-radio name="p7">PO-Post op wound</ion-radio>
+              <ion-radio name="p7">P-Pressure</ion-radio>
+              <ion-radio name="p7">F-Fumigating</ion-radio>
+              <ion-radio name="p7">S1-Redness</ion-radio>
+              <ion-radio name="p7">S2-Partial thickness</ion-radio>
+              <ion-radio name="p7">S3-Full thickness</ion-radio>
+              <ion-radio name="p7">S4-Cavity</ion-radio>
+              <ion-radio name="p7">S5-Unstageble</ion-radio>
+              <ion-radio name="p7">CL-Clean</ion-radio>
+              <ion-radio name="p7">G-Granulating</ion-radio>
+              <ion-radio name="p7">O-Odor</ion-radio>
+              <ion-radio name="p7">E-Exudations</ion-radio>
+              <ion-radio name="p7">B-Bleeding</ion-radio>
+              <ion-radio name="p7">Sl-Sloughs</ion-radio>
+              
+             
+           
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/continuous">Save and Next</a>
+
+    </ion-content>
+</ion-view>

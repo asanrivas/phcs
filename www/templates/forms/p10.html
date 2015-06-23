@@ -1,0 +1,21 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P10 – Oral (Mouth)</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest oral (mouth) condition of patient
+          </div>
+          <ion-item>
+              <ion-radio class="positive" name="p5">G-Good oral hygiene</ion-radio>
+              <ion-radio name="p7">p-particles</ion-radio>
+              <ion-radio name="p7">D-Dirty</ion-radio>
+              <ion-radio name="p7">T-Thrush</ion-radio>
+              <ion-radio name="p7">CT-Coated tongue</ion-radio>
+              <ion-radio name="p7">C-Caries or poor fitting dentures</ion-radio>
+              <ion-radio name="p7">U-Ulcers</ion-radio>
+              <ion-radio name="p7">D-Dry mouth</ion-radio>
+           
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p011">Save and Next</a>
+
+    </ion-content>
+</ion-view>

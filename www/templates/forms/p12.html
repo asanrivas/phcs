@@ -1,0 +1,20 @@
+<ion-view view-title="Continue Visit">
+    <ion-content class="padding">
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P12 – Elimination Bowel</ion-checkbox>
+          <div class="item item-divider">
+            Select the nearest elimination bowel condition of patient
+          </div>
+          <ion-item>
+              <ion-radio class="positive" name="p5">BO-Bowel open</ion-radio>
+              <ion-radio name="p7">BNO-Bowel not open</ion-radio>
+              <ion-radio name="p7">ST-Stoma</ion-radio>
+              <ion-radio name="p7">D-Diarrhea</ion-radio>
+              <ion-radio name="p7">E-Enema</ion-radio>
+              
+             
+           
+          </ion-item>
+          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p012">Save and Next</a>
+
+    </ion-content>
+</ion-view>
