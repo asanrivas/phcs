@@ -11,15 +11,8 @@
         </div>
       </div>
     </div>
-    <div class="item item-divider" ng-init="data = {f07:true, f08:true}">Initial Assessment Check List</div>
-    <ion-checkbox ng-model="data.f07" disabled="true">F-07 Perak Palliative Care Society Initial Assessment Form</ion-checkbox>
-    <ion-checkbox ng-model="data.f08" disabled="true">F-08 Physical Systoms (Patient’s Complaint)</ion-checkbox>
-    <ion-checkbox ng-model="data.f09" disabled="true">F-08 A - Social Assessment</ion-checkbox>
-    <ion-checkbox ng-model="data.f10" disabled="true">F-08 B - Current Medication Chart</ion-checkbox>
-    <ion-checkbox ng-model="data.f11" disabled="true">F-09 P1 – General Examination</ion-checkbox>
-    <ion-checkbox ng-model="data.f12" disabled="true" class="item-button-right" ui-sref="tab.f10">F-10 General Examination Image <a class="button button-positive button-outline" href="#/tab/{{$parent.patientID}}/f10" target="_blank"><i class="icon ion-log-in"></i></a></ion-checkbox>
-    <div class="item item-divider">Multidisciplinary PT20 point check List</div>
-    <ion-list ng-init="data.f01 = true;" class="capital">
+        <div class="item item-divider">Multidisciplinary PT20 point check List</div>
+        <ion-list ng-init="data.f01 = true;" class="capital">
         <ion-checkbox ng-model="data.p01" class="checkbox-balanced" checked="true" disabled="true">p2 – neurological</ion-checkbox>
         <ion-checkbox ng-model="data.p02" class="checkbox-balanced" ng-disabled="true" ng-checked="true">p3 – emotional</ion-checkbox>
         <ion-checkbox ng-model="data.p03" class="checkbox-balanced" ng-disabled="true">p4 – spiritual</ion-checkbox>
