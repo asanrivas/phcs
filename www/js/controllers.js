@@ -80,14 +80,21 @@ angular.module('starter.controllers', [])
         });
     }
 })
-.controller('TabCtrl', function($scope, $stateParams, RandomUser, $rootScope, $ionicModal) {
+.controller('TabCtrl', function($scope, $stateParams, LocalDB, $rootScope, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
-    $scope.patient = RandomUser.getPatientById($stateParams.patientID);
+    $scope.patient = {};
+
+    var request = LocalDB.getPatients($stateParams.patientID);
+    request.onsuccess = function(evt){
+        $scope.patient = request.resu
+    }
+
+    console.log('obj db '+$scope.patient);
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
         if(fromState.name=="patient")
         {
-            $scope.patient = RandomUser.getPatientById(toParams.patientID);
+            $scope.patient = LocalDB.getPatientById(toParams.patientID);
         }
     });
 
