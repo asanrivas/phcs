@@ -80,7 +80,7 @@ angular.module('starter.controllers', [])
         });
     }
 })
-.controller('TabCtrl', function($scope, $stateParams, RandomUser, $rootScope) {
+.controller('TabCtrl', function($scope, $stateParams, RandomUser, $rootScope, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
     $scope.patient = RandomUser.getPatientById($stateParams.patientID);
 
@@ -92,6 +92,32 @@ angular.module('starter.controllers', [])
     });
 
     $scope.setting = {eol: false};
+
+    $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
 })
 
 .controller('PatientCtrl', function($scope, RandomUser, $http, LocalDB) {
@@ -112,6 +138,20 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
+})
+.controller('PointCtrl', function($scope, $state) {
+    $scope.p01next = function(){
+        if($scope.radio.p1 == 'GSC')
+        {
+            $scope.$parent.openModal();
+        }
+        else {
+            $state.go('tab.p02');
+        }
+    }
+    $scope.radio = {
+        p1: null
+    }
 })
 .controller('f10Controller', function($scope, $stateParams) {
     $scope.editImage = function(){
