@@ -88,7 +88,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.f14', { url: '/f14', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f14.html'}}})
     .state('tab.f15', { url: '/f15', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f15.html'}}})
     .state('tab.f16', { url: '/f16', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f16.html'}}})
- 	.state('tab.f16', { url: '/f16', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f17.html'}}})
+    .state('tab.f17', { url: '/f17', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f17.html'}}})
 
     .state('tab.continous', {
         url: '/continous',
