@@ -67,7 +67,7 @@ angular.module('starter.services', [])
     }
 
     openRequest.onsuccess = function(e) {
-        console.log("Success!");
+        console.log("Success load db!");
         db = e.target.result;
 
     }
@@ -102,7 +102,8 @@ angular.module('starter.services', [])
             return deferred.promise;
         },
         getPatientById:function (id) {
-            return transaction.objectStore("patients")[id];
+            var transaction = db.transaction(["patients"],"readwrite");
+            return transaction.objectStore("patients");
         },
         getGallery:function (patient_id) {
             return transaction.objectStore("patients")[id];
