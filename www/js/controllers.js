@@ -1,7 +1,6 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
-    $scope.patient = $scope.$parent.patient;
 })
 .controller('LoginCtrl', function($scope, $state) {
     //$scope.signIn
@@ -80,14 +79,19 @@ angular.module('starter.controllers', [])
         });
     }
 })
-.controller('TabCtrl', function($scope, $stateParams, RandomUser, $rootScope, $ionicModal) {
+.controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
-    $scope.patient = RandomUser.getPatientById($stateParams.patientID);
+    // $scope.patient = RandomUser.getPatientById($stateParams.patientID);
+
+    $localForage.getItem('patients').then(function(dataf){
+        $scope.patients = dataf;
+        $scope.patient = $scope.patients[parseInt($stateParams.patientID)];
+    });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
         if(fromState.name=="patient")
         {
-            $scope.patient = RandomUser.getPatientById(toParams.patientID);
+            $scope.patient = $scope.patients[parseInt(toParams.patientID)];
         }
     });
 
@@ -120,12 +124,23 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('PatientCtrl', function($scope, RandomUser, $http, LocalDB) {
-    $http.get('http://api.randomuser.me/', {params: {'results': 10}}).success(function(data){
-        $scope.patients = data.results;
-        LocalDB.setPatients(data.results);
+.controller('PatientCtrl', function($scope, RandomUser, $http, $localForage) {
+
+    $localForage.getItem('patients').then(function(dataf){
+        if(!dataf)
+        {
+            $http.get('http://api.randomuser.me/', {params: {'results': 10}}).success(function(data){
+                $scope.patients = data.results;
+                $localForage.setItem("patients", data.results);
+            });
+            console.log('data taken from random');
+        }
+        else {
+            $scope.patients = dataf;
+        }
 
     });
+
     $scope.remove = function(chat) {
         Chats.remove(chat);
     }

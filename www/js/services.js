@@ -88,9 +88,18 @@ angular.module('starter.services', [])
             return true;
         },
         getPatients:function () {
-            console.log('initiating...');
-            var transaction = db.transaction(["patients"],"read");
-            return transaction.objectStore("patients");
+            console.log('get patients');
+            var deferred = $q.defer();
+
+            var transaction = db.transaction(["patients"],"readwrite");
+            var request = transaction.objectStore("patients").get();
+            request.onsuccess(function(){
+                deferred.resolve(request.result)
+            }).onerror(function(){
+                deferred.reject(request.console.error);
+            });
+
+            return deferred.promise;
         },
         getPatientById:function (id) {
             return transaction.objectStore("patients")[id];

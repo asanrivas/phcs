@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngResource'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngResource', 'LocalForageModule'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -123,7 +123,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.sp01', { url: '/sp01', views: { 'tab-continous': { templateUrl: 'templates/forms/sp01.html' } } })
     .state('tab.sp02', { url: '/sp02', views: { 'tab-continous': { templateUrl: 'templates/forms/sp02.html' } } })
 
-    
+
     .state('tab.eol', {
         url: '/eol',
         views: {
@@ -153,7 +153,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
     });
 
-    
+
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/');
