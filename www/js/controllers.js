@@ -2,11 +2,33 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
 })
-.controller('LoginCtrl', function($scope, $state) {
+.controller('LoginCtrl', function($scope, $state, $localForage, $http) {
     //$scope.signIn
     $scope.signIn = function () {
         $state.go('patient');
     }
+    $scope.sync = function (argument) {
+        // body...
+        var url = 'http://112.137.162.30/pcis/api_generator.php?api_name=API_SYNC_MOBILE';
+        $http.get(url).success(function(data){
+            $localForage.clear();
+
+
+            $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
+            $localForage.setItem("pruser", reorder(data.pruser, 'USERID'));
+        });
+
+    }
+
+    function reorder(data, key){
+        for (var i = 0, emp, array = []; i < data.length; i++) {
+            emp = data[i];
+            array[ emp[key] ] = emp;
+        }
+
+        return array;
+    }
+
 })
 .controller('FirstTimeCtrl', function($scope) {})
 .controller('TabGalleryCtrl', function($scope, Camera) {
