@@ -138,17 +138,81 @@ angular.module('starter.services', [])
 .factory('Camera', function($q) {
 
   return {
-    getPicture: function(options) {
-      var q = $q.defer();
+      getPicture: function(options) {
+          var q = $q.defer();
 
-      navigator.camera.getPicture(function(result) {
-        // Do any magic you need
-        q.resolve(result);
-      }, function(err) {
-        q.reject(err);
-      }, options);
+          navigator.camera.getPicture(function(result) {
+            // Do any magic you need
+            q.resolve(result);
+          }, function(err) {
+            q.reject(err);
+          }, options);
 
-      return q.promise;
-    }
+          return q.promise;
+      },
+      getPhoto: function() {
+          var q = $q.defer();
+          var options = {
+              destinationType : Camera.DestinationType.FILE_URI,
+              sourceType : Camera.PictureSourceType.CAMERA, // Camera.PictureSourceType.PHOTOLIBRARY
+              allowEdit : false,
+              encodingType: Camera.EncodingType.JPEG,
+              popoverOptions: CameraPopoverOptions,
+          };
+
+          navigator.camera.getPicture(function(imageData) {
+
+              onImageSuccess(imageData);
+
+              function onImageSuccess(fileURI) {
+                  createFileEntry(fileURI);
+              }
+
+              function createFileEntry(fileURI) {
+                  window.resolveLocalFileSystemURL(fileURI, copyFile, fail);
+              }
+
+              function copyFile(fileEntry) {
+                  var name = fileEntry.fullPath.substr(fileEntry.fullPath.lastIndexOf('/') + 1);
+                  var newName = makeid() + name;
+
+                  window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function(fileSystem2) {
+                      fileEntry.copyTo(
+                          fileSystem2,
+                          newName,
+                          onCopySuccess,
+                          fail
+                      );
+                  },
+                  fail);
+              }
+
+              // 6
+              function onCopySuccess(entry) {
+                  q.resolve(entry.nativeURL);
+              }
+
+              function fail(error) {
+                  console.log("fail: " + error.code);
+                  q.reject(error);
+              }
+
+              function makeid() {
+                  var text = "";
+                  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                  for (var i=0; i < 5; i++) {
+                      text += possible.charAt(Math.floor(Math.random() * possible.length));
+                  }
+                  return text;
+
+              }
+
+          }, function(err) {
+              console.log(err);
+          }, options);
+          return q.promise;
+
+      }
   }
 });
