@@ -1,197 +1,46 @@
-<ion-view view-title="F-10 – General Examination">
+<ion-view view-title="F-07 – Initial Assessment">
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider">General Examination</div>
+            <div class="item item-divider">Initial Assessment</div>
             <div class="item item-body">
                 <div>
-                    General Examination <b>sector F10</b>
+                    Initial Assessment <b>sector F07</b>
                 </div>
             </div>
         </div>
-		
-		<div class="list">
-				<label class="item item-input item-select">
-					<div class="input-label">
-						General condition
-					</div>
-						<select>
-							<option selected>Good</option>
-							<option>Satisfactory</option>
-							<option>Fair</option>
-							<option>Poor</option>
-						</select>
-						</label>
-				
+			<div class="list">
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
-				</label>
-						
-				<br>
-				<label class="item item-input item-select">
-					<div class="input-label">
-						Hydration
-					</div>
-						<select>
-							<option selected>Good</option>
-							<option>Mild dehydration</option>
-							<option>Modorate</option>
-							<option>Savere</option>
-						</select>
-				</label>
-
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
-				</label>
-				
-				
-				<br>
-						<label class="item item-input item-select">
-					<div class="input-label">
-						Skin
-					</div>
-						<select>
-							<option selected>Normal</option>
-							<option>Dry skin</option>
-							<option>Bruise</option>
-							<option>Redness</option>
-							
-							<option>Rash</option>
-							<option>Excoriation</option>
-							<option>Jaundice</option>
-							<option>Peterchiae</option>
-						</select>
-				</label>
-				
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
-				</label>
-				
-				<br>
-				
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Mouth</span>
-						<input type="text" placeholder="Mouth">
+					<span class="input-label">Patient Name</span>
+						<input type="text" placeholder="Patient Name">
 				</label>
 				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+					<span class="input-label">PPCS Reg. No</span>
+						<input type="text" placeholder="PPCS Reg. No">
 				</label>
-				
-				<br>
-				
-				
-				<span class="input-label">Cardiovascular System</span>
-				
-				<label class="item item-input item-select">
-				
-					<div class="input-label">
-						Pallor  
-					</div>
-						<select>
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				<label class="item item-input item-select">
-					<div class="input-label">
-						Cyanosis  
-					</div>
-						<select>
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				<label class="item item-input item-select">
-					<div class="input-label">
-						Clubbing  
-					</div>
-						<select>
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				<br>
-				
-				<label class="item item-input item-select">
-				
-					<div class="input-label">
-						Cachexia  
-					</div>
-						<select>
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				<br>
-				
+				<span class="input-label">Page No</span>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">PR</span>
-						<input type="text" placeholder="PR">
+					<span class="input-label">Date</span>
+						<input type="date" placeholder="Date">
 				</label>
-				
 				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+					<span class="input-label">Drug Allergy</span>
+						<input type="text" placeholder="Location of Assessment">
 				</label>
-				
-				<br>
-				
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">PV</span>
-						<input type="text" placeholder="PV">
+					<span class="input-label">Reaction</span>
+						<input type="text" placeholder="How do you like to be addresses">
 				</label>
-				
 				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+					<span class="input-label">Other Allergy</span>
+						<input type="text" placeholder="Referring Doktor">
 				</label>
-				
-				<br>
-				
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Vital signs</span>
-						<input type="text" placeholder="Vital signs">
+					<span class="input-label">Reaction</span>
+						<input type="text" placeholder="Other Consultants involved">
 				</label>
 				
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
-				</label>
-				
-				<br>
-				<span class="input-label">Temperature</span>
-						<ion-list ng-init="data.f01 = true;" class="capital">
-						<ion-checkbox ng-model="data.f07" disabled="true">C|BP</ion-checkbox>
-						<ion-checkbox ng-model="data.f08" disabled="true">mmHg| Pulse</ion-checkbox>
-						<ion-checkbox ng-model="data.f09" disabled="true">|Bpm</ion-checkbox>
-						<ion-checkbox ng-model="data.f10" disabled="true">|RR </ion-checkbox>
-						<ion-checkbox ng-model="data.f10" disabled="true">/min</ion-checkbox>
-						</ion-list>
-						
-						<br>
-						<span class="input-label">Remarks</span>
-				<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="Remarks">
-				</label>
-				
-				
-
-		<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="(sp02, RBS, etc)">
-				</label>
-  
-</div>
-  <div class="col"><span class="input-label"></span></div>
-</div>
-<div>
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f15">Save and Next</a>
+				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/continuos">New Patiant</a>
 			</div>
 
 	</ion-content>
+</ion-view>
