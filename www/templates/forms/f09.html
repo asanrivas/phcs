@@ -105,6 +105,7 @@
 						<ion-checkbox ng-model="data.f08" disabled="true">Flats</ion-checkbox>
 						<ion-checkbox ng-model="data.f09" disabled="true">Shop lot</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">Single story</ion-checkbox>
+						<ion-checkbox ng-model="data.f10" disabled="true">Multi Story</ion-checkbox>
 						</ion-list>
 						<br>
 					<span class="input-label">Home Enviroment</span>
@@ -112,7 +113,15 @@
 						<ion-checkbox ng-model="data.f07" disabled="true">Clean</ion-checkbox>
 						<ion-checkbox ng-model="data.f08" disabled="true">Cluttered</ion-checkbox>
 						<ion-checkbox ng-model="data.f09" disabled="true">Dirty</ion-checkbox>
-						<ion-checkbox ng-model="data.f10" disabled="true">Electricity</ion-checkbox>
+						<label class="item item-input item-select">
+		  <div class="input-label">
+						Electricity
+					</div>
+						<select>
+							<option selected>Yes</option>
+							<option>No</option>					
+						</select>
+				</label>
 						
 						<ion-checkbox ng-model="data.f07" disabled="true">Municipal water supply</ion-checkbox>
 						<ion-checkbox ng-model="data.f08" disabled="true">Other water source</ion-checkbox>
