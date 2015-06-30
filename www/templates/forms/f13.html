@@ -1,101 +1,37 @@
-<ion-view view-title="F-10 – General Examination">
+<ion-view view-title="Current Medication Chart">
     <ion-content class="padding">
         <div class="list card">
-            <div class="item item-divider">General Examination</div>
+            <div class="item item-divider">Current Medication Chart</div>
             <div class="item item-body">
                 <div>
-                    General Examination <b>sector F10</b>
+                    Current Medication Chart <b>sector F07</b>
                 </div>
             </div>
         </div>
-        <div class="list">
-
+		<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">New Patiant</a>
 			<div class="list">
+				<span class="input-label">Page No</span>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">PPCS Reg. No</span>
-						<input type="text" placeholder="PPCS Reg. No">
+					<span class="input-label">Date</span>
+						<input type="date" placeholder="Date">
 				</label>
-				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Drug Allergy</span>
-						<input type="text" placeholder="Drug Allergy">
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Name Medication</span>
-						<input type="text" placeholder="Name Medication">
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Dose</span>
-						<input type="text" placeholder="Dose">
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Route:
-					</div>
-						<select>
-							<option selected>Dermal</option>
-							<option>IV</option>
-							<option>IM</option>
-							<option>NGT</option>
-							<option>O</option>
-							<option>PR</option>
-							<option>S/C</option>
-							<option>S/L</option>
-						
-						</select>
-				</label>
-
-				<span class="input-label">Frequency</span>
-				<ion-list ng-init="data.f01 = true;" class="capital">
-				<ion-checkbox ng-model="data.f07" disabled="true">4 Hourly</ion-checkbox>
-				<ion-checkbox ng-model="data.f08" disabled="true">Bd</ion-checkbox>
-				<ion-checkbox ng-model="data.f09" disabled="true">Eod</ion-checkbox>
-				<ion-checkbox ng-model="data.f10" disabled="true">Od</ion-checkbox>
-				<ion-checkbox ng-model="data.f11" disabled="true">Pm</ion-checkbox>
-				<ion-checkbox ng-model="data.f11" disabled="true">Qid</ion-checkbox>
-				</ion-list>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">What For</span>
-						<input type="text" placeholder="What For">
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Side Effect Of The Drugs</span>
-						<input type="text" placeholder="Dose">
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Started By:
-					</div>
-						<select>
-							<option selected>PPCS</option>
-							<option>Others</option>
-						</select>
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Start Day</span>
-						<input type="date" placeholder="Start Day">
+						<input type="text" placeholder="Location of Assessment">
 				</label>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">End Date</span>
-						<input type="date" placeholder="End Date">
+					<span class="input-label">Reaction</span>
+						<input type="text" placeholder="How do you like to be addresses">
 				</label>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Initial</span>
-						<input type="text" placeholder="Initial">
+					<span class="input-label">Other Allergy</span>
+						<input type="text" placeholder="Referring Doctor">
 				</label>
-
-				
-
-
-
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">Save and Next</a>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Reaction</span>
+						<input type="text" placeholder="Other Consultants involved">
+				</label>
+				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/">Save and Next</a>
 			</div>
 
 	</ion-content>
