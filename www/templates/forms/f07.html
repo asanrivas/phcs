@@ -8,15 +8,16 @@
                 </div>
             </div>
         </div>
-			<div class="list">
-				<span class="input-label">Perak palliative care society initial assessment form</span>
+		
+		<div class="list card">
+			<div class="item item-divider">Perak palliative care society initial assessment form</div>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Date</span>
 						<input type="date" placeholder="Date" ng-model="initial_assessment.date">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Location of Assessment</span>
-						<input type="text" placeholder="Location of Assessment" ng-model=" ">
+						<input type="text" placeholder="Location of Assessment" ng-model="initial_assessment.location">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">How do you like to be addresses</span>
@@ -68,43 +69,51 @@
 							<option selected>No</option>
 						</select>
 				</label>
+				</div>
 				
-				<span class="input-label">History of current illness</span>
+				
+		<div class="list card">
+			<div class="item item-divider">History of current illness</div>
 				<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="(Surgery, Radiotherapy, Chemotherapy)">
+					<input type="text" placeholder="(Surgery, Radiotherapy, Chemotherapy)">
 				</label>
-				
-				<span class="input-label">Initial reason for referral</span>
-				<ion-list ng-init="data.f01 = true;" class="capital">
-				<ion-checkbox ng-model="data.f07" disabled="true">Home visit</ion-checkbox>
-				<ion-checkbox ng-model="data.f08" disabled="true">Palliative support</ion-checkbox>
-				<ion-checkbox ng-model="data.f09" disabled="true">Equipment rental</ion-checkbox>
-				<ion-checkbox ng-model="data.f10" disabled="true">Dressing</ion-checkbox>
-				<ion-checkbox ng-model="data.f11" disabled="true">Others</ion-checkbox>
+		</div>		
+		<div class="list card">
+			<div class="item item-divider">Initial reason for referral</div>
+				<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.initial_reason">
+					<ion-checkbox ng-model="data.f07" disabled="true">Home visit</ion-checkbox>
+					<ion-checkbox ng-model="data.f08" disabled="true">Palliative support</ion-checkbox>
+					<ion-checkbox ng-model="data.f09" disabled="true">Equipment rental</ion-checkbox>
+					<ion-checkbox ng-model="data.f10" disabled="true">Dressing</ion-checkbox>
+					<ion-checkbox ng-model="data.f11" disabled="true">Others</ion-checkbox>
 				</ion-list>
-				
-				<span class="input-label">Past medical history</span>
+		</div>
+		<div class="list card">
+			<div class="item item-divider">Past medical history</div>
 				<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.past_medical_history">
-				<ion-checkbox ng-model="data.f07" disabled="true">Smoking</ion-checkbox>
-				<ion-checkbox ng-model="data.f08" disabled="true">Alcohol</ion-checkbox>
-				<ion-checkbox ng-model="data.f09" disabled="true">AMI/HD</ion-checkbox>
-				<ion-checkbox ng-model="data.f10" disabled="true">Diabetes</ion-checkbox>
+					<ion-checkbox ng-model="data.f07" disabled="true">Smoking</ion-checkbox>
+					<ion-checkbox ng-model="data.f08" disabled="true">Alcohol</ion-checkbox>
+					<ion-checkbox ng-model="data.f09" disabled="true">AMI/HD</ion-checkbox>
+					<ion-checkbox ng-model="data.f10" disabled="true">Diabetes</ion-checkbox>
 				<ion-checkbox ng-model="data.f11" disabled="true">PTB</ion-checkbox>
 				
 				<ion-checkbox ng-model="data.f07" disabled="true">COPD</ion-checkbox>
-				<ion-checkbox ng-model="data.f08" disabled="true">Asthma</ion-checkbox>
-				<ion-checkbox ng-model="data.f09" disabled="true">Renal failure</ion-checkbox>
-				<ion-checkbox ng-model="data.f10" disabled="true">Hypertension</ion-checkbox>
-				<ion-checkbox ng-model="data.f11" disabled="true">Gastric Problems</ion-checkbox>
+					<ion-checkbox ng-model="data.f08" disabled="true">Asthma</ion-checkbox>
+					<ion-checkbox ng-model="data.f09" disabled="true">Renal failure</ion-checkbox>
+					<ion-checkbox ng-model="data.f10" disabled="true">Hypertension</ion-checkbox>
+					<ion-checkbox ng-model="data.f11" disabled="true">Gastric Problems</ion-checkbox>
 				</ion-list>
-				
-				<span class="input-label">Remarks</span>
+		</div>
+		
+		<div class="list card">
+			<div class="item item-divider">Remarks</div>
 				<label class="item item-input item-stacked-label">
 						<input type="text" placeholder="Remarks" ng-model="initial_assessment.remarks">
 				</label>
-
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f08">Save and Next</a>
-			</div>
+				
+		<div class="list">
+			<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f08">Save and Next</a>
+		</div>
 
 	</ion-content>
 </ion-view>
