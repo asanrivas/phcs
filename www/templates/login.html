@@ -7,6 +7,7 @@
             </div>
         </div>
         <div class="list">
+            <div class="item" ng-show="error_message" style="text-align: center;color: red;">{{error_message}}</div>
             <label class="item item-input">
                 <span class="input-label">Username</span>
                 <input type="text" ng-model="user.username">

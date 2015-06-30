@@ -4,8 +4,29 @@ angular.module('starter.controllers', [])
 })
 .controller('LoginCtrl', function($scope, $state, $localForage, $http) {
     //$scope.signIn
-    $scope.signIn = function () {
-        $state.go('patient');
+    $scope.user = {username: '', password: ''}
+    $scope.signIn = function (user) {
+        $localForage.getItem('pruser').then(function(data){
+            if(!data) {
+                alert('data unavailable. please sync the database first');
+            }
+            else {
+                for(var i=0;i<data.length;i++)
+                {
+                    if(data[i].USERNAME==user.username&&data[i].USERPASSWORD==md5(user.password))
+                    {
+                        $state.go('patient');
+                        $scope.error_message = null;
+
+                        return true;
+                    }
+                }
+                console.log('invalid username or password');
+                $scope.error_message = "Invalid username or password";
+
+            }
+        });
+
     }
     $scope.sync = function (argument) {
         // body...
@@ -13,13 +34,13 @@ angular.module('starter.controllers', [])
         $http.get(url).success(function(data){
             $localForage.clear();
 
-
             $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
-            $localForage.setItem("pruser", reorder(data.pruser, 'USERID'));
+            $localForage.setItem("pruser", data.pruser);
         });
 
     }
 
+    //need to reorder data if by key
     function reorder(data, key){
         for (var i = 0, emp, array = []; i < data.length; i++) {
             emp = data[i];
