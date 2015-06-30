@@ -9,40 +9,32 @@
             </div>
         </div>
 			<div class="list">
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Patient Name</span>
-						<input type="text" placeholder="Patient Name">
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">PPCS Reg. No</span>
-						<input type="text" placeholder="PPCS Reg. No">
-				</label>
 				<span class="input-label">Perak palliative care society initial assessment form</span>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Date</span>
-						<input type="date" placeholder="Date">
+						<input type="date" placeholder="Date" ng-model="initial_assessment.date">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Location of Assessment</span>
-						<input type="text" placeholder="Location of Assessment">
+						<input type="text" placeholder="Location of Assessment" ng-model=" ">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">How do you like to be addresses</span>
-						<input type="text" placeholder="How do you like to be addresses">
+						<input type="text" placeholder="How do you like to be addresses" ng-model="initial_assessment.address">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Referring Doctor</span>
-						<input type="text" placeholder="Referring Doktor">
+						<input type="text" placeholder="Referring Doktor" ng-model="initial_assessment.ref_doctor">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Other Consultants involved</span>
-						<input type="text" placeholder="Other Consultants involved">
+						<input type="text" placeholder="Other Consultants involved" ng-model="initial_assessment.other_consultants">
 				</label>
 				<label class="item item-input item-select">
 					<div class="input-label">
 						Patient aware of Diagnosis
 					</div>
-						<select>
+						<select ng-model="initial_assessment.patient_aware_diagnosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -51,7 +43,7 @@
 					<div class="input-label">
 						Family aware of Diagnosis
 					</div>
-						<select>
+						<select ng-model="initial_assessment.family_aware_diagnosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -61,7 +53,7 @@
 					<div class="input-label">
 						Patient aware of Pognosis
 					</div>
-						<select>
+						<select ng-model="initial_assessment.patient_aware_pognosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -71,7 +63,7 @@
 					<div class="input-label">
 						Family aware of Pognosis
 					</div>
-						<select>
+						<select ng-model="initial_assessment.patient_aware_pognosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -92,7 +84,7 @@
 				</ion-list>
 				
 				<span class="input-label">Past medical history</span>
-				<ion-list ng-init="data.f01 = true;" class="capital">
+				<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.past_medical_history">
 				<ion-checkbox ng-model="data.f07" disabled="true">Smoking</ion-checkbox>
 				<ion-checkbox ng-model="data.f08" disabled="true">Alcohol</ion-checkbox>
 				<ion-checkbox ng-model="data.f09" disabled="true">AMI/HD</ion-checkbox>
@@ -108,7 +100,7 @@
 				
 				<span class="input-label">Remarks</span>
 				<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="Remarks">
+						<input type="text" placeholder="Remarks" ng-model="initial_assessment.remarks">
 				</label>
 
 				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f08">Save and Next</a>
