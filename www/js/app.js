@@ -120,6 +120,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.p17', { url: '/p17', views: { 'tab-continous': { templateUrl: 'templates/forms/p17.html' } } })
     .state('tab.p18', { url: '/p18', views: { 'tab-continous': { templateUrl: 'templates/forms/p18.html' } } })
 
+    .state('tab.modal-glassgow1', { url: '/modal-glassgow1', views: { 'tab-continous': { templateUrl: 'templates/forms/modal-glassgow1.html' } } })
+
 
     .state('tab.sp01', { url: '/sp01', views: { 'tab-continous': { templateUrl: 'templates/forms/sp01.html' } } })
     .state('tab.sp02', { url: '/sp02', views: { 'tab-continous': { templateUrl: 'templates/forms/sp02.html' } } })

@@ -39,6 +39,8 @@
         <p ng-show="totalpoint<=15&&totalpoint>8">Best response</p>
         <p ng-show="totalpoint<=8&&totalpoint>3">Comatose client</p>
         <p ng-show="totalpoint<=3">Totally unresponsive</p>
-        <button class="pull-right button button-positive">Next</button>
+        
+        <a class="pull-right button button-positive" href="#/tab/{{$parent.patientID}}/modal-glassgow1">Next</a>
+
     </ion-footer-bar>
   </ion-modal-view>
