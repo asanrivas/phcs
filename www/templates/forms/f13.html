@@ -1,0 +1,38 @@
+<ion-view view-title="Current Medication Chart">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">Current Medication Chart</div>
+            <div class="item item-body">
+                <div>
+                    Current Medication Chart <b>sector F07</b>
+                </div>
+            </div>
+        </div>
+		<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">New Patiant</a>
+			<div class="list">
+				<span class="input-label">Page No</span>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Date</span>
+						<input type="date" placeholder="Date">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Drug Allergy</span>
+						<input type="text" placeholder="Location of Assessment">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Reaction</span>
+						<input type="text" placeholder="How do you like to be addresses">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Other Allergy</span>
+						<input type="text" placeholder="Referring Doctor">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Reaction</span>
+						<input type="text" placeholder="Other Consultants involved">
+				</label>
+				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/">Save and Next</a>
+			</div>
+
+	</ion-content>
+</ion-view>
