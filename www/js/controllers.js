@@ -210,6 +210,15 @@ angular.module('starter.controllers', [])
         handdrawing.openDraw('www/img/f10.png');
     };
 })
+.controller('f07Controller', function($scope, $stateParams) {
+    $scope.editImage = function(){
+        handdrawing.openDraw('www/img/f10.png');
+    };
+
+    $scope.saveAndNext = function(){
+        
+    }
+})
 
 .controller('AccountCtrl', function($scope) {
     $scope.settings = {
