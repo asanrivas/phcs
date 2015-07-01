@@ -11,13 +11,13 @@
 		<div class="list">
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">PR/PV</span>
-						<input type="text" placeholder="Patient Name">
+						<input type="text" placeholder="Patient Name" ng-model="general_examination_cont.pr_pv">
 				</label>
 				
 				
 		</div>
 
-<ion-list ng-init="data.f01 = true;" class="capital">
+<ion-list ng-init="data.f01 = true;" class="capital" ng-model="general_examination_cont.capital">
 				<ion-checkbox ng-model="data.f07" disabled="true">C|BP</ion-checkbox>
 				<ion-checkbox ng-model="data.f08" disabled="true">mmHg|Pluse</ion-checkbox>
 				<ion-checkbox ng-model="data.f09" disabled="true">|Bpm</ion-checkbox>
@@ -27,7 +27,7 @@
 
 <label class="item item-input item-stacked-label">
 				<span class="input-label">Remarks</span>
-						<input type="text" placeholder="(sp02, RBS, etc)">
+						<input type="text" placeholder="(sp02, RBS, etc)" ng-model="general_examination_cont.remarks">
 				</label>				
 
 <div>

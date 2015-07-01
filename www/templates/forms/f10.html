@@ -14,7 +14,7 @@
 					<div class="input-label">
 						General condition
 					</div>
-						<select>
+						<select ng-model="general_examination.general_condition">
 							<option selected>Good</option>
 							<option>Satisfactory</option>
 							<option>Fair</option>
@@ -24,7 +24,7 @@
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.general_condition">
 				</label>
 						
 				<br>
@@ -32,7 +32,7 @@
 					<div class="input-label">
 						Hydration
 					</div>
-						<select>
+						<select ng-model="general_examination.hydration">
 							<option selected>Good</option>
 							<option>Mild dehydration</option>
 							<option>Modorate</option>
@@ -42,7 +42,7 @@
 
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.hydration">
 				</label>
 				
 				
@@ -51,7 +51,7 @@
 					<div class="input-label">
 						Skin
 					</div>
-						<select>
+						<select ng-model="general_examination.skin">
 							<option selected>Normal</option>
 							<option>Dry skin</option>
 							<option>Bruise</option>
@@ -66,18 +66,18 @@
 				
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.skin">
 				</label>
 				
 				<br>
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Mouth</span>
-						<input type="text" placeholder="Mouth">
+						<input type="text" placeholder="Mouth" ng-model="general_examination.mouth">
 				</label>
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.mouth">
 				</label>
 				
 				<br>
@@ -90,7 +90,7 @@
 					<div class="input-label">
 						Pallor  
 					</div>
-						<select>
+						<select ng-model="general_examination.pallor">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -100,7 +100,7 @@
 					<div class="input-label">
 						Cyanosis  
 					</div>
-						<select>
+						<select ng-model="general_examination.cyanosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -110,7 +110,7 @@
 					<div class="input-label">
 						Clubbing  
 					</div>
-						<select>
+						<select ng-model="general_examination.clubbing">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -123,7 +123,7 @@
 					<div class="input-label">
 						Cachexia  
 					</div>
-						<select>
+						<select ng-model="general_examination.cachexia">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -133,41 +133,41 @@
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">PR</span>
-						<input type="text" placeholder="PR">
+						<input type="text" placeholder="PR" ng-model="general_examination.pr">
 				</label>
 				
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.pr">
 				</label>
 				
 				<br>
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">PV</span>
-						<input type="text" placeholder="PV">
+						<input type="text" placeholder="PV" ng-model="general_examination.pv">
 				</label>
 				
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.pv">
 				</label>
 				
 				<br>
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Vital signs</span>
-						<input type="text" placeholder="Vital signs">
+						<input type="text" placeholder="Vital signs" ng-model="general_examination.vital_sign">
 				</label>
 				
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal">
+						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.vital_sign">
 				</label>
 				
 				<br>
 				<span class="input-label">Temperature</span>
-						<ion-list ng-init="data.f01 = true;" class="capital">
+						<ion-list ng-init="data.f01 = true;" class="capital" ng-model="general_examination.temperature">
 						<ion-checkbox ng-model="data.f07" disabled="true">C|BP</ion-checkbox>
 						<ion-checkbox ng-model="data.f08" disabled="true">mmHg| Pulse</ion-checkbox>
 						<ion-checkbox ng-model="data.f09" disabled="true">|Bpm</ion-checkbox>
@@ -178,13 +178,13 @@
 						<br>
 						<span class="input-label">Remarks</span>
 				<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="Remarks">
+						<input type="text" placeholder="Remarks" ng-model="general_examination.remarks">
 				</label>
 				
 				
 
 		<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="(sp02, RBS, etc)">
+						<input type="text" placeholder="(sp02, RBS, etc)" ng-model="general_examination.remarks">
 				</label>
   
 </div>
