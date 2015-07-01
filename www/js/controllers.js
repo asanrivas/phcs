@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
 })
-.controller('LoginCtrl', function($scope, $state, $localForage, $http) {
+.controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading) {
     //$scope.signIn
     $scope.user = {username: '', password: ''}
     $scope.signIn = function (user) {
@@ -210,13 +210,21 @@ angular.module('starter.controllers', [])
         handdrawing.openDraw('www/img/f10.png');
     };
 })
-.controller('f07Controller', function($scope, $stateParams) {
+.controller('f07Controller', function($scope, $stateParams, $state, $localForage) {
     $scope.editImage = function(){
         handdrawing.openDraw('www/img/f10.png');
     };
+    
+    $scope.initial_assessment = {};
 
     $scope.saveAndNext = function(){
-        
+        $localForage.getItem('upload_data').then(function(data){
+            if(!data) data = {};
+            if(!data['V_INITIAL_ASSESSMENT']) data['V_INITIAL_ASSESSMENT'] = {};
+            data['V_INITIAL_ASSESSMENT'][$stateParams.patientID] = $scope.initial_assessment;
+            $localForage.setItem('upload_data', data);
+            $state.go('tab.f08');
+        });
     }
 })
 
