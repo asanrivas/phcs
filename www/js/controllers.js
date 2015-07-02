@@ -28,11 +28,17 @@ angular.module('starter.controllers', [])
         });
 
     }
+
     $scope.sync = function (argument) {
         // body...
         var url = 'http://112.137.162.30/pcis/api_generator.php?api_name=API_SYNC_MOBILE';
+        $ionicLoading.show({
+            template: 'Loading... <ion-spinner class="spinner-energized"></ion-spinner>'
+        });
+
         $http.get(url).success(function(data){
             $localForage.clear();
+            $ionicLoading.hide();
 
             $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
             $localForage.setItem("pruser", data.pruser);
@@ -214,7 +220,7 @@ angular.module('starter.controllers', [])
     $scope.editImage = function(){
         handdrawing.openDraw('www/img/f10.png');
     };
-    
+
     $scope.initial_assessment = {};
 
     $scope.saveAndNext = function(){
