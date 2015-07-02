@@ -10,7 +10,33 @@
         </div>
         <div class="list">
 
-<span class="input-label">Physical Symptoms (Patient's complaints)</span>
+<div class="list card">
+			<div class="item item-divider">Physical Symptoms (Patient's complaints)</div>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Pain</span>
+						<input type="date" placeholder="state site, nature (eg. Nociceptive/neuropathic/bony/incident)" ng-model="initial_assessment.date">
+				</label>
+
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Pain Score
+					</div>
+						<select ng-model="initial_assessment.patient_aware_pognosis">
+							<option selected></option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select>
+				</label>
+				
+				</div>
 	<img src="img/f08.png" >
 <div class="row">
 	<div class="col">
