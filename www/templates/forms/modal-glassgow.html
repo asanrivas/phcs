@@ -1,8 +1,9 @@
-<ion-modal-view ng-init="gsc = { motor: 0, eye:0, verbal:0}">
+<ion-modal-view ng-init="gsc = { motor: 0, eye:0, verbal:0};page1=true; page2=false">
     <ion-header-bar>
       <h1 class="title">My Modal title</h1>
     </ion-header-bar>
-    <ion-content ng-init="page1=true; page2=false">
+    <ion-content >
+    
       <ion-item ng-show="page1">
           <div class="item item-divider">
             <i>E</i>ye opening behavior
@@ -174,6 +175,6 @@
         <p ng-show="totalpoint<=15&&totalpoint>8">Best response</p>
         <p ng-show="totalpoint<=8&&totalpoint>3">Comatose client</p>
         <p ng-show="totalpoint<=3">Totally unresponsive</p>
-        <button class="pull-right button button-positive" ng-click="page1=false">Next</button>
+        <button class="pull-right button button-positive" ng-click="page1=false;page2=true">Next</button>
     </ion-footer-bar>
   </ion-modal-view>
