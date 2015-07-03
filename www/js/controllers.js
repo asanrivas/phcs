@@ -233,6 +233,40 @@ angular.module('starter.controllers', [])
         });
     }
 })
+.controller('f08Controller', function($scope, $stateParams, $state, $localForage) {
+    $scope.editImage = function(){
+        handdrawing.openDraw('www/img/f10.png');
+    };
+
+    $scope.initial_assessment = {};
+
+    $scope.saveAndNext = function(){
+        $localForage.getItem('upload_data').then(function(data){
+            if(!data) data = {};
+            if(!data['V_MEDICAL_ASSESSMENT']) data['V_MEDICAL_ASSESSMENT'] = {};
+            data['V_MEDICAL_ASSESSMENT'][$stateParams.patientID] = $scope.medical_assessment;
+            $localForage.setItem('upload_data', data);
+            $state.go('tab.f09');
+        });
+    }
+})
+.controller('f09Controller', function($scope, $stateParams, $state, $localForage) {
+    $scope.editImage = function(){
+        handdrawing.openDraw('www/img/f10.png');
+    };
+
+    $scope.initial_assessment = {};
+
+    $scope.saveAndNext = function(){
+        $localForage.getItem('upload_data').then(function(data){
+            if(!data) data = {};
+            if(!data['V_SOCIAL_ASSESSMENT']) data['V_SOCIAL_ASSESSMENT'] = {};
+            data['V_SOCIAL_ASSESSMENT'][$stateParams.patientID] = $scope.social_assessment;
+            $localForage.setItem('upload_data', data);
+            $state.go('tab.f10');
+        });
+    }
+})
 
 .controller('AccountCtrl', function($scope) {
     $scope.settings = {
