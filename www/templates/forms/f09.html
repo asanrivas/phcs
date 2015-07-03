@@ -38,42 +38,44 @@
 		<div class="list card">
 			<div class="item item-divider">Avail of caregiver</div>
 				<ion-list ng-init="social_assessment.avail_of_caregiver = true;" class="capital">
-					<ion-checkbox ng-model="social_assessment.avail_of_caregiver.day" value="true">Day</ion-checkbox>
-					<ion-checkbox ng-model="social_assessment.avail_of_caregiver.night" value="true">Night</ion-checkbox>
-					<ion-checkbox ng-model="social_assessment.avail_of_caregiver.all_day" value="true">All day</ion-checkbox>
-					<ion-checkbox ng-model="social_assessment.avail_of_caregiver.no_carer_day" value="true">No Carer</ion-checkbox>
+					<ion-checkbox ng-model="social_assessment.day" value="true">Day</ion-checkbox>
+					<ion-checkbox ng-model="social_assessment.night" value="true">Night</ion-checkbox>
+					<ion-checkbox ng-model="social_assessment.all_day" value="true">All day</ion-checkbox>
+					<ion-checkbox ng-model="social_assessment.no_carer_day" value="true">No Carer</ion-checkbox>
 					</ion-list>
 		</div>
 		<div class="list card">
 			<div class="item item-divider">Religion of Pt</div>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
-						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
 						<ion-checkbox ng-model="social_assessment.f07" disabled="true">Buddism</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Christianity</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Hinduism</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Islam</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Taiosm</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Others</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.a08" disabled="true">Christianity</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.b08" disabled="true">Hinduism</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.c10" disabled="true">Islam</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.d10" disabled="true">Taiosm</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.e08" disabled="true">Others</ion-checkbox>
 					</ion-list>
 			</div>
 
 			<div class="list card">
 			<div class="item item-divider">Home Assessment</div>
-					<span class="input-label">Type of housing</span>
+			</div>
+			
+			<div class="list card">
+					<div class="item item-divider">Type of housing</div>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
-						<ion-checkbox ng-model="social_assessment.f07" disabled="true">Kampung house</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Flats</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f09" disabled="true">Shop lot</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Single story</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Multi Story</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.g07" disabled="true">Kampung house</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.h08" disabled="true">Flats</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.i09" disabled="true">Shop lot</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.j10" disabled="true">Single story</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.k10" disabled="true">Multi Story</ion-checkbox>
 						</ion-list>
 						
 			<div class="list card">
 			<div class="item item-divider">Home Enviroment</div>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
-						<ion-checkbox ng-model="social_assessment.f07" disabled="true">Clean</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Cluttered</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f09" disabled="true">Dirty</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.l07" disabled="true">Clean</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.m08" disabled="true">Cluttered</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.n09" disabled="true">Dirty</ion-checkbox>
 						<label class="item item-input item-select">
 		  <div class="input-label">
 						Electricity
@@ -84,10 +86,10 @@
 						</select>
 				</label>
 
-						<ion-checkbox ng-model="social_assessment.f07" disabled="true">Municipal water supply</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Other water source</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f09" disabled="true">Dark</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Poor Ventilation</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.p07" disabled="true">Municipal water supply</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.q08" disabled="true">Other water source</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.r09" disabled="true">Dark</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.s10" disabled="true">Poor Ventilation</ion-checkbox>
 						</ion-list>
 						<br>
 
@@ -168,11 +170,11 @@
   </div>
 					<span class="input-label">Sanitary</span>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
-						<ion-checkbox ng-model="social_assessment.f07" disabled="true">Squat toilet</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f08" disabled="true">Sit</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f09" disabled="true">Attached toilet</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Commode</ion-checkbox>
-						<ion-checkbox ng-model="social_assessment.f10" disabled="true">Out House</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.t07" disabled="true">Squat toilet</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.u08" disabled="true">Sit</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.v09" disabled="true">Attached toilet</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.v10" disabled="true">Commode</ion-checkbox>
+						<ion-checkbox ng-model="social_assessment.x10" disabled="true">Out House</ion-checkbox>
 						</ion-list>
 
 	<br>
