@@ -238,7 +238,7 @@ angular.module('starter.controllers', [])
         handdrawing.openDraw('www/img/f10.png');
     };
 
-    $scope.initial_assessment = {};
+    $scope.medical_assessment = {};
 
     $scope.saveAndNext = function(){
         $localForage.getItem('upload_data').then(function(data){
@@ -255,7 +255,7 @@ angular.module('starter.controllers', [])
         handdrawing.openDraw('www/img/f10.png');
     };
 
-    $scope.initial_assessment = {};
+    $scope.social_assessment = {};
 
     $scope.saveAndNext = function(){
         $localForage.getItem('upload_data').then(function(data){
