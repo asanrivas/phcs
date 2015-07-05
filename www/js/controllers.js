@@ -43,15 +43,20 @@ angular.module('starter.controllers', [])
                 send_data = data;
             }
             $http.post(url_get, send_data).success(function(data){
-                // $localForage.clear();
+                $localForage.clear();
                 $ionicLoading.hide();
+                //success
                 if(data)
                 {
+                    $scope.error_message = false;
+
                     $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                     $localForage.setItem("pruser", data.pruser);
                 }
-            }).error(function(){
+            }).error(function(error){
                 $scope.error_message = "Unable to connect the server.";
+                $ionicLoading.hide();
+                console.log(error);
             });
         });
     }
@@ -198,7 +203,6 @@ angular.module('starter.controllers', [])
         Chats.remove(chat);
     }
 
-
     $scope.ExcelDateToJSDate =  function (serial) {
         return serial/65536%100;
     }
@@ -226,7 +230,74 @@ angular.module('starter.controllers', [])
         handdrawing.openDraw('www/img/f10.png');
     };
 })
-.controller('f07Controller', function($scope, $stateParams, $state, $localForage) {
+.controller('f04Controller', function($scope, $stateParams, $state, UploadData, Camera) {
+    $scope.getPhoto = function() {
+        console.log('Getting camera');
+        Camera.getPhoto().then(function(data){
+            $scope.lastPhoto = data.nativeURL;
+            $scope.filename = data.name;
+        }, function(){
+
+        })
+    };
+    $scope.patient_gallery = {};
+    $scope.first_visit = {};
+
+    $scope.save = function(){
+        $scope.patient_gallery.title = 'Consent of Admission Release & Indemity Form';
+        $scope.patient_gallery.gallery_type_code = "1";
+        $scope.patient_gallery.gallery_status_code = "";
+        $scope.patient_gallery.description = "";
+        $scope.patient_gallery.image = $scope.lastPhoto;
+        $scope.patient_gallery.filename = $scope.filename;
+
+        $scope.first_visit.patient_id = $stateParams.patientID;
+        $scope.first_visit.image_form = $scope.filename;
+        $scope.first_visit.category_form = 1;
+
+
+        UploadData.save_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function(){
+                $state.go('tab.firsttime');
+            });
+        });
+
+    };
+})
+.controller('f05Controller', function($scope, $stateParams, $state, UploadData, Camera) {
+    $scope.getPhoto = function() {
+        console.log('Getting camera');
+        Camera.getPhoto().then(function(data){
+            $scope.lastPhoto = data.nativeURL;
+            $scope.filename = data.name;
+        }, function(){
+
+        })
+    };
+    $scope.patient_gallery = {};
+    $scope.first_visit = {};
+
+    $scope.save = function(){
+        $scope.patient_gallery.title = 'Declaration of Photographic/Media Consent';
+        $scope.patient_gallery.gallery_type_code = "2";
+        $scope.patient_gallery.gallery_status_code = "";
+        $scope.patient_gallery.description = "";
+        $scope.patient_gallery.image = $scope.lastPhoto;
+        $scope.patient_gallery.filename = $scope.filename;
+
+        $scope.first_visit.patient_id = $stateParams.patientID;
+        $scope.first_visit.image_form = $scope.filename;
+        $scope.first_visit.category_form = 2;
+
+        UploadData.save_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function(){
+                $state.go('tab.firsttime');
+            });
+        });
+
+    };
+})
+.controller('f07Controller', function($scope, $stateParams, $state, UploadData) {
     $scope.editImage = function(img){
         handdrawing.openDraw(img);
     };
@@ -234,16 +305,12 @@ angular.module('starter.controllers', [])
     $scope.initial_assessment = {};
 
     $scope.saveAndNext = function(){
-        $localForage.getItem('upload_data').then(function(data){
-            if(!data) data = {};
-            if(!data['V_INITIAL_ASSESSMENT']) data['V_INITIAL_ASSESSMENT'] = {};
-            data['V_INITIAL_ASSESSMENT'][$stateParams.patientID] = $scope.initial_assessment;
-            $localForage.setItem('upload_data', data);
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_INITIAL_ASSESSMENT', $scope.initial_assessment).then(function(){
             $state.go('tab.f08');
         });
     }
 })
-.controller('f08Controller', function($scope, $stateParams, $state, $localForage) {
+.controller('f08Controller', function($scope, $stateParams, $state, UploadData) {
     $scope.editImage = function(){
         handdrawing.openDraw('www/img/f10.png');
     };
@@ -251,16 +318,12 @@ angular.module('starter.controllers', [])
     $scope.medical_assessment = {};
 
     $scope.saveAndNext = function(){
-        $localForage.getItem('upload_data').then(function(data){
-            if(!data) data = {};
-            if(!data['V_MEDICAL_ASSESSMENT']) data['V_MEDICAL_ASSESSMENT'] = {};
-            data['V_MEDICAL_ASSESSMENT'][$stateParams.patientID] = $scope.medical_assessment;
-            $localForage.setItem('upload_data', data);
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.initial_assessment).then(function(){
             $state.go('tab.f09');
         });
     }
 })
-.controller('f09Controller', function($scope, $stateParams, $state, $localForage) {
+.controller('f09Controller', function($scope, $stateParams, $state, UploadData) {
     $scope.editImage = function(){
         handdrawing.openDraw('www/img/f10.png');
     };
@@ -268,11 +331,7 @@ angular.module('starter.controllers', [])
     $scope.social_assessment = {};
 
     $scope.saveAndNext = function(){
-        $localForage.getItem('upload_data').then(function(data){
-            if(!data) data = {};
-            if(!data['V_SOCIAL_ASSESSMENT']) data['V_SOCIAL_ASSESSMENT'] = {};
-            data['V_SOCIAL_ASSESSMENT'][$stateParams.patientID] = $scope.social_assessment;
-            $localForage.setItem('upload_data', data);
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.initial_assessment).then(function(){
             $state.go('tab.f10');
         });
     }

@@ -49,68 +49,42 @@ angular.module('starter.services', [])
   };
 })
 
-.factory('LocalDB', function(){
-    var db;
-    var openRequest = indexedDB.open("pcis",1);
-    openRequest.onupgradeneeded = function(e) {
-        console.log("Upgrading...");
-        var thisDB = e.target.result;
-
-        var tables = ['patients', 'visit', 'gallery', 'form_data', 'loan_equipment', 'eol'];
-
-        for (var i = 0; i < tables.length; i++) {
-
-            if(!thisDB.objectStoreNames.contains(tables[i])) {
-                thisDB.createObjectStore(tables[i]);
-            }
-        }
-    }
-
-    openRequest.onsuccess = function(e) {
-        console.log("Success load db!");
-        db = e.target.result;
-
-    }
-
-    openRequest.onerror = function(e) {
-        console.log("Error");
-        console.dir(e);
-    }
+.factory('UploadData', function($q, $localForage){
+    var userid;
 
     return {
-        setPatients:function (data) {
-            console.log('saving...');
-            var transaction = db.transaction(["patients"],"readwrite");
-            var patients = transaction.objectStore("patients");
-            for (var i = 0; i < data.length; i++) {
-                patients.add(data[i], i)
-            }
-            return true;
-        },
-        getPatients:function () {
-            console.log('get patients');
-            var deferred = $q.defer();
+        init_upload_data: function(patientID){
+            if(!data)
+                data = {};
+            if(!data[patientID])
+                data[patientID] = {};
 
-            var transaction = db.transaction(["patients"],"readwrite");
-            var request = transaction.objectStore("patients").get();
-            request.onsuccess(function(){
-                deferred.resolve(request.result)
-            }).onerror(function(){
-                deferred.reject(request.console.error);
+        },
+        save_data_patient_id: function(patientID, table, datum)
+        {
+            var q = $q.defer();
+            $localForage.getItem('upload_data').then(function(data){
+                if(!data)
+                    data = {};
+                if(!data[patientID])
+                {
+                    var theDate=new Date();
+                    data[patientID] = {
+                        date: theDate.format("yyyy-mm-dd"),
+                        time: theDate.format("H:MM"),
+                        remark: "",
+                        userid: 1 //hardcoded admin
+                    };
+                }
+
+                data[patientID][table] = datum;
+                $localForage.setItem('upload_data', data).then(function(){
+                    q.resolve(data);
+                });
             });
-
-            return deferred.promise;
-        },
-        getPatientById:function (id) {
-            var transaction = db.transaction(["patients"],"readwrite");
-            return transaction.objectStore("patients");
-        },
-        getGallery:function (patient_id) {
-            return transaction.objectStore("patients")[id];
-        },
-
-    };
-
+            return q.promise;
+        }
+    }
 })
 .factory('RandomUser', function($resource){
     var userList;
@@ -189,7 +163,8 @@ angular.module('starter.services', [])
 
               // 6
               function onCopySuccess(entry) {
-                  q.resolve(entry.nativeURL);
+                //   q.resolve(entry.nativeURL, entry.name);
+                  q.resolve(entry);
               }
 
               function fail(error) {
