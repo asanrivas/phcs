@@ -31,19 +31,29 @@ angular.module('starter.controllers', [])
 
     $scope.sync = function (argument) {
         // body...
-        var url = 'http://112.137.162.30/pcis/api_generator.php?api_name=API_SYNC_MOBILE';
+        var url_get = 'http://112.137.162.30/pcis/api_generator.php?api_name=API_SYNC_MOBILE';
         $ionicLoading.show({
-            template: 'Loading... <ion-spinner class="spinner-energized"></ion-spinner>'
+            template: '<ion-spinner class="spinner-energized"></ion-spinner> Loading...'
         });
 
-        $http.get(url).success(function(data){
-            $localForage.clear();
-            $ionicLoading.hide();
-
-            $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
-            $localForage.setItem("pruser", data.pruser);
+        $localForage.getItem('upload_data').then(function(data){
+            var send_data = {};
+            if(data)
+            {
+                send_data = data;
+            }
+            $http.post(url_get, send_data).success(function(data){
+                // $localForage.clear();
+                $ionicLoading.hide();
+                if(data)
+                {
+                    $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
+                    $localForage.setItem("pruser", data.pruser);
+                }
+            }).error(function(){
+                $scope.error_message = "Unable to connect the server.";
+            });
         });
-
     }
 
     //need to reorder data if by key
@@ -217,8 +227,8 @@ angular.module('starter.controllers', [])
     };
 })
 .controller('f07Controller', function($scope, $stateParams, $state, $localForage) {
-    $scope.editImage = function(){
-        handdrawing.openDraw('www/img/f10.png');
+    $scope.editImage = function(img){
+        handdrawing.openDraw(img);
     };
 
     $scope.initial_assessment = {};
