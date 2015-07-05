@@ -54,7 +54,7 @@
 					<div class="input-label">
 						Patient aware of Pognosis
 					</div>
-						<select ng-model="initial_assessment.patient_aware_pognosis">
+						<select ng-model="initial_assessment.patient_aware_prognosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -64,7 +64,7 @@
 					<div class="input-label">
 						Family aware of Pognosis
 					</div>
-						<select ng-model="initial_assessment.patient_aware_pognosis">
+						<select ng-model="initial_assessment.family_aware_prognosis">
 							<option>Yes</option>
 							<option selected>No</option>
 						</select>
@@ -78,28 +78,27 @@
 		</div>
 		<div class="list card">
 			<div class="item item-divider">Initial reason for referral</div>
-				<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.initial_reason">
-					<ion-checkbox ng-model="data.f07">Home visit</ion-checkbox>
-					<ion-checkbox ng-model="data.f08">Palliative support</ion-checkbox>
-					<ion-checkbox ng-model="data.f09">Equipment rental</ion-checkbox>
-					<ion-checkbox ng-model="data.f10">Dressing</ion-checkbox>
-					<ion-checkbox ng-model="data.f11">Others</ion-checkbox>
+				<ion-list ng-init="data.f01 = true;" class="capital">
+					<ion-checkbox ng-model="initial_assessment.initial_reason.home_visit">Home visit</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.initial_reason.palliative_support">Palliative support</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.initial_reason.equipment_rental">Equipment rental</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.initial_reason.dressing">Dressing</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.initial_reason.others">Others</ion-checkbox>
 				</ion-list>
 		</div>
 		<div class="list card">
 			<div class="item item-divider">Past medical history</div>
 				<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.past_medical_history">
-					<ion-checkbox ng-model="data.f07">Smoking</ion-checkbox>
-					<ion-checkbox ng-model="data.f08">Alcohol</ion-checkbox>
-					<ion-checkbox ng-model="data.f09">AMI/HD</ion-checkbox>
-					<ion-checkbox ng-model="data.f10">Diabetes</ion-checkbox>
-				<ion-checkbox ng-model="data.f11">PTB</ion-checkbox>
-
-				<ion-checkbox ng-model="data.f07">COPD</ion-checkbox>
-					<ion-checkbox ng-model="data.f08">Asthma</ion-checkbox>
-					<ion-checkbox ng-model="data.f09">Renal failure</ion-checkbox>
-					<ion-checkbox ng-model="data.f10">Hypertension</ion-checkbox>
-					<ion-checkbox ng-model="data.f11">Gastric Problems</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.smoking">Smoking</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.alcohol">Alcohol</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.ami_hd">AMI/HD</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.diabetes">Diabetes</ion-checkbox>
+				    <ion-checkbox ng-model="initial_assessment.past_medical_history.ptb">PTB</ion-checkbox>
+                    <ion-checkbox ng-model="initial_assessment.past_medical_history.copd">COPD</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.asthma">Asthma</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.renal_failure">Renal failure</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.hypertension">Hypertension</ion-checkbox>
+					<ion-checkbox ng-model="initial_assessment.past_medical_history.gastric">Gastric Problems</ion-checkbox>
 				</ion-list>
 			</div>
 		</div>
