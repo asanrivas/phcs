@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
 })
-.controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading) {
+.controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading, $ionicPopup) {
     //$scope.signIn
     $scope.user = {username: '', password: ''}
     $scope.signIn = function (user) {
@@ -56,10 +56,27 @@ angular.module('starter.controllers', [])
             }).error(function(error){
                 $scope.error_message = "Unable to connect the server.";
                 $ionicLoading.hide();
+                $scope.showConfirm();
                 console.log(error);
+
             });
         });
     }
+
+    $scope.showConfirm = function() {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Clear Local Data',
+            template: 'Are you sure you want to clear app data?'
+        });
+        confirmPopup.then(function(res) {
+            if(res) {
+                $localForage.clear();
+                console.log('You are sure');
+            } else {
+                console.log('You are not sure');
+            }
+        });
+    };
 
     //need to reorder data if by key
     function reorder(data, key){
