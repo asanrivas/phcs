@@ -69,14 +69,16 @@
 						<ion-checkbox ng-model="social_assessment.j10" disabled="true">Single story</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.k10" disabled="true">Multi Story</ion-checkbox>
 						</ion-list>
-						
+			</div>
 			<div class="list card">
 			<div class="item item-divider">Home Enviroment</div>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
 						<ion-checkbox ng-model="social_assessment.l07" disabled="true">Clean</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.m08" disabled="true">Cluttered</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.n09" disabled="true">Dirty</ion-checkbox>
-						<label class="item item-input item-select">
+			</div>
+			<div class="list card">
+		<label class="item item-input item-select">
 		  <div class="input-label">
 						Electricity
 					</div>
@@ -85,19 +87,22 @@
 							<option>No</option>
 						</select>
 				</label>
-
-						<ion-checkbox ng-model="social_assessment.p07" disabled="true">Municipal water supply</ion-checkbox>
+				
+	<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.past_medical_history">
+						<ion-checkbox ng-model="social_assessment_assessment.past_medical_history.smoking" disabled="true">Municipal water supply</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.q08" disabled="true">Other water source</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.r09" disabled="true">Dark</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.s10" disabled="true">Poor Ventilation</ion-checkbox>
 						</ion-list>
-						<br>
 
+</div>
 
-
-
-					<span class="input-label">Stairs</span>
-					<span class="input-label">Stairs entering home</span>
+<div class="list card">
+					<div class="item item-divider">Stairs</div>
+					</div>
+					
+					<div class="list card">
+					<div class="item item-divider">Stairs entering home</div>
 					<div class="list">
   <label class="item item-radio">
     <input type="radio" name="group">
@@ -114,8 +119,10 @@
     <i class="radio-icon ion-checkmark"></i>
   </label>
   </div>
+</div>
 
-  <span class="input-label">Stairs inside home</span>
+<div class="list card">
+  <div class="item item-divider">Stairs inside home</div>
   <div class="list">
   <label class="item item-radio">
     <input type="radio" name="group1">
@@ -132,8 +139,10 @@
     <i class="radio-icon ion-checkmark"></i>
   </label>
   </div>
+  </div>
 
-    <span class="input-label">Split level</span>
+  <div class="list card">
+    <div class="item item-divider">Split level</div>
   <div class="list">
   <label class="item item-radio">
     <input type="radio" name="group2">
@@ -150,8 +159,10 @@
     <i class="radio-icon ion-checkmark"></i>
   </label>
   </div>
-
-    <span class="input-label">Client using</span>
+</div>
+  
+  <div class="list card">
+    <div class="item item-divider">Client using</div>
   <div class="list">
   <label class="item item-radio">
     <input type="radio" name="group3">
@@ -168,7 +179,9 @@
     <i class="radio-icon ion-checkmark"></i>
   </label>
   </div>
-					<span class="input-label">Sanitary</span>
+  </div>
+  <div class="list card">
+					<div class="item item-divider">Sanitary</div>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
 						<ion-checkbox ng-model="social_assessment.t07" disabled="true">Squat toilet</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.u08" disabled="true">Sit</ion-checkbox>
@@ -177,11 +190,14 @@
 						<ion-checkbox ng-model="social_assessment.x10" disabled="true">Out House</ion-checkbox>
 						</ion-list>
 
-	<br>
-						<span class="input-label">Remarks</span>
+	</div>
+	<div class="list card">
+						<div class="item item-divider">Remarks</div>
 				<label class="item item-input item-stacked-label">
 						<input type="text" placeholder="Remarks">
 				</label>
+				</div>
+	<div class="list">
 				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f10">Save and Next</a>
 			</div>
 
