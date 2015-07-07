@@ -8,7 +8,7 @@
             <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:searchPatient | filter: {PATIENT_ID:'!!'} track by $index" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/dash">
                 <img ng-src="http://api.randomuser.me/portraits/med/women/{{patient.PATIENT_ID}}.jpg">
                 <h2 class="capital">{{patient.NAME}}</h2>
-                <p><span class="ui green circular label" ng-show="$index<5">updated</span> Age: {{patient.AGE|number:0}}</p>
+                <p><span class="ui green circular label" ng-show="upload_data[patient.PATIENT_ID]">updated</span> Age: {{patient.AGE|number:0}}</p>
 
                 <i class="icon ion-chevron-right icon-accessory"></i>
                 <ion-option-button class="button-assertive" ng-click="remove(chat)">

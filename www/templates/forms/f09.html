@@ -14,7 +14,7 @@
 					<ion-checkbox ng-model="social_assessment.family_attitude.Others" value="true">Others</ion-checkbox>
 					</ion-list>
 			</div>
-			
+
 		<div class="list card">
 			<div class="item item-divider">Family Response</div>
 				<ion-list ng-init="social_assessment.f01 = true;" class="capital">
@@ -55,7 +55,7 @@
 			<div class="list card">
 			<div class="item item-divider">Home Assessment</div>
 			</div>
-			
+
 			<div class="list card">
 					<div class="item item-divider">Type of housing</div>
 						<ion-list ng-init="social_assessment.f01 = true;" class="capital">
@@ -83,7 +83,7 @@
 							<option>No</option>
 						</select>
 				</label>
-				
+
 	<ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.past_medical_history">
 						<ion-checkbox ng-model="social_assessment_assessment.past_medical_history.smoking" disabled="true">Municipal water supply</ion-checkbox>
 						<ion-checkbox ng-model="social_assessment.q08" disabled="true">Other water source</ion-checkbox>
@@ -96,7 +96,7 @@
 <div class="list card">
 					<div class="item item-divider">Stairs</div>
 					</div>
-					
+
 					<div class="list card">
 					<div class="item item-divider">Stairs entering home</div>
 					<div class="list">
@@ -156,7 +156,7 @@
   </label>
   </div>
 </div>
-  
+
   <div class="list card">
     <div class="item item-divider">Client using</div>
   <div class="list">
@@ -194,7 +194,7 @@
 				</label>
 				</div>
 	<div class="list">
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f10">Save and Next</a>
+				<a class="button button-positive button-full" href="saveAndNext()">Save and Next</a>
 			</div>
 
 	</ion-content>

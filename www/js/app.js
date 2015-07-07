@@ -37,6 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     .state('patient', {
         url: '/patient',
+        cache: false,
         templateUrl: "templates/patient.html",
         controller: 'PatientCtrl'
 
