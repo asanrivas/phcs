@@ -43,7 +43,7 @@ angular.module('starter.controllers', [])
                 send_data = data;
             }
             $http.post(url_get, send_data).success(function(data){
-                $localForage.clear();
+                // $localForage.clear();
                 $ionicLoading.hide();
                 //success
                 if(data)
@@ -100,11 +100,38 @@ angular.module('starter.controllers', [])
     $scope.getPhoto = function() {
         console.log('Getting camera');
         Camera.getPhoto().then(function(data){
-            console.log(data);
+            console.log(data.nativeURL);
         }, function(){
 
         })
     }
+    //Modal
+    $ionicModal.fromTemplateUrl('templates/modal-glassgow.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function() {
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
 })
 .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
@@ -124,12 +151,21 @@ angular.module('starter.controllers', [])
 
     $scope.setting = {eol: false};
 
+    // Load upload data
+    $scope.upload_data = [];
+    $localForage.getItem('upload_data').then(function(data){
+        if(data)
+            $scope.upload_data = data;
+    });
+
+    //Modal
     $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
         scope: $scope,
         animation: 'slide-in-up'
     }).then(function(modal) {
         $scope.modal = modal;
     });
+
     $scope.openModal = function() {
         $scope.modal.show();
         return false;
@@ -169,7 +205,6 @@ angular.module('starter.controllers', [])
     });
 
     $scope.upload_data = [];
-
     $localForage.getItem('upload_data').then(function(data){
         if(data)
             $scope.upload_data = data;
@@ -309,7 +344,25 @@ angular.module('starter.controllers', [])
         });
     }
 })
-.controller('f09Controller', function($scope, $stateParams, $state, UploadData) {
+.controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.editImage = function(){
+        handdrawing.openDraw('www/img/f10.png');
+    };
+
+    $scope.social_assessment = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_SOCIAL_ASSESSMENT )
+            $scope.social_assessment = data[$stateParams.patientID].V_SOCIAL_ASSESSMENT;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function(){
+            $state.go('tab.f10');
+        });
+    }
+})
+.controller('f10Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
     $scope.editImage = function(){
         handdrawing.openDraw('www/img/f10.png');
     };
