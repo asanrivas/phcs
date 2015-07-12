@@ -70,9 +70,9 @@
         <div class="list card">
             <div class="item item-divider">Home Enviroment</div>
             <ion-list ng-init="social_assessment.f01 = true;" class="capital">
-                <ion-checkbox ng-model="social_assessment.l07">Clean</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.m08">Cluttered</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.n09">Dirty</ion-checkbox>
+                <ion-checkbox ng-model="social_assessment.home_enviroment.Clean">Clean</ion-checkbox>
+                <ion-checkbox ng-model="social_assessment.home_enviroment.Cluttered">Cluttered</ion-checkbox>
+                <ion-checkbox ng-model="social_assessment.home_enviroment.Dirty">Dirty</ion-checkbox>
             </div>
             <div class="list card">
                 <label class="item item-input item-select">
@@ -85,11 +85,11 @@
                     </select>
                 </label>
 
-                <ion-list ng-init="data.f01 = true;" class="capital" ng-model="initial_assessment.past_medical_history">
-                    <ion-checkbox ng-model="social_assessment_assessment.past_medical_history.smoking">Municipal water supply</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.q08">Other water source</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.r09">Dark</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.s10">Poor Ventilation</ion-checkbox>
+                <ion-list class="capital">
+                    <ion-checkbox ng-model="social_assessment_assessment.electricity.Municipal_water-supplyg">Municipal water supply</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.electricity.Other_water_source">Other water source</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.electricity.Dark">Dark</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.electricity.Poor_Ventilation">Poor Ventilation</ion-checkbox>
                 </ion-list>
 
             </div>
@@ -180,11 +180,11 @@
             <div class="list card">
                 <div class="item item-divider">Sanitary</div>
                 <ion-list ng-init="social_assessment.f01 = true;" class="capital">
-                    <ion-checkbox ng-model="social_assessment.t07">Squat toilet</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.u08">Sit</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.v09">Attached toilet</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.v10">Commode</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.x10">Out House</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary.Squat toilet">Squat toilet</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary.Sit">Sit</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary.Attached_toilet">Attached toilet</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary.Commode">Commode</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary.Out House">Out House</ion-checkbox>
                 </ion-list>
 
             </div>
