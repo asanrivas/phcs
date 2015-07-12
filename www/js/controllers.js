@@ -327,6 +327,14 @@ angular.module('starter.controllers', [])
 
     });
 
+    $scope.make_profile_pic = function(img){
+        if(img)
+            return cordova.file.externalDataDirectory+img;
+        else {
+            return $scope.profile_images = 'img/dummy-profile-pic.png';
+        }
+    }
+
     $scope.upload_data = [];
     $localForage.getItem('upload_data').then(function(data){
         if(data)
@@ -472,11 +480,21 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('f08Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
-    $scope.editImage = function(){
-        handdrawing.openDraw('www/img/f10.png');
+
+    $scope.editImage = function(img){
+        handdrawing.openDraw(img, function(data){
+            console.log(data);
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.medical_assessment.body_diagram = 'file://'+data;
+                });
+            }
+        });
     };
 
     $scope.medical_assessment = {};
+    $scope.medical_assessment.body_diagram = null;
 
     $localForage.getItem('upload_data').then(function(data){
         if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_MEDICAL_ASSESSMENT )
