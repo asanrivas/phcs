@@ -111,40 +111,54 @@ angular.module('starter.services', [])
         },
         download_gallery: function(filename)
         {
-            var path = cordova.file.externalDataDirectory+path;
+            var path = cordova.file.externalDataDirectory+filename;
             var q = $q.defer();
-            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem){
-                fileSystem.root.getFile(path, { create: false },
-                    function() {
-                        console.log('file exist so nothing to do...');
-                        q.resolve(path);
-                    },
-                    function(){
-                        console.log('Downloading the file: '+filename);
-                        var corrad_server = window.localStorage.getItem('corrad_server');
-                        var fileTransfer = new FileTransfer();
-                        var uri = encodeURI(corrad_server+'upload/'+filename);
-                        var fileURL = cordova.file.externalDataDirectory+filename;
+            window.resolveLocalFileSystemURL(path,
+                function() {
+                    console.log('file exist so nothing to do...');
+                    q.resolve(path);
+                },
+                function(){
+                    console.log('Downloading the file: '+filename);
+                    var corrad_server = window.localStorage.getItem('corrad_server');
+                    var fileTransfer = new FileTransfer();
+                    var uri = encodeURI(corrad_server+'upload/'+filename);
+                    var fileURL = cordova.file.externalDataDirectory+filename;
 
-                        fileTransfer.download(
-                            uri,
-                            fileURL,
-                            function(entry) {
-                                console.log("download complete: " + entry.toURL());
-                                q.resolve(entry.toURL());
-                            },
-                            function(error) {
-                                console.log("download error source " + error.source);
-                                console.log("download error target " + error.target);
-                                console.log("upload error code" + error.code);
-                                q.reject(error);
-                            },
-                            true
-                        );
-                    });
+                    fileTransfer.download(
+                        uri,
+                        fileURL,
+                        function(entry) {
+                            console.log("download complete: " + entry.toURL());
+                            q.resolve(entry.toURL());
+                        },
+                        function(error) {
+                            console.log("download error source " + error.source);
+                            console.log("download error target " + error.target);
+                            console.log("upload error code" + error.code);
+                            q.reject(error);
+                        },
+                        true
+                    );
+                });
+            return q.promise;
+        },
+        upload_gallery: function(fileURL)
+        {
+            var q = $q.defer();
+            var corrad_server = window.localStorage.getItem('corrad_server');
+            var options = new FileUploadOptions();
+            options.fileKey = "file";
+            options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+            options.mimeType = "image/jpeg";
+
+            var ft = new FileTransfer();
+            ft.upload(fileURL, encodeURI(corrad_server+'api_generator.php?api_name=API_UPLOAD_IMAGE'), function(success){
+                console.log('Uploading success :'+options.fileName);
+                q.resolve(success);
             }, function(error){
                 q.reject(error);
-            }); //of requestFileSystem
+            }, options);
             return q.promise;
         }
     }

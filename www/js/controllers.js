@@ -36,14 +36,34 @@ angular.module('starter.controllers', [])
             template: '<ion-spinner class="spinner-energized"></ion-spinner> Loading...'
         });
 
+        //Upload Image
+        $localForage.getItem('PRO_PATIENT_GALLERY').then(function(data){
+
+        });
+
+        // Upload data
         $localForage.getItem('upload_data').then(function(data){
+            if(data)
+
+
             var send_data = {};
             if(data)
             {
                 send_data = data;
             }
+
+            for (var i = 0; Array.isArray(send_data) && i < send_data.length; i++) {
+                // console.log(send_data[i].filename);
+                if(send_data[i] && send_data[i].PRO_PATIENT_GALLERY && Array.isArray(send_data[i].PRO_PATIENT_GALLERY))
+                {
+                    var images = send_data[i].PRO_PATIENT_GALLERY;
+                    for (var j = 0; j < images.length; j++) {
+                        UploadData.upload_gallery(images[j].filename);
+                    }
+                }
+            }
+
             $http.post(url_get, send_data, {timeout:60000}).success(function(data){
-                // $localForage.clear();
                 $ionicLoading.hide();
                 //success
                 if(data)
