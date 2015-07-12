@@ -32,18 +32,18 @@
                     </div>
                     <div class="item item-button-right">
                         Travel to address
-                        <a class="button button-positive button-outline" href="geo:q={{patient.user.location.street}}" target="_blank">
+                        <a class="button button-positive button-outline" ng-click="open_loc(patient.ADDRESS)" target="_blank">
                             <i class="icon ion-navigate"></i>
                         </a>
                     </div>
-                    <div class="item ">
+                    <div class="item">
                         Decision maker contact <span class="item-note black">{{patient.DECISION_MAKER_CONTACT}}</span>
                     </div>
                     <div class="item" ng-show="dashboard.detail">
                         Language <span class="item-note black">{{patient.LANGUAGE}}</span>
                     </div>
                     <div class="item" ng-show="dashboard.detail">
-                        Travelling Status <span class="item-note black">Cendawan</span>
+                        Nurse Name <span class="item-note black">{{patient.NURSE_NAME}}</span>
                     </div>
                     <div class="item" ng-show="dashboard.detail">
                         Travelling Status <span class="item-note black">Cendawan</span>
