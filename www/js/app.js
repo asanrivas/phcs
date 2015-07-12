@@ -18,6 +18,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             // org.apache.cordova.statusbar required
             StatusBar.styleLightContent();
         }
+
+        if(!window.localStorage.getItem('corrad_server'))
+            window.localStorage.setItem('corrad_server', 'http://112.137.162.30/pcis/');
     });
 })
 
@@ -45,6 +48,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     // setup an abstract state for the tabs directive
     .state('tab', {
         url: "/tab/:patientID",
+        cache: false,
         abstract: true,
         templateUrl: "templates/tabs.html",
         controller: 'TabCtrl'

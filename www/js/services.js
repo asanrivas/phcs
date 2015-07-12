@@ -83,31 +83,85 @@ angular.module('starter.services', [])
                 });
             });
             return q.promise;
+        },
+        append_data_patient_id: function(patientID, table, datum)
+        {
+            var q = $q.defer();
+            $localForage.getItem('upload_data').then(function(data){
+                if(!data)
+                    data = {};
+                if(!data[patientID])
+                {
+                    var theDate=new Date();
+                    data[patientID] = {
+                        date: theDate.format("yyyy-mm-dd"),
+                        time: theDate.format("H:MM"),
+                        remark: "",
+                        userid: 1 //hardcoded admin
+                    };
+                }
+                if(!Array.isArray(data[patientID][table]))
+                    data[patientID][table] = [];
+                data[patientID][table].push(datum);
+                $localForage.setItem('upload_data', data).then(function(){
+                    q.resolve(data);
+                });
+            });
+            return q.promise;
+        },
+        download_gallery: function(filename)
+        {
+            var path = cordova.file.externalDataDirectory+filename;
+            var q = $q.defer();
+            window.resolveLocalFileSystemURL(path,
+                function() {
+                    console.log('file exist so nothing to do...');
+                    q.resolve(path);
+                },
+                function(){
+                    console.log('Downloading the file: '+filename);
+                    var corrad_server = window.localStorage.getItem('corrad_server');
+                    var fileTransfer = new FileTransfer();
+                    var uri = encodeURI(corrad_server+'upload/'+filename);
+                    var fileURL = cordova.file.externalDataDirectory+filename;
+
+                    fileTransfer.download(
+                        uri,
+                        fileURL,
+                        function(entry) {
+                            console.log("download complete: " + entry.toURL());
+                            q.resolve(entry.toURL());
+                        },
+                        function(error) {
+                            console.log("download error source " + error.source);
+                            console.log("download error target " + error.target);
+                            console.log("upload error code" + error.code);
+                            q.reject(error);
+                        },
+                        true
+                    );
+                });
+            return q.promise;
+        },
+        upload_gallery: function(fileURL)
+        {
+            var q = $q.defer();
+            var corrad_server = window.localStorage.getItem('corrad_server');
+            var options = new FileUploadOptions();
+            options.fileKey = "file";
+            options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+            options.mimeType = "image/jpeg";
+
+            var ft = new FileTransfer();
+            ft.upload(fileURL, encodeURI(corrad_server+'api_generator.php?api_name=API_UPLOAD_IMAGE'), function(success){
+                console.log('Uploading success :'+options.fileName);
+                q.resolve(success);
+            }, function(error){
+                q.reject(error);
+            }, options);
+            return q.promise;
         }
     }
-})
-.factory('RandomUser', function($resource){
-    var userList;
-
-    return {
-        setPatients: function(data) {
-            userList = data;
-            window.localStorage['userList'] = JSON.stringify(userList);
-        },
-        getPatients: function() {
-            return userList;
-        },
-        getPatientById: function(userid)
-        {
-            if(!userList)
-            {
-                userList = JSON.parse(localStorage.getItem('userList')) || [];
-                return userList[userid];
-            }
-            else
-                return userList[userid];
-        }
-    };
 })
 .factory('Camera', function($q) {
 

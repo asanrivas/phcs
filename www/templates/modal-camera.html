@@ -1,0 +1,52 @@
+<ion-modal-view view-title="Photo Description">
+    <ion-header-bar>
+        <div class="buttons" ng-click="closeModal()">
+            <button class="button button-clear">Cancel</button>
+        </div>
+        <h1 class="title">Photo Description</h1>
+        <div class="buttons" ng-click="savePhoto()">
+            <button class="button button-clear">Save</button>
+        </div>
+    </ion-header-bar>
+    <ion-content in-init="patient_gallery.gallery_status_code=1">
+        <div class="row padding" ng-show="photoURL">
+            <img ng-src="{{photoURL}}" style="max-width: 100%">
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Photo Type</div>
+            <label class="item item-radio">
+                <input type="radio" name="group" ng-model="patient_gallery.gallery_type_code" value="3">
+                <div class="item-content">
+                    Patient Condition
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <label class="item item-radio">
+                <input type="radio" name="group" ng-model="patient_gallery.gallery_type_code" value="4">
+                <div class="item-content">
+                    Activity
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <label class="item item-radio">
+                <input type="radio" name="group" ng-model="patient_gallery.gallery_type_code" value="5">
+                <div class="item-content">
+                    Profile picture
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <div class="item item-divider">Photo Information</div>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Title</span>
+                <input type="text" placeholder="Photo Title" ng-model="patient_gallery.title">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Description</span>
+                <!-- <input type="text" placeholder="Not included in proposal" ng-model="patient_gallery.title"> -->
+                <textarea ng-model="patient_gallery.description"  placeholder="Photo description"></textarea>
+            </label>
+        </div>
+    </div>
+
+</ion-content>
+</ion-modal-view>

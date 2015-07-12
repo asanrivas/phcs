@@ -6,12 +6,20 @@
         <div class="row padding" ng-show="lastPhoto">
             <img ng-src="{{lastPhoto}}" style="max-width: 100%">
         </div>
-        <div class="row row-wrap">
-            <div class="" style="width:165px !important" ng-repeat="item in items"
-            item="item"
-            href="#/item/{{item.id}}">
-            <img ng-src="http://api.randomuser.me/portraits/med/women/{{item.id}}.jpg"/>
+        <div class="row row-wrap responsive-sd">
+            <div class="col col-25" style="" ng-repeat="item in $parent.upload_data[$parent.patientID].PRO_PATIENT_GALLERY" ng-click="previewImage(item.filename)">
+                <img ng-src="{{item.filename?item.filename:'https://placehold.it/150x150'}}" width="100%"/>
+            </div>
+            <div class="col col-25" style="" ng-repeat="item in db_gallery" ng-click="previewImage(item.fullname)">
+                <img ng-src="{{item.fullname?item.fullname:'https://placehold.it/150x150'}}" width="100%"/>
+            </div>
         </div>
-    </div>
-</ion-content>
+    </ion-content>
 </ion-view>
+<script id="template/image-modal.html" type="text/ng-template">
+    <div class="modal image-modal transparent" ng-click="preview.hide()">
+        <ion-pane class="transparent">
+            <img ng-src="{{previewImageSrc}}" class="fullscreen-image"/>
+        </ion-pane>
+    </div>
+</script>
