@@ -8,7 +8,7 @@
                 <div class="item item-divider">Physical Symptoms (Patient's complaints)</div>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Pain</span>
-                    <input type="text" placeholder="state site, nature (eg. Nociceptive/neuropathic/bony/incident)" ng-model="medical_assessment.physical_symptoms.pain">
+<input type="text" placeholder="state site, nature (eg. Nociceptive/neuropathic/bony/incident)" ng-model="medical_assessment.physical_symptoms.pain">
                 </label>
                 <label class="item item-input item-select">
                     <div class="input-label">
@@ -34,7 +34,7 @@
             {{medical_assessment.body_diagram}}
             <div class="row">
                 <div class="col">
-                    <ion-list ng-init="data.f01 = true;" class="capital">
+                    <ion-list ng-init="medical_assessment.patient_id=$parent.patientID">
                         <ion-checkbox ng-model="medical_assessment.physical_symptoms.mouth" value="true">
                             <label class="item item-input item-stacked-label">
                                 <span class="input-label">Mouth</span>
