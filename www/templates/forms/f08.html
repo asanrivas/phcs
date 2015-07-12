@@ -114,7 +114,7 @@
                     </ion-list>
                 </div>
                 <div class="col">
-                    <ion-list ng-init="data.f01 = true;" class="capital">
+                    <ion-list ng-init="medical_assessment.patient_id=$parent.patientID">
                         <ion-checkbox ng-model="medical_assessment.physical_symptoms.anorexia" value="true">
                             <label class="item item-input item-stacked-label">
                                 <span class="input-label">Anorexia</span>
