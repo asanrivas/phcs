@@ -3,7 +3,7 @@
         <div id="profile-bg"></div>
         <div id="content">
             <div id="profile-info">
-                <img id="profile-image" ng-src="http://api.randomuser.me/portraits/med/women/{{patient.PATIENT_ID}}.jpg">
+                <img id="profile-image" ng-src="{{make_profile_pic($parent.upload_data[$parent.patientID].profile_images)}}">
                 <h3 id="profile-name" class="capital">{{patient.NAME}}</h3>
                 <span id="profile-description" class="capital">{{patient.AGE}} years old
                 </div>

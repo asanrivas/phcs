@@ -10,6 +10,9 @@
             <div class="col col-25" style="" ng-repeat="item in $parent.upload_data[$parent.patientID].PRO_PATIENT_GALLERY" ng-click="previewImage(item.filename)">
                 <img ng-src="{{item.filename?item.filename:'https://placehold.it/150x150'}}" width="100%"/>
             </div>
+            <div class="col col-25" style="" ng-repeat="item in db_gallery" ng-click="previewImage(item.fullname)">
+                <img ng-src="{{item.fullname?item.fullname:'https://placehold.it/150x150'}}" width="100%"/>
+            </div>
         </div>
     </ion-content>
 </ion-view>

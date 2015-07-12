@@ -1,6 +1,17 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $localForage) {
+    $scope.profile_images = null;
+
+    $scope.make_profile_pic = function(img){
+        if(img)
+            return cordova.file.externalDataDirectory+img;
+        else {
+            return $scope.profile_images = 'img/dummy-profile-pic.png';
+        }
+    }
+
+
 })
 .controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading, $ionicPopup, UploadData) {
     //$scope.signIn
@@ -52,7 +63,7 @@ angular.module('starter.controllers', [])
                 send_data = data;
             }
 
-            for (var i = 0; Array.isArray(send_data) && i < send_data.length; i++) {
+            for (var i = 0; window.cordova && Array.isArray(send_data) && i < send_data.length; i++) {
                 // console.log(send_data[i].filename);
                 if(send_data[i] && send_data[i].PRO_PATIENT_GALLERY && Array.isArray(send_data[i].PRO_PATIENT_GALLERY))
                 {
@@ -81,7 +92,8 @@ angular.module('starter.controllers', [])
                             gallery[i].filename = gallery[i].IMAGE.substr(gallery[i].IMAGE.lastIndexOf('/') + 1);
 
                             //download for each picture;
-                            UploadData.download_gallery(gallery[i].filename);
+                            if(window.cordova)
+                                UploadData.download_gallery(gallery[i].filename);
                         }
                     }
 
@@ -142,6 +154,19 @@ angular.module('starter.controllers', [])
 
     $scope.patient_gallery = {};
 
+    $scope.db_gallery = [];
+    $localForage.getItem('PRO_PATIENT_GALLERY').then(function(data){
+        if(!data) return;
+        for (var i = 0; i < data.length; i++) {
+            if(!data[i]) return;
+            if(data[i].PATIENT_ID == $stateParams.patientID && data[i].filename)
+            {
+                $scope.db_gallery.push(angular.extend({fullname: cordova.file.externalDataDirectory+data[i].filename}, data[i]));
+            }
+
+        }
+    });
+
     $scope.savePhoto = function() {
         // UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
         //     $scope.closeModal();
@@ -149,7 +174,7 @@ angular.module('starter.controllers', [])
         //
         $scope.patient_gallery.patient_id = $stateParams.patientID;
         $scope.patient_gallery.image = $scope.filename;
-        $scope.patient_gallery.filename = $scope.photoURL;
+        $scope.patient_gallery.filename = $scope.photoURL;//'img/ionic.png';//
 
         // if(!$scope.$parent.upload_data[$scope.$parent.patientID])
         //     $scope.$parent.upload_data[$scope.$parent.patientID] = {};
@@ -157,9 +182,28 @@ angular.module('starter.controllers', [])
         //     $scope.$parent.upload_data[$scope.$parent.patientID].PRO_PATIENT_GALLERY = [];
         //
         // $scope.$parent.upload_data[$scope.$parent.patientID].PRO_PATIENT_GALLERY.push($scope.patient_gallery);
-        UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
-            $scope.$parent.reload_upload_data();
-            $scope.closeModal();
+        UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(data){
+            console.log(data);
+            var images = data[$scope.patientID].PRO_PATIENT_GALLERY;
+            var found_pic = false;
+            for (var i = images.length - 1; i >= 0; i--) {
+                if(images[i] && images[i].gallery_type_code == "5")
+                {
+                    found_pic = true;
+                    // $scope.$parent.upload_data[$scope.patientID]['profile_images'] = images[i].filename;
+                    UploadData.save_data_patient_id($stateParams.patientID, 'profile_images', images[i].image).then(function(){
+                        $scope.$parent.reload_upload_data();
+                        $scope.closeModal();
+                    });
+                    break;
+                }
+            }
+
+            if(!found_pic)
+            {
+                $scope.$parent.reload_upload_data();
+                $scope.closeModal();
+            }
         });
 
     };
