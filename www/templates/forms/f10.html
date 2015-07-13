@@ -64,7 +64,7 @@
 				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				
 				
-				<span class="input-label">Cardiovascular System</span>
+				<div class="item item-divider">Cardiovascular System</div>
 				
 				<label class="item item-input item-select">
 				
@@ -139,7 +139,7 @@
 				</div>
 				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				
-				<span class="input-label">Temperature</span>
+				<div class="item item-divider">Temperature</div>
 						<ion-list ng-init="general_examination.patient_id=$parent.patientID">
 						<ion-checkbox ng-model="data.f07" disabled="true">C|BP</ion-checkbox>
 						<ion-checkbox ng-model="data.f08" disabled="true">mmHg| Pulse</ion-checkbox>
@@ -151,14 +151,9 @@
 						
 						
 				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
+						<label class="item item-input item-stacked-label">
 						<span class="input-label">Remarks</span>
-				<label class="item item-input item-stacked-label">
-						<input type="text" placeholder="Remarks" ng-model="general_examination.remarks">
-				</label>
-				</div>
 				
-<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-		<label class="item item-input item-stacked-label">
 						<input type="text" placeholder="(sp02, RBS, etc)" ng-model="general_examination.remarks">
 				</label>
   
