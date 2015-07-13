@@ -6,11 +6,19 @@ angular.module('starter.controllers', [])
     $scope.make_profile_pic = function(img){
         if(img)
             return cordova.file.externalDataDirectory+img;
+        else if($scope.$parent.patient.PROFILE_IMAGE)
+            return cordova.file.externalDataDirectory+$scope.$parent.patient.PROFILE_IMAGE;
         else {
             return $scope.profile_images = 'img/dummy-profile-pic.png';
         }
     }
 
+    $scope.open_loc = function(dest){
+        var url = "geo:?q="  + dest +"&z=14";
+        console.log(url);
+        //window.location.href = url;
+        cordova.InAppBrowser.open(url, "_system");
+    }
 
 })
 .controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading, $ionicPopup, UploadData) {
@@ -255,6 +263,7 @@ angular.module('starter.controllers', [])
 })
 .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
+    $scope.patient = [];
     $localForage.getItem('patients').then(function(dataf){
         $scope.patients = dataf;
         $scope.patient = $scope.patients[parseInt($stateParams.patientID)];
@@ -530,16 +539,16 @@ angular.module('starter.controllers', [])
         handdrawing.openDraw('www/img/f10.png');
     };
 
-    $scope.social_assessment = {};
+    $scope.general_examination = {};
 
     $localForage.getItem('upload_data').then(function(data){
-        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_SOCIAL_ASSESSMENT )
-            $scope.social_assessment = data[$stateParams.patientID].V_SOCIAL_ASSESSMENT;
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION )
+            $scope.general_examination = data[$stateParams.patientID].V_GENERAL_EXAMINATION;
     });
 
     $scope.saveAndNext = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function(){
-            $state.go('tab.f10');
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function(){
+            $state.go('tab.f11');
         });
     }
 })

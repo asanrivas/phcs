@@ -5,7 +5,7 @@
       
         </div>
 		
-		<div class="list">
+		<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-select">
 					<div class="input-label">
 						General condition
@@ -17,13 +17,10 @@
 							<option>Poor</option>
 						</select>
 						</label>
+			</div>
 				
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.general_condition">
-				</label>
 						
-				<br>
+			<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-select">
 					<div class="input-label">
 						Hydration
@@ -35,14 +32,9 @@
 							<option>Savere</option>
 						</select>
 				</label>
-
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.hydration">
-				</label>
 				
-				
-				<br>
+				</div>
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 						<label class="item item-input item-select">
 					<div class="input-label">
 						Skin
@@ -59,24 +51,17 @@
 							<option>Peterchiae</option>
 						</select>
 				</label>
-				
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.skin">
-				</label>
-				
-				<br>
+				</div>
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Mouth</span>
 						<input type="text" placeholder="Mouth" ng-model="general_examination.mouth">
 				</label>
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.mouth">
-				</label>
+				</div>
 				
-				<br>
+				
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				
 				
 				<span class="input-label">Cardiovascular System</span>
@@ -112,8 +97,9 @@
 						</select>
 				</label>
 				
-				<br>
+				</div>
 				
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-select">
 				
 					<div class="input-label">
@@ -125,60 +111,53 @@
 						</select>
 				</label>
 				
-				<br>
+				</div>
 				
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">PR</span>
 						<input type="text" placeholder="PR" ng-model="general_examination.pr">
 				</label>
 				
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.pr">
-				</label>
+				</div>
 				
-				<br>
-				
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">PV</span>
 						<input type="text" placeholder="PV" ng-model="general_examination.pv">
 				</label>
 				
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.pv">
-				</label>
 				
-				<br>
+				</div>
 				
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Vital signs</span>
 						<input type="text" placeholder="Vital signs" ng-model="general_examination.vital_sign">
 				</label>
 				
-				<label class="item item-input item-stacked-label">
-				<span class="input-label">Not included in proposal</span>
-						<input type="text" placeholder="Not included in proposal" ng-model="general_examination.vital_sign">
-				</label>
+				</div>
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				
-				<br>
 				<span class="input-label">Temperature</span>
-						<ion-list ng-init="data.f01 = true;" class="capital" ng-model="general_examination.temperature">
+						<ion-list ng-init="general_examination.patient_id=$parent.patientID">
 						<ion-checkbox ng-model="data.f07" disabled="true">C|BP</ion-checkbox>
 						<ion-checkbox ng-model="data.f08" disabled="true">mmHg| Pulse</ion-checkbox>
 						<ion-checkbox ng-model="data.f09" disabled="true">|Bpm</ion-checkbox>
 						<ion-checkbox ng-model="data.f10" disabled="true">|RR </ion-checkbox>
 						<ion-checkbox ng-model="data.f11" disabled="true">/min</ion-checkbox>
 						</ion-list>
+						</div>
 						
-						<br>
+						
+				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 						<span class="input-label">Remarks</span>
 				<label class="item item-input item-stacked-label">
 						<input type="text" placeholder="Remarks" ng-model="general_examination.remarks">
 				</label>
+				</div>
 				
-				
-
+<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 		<label class="item item-input item-stacked-label">
 						<input type="text" placeholder="(sp02, RBS, etc)" ng-model="general_examination.remarks">
 				</label>
@@ -187,7 +166,7 @@
   <div class="col"><span class="input-label"></span></div>
 </div>
 <div>
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f11">Save and Next</a>
+				<a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
 			</div>
 
 	</ion-content>
