@@ -4,9 +4,9 @@ angular.module('starter.controllers', [])
     $scope.profile_images = null;
 
     $scope.make_profile_pic = function(img){
-        if(img)
+        if(window.cordova && img)
             return cordova.file.externalDataDirectory+img;
-        else if($scope.$parent.patient.PROFILE_IMAGE)
+        else if(window.cordova && $scope.$parent.patient.PROFILE_IMAGE)
             return cordova.file.externalDataDirectory+$scope.$parent.patient.PROFILE_IMAGE;
         else {
             return $scope.profile_images = 'img/dummy-profile-pic.png';
@@ -337,7 +337,7 @@ angular.module('starter.controllers', [])
     });
 
     $scope.make_profile_pic = function(img){
-        if(img)
+        if(window.cordova && img)
             return cordova.file.externalDataDirectory+img;
         else {
             return $scope.profile_images = 'img/dummy-profile-pic.png';
