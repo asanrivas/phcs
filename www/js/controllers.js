@@ -318,7 +318,16 @@ angular.module('starter.controllers', [])
         // Execute action
     });
 })
-
+.controller('FormFirstVisitCtrl', function($scope, $stateParams, $localForage, $ionicModal) {
+    $scope.patientID = $stateParams.patientID;
+    $scope.patient = [];
+    $localForage.getItem('patients').then(function(dataf){
+        $scope.patients = dataf;
+        $scope.patient = $scope.patients[parseInt($stateParams.patientID)];
+    });
+    $scope.upload_data = [];
+    $localForage.bind($scope, 'upload_data');
+})
 .controller('PatientCtrl', function($scope, $http, $localForage) {
 
     $localForage.getItem('patients').then(function(dataf){
