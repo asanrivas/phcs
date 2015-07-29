@@ -523,7 +523,7 @@ angular.module('starter.controllers', [])
         var img = $scope.medical_assessment.body_diagram;
         if(img.startsWith('img'))
             img = 'www/'+img;
-        handdrawing.openDraw($scope.medical_assessment.body_diagram, function(data){
+        handdrawing.openDraw(img, function(data){
             console.log(data);
             if(data)
             {

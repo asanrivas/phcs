@@ -93,7 +93,7 @@
                         Last visit: <span class="item-note">27/04/2015</span>
                     </div>
                     <div class="item" ng-repeat="nurse in nurse_visit | filter:{PATIENT_ID:$parent.patientID}">
-                        {{$index+1}}. Visit by <strong>{{nurse.NAME}}</strong> on {{nurse.DATE_FIRST_VISIT}}
+                        {{$index+1}}. Visit by <strong>{{nurse.NAME}}</strong> on {{nurse.DATE}} {{nurse.TIME}}
                     </div>
                 </div>
             </div>
