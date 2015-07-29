@@ -1,0 +1,185 @@
+<ion-view view-title="EOLCP - Comfort Measures">
+    <ion-content class="padding">
+        <div class="list card">
+           <div class="item item-divider">COMFORT MEASURES</div>
+        </div>
+
+        <div class="list card" ng-init="eolcp_comfort_measures.patient_id=$parent.patientID">
+            <div class="item item-divider">Goals</div>
+            <div class="item item-body">
+                <div>1. Current medication assessed and non-essential medications discontinued</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Appropriate oral drugs converted to subcutaneous route and syringe driver commenced if appropriate.</div>
+                    <select ng-model="eolcp_comfort_measures.goal_1">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+            <div class="item item-body">
+                <div>2. PRN subcutaneous medication written up for list below</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Symptoms</div>
+                    <div class="input-label" style="margin-left:25px">|</div>
+                    <div class="input-label" style="margin-left:25px">Classification</div>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Pain</div>
+                    <div class="input-label" style="margin-left:25px">|</div>
+                    <div class="input-label" style="margin-left:25px">Analgesic</div>
+                    <select ng-model="eolcp_comfort_measures.pain_analgesia">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Nausea & Vomiting</div>
+                    <div class="input-label" style="margin-left:25px">|</div>
+                    <div class="input-label" style="margin-left:25px">Anti-emegic</div>
+                    <select ng-model="eolcp_comfort_measures.nausea_anti_emetic">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Agitation</div>
+                    <div class="input-label" style="margin-left:25px">|</div>
+                    <div class="input-label" style="margin-left:25px">Sedative</div>
+                    <select ng-model="eolcp_comfort_measures.agitation_sedative">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Respiratory Tract Secretions</div>
+                    <div class="input-label" style="margin-left:25px">|</div>
+                    <div class="input-label" style="margin-left:25px">Anticholinergic</div>
+                    <select ng-model="eolcp_comfort_measures.respiratory_anticholinergic">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Breathlessness</div>
+                    <div class="input-label" style="margin-left:25px">|</div>
+                    <div class="input-label" style="margin-left:25px">Opioid</div>
+                    <select ng-model="eolcp_comfort_measures.breathlessness_opioid">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+            <div class="item item-body">
+                <div>3. Decision to discontinue inappropriate nursing interventions taken and informed family</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Taking vital signs</div>
+                    <select ng-model="eolcp_comfort_measures.vital_signs">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Routine turning to prevent bed sores (turn now only for comfort)</div>
+                    <select ng-model="eolcp_comfort_measures.routine">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Wound care</div>
+                    <select ng-model="eolcp_comfort_measures.wound_care">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+            <div class="item item-divider">1. Pain</div>
+            <div class="item item-body">
+                <div>Goal: Patient is pain free</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Verbalise by patient if conscious</div>
+                    <select ng-model="eolcp_comfort_measures.pain_verbalise">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Pain free on movement (move only for comfort)</div>
+                    <select ng-model="eolcp_comfort_measures.pain_free">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Appears peaceful</div>
+                    <select ng-model="eolcp_comfort_measures.pain_peaceful">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">2. Agitation</div>
+            <div class="item item-body">
+                <div>Goal: Patient is not agitated</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Patient does not display signs of delirium, terminal anguish, restlessness (thrashing, plucking, twitching)</div>
+                    <select ng-model="eolcp_comfort_measures.agitation_display">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Exclude retention of urine as cause</div>
+                    <select ng-model="eolcp_comfort_measures.agitation_retention">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">3. Respiratory Tract Secretions</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Patient's breathing is not made difficult by secretions</div>
+                    <select ng-model="eolcp_comfort_measures.respiratory_goal">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">4. Nausea & Vomiting</div>
+            <div class="item item-body">
+                <div>Goal: Patient does not feel nauseous or vomits</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Patient verbalises if conscious</div>
+                    <select ng-model="eolcp_comfort_measures.nause_verbalises">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">5. Breathlessness</div>
+            <div class="item item-body">
+                <div>Goal: Patient does not feel breathless</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Patient verbalises if conscious</div>
+                    <select ng-model="eolcp_comfort_measures.breathlessness_verbalises">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+
+        </div>
+
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+        </div>
+
+    </ion-content>
+</ion-view>

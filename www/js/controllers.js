@@ -107,6 +107,10 @@ angular.module('starter.controllers', [])
 
                     $localForage.setItem("PRO_PATIENT_GALLERY", gallery);
                     $localForage.setItem("V_FIRST_VISIT", data.first_visit);
+                    // $localForage.setItem("V_PMT_EOLCP", data.first_visit);
+                    // $localForage.setItem("V_PMT_EOLCP_IPA", data.first_visit);
+                    // $localForage.setItem("V_EOLCP_COMFORT_MEASURES", data.first_visit);
+                    // $localForage.setItem("V_EOLCP_TREATMENTS_PROCEDURES", data.first_visit);
                 }
             }).error(function(error, status, headers, config){
                 $scope.error_message = "Unable to connect the server.";
@@ -627,7 +631,6 @@ angular.module('starter.controllers', [])
     });
 
     $scope.saveAndNext = function(){
-        console.log("eolcp: "+$stateParams.patientID);
         UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP', $scope.eolcp_criteria).then(function(){
             $state.go('tab.e02');
         });

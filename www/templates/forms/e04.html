@@ -1,0 +1,268 @@
+<ion-view view-title="EOLCP - Treatments / Procedures (T/P)">
+    <ion-content class="padding">
+        <div class="list card">
+           <div class="item item-divider">TREATMENTS / PROCEDURES (T/P)</div>
+        </div>
+
+        <div class="list card" ng-init="eolcp_treatments_procedures.patient_id=$parent.patientID">
+            <div class="item item-divider">1. Mouth Care</div>
+            <div class="item item-body">
+                <div>Goal: Mouth is moist and clean</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Mouth care taught by carers and assessed each visit for effectiveness</div>
+                    <select ng-model="eolcp_treatments_procedures.mouth_care">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">2. Micturition Difficulties</div>
+            <div class="item item-body">
+                <div>Goal: Patient is comfortable</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Urinary catherer if in retention</div>
+                    <select ng-model="eolcp_treatments_procedures.urinary_catherer">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Urinary catherer or pads, if general weakness creates incontinence</div>
+                    <select ng-model="eolcp_treatments_procedures.urinary_catherer_or_pads">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">3. Bowel Care</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Patient is comfortable</div>
+                    <select ng-model="eolcp_treatments_procedures.bowel_care">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">4. Medication</div>
+            <div class="item item-body">
+                <div>Goal: All appropriate syringe driver medication given safely and accurately via sub-cut</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Family knows how to contact nurse if problems</div>
+                    <select ng-model="eolcp_treatments_procedures.medication_family_knows">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Other medications given safely and accurately by carers</div>
+                    <select ng-model="eolcp_treatments_procedures.medication_other">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">5. Eye Care</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Eyes to be kept moist & clean</div>
+                    <select ng-model="eolcp_treatments_procedures.medication_eye_care">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">6. Mobility/Pressure Area Care</div>
+            <div class="item item-body">
+                <div>Goal: Patient is comfortable and in safe environment</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Patient is moved for comfort</div>
+                    <select ng-model="eolcp_treatments_procedures.mobility_moved_comfort">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">7. Personal hygiene</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Patient's personal hygiene needs met</div>
+                    <select ng-model="eolcp_treatments_procedures.personal_hygiene">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">8. Psychological Insight</div>
+            <div class="item item-divider">
+                <div>Patient</div>
+            </div>
+            <div class="item item-body">
+                <div>Goal: Patient becomes aware of the situations, as appropriate</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Patient is informed of procedure</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_patient_informed">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Touch, verbal communication is continued</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_touch_verbal">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">
+                <div>Family/Other</div>
+            </div>
+            <div class="item item-body">
+                <div>Goal: Family/other are prepared for the patient's imminent death</div>
+            </div>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Understand care of the patient</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_family_understand">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Recognition of the patient dying</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_family_recognition">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Inform of measures taken to maintain patient's comfort</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_family_inform">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">9. Care of the Family/Others</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: The needs of those attending the patient are accommodated</div>
+                    <select ng-model="eolcp_treatments_procedures.care_family_others">
+                        <option>Achieved</option>
+                        <option>Not Achieved</option>
+                        <option selected>Not Applicable</option>
+                    </select>
+                </label>
+            <div class="item item-divider">10. Psychological Insight</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Insight into condition identified</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_condition">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <div class="item item-body" style="margin-left:25px">
+                    <div>Aware of seriousness condition:</div>
+                </div>
+                <label class="item item-input item-select" >
+                    <div class="input-label" style="margin-left:50px">- Patient</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_patient_aware">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select" >
+                    <div class="input-label" style="margin-left:50px">- Family/Other</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_family_aware">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <div class="item item-body" style="margin-left:25px">
+                    <div>Unanswered questions addressed:</div>
+                </div>
+                <label class="item item-input item-select" >
+                    <div class="input-label" style="margin-left:50px">- Patient</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_patient_unanswered">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select" >
+                    <div class="input-label" style="margin-left:50px">- Family/Other</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_family_unanswered">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Family given PPCS leaflet</div>
+                    <select ng-model="eolcp_treatments_procedures.psychological_family_given">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+            <div class="item item-divider">Remarks:</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Remarks" ng-model="eolcp_treatments_procedures.remarks">
+                </label>
+            <div class="item item-divider">11. Religious Support</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Religious needs identified and discussed with patient/family/other</div>
+                    <select ng-model="eolcp_treatments_procedures.religious_needs">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label" style="margin-left:25px">Formal religion identified</div>
+                    <select ng-model="eolcp_treatments_procedures.religion_identified">
+                        <option>Yes</option>
+                        <option selected>NA</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date of assessment was made</span>
+                        <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.religious_date">
+                </label>
+                <div class="item item-divider">Remarks:</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Remarks" ng-model="eolcp_treatments_procedures.religious_remarks">
+                </label>
+            <div class="item item-divider">12. Summary</div>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Plan of care explained & discussed with </div>
+                    <select ng-model="eolcp_treatments_procedures.religious_needs">
+                        <option>Patient</option>
+                        <option>Family</option>
+                        <option selected>Other</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">Goal: Family/other express understanding of plan of care</div>
+                    <select ng-model="eolcp_treatments_procedures.religious_needs">
+                        <option>Yes</option>
+                        <option selected>No</option>
+                    </select>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date of assessment was made</span>
+                        <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.summary_date">
+                </label>
+            <div class="item item-divider">Remarks:</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Remarks" ng-model="eolcp_treatments_procedures.summary_remarks">
+                </label>
+
+        </div>
+            <div class="list">
+                <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+            </div>
+
+        </ion-content>
+    </ion-view>

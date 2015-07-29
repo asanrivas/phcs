@@ -1,0 +1,51 @@
+<ion-view view-title="F-07 – Criteria for EOLCP">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">CRITERIA FOR EOLCP</div>
+            <div class="item item-body">
+                <div>
+                    To activate EOLCP, patient must be presented with at least TWO of the following and in consultation of a doctor
+                </div>
+            </div>
+        </div>
+<!--
+        <div class="list card">
+            <div class="item item-divider">Initial reason for referral</div>
+                <ion-list ng-init="data.f01 = true;" class="capital">
+                    <ion-checkbox ng-model="initial_assessment.initial_reason.home_visit">Home visit</ion-checkbox>
+                    <ion-checkbox ng-model="initial_assessment.initial_reason.palliative_support">Palliative support</ion-checkbox>
+                    <ion-checkbox ng-model="initial_assessment.initial_reason.equipment_rental">Equipment rental</ion-checkbox>
+                    <ion-checkbox ng-model="initial_assessment.initial_reason.dressing">Dressing</ion-checkbox>
+                    <ion-checkbox ng-model="initial_assessment.initial_reason.others">Others</ion-checkbox>
+                </ion-list>
+        </div>
+-->
+        <div class="list card" ng-init="eolcp_criteria.patient_id=$parent.patientID">
+
+        <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="eolcp_criteria.criteria">
+            <ion-checkbox ng-model="eolcp_criteria.criteria.terminal_discharge_from_hospital">
+                Terminal discharge from hospital
+            </ion-checkbox>
+            <ion-checkbox ng-model="eolcp_criteria.criteria.terminal_condition_had_been_informed_by_doctor">
+                Terminal condition had been informed by doctor
+            </ion-checkbox>
+            <ion-checkbox ng-model="eolcp_criteria.criteria.irreversible_condition">
+                Irreversible condition
+            </ion-checkbox>
+            <ion-checkbox ng-model="eolcp_criteria.criteria.poor_conscious_level">
+                Poor conscious level
+            </ion-checkbox>
+            <ion-checkbox ng-model="eolcp_criteria.unable_to_take_orally__only_able_to_take_sips_of_fluid">
+                Unable to take orally/Only able to take sips of fluid
+            </ion-checkbox>
+            <ion-checkbox ng-model="eolcp_criteria.deteriorating_vital_signs">
+                Deteriorating vital signs
+            </ion-checkbox>
+<!--
+            <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/pmt">Sign and Save</a>
+-->
+            <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,127 @@
+<ion-view view-title="F-07 – EOLCP - Initial Assessment">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">INITIAL PATIENT ASSESSMENT</div>
+            <div class="item item-body">
+                <div>
+                    Physical Condition to be completed by a doctor or a nurse
+                </div>
+            </div>
+        </div>
+        <div class="list">
+            <div class="item item-divider">Condition</div>
+			<label class="item item-input item-select">
+				<div class="input-label">Unable to swallow</div>
+				<select ng-model="eolcp_initial_pain_assessment.unable">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Conscious</div>
+				<select ng-model="eolcp_initial_pain_assessment.conscious">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Confused</div>
+				<select ng-model="eolcp_initial_pain_assessment.confused">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Restless</div>
+				<select ng-model="eolcp_initial_pain_assessment.restless">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Breathless</div>
+				<select ng-model="eolcp_initial_pain_assessment.breathless">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">* Respiratory tract secretion / Death Rattle</div>
+				<select ng-model="eolcp_initial_pain_assessment.respiratory">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Peripheral Cyanosis</div>
+				<select ng-model="eolcp_initial_pain_assessment.peripheral">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Nausea</div>
+				<select ng-model="eolcp_initial_pain_assessment.nausea">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Vomiting</div>
+				<select ng-model="eolcp_initial_pain_assessment.vomiting">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Distended Bladder</div>
+				<select ng-model="eolcp_initial_pain_assessment.distended">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">* Diarrhoea / Constipation</div>
+				<select ng-model="eolcp_initial_pain_assessment.diarrhoea">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Fever</div>
+				<select ng-model="eolcp_initial_pain_assessment.fever">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Pain</div>
+				<select ng-model="eolcp_initial_pain_assessment.pain">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Other</div>
+				<select ng-model="eolcp_initial_pain_assessment.others">
+					<option>Yes</option>
+					<option selected>No</option>
+				</select>
+			</label>
+            <label class="item item-input">
+                <span class="input-label">If other, please specify:</span>
+                <input type="text" ng-model="eolcp_initial_pain_assessment.others_specify">
+            </label>
+            <div class="item item-divider">
+                <div>
+                    ("Yes" requires action plan in MDT progress note)
+                </div>
+            </div>
+<!--
+            <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/pmt">Sign and Save</a>
+-->
+            <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>
