@@ -2,13 +2,13 @@
     <ion-content class="padding">
         <div class="list card">
             <div class="item item-divider">General Examination (cont.)</div>
- 
+
         </div>
         <div class="list">
 
 			<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">General Condition:</span>			
+					<span class="input-label">General Condition:</span>
 				</label>
 
 				<label class="item item-input item-select">
@@ -16,19 +16,19 @@
 						Cachexia:
 					</div>
 						<select ng-model="general_examination.cachexia">
-							<option>Yes</option>
-							<option>No</option>					
+							<option selected>Yes</option>
+							<option>No</option>
 						</select>
 				</label>
 
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Mouth:</span>			
+					<span class="input-label">Mouth:</span>
 				</label>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Hydration:</span>			
+					<span class="input-label">Hydration:</span>
 				</label>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Skin:</span>			
+					<span class="input-label">Skin:</span>
 				</label>
 
 				<label class="item item-input item-select">
@@ -36,8 +36,8 @@
 						Jaundice:
 					</div>
 						<select ng-model="general_examination.jaudice">
-							<option>Yes</option>
-							<option>No</option>					
+							<option selected>Yes</option>
+							<option>No</option>
 						</select>
 				</label>
 				<label class="item item-input item-stacked-label">
@@ -45,7 +45,7 @@
 				</label>
 
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Cardiovascular System:</span>			
+					<span class="input-label">Cardiovascular System:</span>
 				</label>
 
 				<label class="item item-input item-select">
@@ -54,7 +54,7 @@
 					</div>
 						<select ng-model="general_examination.pallor">
 							<option selected>Yes</option>
-							<option>No</option>					
+							<option>No</option>
 						</select>
 				</label>
 
@@ -64,7 +64,7 @@
 					</div>
 						<select ng-model="general_examination.cyanosis">
 							<option selected>Yes</option>
-							<option>No</option>					
+							<option>No</option>
 						</select>
 				</label>
 
@@ -74,7 +74,7 @@
 					</div>
 						<select ng-model="general_examination.clubbing">
 							<option selected>Yes</option>
-							<option>No</option>					
+							<option>No</option>
 						</select>
 				</label>
 
@@ -92,16 +92,6 @@
 				<label class="item item-input item-stacked-label">
 					<img src="img/f10_3.png">
 				</label>
-
-
-
-
-
-
-				
-				
-				
-
 				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f12">Save and Next</a>
 			</div>
 

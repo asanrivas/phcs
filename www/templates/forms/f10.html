@@ -2,166 +2,147 @@
     <ion-content class="padding">
         <div class="list card">
             <div class="item item-divider">General Examination</div>
-      
         </div>
-		
-		<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-select">
-					<div class="input-label">
-						General condition
-					</div>
-						<select ng-model="general_examination.general_condition">
-							<option selected>Good</option>
-							<option>Satisfactory</option>
-							<option>Fair</option>
-							<option>Poor</option>
-						</select>
-						</label>
-			</div>
-				
-						
-			<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-select">
-					<div class="input-label">
-						Hydration
-					</div>
-						<select ng-model="general_examination.hydration">
-							<option selected>Good</option>
-							<option>Mild dehydration</option>
-							<option>Modorate</option>
-							<option>Savere</option>
-						</select>
-				</label>
-				
-				</div>
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-						<label class="item item-input item-select">
-					<div class="input-label">
-						Skin
-					</div>
-						<select ng-model="general_examination.skin">
-							<option selected>Normal</option>
-							<option>Dry skin</option>
-							<option>Bruise</option>
-							<option>Redness</option>
-							
-							<option>Rash</option>
-							<option>Excoriation</option>
-							<option>Jaundice</option>
-							<option>Peterchiae</option>
-						</select>
-				</label>
-				</div>
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Mouth</span>
-						<input type="text" placeholder="Mouth" ng-model="general_examination.mouth">
-				</label>
-				</div>
-				
-				
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				
-				
-				<div class="item item-divider">Cardiovascular System</div>
-				
-				<label class="item item-input item-select">
-				
-					<div class="input-label">
-						Pallor  
-					</div>
-						<select ng-model="general_examination.pallor">
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				<label class="item item-input item-select">
-					<div class="input-label">
-						Cyanosis  
-					</div>
-						<select ng-model="general_examination.cyanosis">
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				<label class="item item-input item-select">
-					<div class="input-label">
-						Clubbing  
-					</div>
-						<select ng-model="general_examination.clubbing">
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				</div>
-				
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-select">
-				
-					<div class="input-label">
-						Cachexia  
-					</div>
-						<select ng-model="general_examination.cachexia">
-							<option>Yes</option>
-							<option selected>No</option>
-						</select>
-				</label>
-				
-				</div>
-				
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">PR</span>
-						<input type="text" placeholder="PR" ng-model="general_examination.pr">
-				</label>
-				
-				</div>
-				
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">PV</span>
-						<input type="text" placeholder="PV" ng-model="general_examination.pv">
-				</label>
-				
-				
-				</div>
-				
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Vital signs</span>
-						<input type="text" placeholder="Vital signs" ng-model="general_examination.vital_sign">
-				</label>
-				
-				</div>
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				
-				<div class="item item-divider">Temperature</div>
-						<ion-list ng-init="general_examination.patient_id=$parent.patientID">
-						<ion-checkbox ng-model="data.f07" disabled="true">C|BP</ion-checkbox>
-						<ion-checkbox ng-model="data.f08" disabled="true">mmHg| Pulse</ion-checkbox>
-						<ion-checkbox ng-model="data.f09" disabled="true">|Bpm</ion-checkbox>
-						<ion-checkbox ng-model="data.f10" disabled="true">|RR </ion-checkbox>
-						<ion-checkbox ng-model="data.f11" disabled="true">/min</ion-checkbox>
-						</ion-list>
-						</div>
-						
-						
-				<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-						<label class="item item-input item-stacked-label">
-						<span class="input-label">Remarks</span>
-				
-						<input type="text" placeholder="(sp02, RBS, etc)" ng-model="general_examination.remarks">
-				</label>
-  
-</div>
-  <div class="col"><span class="input-label"></span></div>
-</div>
-<div>
-				<a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
-			</div>
+        <div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    General condition
+                </div>
+                <select ng-model="general_examination.general_condition">
+                    <option selected>Good</option>
+                    <option>Satisfactory</option>
+                    <option>Fair</option>
+                    <option>Poor</option>
+                </select>
+            </label>
+        </div>
 
-	</ion-content>
+        <div class="list card">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Hydration
+                </div>
+                <select ng-model="general_examination.hydration">
+                    <option selected>Good</option>
+                    <option>Mild dehydration</option>
+                    <option>Modorate</option>
+                    <option>Savere</option>
+                </select>
+            </label>
+        </div>
+        <div class="list card">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Skin
+                </div>
+                <select ng-model="general_examination.skin">
+                    <option selected>Normal</option>
+                    <option>Dry skin</option>
+                    <option>Bruise</option>
+                    <option>Redness</option>
+                    <option>Rash</option>
+                    <option>Excoriation</option>
+                    <option>Jaundice</option>
+                    <option>Peterchiae</option>
+                </select>
+            </label>
+        </div>
+        <div class="list card">
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Mouth</span>
+                <input type="text" placeholder="Mouth" ng-model="general_examination.mouth">
+            </label>
+        </div>
+
+        <div class="list card">
+            <div class="item item-divider">Cardiovascular System</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Pallor
+                </div>
+                <select ng-model="general_examination.pallor">
+                    <option>Yes</option>
+                    <option selected>No</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Cyanosis
+                </div>
+                <select ng-model="general_examination.cyanosis">
+                    <option>Yes</option>
+                    <option selected>No</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Clubbing
+                </div>
+                <select ng-model="general_examination.clubbing">
+                    <option>Yes</option>
+                    <option selected>No</option>
+                </select>
+            </label>
+
+        </div>
+
+        <div class="list card">
+            <label class="item item-input item-select">
+
+                <div class="input-label">
+                    Cachexia
+                </div>
+                <select ng-model="general_examination.cachexia">
+                    <option>Yes</option>
+                    <option selected>No</option>
+                </select>
+            </label>
+
+        </div>
+
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">PR</span>
+                <input type="text" placeholder="PR" ng-model="general_examination.pr">
+            </label>
+
+        </div>
+
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">PV</span>
+                <input type="text" placeholder="PV" ng-model="general_examination.pv">
+            </label>
+        </div>
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Vital signs</span>
+                <input type="text" placeholder="Vital signs" ng-model="general_examination.vital_sign">
+            </label>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Temperature</div>
+            <ion-list>
+                <ion-checkbox ng-model="general_examination.temperature.mmHg_Pulse">C|BP</ion-checkbox>
+                <ion-checkbox ng-model="general_examination.temperature.mmHg">mmHg| Pulse</ion-checkbox>
+                <ion-checkbox ng-model="general_examination.temperature.Bpm">|Bpm</ion-checkbox>
+                <ion-checkbox ng-model="general_examination.temperature.RR">|RR </ion-checkbox>
+                <ion-checkbox ng-model="general_examination.temperature.min">/min</ion-checkbox>
+            </ion-list>
+        </div>
+
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Remarks</span>
+                <input type="text" placeholder="(sp02, RBS, etc)" ng-model="general_examination.remarks">
+            </label>
+        </div>
+        <br/></br/>
+    </ion-content>
+    <div class="bar bar-footer tabs bar-positive">
+        <a class="tab-item" ng-click="saveAndNext()">Save &amp; Next</a>
+    </div>
+</ion-view>
