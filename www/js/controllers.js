@@ -4,9 +4,9 @@ angular.module('starter.controllers', [])
     $scope.profile_images = null;
 
     $scope.make_profile_pic = function(img){
-        if(img)
+        if(window.cordova && img)
             return cordova.file.externalDataDirectory+img;
-        else if($scope.$parent.patient.PROFILE_IMAGE)
+        else if(window.cordova && $scope.$parent.patient.PROFILE_IMAGE)
             return cordova.file.externalDataDirectory+$scope.$parent.patient.PROFILE_IMAGE;
         else {
             return $scope.profile_images = 'img/dummy-profile-pic.png';
@@ -88,7 +88,7 @@ angular.module('starter.controllers', [])
                 if(data)
                 {
                     $scope.error_message = false;
-                    $localForage.clear();
+                    // $localForage.clear();
                     $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                     $localForage.setItem("pruser", data.pruser);
 
@@ -318,7 +318,16 @@ angular.module('starter.controllers', [])
         // Execute action
     });
 })
-
+.controller('FormFirstVisitCtrl', function($scope, $stateParams, $localForage, $ionicModal) {
+    $scope.patientID = $stateParams.patientID;
+    $scope.patient = [];
+    $localForage.getItem('patients').then(function(dataf){
+        $scope.patients = dataf;
+        $scope.patient = $scope.patients[parseInt($stateParams.patientID)];
+    });
+    $scope.upload_data = [];
+    $localForage.bind($scope, 'upload_data');
+})
 .controller('PatientCtrl', function($scope, $http, $localForage) {
 
     $localForage.getItem('patients').then(function(dataf){
@@ -337,7 +346,7 @@ angular.module('starter.controllers', [])
     });
 
     $scope.make_profile_pic = function(img){
-        if(img)
+        if(window.cordova && img)
             return cordova.file.externalDataDirectory+img;
         else {
             return $scope.profile_images = 'img/dummy-profile-pic.png';
@@ -400,7 +409,7 @@ angular.module('starter.controllers', [])
     else if($localForage.getItem('V_FIRST_VISIT'))
         source = $localForage.getItem('V_FIRST_VISIT')
     for (var i = 0; i < source.length; i++) {
-        if(source[i].category_form==1)
+        if(window.cordova && source[i].category_form==1)
             $scope.lastPhoto = cordova.file.externalDataDirectory+source[i].image_form;
     }
 
@@ -419,7 +428,7 @@ angular.module('starter.controllers', [])
 
         UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
             UploadData.append_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function(){
-                $state.go('tab.firsttime');
+                $state.go('formfirstvisit.f05');
                 $scope.$parent.reload_upload_data();
             });
         });
@@ -443,7 +452,7 @@ angular.module('starter.controllers', [])
     {
         var id=$scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT;
         for (var i = 0; i < id.length; i++) {
-            if(id[i].category_form==2)
+            if(window.cordova && id[i].category_form==2)
                 $scope.lastPhoto = cordova.file.externalDataDirectory+id[i].image_form;
         }
     }
@@ -463,7 +472,7 @@ angular.module('starter.controllers', [])
 
         UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
             UploadData.append_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function(){
-                $state.go('tab.firsttime');
+                $state.go('formfirstvisit.f07');
                 $scope.$parent.reload_upload_data();
             });
         });
@@ -484,7 +493,7 @@ angular.module('starter.controllers', [])
 
     $scope.saveAndNext = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_INITIAL_ASSESSMENT', $scope.initial_assessment).then(function(){
-            $state.go('tab.f08');
+            $state.go('formfirstvisit.f08');
         });
     }
 })
@@ -512,7 +521,7 @@ angular.module('starter.controllers', [])
 
     $scope.saveAndNext = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function(){
-            $state.go('tab.f09');
+            $state.go('formfirstvisit.f09');
         });
     }
 })
@@ -530,7 +539,7 @@ angular.module('starter.controllers', [])
 
     $scope.saveAndNext = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function(){
-            $state.go('tab.f10');
+            $state.go('formfirstvisit.f10');
         });
     }
 })
@@ -548,6 +557,62 @@ angular.module('starter.controllers', [])
 
     $scope.saveAndNext = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function(){
+            $state.go('formfirstvisit.f11');
+        });
+    }
+})
+.controller('f11Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.editImage = function(img){
+        handdrawing.openDraw(img, function(data){
+            console.log(data);
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.medical_assessment.body_diagram = 'file://'+data;
+                });
+            }
+        });
+    };
+
+    $scope.general_examination = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION )
+            $scope.general_examination = data[$stateParams.patientID].V_GENERAL_EXAMINATION;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function(){
+            $state.go('formfirstvisit.f12');
+        });
+    }
+})
+.controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.general_examination = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION )
+            $scope.general_examination = data[$stateParams.patientID].V_GENERAL_EXAMINATION;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.general_examination).then(function(){
+            $state.go('tab.f11');
+        });
+    }
+})
+.controller('f14Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.general_examination = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION )
+            $scope.general_examination = data[$stateParams.patientID].V_GENERAL_EXAMINATION;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.general_examination).then(function(){
             $state.go('tab.f11');
         });
     }

@@ -84,17 +84,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
-    .state('tab.f04', { url: '/f04', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f04.html', controller: 'f04Controller'}}})
-    .state('tab.f05', { url: '/f05', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f05.html', controller: 'f05Controller'}}})
-    .state('tab.f07', { url: '/f07', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f07.html', controller: 'f07Controller'}}})
-    .state('tab.f08', { url: '/f08', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f08.html', controller: 'f08Controller'}}})
-    .state('tab.f09', { url: '/f09', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f09.html', controller: 'f09Controller'}}})
-    .state('tab.f10', { url: '/f10', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f10.html', controller: 'f10Controller'}}})
-    .state('tab.f11', { url: '/f11', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f11.html'}}})
-    .state('tab.f12', { url: '/f12', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f12.html'}}})
-    .state('tab.f13', { url: '/f13', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f13.html'}}})
-    .state('tab.f14', { url: '/f14', views: { 'tab-firsttime': { templateUrl: 'templates/forms/f14.html'}}})
-
+    .state('formfirstvisit', {
+        url: "/formsfirstvisit/:patientID",
+        abstract: true,
+        templateUrl: "templates/tab-firsttime-forms.html",
+        controller: "FormFirstVisitCtrl"
+    })
+    .state('formfirstvisit.f04', { url: '/f04', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f04.html', controller: 'f04Controller'}}})
+    .state('formfirstvisit.f05', { url: '/f05', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f05.html', controller: 'f05Controller'}}})
+    .state('formfirstvisit.f07', { url: '/f07', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f07.html', controller: 'f07Controller'}}})
+    .state('formfirstvisit.f08', { url: '/f08', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f08.html', controller: 'f08Controller'}}})
+    .state('formfirstvisit.f09', { url: '/f09', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f09.html', controller: 'f09Controller'}}})
+    .state('formfirstvisit.f10', { url: '/f10', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f10.html', controller: 'f10Controller'}}})
+    .state('formfirstvisit.f11', { url: '/f11', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f11.html', controller: 'f11Controller'}}})
+    .state('formfirstvisit.f13', { url: '/f13', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f13.html', controller: 'f13Controller'}}})
+    .state('formfirstvisit.f14', { url: '/f14', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f14.html', controller: 'f14Controller'}}})
 
     .state('tab.continous', {
         url: '/continous',

@@ -1,0 +1,27 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+          <a class="button button-clear" href="#/tab/{{patientID}}/firsttime">Cancel</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-side-menu-content>
+        <ion-nav-view name="sub-firstvisit"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" expose-aside-when="large">
+        <ion-content>
+            <ion-list>
+                <ion-item  menu-close ui-sref="formfirstvisit.f04">Admission Release &amp; Indeminity Form</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f05">Photographic/media consent</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f07">Initial Assessment Forms</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f08">Medical Assessment</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f09">Social Assessment</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f10">General Examination</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f11">General Examination (cont.)</ion-item>
+                <ion-item  menu-close ui-sref="formfirstvisit.f13">Current Medication Chart</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

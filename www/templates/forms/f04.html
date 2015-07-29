@@ -1,7 +1,4 @@
-<ion-view view-title="Take Photo">
-    <ion-nav-buttons side="right">
-      <button class="button button-clear" ng-click="save()">Save</button>
-    </ion-nav-buttons>
+<ion-view view-title="Admission Release &amp; Indeminity">
     <ion-content>
         <div class="row">
             <button class="button button-large button-block button-calm" ng-click="getPhoto()"><i class="icon ion-camera"></i> Capture Consent of Admission Release &amp; Indemity Form</button>
@@ -10,4 +7,7 @@
             <img ng-src="{{lastPhoto}}" style="max-width: 100%">
         </div>
     </ion-content>
+    <div class="bar bar-footer tabs bar-positive">
+      <a class="tab-item" ng-click="save()">Save &amp; Next</a>
+    </div>
 </ion-view>
