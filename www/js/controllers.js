@@ -19,6 +19,10 @@ angular.module('starter.controllers', [])
         //window.location.href = url;
         cordova.InAppBrowser.open(url, "_system");
     }
+    $scope.nurse_visit = [];
+    $localForage.getItem('nurse_visit').then(function(data){
+        $scope.nurse_visit = data;
+    });
 
 })
 .controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading, $ionicPopup, UploadData) {
@@ -91,6 +95,7 @@ angular.module('starter.controllers', [])
                     // $localForage.clear();
                     $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                     $localForage.setItem("pruser", data.pruser);
+                    $localForage.setItem("nurse_visit", data.nurse_visit);
 
                     var gallery = data.gallery;
                     for (var i = 0; gallery && i < gallery.length; i++)
@@ -390,8 +395,16 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('f10Controller', function($scope, $stateParams) {
-    $scope.editImage = function(){
-        handdrawing.openDraw('www/img/f10.png');
+    $scope.editImage = function(img){
+        handdrawing.openDraw(img, function(data){
+            console.log(data);
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.medical_assessment.body_diagram = 'file://'+data;
+                });
+            }
+        });
     };
 })
 .controller('f04Controller', function($scope, $stateParams, $state, UploadData, Camera, $localForage) {
@@ -503,8 +516,14 @@ angular.module('starter.controllers', [])
 })
 .controller('f08Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
 
-    $scope.editImage = function(img){
-        handdrawing.openDraw(img, function(data){
+    $scope.medical_assessment = {};
+    $scope.medical_assessment.body_diagram = 'img/f08.png';
+
+    $scope.editImage = function(){
+        var img = $scope.medical_assessment.body_diagram;
+        if(img.startsWith('img'))
+            img = 'www/'+img;
+        handdrawing.openDraw($scope.medical_assessment.body_diagram, function(data){
             console.log(data);
             if(data)
             {
@@ -514,9 +533,6 @@ angular.module('starter.controllers', [])
             }
         });
     };
-
-    $scope.medical_assessment = {};
-    $scope.medical_assessment.body_diagram = null;
 
     $localForage.getItem('upload_data').then(function(data){
         if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_MEDICAL_ASSESSMENT )
@@ -530,8 +546,16 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
-    $scope.editImage = function(){
-        handdrawing.openDraw('www/img/f10.png');
+    $scope.editImage = function(img){
+        handdrawing.openDraw(img, function(data){
+            console.log(data);
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.medical_assessment.body_diagram = 'file://'+data;
+                });
+            }
+        });
     };
 
     $scope.social_assessment = {};
@@ -548,8 +572,16 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('f10Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
-    $scope.editImage = function(){
-        handdrawing.openDraw('www/img/f10.png');
+    $scope.editImage = function(img){
+        handdrawing.openDraw(img, function(data){
+            console.log(data);
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.medical_assessment.body_diagram = 'file://'+data;
+                });
+            }
+        });
     };
 
     $scope.general_examination = {};
