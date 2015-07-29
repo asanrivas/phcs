@@ -552,6 +552,73 @@ angular.module('starter.controllers', [])
         });
     }
 })
+.controller('e01Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.eolcp_criteria = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_EOLCP )
+            $scope.eolcp_criteria = data[$stateParams.patientID].V_PMT_EOLCP;
+    });
+
+    $scope.saveAndNext = function(){
+        console.log("eolcp: "+$stateParams.patientID);
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP', $scope.eolcp_criteria).then(function(){
+            $state.go('tab.e02');
+        });
+    }
+})
+
+.controller('e02Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.eolcp_initial_pain_assessment = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_EOLCP_IPA )
+            $scope.eolcp_initial_pain_assessment = data[$stateParams.patientID].V_PMT_EOLCP_IPA;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP_IPA', $scope.eolcp_initial_pain_assessment).then(function(){
+            $state.go('tab.e03');
+        });
+    }
+})
+
+.controller('e03Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.eolcp_comfort_measures = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_EOLCP_COMFORT_MEASURES )
+            $scope.eolcp_comfort_measures = data[$stateParams.patientID].V_EOLCP_COMFORT_MEASURES;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_EOLCP_COMFORT_MEASURES', $scope.eolcp_comfort_measures).then(function(){
+            $state.go('tab.e04');
+        });
+    }
+
+})
+
+
+.controller('e04Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.eolcp_treatments_procedures = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_EOLCP_TREATMENTS_PROCEDURES )
+            $scope.eolcp_treatments_procedures = data[$stateParams.patientID].V_EOLCP_TREATMENTS_PROCEDURES;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_EOLCP_TREATMENTS_PROCEDURES', $scope.eolcp_treatments_procedures).then(function(){
+            $state.go('tab.e05');
+        });
+    }
+
+})
 
 .controller('AccountCtrl', function($scope) {
     $scope.settings = {

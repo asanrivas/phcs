@@ -150,6 +150,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
+    .state('tab.e01', { url: '/e01', views: { 'tab-eol': { templateUrl: 'templates/forms/e01.html', controller: 'e01Controller'}}})
+    .state('tab.e02', { url: '/e02', views: { 'tab-eol': { templateUrl: 'templates/forms/e02.html', controller: 'e02Controller'}}})
+    .state('tab.e03', { url: '/e03', views: { 'tab-eol': { templateUrl: 'templates/forms/e03.html', controller: 'e03Controller'}}})
+    .state('tab.e04', { url: '/e04', views: { 'tab-eol': { templateUrl: 'templates/forms/e04.html', controller: 'e04Controller'}}})
+
     .state('tab.equipment', {
         url: '/equipment',
         views: {

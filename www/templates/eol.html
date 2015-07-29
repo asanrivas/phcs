@@ -14,6 +14,19 @@
         </div>
         <a class="button button-assertive button-outline button-block" href="#/tab/{{$parent.patientID}}/feolcp">Fill up EOL Form</a>
 
+            <p>The EOLCP will start with :</p>
+                <a class="button button-full button-positive" ui-sref="tab.e01">
+                    Criteria for EOLCP
+                </a>
+                <a class="button button-full button-positive" ui-sref="tab.e02">
+                    EOLCP - Initial Pain Assessment
+                </a>
+                <a class="button button-full button-positive" ui-sref="tab.e03">
+                    EOLCP - Comfort Measures
+                </a>
+                <a class="button button-full button-positive" ui-sref="tab.e04">
+                    EOLCP - Treatments / Procedures
+                </a>
       </div>
       <div class="item item-footer">
           <ion-toggle ng-model="$parent.setting.eol" toggle-class="toggle-assertive">
