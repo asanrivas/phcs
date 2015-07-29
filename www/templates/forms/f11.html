@@ -5,95 +5,23 @@
 
         </div>
         <div class="list">
-
-			<div class="list card" ng-init="general_examination.patient_id=$parent.patientID">
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">General Condition:</span>
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Cachexia:
-					</div>
-						<select ng-model="general_examination.cachexia">
-							<option selected>Yes</option>
-							<option>No</option>
-						</select>
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Mouth:</span>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Hydration:</span>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Skin:</span>
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Jaundice:
-					</div>
-						<select ng-model="general_examination.jaudice">
-							<option selected>Yes</option>
-							<option>No</option>
-						</select>
-				</label>
-				<label class="item item-input item-stacked-label">
-					<img src="img/f10_1.png">
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Cardiovascular System:</span>
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Pallor:
-					</div>
-						<select ng-model="general_examination.pallor">
-							<option selected>Yes</option>
-							<option>No</option>
-						</select>
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Cyanosis:
-					</div>
-						<select ng-model="general_examination.cyanosis">
-							<option selected>Yes</option>
-							<option>No</option>
-						</select>
-				</label>
-
-				<label class="item item-input item-select">
-		  <div class="input-label">
-						Clubbing:
-					</div>
-						<select ng-model="general_examination.clubbing">
-							<option selected>Yes</option>
-							<option>No</option>
-						</select>
-				</label>
-
 			<label class="item item-input item-stacked-label">
 					<span class="input-label">Respiratory System:</span>
 				</label>
 
 				<label class="item item-input item-stacked-label">
-					<img src="img/f10_2.png">
+                    <img src="img/f10_2.png" ng-click="editImage('www/img/f10_2.png')" style="max-width: 100%" ng-src="{{general_examination.respiratory_system_image?general_examination.respiratory_system_image:'img/f10_2.png'}}"/>
 				</label>
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Abdomen/GU System:</span>
 				</label>
 				<label class="item item-input item-stacked-label">
-					<img src="img/f10_3.png">
+                    <img src="img/f10_3.png" ng-click="editImage('www/img/f10_3.png')" style="max-width: 100%" ng-src="{{general_examination.abdomen_image?general_examination.abdomen_image:'img/f10_3.png'}}"/>
 				</label>
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f12">Save and Next</a>
 			</div>
-
 	</ion-content>
+    <div class="bar bar-footer tabs bar-positive">
+        <a class="tab-item" ng-click="saveAndNext()">Save &amp; Next</a>
+    </div>
 </ion-view>

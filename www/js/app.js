@@ -97,7 +97,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('formfirstvisit.f09', { url: '/f09', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f09.html', controller: 'f09Controller'}}})
     .state('formfirstvisit.f10', { url: '/f10', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f10.html', controller: 'f10Controller'}}})
     .state('formfirstvisit.f11', { url: '/f11', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f11.html', controller: 'f11Controller'}}})
-    .state('formfirstvisit.f12', { url: '/f12', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f12.html', controller: 'f12Controller'}}})
     .state('formfirstvisit.f13', { url: '/f13', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f13.html', controller: 'f13Controller'}}})
     .state('formfirstvisit.f14', { url: '/f14', views: { 'sub-firstvisit': { templateUrl: 'templates/forms/f14.html', controller: 'f14Controller'}}})
 
