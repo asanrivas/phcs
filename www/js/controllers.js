@@ -708,13 +708,13 @@ angular.module('starter.controllers', [])
     $scope.eolcp_treatments_procedures = {};
 
     $localForage.getItem('upload_data').then(function(data){
-        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_EOLCP_TREATMENTS_PROCEDURES )
-            $scope.eolcp_treatments_procedures = data[$stateParams.patientID].V_EOLCP_TREATMENTS_PROCEDURES;
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_EOLCP_TP )
+            $scope.eolcp_treatments_procedures = data[$stateParams.patientID].V_PMT_EOLCP_TP;
     });
 
     $scope.saveAndNext = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_EOLCP_TREATMENTS_PROCEDURES', $scope.eolcp_treatments_procedures).then(function(){
-            $state.go('tab.e05');
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP_TP', $scope.eolcp_treatments_procedures).then(function(){
+            $state.go('tab.eol');
         });
     }
 
