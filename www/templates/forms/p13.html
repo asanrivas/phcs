@@ -6,7 +6,7 @@
           </div>
           <ion-item>
               <ion-radio class="positive" name="p13">NW- No wound</ion-radio>
-              <ion-radio name="p13">PO-Post op wound</ion-radio>
+              <ion-radio name="p13" class="assertive" ng-model="radio.p13" value="GSC">PO-Post op wound</ion-radio>
               <ion-radio name="p13">P-Pressure</ion-radio>
               <ion-radio name="p13">F-Fumigating</ion-radio>
               <ion-radio name="p13">S1-Redness</ion-radio>
@@ -24,7 +24,7 @@
              
            
           </ion-item>
-          <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/p14">Save and Next</a>
+          <a class="button button-positive button-full" ng-click="p13next()">Save and Next</a>
 
     </ion-content>
 </ion-view>

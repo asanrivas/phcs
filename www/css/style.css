@@ -135,6 +135,8 @@
   top: 0;
 }
 
+
+
 /* Fix modal backdrop for smaller devices */
 @media (max-width: 679px) {
   .active .modal-backdrop-bg {
@@ -147,6 +149,9 @@
     opacity: 0;
   }
 }
+
+
+
 
 /*.checkbox input:disabled:checked:before, .checkbox input:disabled:checked + .checkbox-icon:before {
     background: #33cd5f;

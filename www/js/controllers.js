@@ -299,33 +299,7 @@ angular.module('starter.controllers', [])
         $localForage.bind($scope, 'upload_data');
     };
 
-    //Modal
-    $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.openModal = function() {
-        $scope.modal.show();
-        return false;
-    };
-    $scope.closeModal = function() {
-        $scope.modal.hide();
-    };
-    //Cleanup the modal when we're done with it!
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
-    // Execute action on hide modal
-    $scope.$on('modal.hidden', function() {
-        // Execute action
-    });
-    // Execute action on remove modal
-    $scope.$on('modal.removed', function() {
-        // Execute action
-    });
+    
 })
 .controller('FormFirstVisitCtrl', function($scope, $stateParams, $localForage, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
@@ -380,19 +354,85 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
 })
-.controller('PointCtrl', function($scope, $state) {
+.controller('PointCtrl', function($scope, $state, $ionicModal) {
     $scope.p01next = function(){
         if($scope.radio.p1 == 'GSC')
         {
-            $scope.$parent.openModal();
+            $scope.openModal();
         }
         else {
             $state.go('tab.p02');
         }
     }
-    $scope.radio = {
-        p1: null
+
+    $scope.p17next = function(){
+        if($scope.radio.p17 == 'GSC')
+        {
+            $scope.openModal();
+        }
+        else {
+            $state.go('tab.p18');
+        }
     }
+    $scope.radio = {
+        p1: null,
+        p17: null,
+        p13: null
+    }
+
+     $scope.p13next = function(){
+        if($scope.radio.p13 == 'GSC')
+        {
+            $scope.openModal();
+        }
+        else {
+            $state.go('tab.p13');
+        }
+    }
+
+    //Modal
+    $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function() {
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
+
+
+    $ionicModal.fromTemplateUrl('templates/forms/wound_monitoring.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function() {
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
 })
 .controller('f10Controller', function($scope, $stateParams) {
     $scope.editImage = function(img){
@@ -725,3 +765,9 @@ angular.module('starter.controllers', [])
         enableFriends: true
     };
 });
+
+
+
+
+
+

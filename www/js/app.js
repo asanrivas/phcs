@@ -128,11 +128,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.p14', { url: '/p14', views: { 'tab-continous': { templateUrl: 'templates/forms/p14.html' } } })
     .state('tab.p15', { url: '/p15', views: { 'tab-continous': { templateUrl: 'templates/forms/p15.html' } } })
     .state('tab.p16', { url: '/p16', views: { 'tab-continous': { templateUrl: 'templates/forms/p16.html' } } })
-    .state('tab.p17', { url: '/p17', views: { 'tab-continous': { templateUrl: 'templates/forms/p17.html' } } })
+    .state('tab.p17', { url: '/p17', views: { 'tab-continous': { templateUrl: 'templates/forms/p17.html', controller: 'PointCtrl'} } })
     .state('tab.p18', { url: '/p18', views: { 'tab-continous': { templateUrl: 'templates/forms/p18.html' } } })
 
     .state('tab.sp01', { url: '/sp01', views: { 'tab-continous': { templateUrl: 'templates/forms/sp01.html' } } })
     .state('tab.sp02', { url: '/sp02', views: { 'tab-continous': { templateUrl: 'templates/forms/sp02.html' } } })
+    .state('tab.collapsible', { url: '/collapsible', views: { 'tab-continous': { templateUrl: 'templates/forms/collapsible.html' } } })
+
 
 
     .state('tab.eol', {
