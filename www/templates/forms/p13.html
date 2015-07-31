@@ -6,20 +6,3296 @@
           </div>
           <ion-item>
               <ion-radio class="positive" name="p13">NW- No wound</ion-radio>
-              <ion-radio name="p13" class="assertive" ng-model="radio.p13" value="GSC">PO-Post op wound</ion-radio>
-              <ion-radio name="p13">P-Pressure</ion-radio>
-              <ion-radio name="p13">F-Fumigating</ion-radio>
-              <ion-radio name="p13">S1-Redness</ion-radio>
-              <ion-radio name="p13">S2-Partial thickness</ion-radio>
-              <ion-radio name="p13">S3-Full thickness</ion-radio>
-              <ion-radio name="p13">S4-Cavity</ion-radio>
-              <ion-radio name="p13">S5-Unstageble</ion-radio>
-              <ion-radio name="p13">CL-Clean</ion-radio>
-              <ion-radio name="p13">G-Granulating</ion-radio>
-              <ion-radio name="p13">O-Odor</ion-radio>
-              <ion-radio name="p13">E-Exudations</ion-radio>
-              <ion-radio name="p13">B-Bleeding</ion-radio>
-              <ion-radio name="p13">Sl-Sloughs</ion-radio>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed1=!collapsed1">PO-Post op wound</ion-radio>
+              <div ng-show="collapsed1">
+                <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+
+             <ion-radio class="item item-radio" name="p13" ng-click="collapsed2=!collapsed2">P-Pressure</ion-radio>
+   <div ng-show="collapsed2">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed3=!collapsed3">F-Fumigating</ion-radio>
+<div ng-show="collapsed3">
+
+
+      <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed4=!collapsed4">S1-Redness</ion-radio>
+
+               <div ng-show="collapsed4">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed5=!collapsed5">S2-Partial thickness</ion-radio>
+
+               <div ng-show="collapsed5">
+
+
+        <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed6=!collapsed6">S3-Full thickness</ion-radio>
+<div ng-show="collapsed6">
+
+
+        <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed7=!collapsed7">S4-Cavity</ion-radio>
+               <div ng-show="collapsed7">
+
+
+        <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed8=!collapsed8">S5-Unstageble</ion-radio>
+               <div ng-show="collapsed8">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed9=!collapsed9">CL-Clean</ion-radio>
+               <div ng-show="collapsed9">
+
+
+        <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed10=!collapsed10">G-Granulating</ion-radio>
+               <div ng-show="collapsed10">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed11=!collapsed11">O-Odor</ion-radio>
+               <div ng-show="collapsed11">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
+
+
+              <ion-radio class="item item-radio" name="p13" ng-click="collapsed12=!collapsed12">E-Exudations</ion-radio>
+
+              <div ng-show="collapsed12">
+
+
+        <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed13=!collapsed13">B-Bleeding</ion-radio>
+               <div ng-show="collapsed13">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+              </div>
+
+
+               <ion-radio class="item item-radio" name="p13" ng-click="collapsed14=!collapsed14">Sl-Sloughs</ion-radio>
+               <div ng-show="collapsed14">
+
+
+       <h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
+      <div class="row">
+  <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b></div>
+  <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage I:</b></div>
+  <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage II:</b></div>
+  <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage III:</b></div>
+  <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Stage IV:</b></div>
+  <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+
+<div class="row">
+  <div class="col "><b>Unstaged</b></div>
+  <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b></div>
+</div>
+
+ <div class="row">
+  <div class="col "><b>Enter Date and Location/Size No of Wound</b></div>
+ 
+</div>
+
+<div class="row">
+  <div class="col ">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Date</span>
+            <input type="date" placeholder="Date" >
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">No</span>
+            <input type="text">
+        </label></div>
+  <div class="col "><label class="item item-input item-stacked-label">
+          <span class="input-label">Size</span>
+            <input type="text">
+        </label></div>
+  <div class="col"><label class="item item-input item-stacked-label">
+          <span class="input-label">Location</span>
+            <input type="text">
+        </label></div>
+</div>
+               
+<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Appearance</b><br>
+                <ion-checkbox name="1">Epithelizing - Pink</ion-checkbox>
+                <ion-checkbox name="2">Granulating - Red</ion-checkbox>
+                <ion-checkbox name="3">Sloughy - Yellow</ion-checkbox>
+                <ion-checkbox name="4">Infected - Green</ion-checkbox>
+                <ion-checkbox name="5">Necrotic - Black</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Discharge/Drainage Amount - sl,+,++,+++</b><br>
+                <ion-checkbox name="1">Serous / Haemoserous</ion-checkbox>
+                <ion-checkbox name="2">Blood</ion-checkbox>
+                <ion-checkbox name="3">Yellowish / Greenish</ion-checkbox>
+              </div>
+        </div>
+
+
+        <div class="row">
+              <div class="col col-50"><b>Pain / Present</b><br>
+                <ion-checkbox name="1">Intensity (use pain measurement scale)</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">   
+              <div class="col col-50"><b>Swelling / Redness</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+        </div>
+
+         <div class="row">
+              <div class="col col-50"><b>Odour</b><br>
+                <ion-checkbox name="1">Present</ion-checkbox>
+              </div>
+          </div>     
+
+        <div class="row">
+              <div class="col col-50"><b>Cleansing Solutions</b><br>
+                <ion-checkbox name="1">Normal Saline 0.9%</ion-checkbox>
+                <ion-checkbox name="2">Tap Water</ion-checkbox>
+                <ion-checkbox name="3">Others:</ion-checkbox>
+              </div>
+        </div>
+
+        <div class="row">
+              <div class="col col-50"><b>Dressing Products</b><br>
+                <ion-checkbox name="1">Duoderm Water</ion-checkbox>
+                <ion-checkbox name="2">Intrasite Gel</ion-checkbox>
+                <ion-checkbox name="3">Kaltostat</ion-checkbox>
+                <ion-checkbox name="4">Opsite/Tegaderm/Primapore</ion-checkbox>
+                <ion-checkbox name="5">Solcoseryl / Purilon</ion-checkbox>
+                <ion-checkbox name="6">Melonin</ion-checkbox>
+                <ion-checkbox name="7">Foam</ion-checkbox>
+                <ion-checkbox name="8">Others :</ion-checkbox>
+              </div>
+  
+        </div>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label"><b>Date of dressing</b></span>
+            <input type="date" placeholder="Date" >
+        </label>
+
+              </div>
               
              
            
