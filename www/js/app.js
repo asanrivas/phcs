@@ -5,6 +5,15 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
+if (typeof String.prototype.startsWith != 'function') {
+  // see below for better implementation!
+  String.prototype.startsWith = function (str){
+    return this.indexOf(str) === 0;
+  };
+}
+
+
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngResource', 'LocalForageModule'])
 
 .run(function($ionicPlatform) {
@@ -77,6 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     .state('tab.firsttime', {
         url: '/firsttime',
+        cache: false,
         views: {
             'tab-firsttime': {
                 templateUrl: 'templates/tab-firsttime.html',

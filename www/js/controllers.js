@@ -299,7 +299,7 @@ angular.module('starter.controllers', [])
         $localForage.bind($scope, 'upload_data');
     };
 
-    
+
 })
 .controller('FormFirstVisitCtrl', function($scope, $stateParams, $localForage, $ionicModal) {
     $scope.patientID = $stateParams.patientID;
@@ -422,19 +422,6 @@ angular.module('starter.controllers', [])
     };
     $scope.closeModal = function() {
         $scope.modal.hide();
-    };
-})
-.controller('f10Controller', function($scope, $stateParams) {
-    $scope.editImage = function(img){
-        handdrawing.openDraw(img, function(data){
-            console.log(data);
-            if(data)
-            {
-                $scope.$apply(function () {
-                    $scope.medical_assessment.body_diagram = 'file://'+data;
-                });
-            }
-        });
     };
 })
 .controller('f04Controller', function($scope, $stateParams, $state, UploadData, Camera, $localForage) {
@@ -576,18 +563,6 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
-    $scope.editImage = function(img){
-        handdrawing.openDraw(img, function(data){
-            console.log(data);
-            if(data)
-            {
-                $scope.$apply(function () {
-                    $scope.medical_assessment.body_diagram = 'file://'+data;
-                });
-            }
-        });
-    };
-
     $scope.social_assessment = {};
 
     $localForage.getItem('upload_data').then(function(data){
@@ -602,18 +577,6 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('f10Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
-    $scope.editImage = function(img){
-        handdrawing.openDraw(img, function(data){
-            console.log(data);
-            if(data)
-            {
-                $scope.$apply(function () {
-                    $scope.medical_assessment.body_diagram = 'file://'+data;
-                });
-            }
-        });
-    };
-
     $scope.general_examination = {};
 
     $localForage.getItem('upload_data').then(function(data){
@@ -629,19 +592,40 @@ angular.module('starter.controllers', [])
 })
 .controller('f11Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
 
-    $scope.editImage = function(img){
+    $scope.general_examination = {};
+    $scope.general_examination.respiratory_system_image = "img/f10_2.png";
+    $scope.general_examination.abdomen_image = "img/f10_3.png";
+
+    $scope.editImage = function(){
+        var img = $scope.general_examination.respiratory_system_image;
+        if(img.startsWith('img'))
+            img = 'www/'+img;
         handdrawing.openDraw(img, function(data){
             console.log(data);
             if(data)
             {
                 $scope.$apply(function () {
-                    $scope.medical_assessment.body_diagram = 'file://'+data;
+                    $scope.general_examination.respiratory_system_image = 'file://'+data;
                 });
             }
         });
     };
 
-    $scope.general_examination = {};
+    $scope.editImage2 = function(){
+        var img = $scope.general_examination.abdomen_image;
+        if(img.startsWith('img'))
+            img = 'www/'+img;
+        handdrawing.openDraw(img, function(data){
+            console.log(data);
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.general_examination.abdomen_image = 'file://'+data;
+                });
+            }
+        });
+    };
+
 
     $localForage.getItem('upload_data').then(function(data){
         if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION )
@@ -650,7 +634,7 @@ angular.module('starter.controllers', [])
 
     $scope.saveAndNext = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function(){
-            $state.go('formfirstvisit.f12');
+            $state.go('formfirstvisit.f13');
         });
     }
 })
@@ -755,9 +739,3 @@ angular.module('starter.controllers', [])
         enableFriends: true
     };
 });
-
-
-
-
-
-
