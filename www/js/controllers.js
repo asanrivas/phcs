@@ -665,7 +665,7 @@ angular.module('starter.controllers', [])
 
     $scope.saveAndNext = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.general_examination).then(function(){
-            $state.go('tab.f11');
+            $state.go('tab.firsttime');
         });
     }
 })
