@@ -1,11 +1,19 @@
 <ion-view view-title="Continue Visit">
     <ion-content class="padding">
-          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true">P12 – Elimination Bladder</ion-checkbox>
+          <ion-checkbox ng-model="data.f01" class="checkbox-balanced" checked="true" disabled="true"><b>P12 – Elimination Bladder</b></ion-checkbox>
           <div class="item item-divider">
             Select the nearest elimination bladder condition of patient
           </div>
           <ion-item>
-              <ion-radio class="positive" name="p12">A-Assisted</ion-radio>
+               <ion-radio class="positive" name="p12">S-Self</ion-radio>
+              <ion-radio class="item item-radio" name="p12" ng-click="collapsed1=!collapsed1">A-Assisted</ion-radio>
+              <div ng-show="collapsed1">
+                <ion-radio class="balanced" name="c12">Frequency</ion-radio>
+                <ion-radio class="balanced" name="c12">Incontinence</ion-radio>
+                <ion-radio class="balanced" name="c12">Retention</ion-radio>
+                <ion-radio class="balanced" name="c12">Noctural</ion-radio>
+                <ion-radio class="balanced" name="c12">Urgency</ion-radio>
+              </div>
               <ion-radio name="p12">P-Diapers</ion-radio>
               <ion-radio name="p12">C-Catheter/MC</ion-radio>
               <ion-radio name="p12">B-Bedpan/urinal</ion-radio>
