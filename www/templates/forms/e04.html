@@ -254,9 +254,26 @@
                     <span class="input-label">Date of assessment was made</span>
                         <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.summary_date">
                 </label>
-            <div class="item item-divider">Remarks:</div>
+                <div class="item item-divider">Remarks:</div>
                 <label class="item item-input item-stacked-label">
                         <input type="text" placeholder="Remarks" ng-model="eolcp_treatments_procedures.summary_remarks">
+                </label>
+            <div class="item item-divider"></div>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">End of Life Care Plan (EOLCP) closed:</span>
+                        <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.eolcp_date">
+                </label>
+                <div class="item item-divider">EOLCP Remarks:</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Remarks" ng-model="eolcp_treatments_procedures.eolcp_remarks">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date and Time of Death:</span>
+                        <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.death_date_time">
+                </label>
+                <div class="item item-divider">Place of Death:</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Remarks" ng-model="eolcp_treatments_procedures.eolcp_deathplace">
                 </label>
 
         </div>

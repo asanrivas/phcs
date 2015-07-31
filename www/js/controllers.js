@@ -92,7 +92,7 @@ angular.module('starter.controllers', [])
                 if(data)
                 {
                     $scope.error_message = false;
-                    // $localForage.clear();
+                    $localForage.clear();
                     $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                     $localForage.setItem("pruser", data.pruser);
                     $localForage.setItem("nurse_visit", data.nurse_visit);
@@ -730,12 +730,12 @@ angular.module('starter.controllers', [])
     $scope.eolcp_comfort_measures = {};
 
     $localForage.getItem('upload_data').then(function(data){
-        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_EOLCP_COMFORT_MEASURES )
-            $scope.eolcp_comfort_measures = data[$stateParams.patientID].V_EOLCP_COMFORT_MEASURES;
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_EOLCP_COMFORT )
+            $scope.eolcp_comfort_measures = data[$stateParams.patientID].V_PMT_EOLCP_COMFORT;
     });
 
     $scope.saveAndNext = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_EOLCP_COMFORT_MEASURES', $scope.eolcp_comfort_measures).then(function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP_COMFORT', $scope.eolcp_comfort_measures).then(function(){
             $state.go('tab.e04');
         });
     }
