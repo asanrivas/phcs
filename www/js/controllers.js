@@ -376,19 +376,9 @@ angular.module('starter.controllers', [])
     }
     $scope.radio = {
         p1: null,
-        p17: null,
-        p13: null
+        p17: null
     }
 
-     $scope.p13next = function(){
-        if($scope.radio.p13 == 'GSC')
-        {
-            $scope.openModal();
-        }
-        else {
-            $state.go('tab.p13');
-        }
-    }
 
     //Modal
     $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
