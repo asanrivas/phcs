@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $localForage) {
+.controller('DashCtrl', function($scope, $localForage, $state) {
     $scope.profile_images = null;
 
     $scope.make_profile_pic = function(img){
@@ -24,6 +24,12 @@ angular.module('starter.controllers', [])
         $scope.nurse_visit = data;
     });
 
+    $scope.logout = function () {
+        window.localStorage.removeItem('user:userid');
+        window.localStorage.removeItem('user:username');
+        $state.go('login');
+
+    }
 })
 .controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading, $ionicPopup, UploadData) {
     //$scope.signIn
@@ -40,6 +46,8 @@ angular.module('starter.controllers', [])
                     {
                         $state.go('patient');
                         $scope.error_message = null;
+                        window.localStorage.setItem('user:userid', data[i].USERID);
+                        window.localStorage.setItem('user:username', data[i].USERNAME);
 
                         return true;
                     }
@@ -92,7 +100,7 @@ angular.module('starter.controllers', [])
                 if(data)
                 {
                     $scope.error_message = false;
-                    $localForage.clear();
+                    // $localForage.clear();
                     $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                     $localForage.setItem("pruser", data.pruser);
                     $localForage.setItem("nurse_visit", data.nurse_visit);
@@ -310,6 +318,10 @@ angular.module('starter.controllers', [])
     });
     $scope.upload_data = [];
     $localForage.bind($scope, 'upload_data');
+
+    $scope.userid = window.localStorage.getItem('user:userid');
+    $scope.username = window.localStorage.getItem('user:username');
+
 })
 .controller('PatientCtrl', function($scope, $http, $localForage) {
 
@@ -521,6 +533,7 @@ angular.module('starter.controllers', [])
     $scope.initial_assessment = {};
 
     $localForage.getItem('upload_data').then(function(data){
+        console.log("patient: "+$scope.initial_assessment.patient_id);
         if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_INITIAL_ASSESSMENT )
             $scope.initial_assessment = data[$stateParams.patientID].V_INITIAL_ASSESSMENT;
     });
@@ -638,20 +651,59 @@ angular.module('starter.controllers', [])
         });
     }
 })
-.controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+.controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
 
-    $scope.general_examination = {};
+    $scope.curr_medication = {};
 
     $localForage.getItem('upload_data').then(function(data){
-        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION )
-            $scope.general_examination = data[$stateParams.patientID].V_GENERAL_EXAMINATION;
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CURR_MEDICATION_CHART )
+            $scope.curr_medication = data[$stateParams.patientID].V_CURR_MEDICATION_CHART;
     });
 
     $scope.saveAndNext = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.general_examination).then(function(){
-            $state.go('tab.firsttime');
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.curr_medication).then(function(){
+            $state.go('tab.firsttime', {patientID:$scope.$parent.patientID});
         });
     }
+
+    $ionicModal.fromTemplateUrl('templates/forms/f14.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.medication = {};
+    $scope.saveModal = function() {
+        if(!$scope.curr_medication.medications)
+            $scope.curr_medication.medications = [];
+        $scope.curr_medication.medications.push($scope.medication);
+
+        $scope.modal.hide();
+        return true;
+    }
+
+    $scope.openModal = function() {
+        $scope.medication = {};
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+        $scope.preview.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
 })
 .controller('f14Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
     $scope.general_examination = {};

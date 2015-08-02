@@ -1,37 +1,32 @@
-<ion-view view-title="Current Medication Chart">
-    <ion-content class="padding">
-        <div class="list card">
-            <div class="item item-divider">Current Medication Chart</div>
-
+<ion-modal-view view-title="">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons" ng-click="closeModal()">
+            <button class="button button-clear">Cancel</button>
         </div>
+        <h1 class="title">Add Medication Chart</h1>
+        <div class="buttons" ng-click="saveModal()">
+            <button class="button button-clear">Save</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="padding" ng-init="medication.initial=userid">
         <div class="list">
 
 			<div class="list">
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">PPCS Reg. No</span>
-						<input type="text" placeholder="PPCS Reg. No">
-				</label>
-
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Drug Allergy</span>
-						<input type="text" placeholder="Drug Allergy">
-				</label>
-
-				<label class="item item-input item-stacked-label">
 					<span class="input-label">Name Medication</span>
-						<input type="text" placeholder="Name Medication">
+						<input type="text" placeholder="Name Medication" ng-model="medication.medication_name">
 				</label>
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Dose</span>
-						<input type="text" placeholder="Dose">
+						<input type="text" placeholder="Dose" ng-model="medication.dose">
 				</label>
 
 				<label class="item item-input item-select">
 		  <div class="input-label">
 						Route:
 					</div>
-						<select>
+						<select ng-model="medication.route">
 							<option selected>Dermal</option>
 							<option>IV</option>
 							<option>IM</option>
@@ -45,30 +40,30 @@
 				</label>
 
 				<span class="input-label">Frequency</span>
-				<ion-list ng-init="data.f01 = true;" class="capital">
-				<ion-checkbox ng-model="data.f07" disabled="true">4 Hourly</ion-checkbox>
-				<ion-checkbox ng-model="data.f08" disabled="true">Bd</ion-checkbox>
-				<ion-checkbox ng-model="data.f09" disabled="true">Eod</ion-checkbox>
-				<ion-checkbox ng-model="data.f10" disabled="true">Od</ion-checkbox>
-				<ion-checkbox ng-model="data.f11" disabled="true">Pm</ion-checkbox>
-				<ion-checkbox ng-model="data.f11" disabled="true">Qid</ion-checkbox>
+				<ion-list>
+    				<ion-checkbox ng-model="medication.frequency.hourly">4 Hourly</ion-checkbox>
+    				<ion-checkbox ng-model="medication.frequency.Bd">Bd</ion-checkbox>
+    				<ion-checkbox ng-model="medication.frequency.Eod">Eod</ion-checkbox>
+    				<ion-checkbox ng-model="medication.frequency.Od">Od</ion-checkbox>
+    				<ion-checkbox ng-model="medication.frequency.Pm">Pm</ion-checkbox>
+    				<ion-checkbox ng-model="medication.frequency.Qid">Qid</ion-checkbox>
 				</ion-list>
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">What For</span>
-						<input type="text" placeholder="What For">
+						<input type="text" placeholder="What For" ng-model="medication.what_for">
 				</label>
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Side Effect Of The Drugs</span>
-						<input type="text" placeholder="Dose">
+						<input type="text" placeholder="Side effect" ng-model="medication.drug_side_effect">
 				</label>
 
 				<label class="item item-input item-select">
 		  <div class="input-label">
 						Started By:
 					</div>
-						<select>
+						<select ng-model="medication.started_by">
 							<option selected>PPCS</option>
 							<option>Others</option>
 						</select>
@@ -76,18 +71,12 @@
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Start Day</span>
-						<input type="date" placeholder="Start Day">
+						<input type="date" placeholder="Start Day" ng-model="medication.start_day">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">End Date</span>
-						<input type="date" placeholder="End Date">
+						<input type="date" placeholder="End Date" ng-model="medication.end_date">
 				</label>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Initial</span>
-						<input type="text" placeholder="Initial">
-				</label>
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/f14">Save</a>
 			</div>
-
 	</ion-content>
-</ion-view>
+</ion-modal-view>

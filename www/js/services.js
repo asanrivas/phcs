@@ -62,22 +62,25 @@ angular.module('starter.services', [])
         },
         save_data_patient_id: function(patientID, table, datum)
         {
+            var theDate=new Date();
             var q = $q.defer();
             $localForage.getItem('upload_data').then(function(data){
                 if(!data)
                     data = {};
                 if(!data[patientID])
                 {
-                    var theDate=new Date();
                     data[patientID] = {
                         date: theDate.format("yyyy-mm-dd"),
-                        time: theDate.format("H:MM"),
+                        time: theDate.format("H:MM:SS"),
                         remark: "",
                         userid: 1 //hardcoded admin
                     };
                 }
+                var defaultObj = {patient_id: patientID, date: theDate.format("yyyy-mm-dd HH:MM")};
+                var extended = {};
 
-                data[patientID][table] = datum;
+                angular.extend(extended, datum, defaultObj);
+                data[patientID][table] = extended;
                 $localForage.setItem('upload_data', data).then(function(){
                     q.resolve(data);
                 });

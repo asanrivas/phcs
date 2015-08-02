@@ -4,30 +4,68 @@
             <div class="item item-divider">Current Medication Chart</div>
 
         </div>
-		<a class="button button-positive button-full" ui-sref="formfirstvisit.f12">Current Medication Chart</a>
 			<div class="list">
-				<span class="input-label">Page No</span>
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Date</span>
-						<input type="date" placeholder="Date">
-				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Drug Allergy</span>
-						<input type="text" placeholder="Location of Assessment">
+						<input type="text" placeholder="Drug Allergy" ng-model="curr_medication.drug_allergy">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Reaction</span>
-						<input type="text" placeholder="How do you like to be addresses">
+						<input type="text" placeholder="Drug allergy reaction" ng-model="curr_medication.reaction_drug_allergy">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Other Allergy</span>
-						<input type="text" placeholder="Referring Doctor">
+						<input type="text" placeholder="Other Allergy" ng-model="curr_medication.other_allergy">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Reaction</span>
-						<input type="text" placeholder="Other Consultants involved">
+						<input type="text" placeholder="Other allergy reaction" ng-model="curr_medication.reaction_other_allergy">
 				</label>
+            </div>
+
+            <a class="button button-positive button-full" ng-click="openModal()">Add Medication</a>
+            <h4>Medications</h4>
+            <div class="list" ng-repeat="medication in curr_medication.medications">
+                <div class="item item-divider">Item #{{$index + 1}}</div>
+                <div class="row item">
+                  <div class="col col-33 positive">Name of Drugs/Medication</div>
+                  <div class="col col-67">{{medication.medication_name}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Dose</div>
+                  <div class="col col-67">{{medication.dose}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Route</div>
+                  <div class="col col-67">{{medication.route}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Frequency</div>
+                  <div class="col col-67"><p ng-repeat="(key, data) in medication.frequency">{{key}}</p></div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">What for</div>
+                  <div class="col col-67">{{medication.what_for}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Side Effects</div>
+                  <div class="col col-67">{{medication.drug_side_effect}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Started by PPCS/Other</div>
+                  <div class="col col-67">{{medication.started_by}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Start Date</div>
+                  <div class="col col-67">{{medication.start_day}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">End date</div>
+                  <div class="col col-67">{{medication.end_date}}</div>
+                </div>
 			</div>
+            <br/>
+            <br/>
 	</ion-content>
     <div class="bar bar-footer tabs bar-positive">
         <a class="tab-item" ng-click="saveAndNext()">Save &amp; Close</a>
