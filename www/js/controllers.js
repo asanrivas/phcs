@@ -100,7 +100,7 @@ angular.module('starter.controllers', [])
                 if(data)
                 {
                     $scope.error_message = false;
-                    // $localForage.clear();
+                    $localForage.clear();
                     $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                     $localForage.setItem("pruser", data.pruser);
                     $localForage.setItem("nurse_visit", data.nurse_visit);
