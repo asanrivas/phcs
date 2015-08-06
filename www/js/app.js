@@ -146,6 +146,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.collapsible', { url: '/collapsible', views: { 'tab-continous': { templateUrl: 'templates/forms/collapsible.html' } } })
 
 
+    .state('tab.medication', {
+        url: '/medication',
+        views: {
+            'tab-medication': {
+                templateUrl: 'templates/tab-medication.html',
+                controller: 'TabMedicationCtrl'
+            }
+        }
+    })
 
     .state('tab.eol', {
         url: '/eol',

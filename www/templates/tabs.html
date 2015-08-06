@@ -27,6 +27,9 @@ navigation history that also transitions its views in and out.
         </ion-nav-back-button>
         <ion-nav-view name="tab-continous"></ion-nav-view>
     </ion-tab>
+    <ion-tab title="Medication Chart" icon-off="ion-ios-flask-outline" icon-on="ion-ios-flask" href="#/tab/{{patientID}}/medication">
+        <ion-nav-view name="tab-medication"></ion-nav-view>
+    </ion-tab>
     <ion-tab title="EOL" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/{{patientID}}/eol">
         <ion-nav-view name="tab-eol"></ion-nav-view>
     </ion-tab>

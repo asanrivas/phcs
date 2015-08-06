@@ -771,6 +771,36 @@ angular.module('starter.controllers', [])
 
 .controller('e04Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
 
+    function extractDate(date)
+    {
+        console.log("extractDate: "+date);
+        var mm = date.getMonth() + 1;
+        mm = (mm < 10) ? '0' + mm : mm;
+        var dd = date.getDate();
+        dd = (dd < 10) ? '0' + dd : dd;
+        var yyyy = date.getFullYear();
+        return  dd + '-' + mm + '-' +  yyyy;
+    }
+
+    // new date picker
+    $scope.newdate = "";
+
+    $scope.onclick = function(){
+        var options = {
+            date: new Date(),
+            mode: 'date'
+        };
+        datePicker.show(options, function (date) {
+            console.log('date setted '+date);
+            $scope.$apply(function(){
+                $scope.eolcp_treatments_procedures.death_date_time = extractDate(date);
+            });
+
+        }, function (error) { // Android only
+              alert('Error: ' + error);
+        });
+    };
+
     $scope.eolcp_treatments_procedures = {};
 
     $localForage.getItem('upload_data').then(function(data){
@@ -784,6 +814,61 @@ angular.module('starter.controllers', [])
         });
     }
 
+})
+
+.controller('TabMedicationCtrl', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
+
+    $scope.curr_medication = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CURR_MEDICATION_CHART )
+            $scope.curr_medication = data[$stateParams.patientID].V_CURR_MEDICATION_CHART;
+    });
+
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.curr_medication).then(function(){
+            $state.go('tab.firsttime', {patientID:$scope.$parent.patientID});
+        });
+    }
+
+    $ionicModal.fromTemplateUrl('templates/forms/f14.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.medication = {};
+    $scope.saveModal = function() {
+        if(!$scope.curr_medication.medications)
+            $scope.curr_medication.medications = [];
+        $scope.curr_medication.medications.push($scope.medication);
+
+        $scope.modal.hide();
+        return true;
+    }
+
+    $scope.openModal = function() {
+        $scope.medication = {};
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+        $scope.preview.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
 })
 
 .controller('AccountCtrl', function($scope) {
