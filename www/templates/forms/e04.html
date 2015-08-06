@@ -269,7 +269,12 @@
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Date and Time of Death:</span>
+<!--
                         <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.death_date_time">
+-->
+                    <label class="item item-input">
+                        <input type="text" ng-model="eolcp_treatments_procedures.death_date_time" ng-click="onclick()" ng-maxlength="10">
+                    </label>
                 </label>
                 <div class="item item-divider">Place of Death:</div>
                 <label class="item item-input item-stacked-label">
