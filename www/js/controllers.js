@@ -526,16 +526,26 @@ angular.module('starter.controllers', [])
     };
 })
 .controller('f07Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
-    $scope.editImage = function(img){
-        handdrawing.openDraw(img);
-    };
-
     $scope.initial_assessment = {};
 
     $localForage.getItem('upload_data').then(function(data){
         console.log("patient: "+$scope.initial_assessment.patient_id);
         if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_INITIAL_ASSESSMENT )
             $scope.initial_assessment = data[$stateParams.patientID].V_INITIAL_ASSESSMENT;
+        else
+        {
+            $localForage.getItem('V_FIRST_VISIT').then(function(vdata){
+                if(vdata && vdata['V_INITIAL_ASSESSMENT'])
+                {
+                    for (var i = vdata['V_INITIAL_ASSESSMENT'].length-1; i >= 0; i--) {
+                        if(vdata['V_INITIAL_ASSESSMENT'][i].patient_id == $stateParams.patientID)
+                        {
+                            $scope.initial_assessment = vdata['V_INITIAL_ASSESSMENT'][i];
+                        }
+                    }
+                }
+            });
+        }
     });
 
     $scope.saveAndNext = function(){
