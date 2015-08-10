@@ -150,6 +150,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     .state('tab.complimentary', { url: '/complimentary', views: { 'tab-pmt': { templateUrl: 'templates/forms/complimentary.html'} } })
 
+    .state('tab.multi', { url: '/multi', views: { 'tab-pmt': { templateUrl: 'templates/forms/multi.html'} } })
+
     .state('tab.medication', {
         url: '/medication',
         views: {
