@@ -5,13 +5,24 @@
     </ion-nav-bar>
     <ion-content>
         <ion-list>
-            <label class="item item-input">
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" placeholder="Search" ng-model="searchPatient">
             </label>
-            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:searchPatient | filter: {PATIENT_ID:'!!'} track by $index" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/dash">
+            <div class="item item-input-inset">
+                <a class="button" ng-class="{'button-positive': isActive('shownew')}" ng-click="setActive('shownew'); toggleOrder()">Sort New</a>
+            </div>
+            <div class="item item-input-inset">
+                <a class="button" ng-class="{'button-positive': isActive('showstd')}" ng-click="setActive('showstd'); toggleOrder()">Sort Name</a>
+            </div>
+
+        </div>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:searchPatient | filter: {PATIENT_ID:'!!'}  | orderBy:orderdata():truefalse()" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/home">
+            <!-- <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:filterdata | orderBy:'NAME'" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/dash"> -->
                 <img ng-src="{{make_profile_pic(patient.PROFILE_IMAGE)}}">
                 <h2 class="capital">{{patient.NAME}}</h2>
+                <h2 class="capital">{{patient.REGISTER_DATE}}</h2>
                 <p><span class="ui green circular label" ng-show="upload_data[patient.PATIENT_ID]">updated</span> Age: {{patient.AGE|number:0}}</p>
 
                 <i class="icon ion-chevron-right icon-accessory"></i>

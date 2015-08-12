@@ -1,0 +1,93 @@
+<ion-view view-title="Dashboard">
+    <ion-content>
+        <div id="profile-bg"></div>
+        <div id="content">
+            <div id="profile-info">
+                <img id="profile-image" ng-src="{{make_profile_pic($parent.upload_data[$parent.patientID].profile_images)}}">
+                <h3 id="profile-name" class="capital">{{patient.NAME}}</h3>
+                <span id="profile-description" class="capital">{{patient.AGE}} years old
+                </div>
+                <div class="row">
+                    <a class="button button-block col" href="#/patient">Change Patient</a>
+                    <a class="button button-dark col button-block" ng-click="logout()">Logout</a>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-divider">Patient Profile</div>
+                <div class="item item-body list" ng-init="dashboard.detail=false">
+                    <div class="item item-input">
+                        <span class="input-label">Name</span>
+                        <input type="text" ng-model="patient.NAME">
+                    </div>
+                    <div class="item">
+                        Register No. <span class="item-note black capital">{{patient.PATIENT_ID}}</span>
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">IC</span>
+                        <input type="text" ng-model="patient.IC">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Address</span>
+                        <input type="text" ng-model="patient.ADDRESS">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">POSTCODE</span>
+                        <input type="text" ng-model="patient.POSTCODE">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Date of birth</span>
+                        <input type="text" ng-model="patient.DATE_OF_BIRTH">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Occupation</span>
+                        <input type="text" ng-model="patient.OCCUPATION">
+                    </div>
+
+                    <div class="item item-input">
+                        <div class="input-label">Marital Status</div>
+                        <select ng-model="patient.MARITAL_STATUS">
+                            <option value="01" ng-selected="patient.MARITAL_STATUS=='01'">SINGLE</option>
+                            <option value="02" ng-selected="patient.MARITAL_STATUS=='02'">MARRIED</option>
+                            <option value="03" ng-selected="patient.MARITAL_STATUS=='03'">WIDOW</option>
+                        </select>
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Tel House Client</span>
+                        <input type="tel" ng-model="patient.TEL_HOUSE_CLIENT">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Diagnosis</span>
+                        <input type="text" ng-model="patient.DIAGNOSIS">
+                    </div>
+
+                    <div class="item item-input">
+                        <span class="input-label">Race</span>
+                        <input type="text" ng-model="patient.RACE">
+                    </div>
+
+                    <div class="item item-input">
+                        <span class="input-label">Decision maker contact</span>
+                        <input type="text" ng-model="patient.DECISION_MAKER_CONTACT">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Language</span>
+                        <input type="text" ng-model="patient.LANGUAGE">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Nurse Name</span>
+                        <input type="text" ng-model="patient.NURSE_NAME">
+                    </div>
+                    <div class="item item-input">
+                        <span class="input-label">Primary Mobile</span>
+                        <input type="tel" ng-model="patient.PRIMARY_MOBILE">
+                    </div>
+
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-body">
+                    <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-view>

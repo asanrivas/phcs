@@ -52,7 +52,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         cache: false,
         templateUrl: "templates/patient.html",
         controller: 'PatientCtrl'
-
     })
     // setup an abstract state for the tabs directive
     .state('tab', {
@@ -65,15 +64,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     // Each tab has its own nav history stack:
 
-    .state('tab.dash', {
-        url: '/dash',
-        views: {
-            'tab-dash': {
-                templateUrl: 'templates/tab-dash.html',
-                controller: 'DashCtrl'
-            }
-        }
-    })
+    // .state('tab.dash', {
+    //     url: '/dash',
+    //     views: {
+    //         'tab-dash': {
+    //             templateUrl: 'templates/tab-dash.html',
+    //             controller: 'DashCtrl'
+    //         }
+    //     }
+    // })
 
     .state('tab.gallery', {
         url: '/gallery',
@@ -173,6 +172,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
+    .state('tab.home', {
+        url: '/home',
+        views: {
+            'tab-home': {
+                templateUrl: 'templates/tab-home.html',
+                controller: 'HomeCtrl'
+            }
+        }
+    })
+    .state('tab.patient', { 
+        url: '/edit-patient', 
+        views: { 
+            'tab-home': { 
+                templateUrl: 'templates/patient-edit.html', 
+                controller: 'HomeCtrl'
+            }
+        }
+    })
+
     .state('tab.feolcp', { url: '/feolcp', views: { 'tab-eol': { templateUrl: 'templates/forms/feolcp.html'}}})
     .state('tab.pmt', {
         url: '/pmt',

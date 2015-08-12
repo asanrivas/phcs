@@ -1,5 +1,42 @@
 angular.module('starter.controllers', [])
 
+.controller('HomeCtrl', function($scope, $localForage, $state) {
+    $scope.profile_images = null;
+
+    $scope.make_profile_pic = function(img){
+        if(window.cordova && img)
+            return cordova.file.externalDataDirectory+img;
+        else if(window.cordova && $scope.$parent.patient.PROFILE_IMAGE)
+            return cordova.file.externalDataDirectory+$scope.$parent.patient.PROFILE_IMAGE;
+        else {
+            return $scope.profile_images = 'img/dummy-profile-pic.png';
+        }
+    }
+
+    $scope.open_loc = function(dest){
+        var url = "geo:?q="  + dest +"&z=14";
+        console.log(url);
+        //window.location.href = url;
+        cordova.InAppBrowser.open(url, "_system");
+    }
+    $scope.nurse_visit = [];
+    $localForage.getItem('nurse_visit').then(function(data){
+        $scope.nurse_visit = data;
+    });
+
+    $scope.logout = function () {
+        window.localStorage.removeItem('user:userid');
+        window.localStorage.removeItem('user:username');
+        $state.go('login');
+
+    }
+
+    $scope.saveAndNext = function () {
+        console.log("go to home");
+        $state.go('tab.home');
+    }
+})
+
 .controller('DashCtrl', function($scope, $localForage, $state) {
     $scope.profile_images = null;
 
@@ -323,7 +360,56 @@ angular.module('starter.controllers', [])
     $scope.username = window.localStorage.getItem('user:username');
 
 })
+
 .controller('PatientCtrl', function($scope, $http, $localForage) {
+
+// For button selection
+
+    $scope.active = 'shownew';
+    $scope.setActive = function(type) {
+        $scope.active = type;
+        console.log("Button1: "+$scope.active);
+    };
+    $scope.isActive = function(type) {
+        return type === $scope.active;
+        console.log("Button2: "+$scope.active);
+    };
+    $scope.checkclicked = function() {
+        console.log("Button: "+$scope.active);
+    };
+
+    $scope.shouldChangeOrder = false;
+
+    $scope.truefalse = function() {
+        if ($scope.active == "shownew") {
+            console.log("true");
+            return "true";
+        } else {
+            return "false";
+            console.log("false");
+        }
+    }
+
+    $scope.orderdata = function() {
+        // if($scope.shouldChangeOrder) {
+        //     console.log("1 "+$scope.shouldChangeOrder);
+        //     return "REGISTER_DATE";
+        // } else {
+        //     return "";
+        // }
+        if ($scope.active == "shownew") {
+            console.log("REGISTER_DATE");
+            return "REGISTER_DATE";
+        } else {
+            console.log("NAME");
+            return "NAME";
+        }
+    }
+    $scope.toggleOrder = function() {
+        $scope.shouldChangeOrder = !$scope.shouldChangeOrder;
+    }
+
+// End - For button selection
 
     $localForage.getItem('patients').then(function(dataf){
         if(!dataf)
