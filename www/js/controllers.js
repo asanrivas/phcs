@@ -875,7 +875,10 @@ angular.module('starter.controllers', [])
         var dd = date.getDate();
         dd = (dd < 10) ? '0' + dd : dd;
         var yyyy = date.getFullYear();
-        return  dd + '-' + mm + '-' +  yyyy;
+        var hrs = date.getHours();
+        var mins = date.getMinutes();
+        var secs = date.getSeconds();
+        return  dd + '-' + mm + '-' +  yyyy + ' ' + hrs + ':' + mins + ':' + secs;
     }
 
     // new date picker
