@@ -867,6 +867,13 @@ angular.module('starter.controllers', [])
 
 .controller('e04Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
 
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
     function extractDate(date)
     {
         console.log("extractDate: "+date);
@@ -875,10 +882,11 @@ angular.module('starter.controllers', [])
         var dd = date.getDate();
         dd = (dd < 10) ? '0' + dd : dd;
         var yyyy = date.getFullYear();
-        var hrs = date.getHours();
-        var mins = date.getMinutes();
-        var secs = date.getSeconds();
-        return  dd + '-' + mm + '-' +  yyyy + ' ' + hrs + ':' + mins + ':' + secs;
+        var hrs = addZero(date.getHours());
+        var mins = addZero(date.getMinutes());
+        var secs = addZero(date.getSeconds());
+        // return  dd + '-' + mm + '-' +  yyyy + ' ' + hrs + ':' + mins + ':' + secs;
+        return  yyyy + '-' + mm + '-' +  dd + ' ' + hrs + ':' + mins + ':' + secs;
     }
 
     // new date picker

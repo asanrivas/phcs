@@ -41,31 +41,34 @@
             <ion-checkbox ng-model="eolcp_criteria.deteriorating_vital_signs">
                 Deteriorating vital signs
             </ion-checkbox>
-            <label class="item item-input item-select">
-            <div class="input-label">
-                        Confirm KIV
-                    </div>
-                        <select>
-                            <option>Yes</option>
-                            <option selected>No</option>
-                        </select>
+                <div class="item item-divider">Nurse:</div>
+                    <label class="item item-input item-select">
+                        <div class="input-label">Confirm KIV</div>
+                            <select ng-model="eolcp_criteria.confirm_kiv">
+                                <option>Yes</option>
+                                <option selected>No</option>
+                            </select>
+                    </label>
+                <label class="item item-input">
+                    <span class="input-label">Remarks</span>
+                    <input type="text" placeholder="Remarks" ng-model="eolcp_criteria.remarks">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Visited Date</span>
+                        <input type="date" placeholder="Visited Date" ng-model="eolcp_criteria.visited_date">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date Start</span>
+                        <input type="date" placeholder="Visited Date" ng-model="eolcp_criteria.date_start">
                 </label>
 
-            <div class="list card">
-            <div class="item item-divider">Remarks</div>
-                <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Remarks">
-                </label>
-        </div>
         <label class="item item-input item-select">
-        <div class="input-label">
-                        Agreed by Doctor 
-                    </div>
-                        <select>
-                            <option>Agreed</option>
-                            <option selected>Disagreed</option>
-                        </select>
-                </label>
+            <div class="input-label">Agreed by Doctor</div>
+                <select ng-model="eolcp_criteria.agreed_by_doc">
+                    <option>Agreed</option>
+                    <option selected>Disagreed</option>
+                </select>
+        </label>
 
 <!--
             <a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/pmt">Sign and Save</a>
