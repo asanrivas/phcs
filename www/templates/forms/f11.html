@@ -8,13 +8,13 @@
 			<label class="item item-input item-stacked-label">
 					<span class="input-label">Respiratory System:</span>
 				</label>
-                <img src="img/f10_2.png" ng-click="editImage()" style="max-width: 100%" ng-src="{{general_examination.respiratory_system_image}}"/>
+                <img src="img/f10_2.png" ng-click="editImage()" style="max-width: 100%" ng-src="{{general_examination.tmp_hand?general_examination.tmp_hand:general_examination.respiratory_system_image}}"/>
 
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Abdomen/GU System:</span>
 				</label>
-                <img src="img/f10_3.png" ng-click="editImage2()" style="max-width: 100%" ng-src="{{general_examination.abdomen_image}}"/>
+                <img src="img/f10_3.png" ng-click="editImage2()" style="max-width: 100%" ng-src="{{general_examination.tmp_hand2?general_examination.tmp_hand2:general_examination.abdomen_image}}"/>
 			</div>
 	</ion-content>
     <div class="bar bar-footer tabs bar-positive">

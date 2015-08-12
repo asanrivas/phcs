@@ -70,6 +70,8 @@ angular.module('starter.controllers', [])
 })
 .controller('LoginCtrl', function($scope, $state, $localForage, $http, $ionicLoading, $ionicPopup, UploadData) {
     //$scope.signIn
+
+    var corrad_server = window.localStorage.getItem('corrad_server');
     $scope.user = {username: '', password: ''}
     $scope.signIn = function (user) {
         $localForage.getItem('pruser').then(function(data){
@@ -99,7 +101,7 @@ angular.module('starter.controllers', [])
 
     $scope.sync = function (argument) {
         // body...
-        var url_get = 'http://112.137.162.30/pcis/api_generator.php?api_name=API_SYNC_MOBILE';
+        var url_get = corrad_server+'api_generator.php?api_name=API_SYNC_MOBILE';
         $ionicLoading.show({
             template: '<ion-spinner class="spinner-energized"></ion-spinner> Loading...'
         });
@@ -650,11 +652,11 @@ angular.module('starter.controllers', [])
         if(img.startsWith('img'))
             img = 'www/'+img;
         handdrawing.openDraw(img, function(data){
-            console.log(data);
             if(data)
             {
                 $scope.$apply(function () {
                     $scope.medical_assessment.body_diagram = 'file://'+data;
+                    $scope.medical_assessment.tmp_hand1 = 'file://'+data;
                 });
             }
         });
@@ -666,8 +668,24 @@ angular.module('starter.controllers', [])
     });
 
     $scope.saveAndNext = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function(){
-            $state.go('formfirstvisit.f09');
+        var filepath = $scope.medical_assessment.body_diagram;
+        var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+
+        $scope.medical_assessment.body_diagram = images;
+
+        var patient_gallery = {};
+        patient_gallery.patient_id = $stateParams.patientID;
+        patient_gallery.title = 'Diagram';
+        patient_gallery.gallery_type_code = "0";
+        patient_gallery.gallery_status_code = "1";
+        patient_gallery.description = "";
+        patient_gallery.image = images;
+        patient_gallery.filename = filepath;
+
+        UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function(){
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function(){
+                $state.go('formfirstvisit.f09');
+            });
         });
     }
 })
@@ -713,8 +731,10 @@ angular.module('starter.controllers', [])
             console.log(data);
             if(data)
             {
+                console.log(data);
                 $scope.$apply(function () {
                     $scope.general_examination.respiratory_system_image = 'file://'+data;
+                    $scope.general_examination.tmp_hand1 = 'file://'+data;
                 });
             }
         });
@@ -730,6 +750,7 @@ angular.module('starter.controllers', [])
             {
                 $scope.$apply(function () {
                     $scope.general_examination.abdomen_image = 'file://'+data;
+                    $scope.general_examination.tmp_hand2 = 'file://'+data;
                 });
             }
         });
@@ -742,8 +763,40 @@ angular.module('starter.controllers', [])
     });
 
     $scope.saveAndNext = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function(){
-            $state.go('formfirstvisit.f13');
+        var filepath = $scope.general_examination.respiratory_system_image;
+        var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+
+        var filepath2 = $scope.general_examination.abdomen_image;
+        var images2 = filepath2.substr(filepath2.lastIndexOf('/') + 1);
+
+        $scope.general_examination.respiratory_system_image = images;
+        $scope.general_examination.abdomen_image = images;
+
+        var patient_gallery = {};
+        patient_gallery.patient_id = $stateParams.patientID;
+        patient_gallery.title = 'Diagram';
+        patient_gallery.gallery_type_code = "0";
+        patient_gallery.gallery_status_code = "1";
+        patient_gallery.description = "";
+        patient_gallery.image = images;
+        patient_gallery.filename = filepath;
+
+        var patient_gallery2 = {};
+        patient_gallery2.patient_id = $stateParams.patientID;
+        patient_gallery2.title = 'Diagram';
+        patient_gallery2.gallery_type_code = "0";
+        patient_gallery2.gallery_status_code = "1";
+        patient_gallery2.description = "";
+        patient_gallery2.image = images2;
+        patient_gallery2.filename = filepath2;
+
+
+        UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function(){
+            UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery2).then(function(){
+                UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function(){
+                    $state.go('formfirstvisit.f13');
+                });
+            });
         });
     }
 })
@@ -790,7 +843,6 @@ angular.module('starter.controllers', [])
     //Cleanup the modal when we're done with it!
     $scope.$on('$destroy', function() {
         $scope.modal.remove();
-        $scope.preview.remove();
     });
     // Execute action on hide modal
     $scope.$on('modal.hidden', function() {

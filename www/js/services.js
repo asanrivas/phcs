@@ -167,7 +167,23 @@ angular.module('starter.services', [])
                 q.reject(error);
             }, options);
             return q.promise;
-        }
+        },
+        clear_directory: function(path) {
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+            function fail(evt) {
+                alert("FILE SYSTEM FAILURE" + evt.target.error.code);
+            }
+            function onFileSystemSuccess(fileSystem) {
+                fileSystem.root.getDirectory(
+                    path,//cordova.file.externalDataDirectory+".handdrawing",
+                    {create : true, exclusive : false},
+                    function(entry) {
+                        entry.removeRecursively(function() {
+                            console.log("Remove Recursively Succeeded");
+                        }, fail);
+                    }, fail);
+                }
+            }
     }
 })
 .factory('Camera', function($q) {
