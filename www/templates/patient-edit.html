@@ -61,8 +61,13 @@
                     </div>
 
                     <div class="item item-input">
-                        <span class="input-label">Race</span>
-                        <input type="text" ng-model="patient.RACE">
+                        <div class="input-label">Race</div>
+                        <select ng-model="patient.RACE">
+                            <option value="1" ng-selected="patient.RACE=='1'">MALAY</option>
+                            <option value="2" ng-selected="patient.RACE=='2'">CHINESE</option>
+                            <option value="3" ng-selected="patient.RACE=='3'">INDIAN</option>
+                            <option value="4" ng-selected="patient.RACE=='4'">OTHERS</option>
+                        </select>
                     </div>
 
                     <div class="item item-input">

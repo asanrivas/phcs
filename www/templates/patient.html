@@ -19,7 +19,7 @@
 
         </div>
             <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:searchPatient | filter: {PATIENT_ID:'!!'}  | orderBy:orderdata():truefalse()" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/home">
-            <!-- <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:filterdata | orderBy:'NAME'" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/dash"> -->
+            <!-- <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="patient in patients | filter:searchPatient | filter: {PATIENT_ID:'!!'} track by $index" type="item-text-wrap" href="#/tab/{{patient.PATIENT_ID}}/dash"> -->
                 <img ng-src="{{make_profile_pic(patient.PROFILE_IMAGE)}}">
                 <h2 class="capital">{{patient.NAME}}</h2>
                 <h2 class="capital">{{patient.REGISTER_DATE | date : dd/mm/yyyy}}</h2>

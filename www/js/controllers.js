@@ -884,7 +884,7 @@ angular.module('starter.controllers', [])
     $scope.onclick = function(){
         var options = {
             date: new Date(),
-            mode: 'date'
+            mode: 'datetime'
         };
         datePicker.show(options, function (date) {
             console.log('date setted '+date);
