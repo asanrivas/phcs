@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'PointCtrl'} } })
 
-    .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'} } })
+    .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-home': { templateUrl: 'templates/forms/fsummaryinitial.html'} } })
 
     .state('tab.complimentary', { url: '/complimentary', views: { 'tab-pmt': { templateUrl: 'templates/forms/complimentary.html'} } })
 
