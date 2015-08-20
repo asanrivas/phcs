@@ -1,0 +1,40 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+          <a class="button button-clear" href="#/tab/{{patientID}}/continuous">Back</a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-side-menu-content>
+        <ion-nav-view name="sub-continuous"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" expose-aside-when="large">
+        <ion-content>
+            <ion-list>
+                <ion-item  menu-close ui-sref="formcontinuous.p001">P01 – NEUROLOGICAL</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p002">P02 – Emotional</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p003">P03 – Spiritual</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p004">P04 – Comfort</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p005">P05 – Sleeping</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p006">P06 – Breathing</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p007">P07 – Circulation</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p008">P08 – Temperature</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p009">P09 – Oral (Mouth)</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p010">P10 – Nutrition</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p011">P11 – Elimination Bowel</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p012">P12 – Elimination Bladder</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p013">P13 – Wound</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p014">P14 – Activities For Daily Living And Sexuality</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p015">P15 – End Of Life Issue</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p016">P16 – Client Support Issues</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p017">P17 – Mobilization And Activity</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.p018">P18 – Palliative Massage Therapy (PMT)</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.sp01">SP 01 - Special Mention</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.sp02">SP 02 - Special Instruction</ion-item>
+                <ion-item  menu-close ui-sref="formcontinuous.fsummaryinitial">Summary Of Initial Assessment / Problem / Actions / Plan</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -22,25 +22,25 @@
         </div>
      <div class="item item-divider">Date</div>
                 <label class="item item-input item-stacked-label">
-                        <input type="date" placeholder="Date" ng-model="initial_assessment.date">
+                        <input type="date" placeholder="Date" ng-model="initial_summary.date">
                </label>
         </div>
       <div class="item item-divider">Time</div>
                 <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Time" ng-model="initial_assessment.location">
+                        <input type="text" placeholder="Time" ng-model="initial_summary.time">
                 </label>
         </div>
              <div class="item item-divider">Code & Category</div>
                 <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Code & Category" ng-model="initial_assessment.location">
+                        <input type="text" placeholder="Code & Category" ng-model="initial_summary.code_category">
                    </label>
         </div>
          <div class="item item-divider">Action/Plan</div>
                 <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Action/Plan" ng-model="initial_assessment.location">
+                        <input type="text" placeholder="Action/Plan" ng-model="initial_summary.action_plan">
                    </label>
         </div>
-                  <a class="button button-positive button-full" ng-click="p01next()">Save and Close</a>
+                  <a class="button button-positive button-full" ng-click="ContinuousSaveAndClose()">Save and Close</a>
         </ion-content>
       
     </ion-view>

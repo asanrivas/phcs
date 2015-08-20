@@ -10,29 +10,21 @@
         </div>
 		
 		<div class="list">
-				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Special Mention (appointment admission)</span>
-						<input type="text" placeholder="Special Mention">
+						<input type="text" placeholder="Special Mention" ng-model="continuous_sp02.special">
 				</label>
-						
 				<br>
 
 				<label class="item item-input item-stacked-label">
-				<span class="input-label">Date/Initial</span>
-						<input type="date" placeholder="Date/Initial">
+					<span class="input-label">Date/Initial</span>
+					<input type="date" placeholder="Date/Initial" ng-model="continuous_sp02.date_initial">
 				</label>
-				
 				<br>
-					
-				
-				
-  
-</div>
-  <div class="col"><span class="input-label"></span></div>
-</div>
-<div>
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/continuos">Save and Next</a>
-			</div>
+		</div>
+  		<div class="col"><span class="input-label"></span></div>
+		<div>
+				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/sp02">Save and Next</a>
+		</div>
 
 	</ion-content>

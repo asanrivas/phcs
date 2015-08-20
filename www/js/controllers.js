@@ -202,6 +202,9 @@ angular.module('starter.controllers', [])
 
 })
 .controller('FirstTimeCtrl', function($scope) {})
+.controller('ContinuousCtrl', function($scope) {})
+.controller('FormContinuousCtrl', function($scope) {})
+
 .controller('TabGalleryCtrl', function($scope, Camera, $localForage, $stateParams, $ionicModal, UploadData) {
     $scope.items = [];
 
@@ -454,14 +457,57 @@ angular.module('starter.controllers', [])
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
 })
+
+.controller('pt20Ctrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.continuous_pt20 = {};
+
+    $localForage.getItem('upload_data').then(function(data){
+        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CONTINUE_VISIT )
+            $scope.continuous_pt20 = data[$stateParams.patientID].V_CONTINUE_VISIT;
+    });
+
+    $scope.PT20Next = function(){
+        console.log("CONTINUE_VISIT_1");
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function(){
+            console.log("V_CONTINUE_VISIT");
+            $state.go('tab.sp01');
+        });
+    }
+})
+
+.controller('sp01Ctrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+})
+
+.controller('sp02Ctrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+})
+
+.controller('fsummaryinitialCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.ContinuousSaveAndClose = function(){
+        console.log("CONTINUE_VISIT_4");
+        // UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function(){
+        //     console.log("CONTINUE_VISIT_4---");
+        //     $state.go('tab.sp01');
+        // });
+            $state.go('tab.continous');
+    }
+
+})
+
 .controller('PointCtrl', function($scope, $state, $ionicModal) {
     $scope.p01next = function(){
+        console.log("p01next");
+        if($scope.checkbox.p3) {
+            console.log("openModal");
+        }
         if($scope.radio.p1 == 'GSC')
         {
+            console.log("openModal");
             $scope.openModal();
         }
         else {
-            $state.go('tab.p02');
+            $state.go('formcontinuous.p002');
+            $state.go('formcontinuous.p002');
         }
     }
 
@@ -471,7 +517,7 @@ angular.module('starter.controllers', [])
             $scope.openModal();
         }
         else {
-            $state.go('tab.p18');
+            $state.go('formcontinuous.p018');
         }
     }
     $scope.radio = {
@@ -800,6 +846,15 @@ angular.module('starter.controllers', [])
         });
     }
 })
+
+.controller('p18Controller', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
+    $scope.saveAndNext = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.curr_medication).then(function(){
+            $state.go('tab.firsttime', {patientID:$scope.$parent.patientID});
+        });
+    }
+})
+
 .controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
 
     $scope.curr_medication = {};

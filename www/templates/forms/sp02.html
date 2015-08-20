@@ -10,34 +10,27 @@
         </div>
 		
 		<div class="list">
-				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Special Instruction (dressing, cath/tube, PMT, etc)</span>
-						<input type="text" placeholder="Special Mention">
+						<input type="text" placeholder="Special Mention" ng-model="continuous_sp01.special">
 				</label>
-						
 				<br>
 
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Date Started/Initial</span>
-						<input type="date" placeholder="Date/Initial">
+						<input type="date" placeholder="Date/Initial" ng-model="continuous_sp01.date_start">
 				</label>
-				
 				<br>
 
 				<label class="item item-input item-stacked-label">
 				<span class="input-label">Date Complete/Initial</span>
-						<input type="date" placeholder="Date/Initial">
+						<input type="date" placeholder="Date/Initial"  ng-model="continuous_sp01.date_complete">
 				</label>
-					
-				
-				
-  
-</div>
-  <div class="col"><span class="input-label"></span></div>
-</div>
-<div>
-				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/continuos">Save and Next</a>
-			</div>
+		</div>
+  		<div class="col"><span class="input-label"></span></div>
+
+		<div>
+				<a class="button button-positive button-full" href="#/tab/{{$parent.patientID}}/fsummaryinitial">Save and Next</a>
+		</div>
 
 	</ion-content>
