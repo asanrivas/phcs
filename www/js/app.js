@@ -187,10 +187,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.glassgow', { url: '/glassgow/:patientID', views: { 'tab-continous': { templateUrl: 'templates/forms/modal-glassgow.html', controller: 'pt20Ctrl' } } })
 
     .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'PointCtrl'} } })
+    .state('tab.summary_initial', { url: '/summary_initial', views: { 'tab-continous': { templateUrl: 'templates/forms/summary_initial.html'}, controller: 'summary_initialCtrl' } })
 
     .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'}, controller: 'fsummaryinitialCtrl' } })
 
     // .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-home': { templateUrl: 'templates/forms/fsummaryinitial.html'} } })
+    .state('tab.multi_team', { url: '/multi_team', views: { 'tab-home': { templateUrl: 'templates/forms/multi_team.html'}, controller: 'multi_teamCtrl' } })
+// <<<<<<< HEAD
+// =======
+//     .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-home': { templateUrl: 'templates/forms/fsummaryinitial.html'} } })
+// >>>>>>> 65a4f69da3cec1a2dbb0399b25b8ad598f714165
 
     .state('tab.complimentary', { url: '/complimentary', views: { 'tab-pmt': { templateUrl: 'templates/forms/complimentary.html'} } })
 
