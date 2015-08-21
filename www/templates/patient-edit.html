@@ -12,7 +12,8 @@
                     <a class="button button-dark col button-block" ng-click="logout()">Logout</a>
                 </div>
             </div>
-            <div class="list card">
+
+            <div class="list card" ng-init="patient.patient_id=$parent.patientID">
                 <div class="item item-divider">Patient Profile</div>
                 <div class="item item-body list" ng-init="dashboard.detail=false">
                     <div class="item item-input">

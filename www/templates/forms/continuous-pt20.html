@@ -17,7 +17,7 @@
             <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="continuous_pt20.neurological">
               <ion-checkbox class="positive" ng-model="continuous_pt20.neurological.alert">A - Alert</ion-checkbox>
               <ion-checkbox ng-model="continuous_pt20.neurological.oriented">O - Oriented</ion-checkbox>
-              <ion-checkbox class="assertive" ng-model="continuous_pt20.neurological.glasgow_coma_scale">GSC - Glasgow Coma Scale</ion-checkbox>
+              <ion-checkbox class="assertive" ng-change="GSC_change()" ng-model="continuous_pt20.neurological.glasgow_coma_scale">GSC - Glasgow Coma Scale</ion-checkbox>
               <ion-checkbox ng-model="continuous_pt20.neurological.seizures">S - Seizures</ion-checkbox>
             </div>
 

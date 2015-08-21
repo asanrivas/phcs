@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $localForage, $state) {
+.controller('HomeCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
     $scope.profile_images = null;
 
     $scope.make_profile_pic = function(img){
@@ -28,12 +28,13 @@ angular.module('starter.controllers', [])
         window.localStorage.removeItem('user:userid');
         window.localStorage.removeItem('user:username');
         $state.go('login');
+    };
 
-    }
-
-    $scope.saveAndNext = function () {
-        console.log("go to home");
-        $state.go('tab.home');
+    $scope.saveAndNext = function(){
+        console.log("patient: "+$scope.patient);
+        UploadData.save_data_patient_id($stateParams.patientID, 'patients', $scope.patient).then(function(){
+            $state.go('tab.home');
+        });
     }
 })
 
@@ -373,25 +374,25 @@ angular.module('starter.controllers', [])
     $scope.active = 'shownew';
     $scope.setActive = function(type) {
         $scope.active = type;
-        console.log("Button1: "+$scope.active);
+        // console.log("Button1: "+$scope.active);
     };
     $scope.isActive = function(type) {
         return type === $scope.active;
-        console.log("Button2: "+$scope.active);
+        // console.log("Button2: "+$scope.active);
     };
     $scope.checkclicked = function() {
-        console.log("Button: "+$scope.active);
+        // console.log("Button: "+$scope.active);
     };
 
     $scope.shouldChangeOrder = false;
 
     $scope.truefalse = function() {
         if ($scope.active == "shownew") {
-            console.log("true");
+            // console.log("true");
             return "true";
         } else {
             return "false";
-            console.log("false");
+            // console.log("false");
         }
     }
 
@@ -403,10 +404,10 @@ angular.module('starter.controllers', [])
         //     return "";
         // }
         if ($scope.active == "shownew") {
-            console.log("REGISTER_DATE");
+            // console.log("REGISTER_DATE");
             return "REGISTER_DATE";
         } else {
-            console.log("NAME");
+            // console.log("NAME");
             return "NAME";
         }
     }
@@ -466,10 +467,15 @@ angular.module('starter.controllers', [])
             $scope.continuous_pt20 = data[$stateParams.patientID].V_CONTINUE_VISIT;
     });
 
+    $scope.GSC_change = function(){
+        if($scope.continuous_pt20.neurological.glasgow_coma_scale){
+            $state.go('tab.glassgow');
+            console.log("GCS: "+$scope.continuous_pt20.neurological.glasgow_coma_scale);
+        };
+    };
+
     $scope.PT20Next = function(){
-        console.log("CONTINUE_VISIT_1");
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function(){
-            console.log("V_CONTINUE_VISIT");
             $state.go('tab.sp01');
         });
     }

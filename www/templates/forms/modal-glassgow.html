@@ -8,31 +8,31 @@
           <div class="item item-divider">
             <i>E</i>ye opening behavior
           </div>
-          <ion-radio name="eye" ng-model="gsc.eye" ng-value="4">Spontaneously +4</ion-radio>
-          <ion-radio name="eye" ng-model="gsc.eye" ng-value="3">To speech +3</ion-radio>
-          <ion-radio name="eye" ng-model="gsc.eye" ng-value="2">To pain +2</ion-radio>
-          <ion-radio name="eye" ng-model="gsc.eye" ng-value="1">No Response +1</ion-radio>
+          <ion-radio name="eye" ng-model="gsc.eye" ng-value=4>Spontaneously +4</ion-radio>
+          <ion-radio name="eye" ng-model="gsc.eye" ng-value=3>To speech +3</ion-radio>
+          <ion-radio name="eye" ng-model="gsc.eye" ng-value=2>To pain +2</ion-radio>
+          <ion-radio name="eye" ng-model="gsc.eye" ng-value=1>No Response +1</ion-radio>
 
           <div class="item item-divider">
             Best <b>V</b>erbal Response
           </div>
 
-          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value="5">Oriented on time, place and person +5</ion-radio>
-          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value="4">Confused +4</ion-radio>
-          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value="3">Inappropriate words +3</ion-radio>
-          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value="2">Incomprehensible sounds +2</ion-radio>
-          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value="1">No responses +1</ion-radio>
+          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value=5>Oriented on time, place and person +5</ion-radio>
+          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value=4>Confused +4</ion-radio>
+          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value=3>Inappropriate words +3</ion-radio>
+          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value=2>Incomprehensible sounds +2</ion-radio>
+          <ion-radio name="verbal" ng-model="gsc.verbal" ng-value=1>No responses +1</ion-radio>
 
           <div class="item item-divider">
             Best <b>M</b>otor Response
           </div>
 
-          <ion-radio name="motor" ng-model="gsc.motor" ng-value="6">Obey commands +6</ion-radio>
-          <ion-radio name="motor" ng-model="gsc.motor" ng-value="5">Movers to localized pain +5</ion-radio>
-          <ion-radio name="motor" ng-model="gsc.motor" ng-value="4">Flexion withdrawal from pain +4</ion-radio>
-          <ion-radio name="motor" ng-model="gsc.motor" ng-value="3">Abnormal flexion (decorticate) +3</ion-radio>
-          <ion-radio name="motor" ng-model="gsc.motor" ng-value="2">Abnormal extension (decerebrate) +2</ion-radio>
-          <ion-radio name="motor" ng-model="gsc.motor" ng-value="1">No response +1</ion-radio>
+          <ion-radio name="motor" ng-model="gsc.motor" ng-value=6>Obey commands +6</ion-radio>
+          <ion-radio name="motor" ng-model="gsc.motor" ng-value=5>Movers to localized pain +5</ion-radio>
+          <ion-radio name="motor" ng-model="gsc.motor" ng-value=4>Flexion withdrawal from pain +4</ion-radio>
+          <ion-radio name="motor" ng-model="gsc.motor" ng-value=3>Abnormal flexion (decorticate) +3</ion-radio>
+          <ion-radio name="motor" ng-model="gsc.motor" ng-value=2>Abnormal extension (decerebrate) +2</ion-radio>
+          <ion-radio name="motor" ng-model="gsc.motor" ng-value=1>No response +1</ion-radio>
            <p>Total score (E+V+M): {{totalpoint = gsc.motor+gsc.eye+gsc.verbal}}</p>
         <p ng-show="totalpoint<=15&&totalpoint>8">Best response</p>
         <p ng-show="totalpoint<=8&&totalpoint>3">Comatose client</p>
