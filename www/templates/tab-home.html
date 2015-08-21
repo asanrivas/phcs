@@ -31,7 +31,9 @@
                     <div class="item ion-icon">
                         Date of birth <span class="item-note black capital">{{patient.DATE_OF_BIRTH}}</span>
                     </div>
-
+                    <div class="item ion-icon">
+                        Patient Status <span class="item-note black capital">{{patient.CATEGORY_CODE_DESC}}</span>
+                    </div>
 
 					<div class="item ion-icon">
                         Occupation <span class="item-note black capital">{{patient.OCCUPATION}}</span>
@@ -68,6 +70,7 @@
                     <div class="item" ng-show="dashboard.detail">
                         Nurse Name <span class="item-note black">{{patient.NURSE_NAME}}</span>
                     </div>
+                    
 					<div class="item ion-icon">
                         Primary Mobile <span class="item-note black capital">{{patient.PRIMARY_MOBILE}}</span>
                     </div>

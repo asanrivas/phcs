@@ -84,6 +84,17 @@
                         <input type="text" ng-model="patient.NURSE_NAME">
                     </div>
                     <div class="item item-input">
+                        <div class="input-label">Patient Status</div>
+                        <select ng-model="patient.RACE">
+                            <option value="01" ng-selected="patient.CATEGORY_CODE=='01'">HOMECARE</option>
+                            <option value="02" ng-selected="patient.CATEGORY_CODE=='02'">OPP</option>
+                            <option value="03" ng-selected="patient.CATEGORY_CODE=='03'">SUNSHINE</option>
+                            <option value="04" ng-selected="patient.CATEGORY_CODE=='04'">KIV</option>
+                             <option value="05" ng-selected="patient.CATEGORY_CODE=='05'">DIED</option>
+                              <option value="06" ng-selected="patient.CATEGORY_CODE=='06'">EQUIPMENT LOAN</option>
+                        </select>
+                    </div>
+                    <div class="item item-input">
                         <span class="input-label">Primary Mobile</span>
                         <input type="tel" ng-model="patient.PRIMARY_MOBILE">
                     </div>
