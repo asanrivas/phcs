@@ -185,8 +185,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.collapsible', { url: '/collapsible', views: { 'tab-continous': { templateUrl: 'templates/forms/collapsible.html' } } })
 
     .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'PointCtrl'} } })
+    .state('tab.summary_initial', { url: '/summary_initial', views: { 'tab-continous': { templateUrl: 'templates/forms/summary_initial.html'}, controller: 'summary_initialCtrl' } })
 
-    .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'}, controller: 'fsummaryinitialCtrl' } })
+    .state('tab.multi_team', { url: '/multi_team', views: { 'tab-home': { templateUrl: 'templates/forms/multi_team.html'}, controller: 'multi_teamCtrl' } })
 // <<<<<<< HEAD
 // =======
 //     .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-home': { templateUrl: 'templates/forms/fsummaryinitial.html'} } })
