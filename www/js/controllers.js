@@ -202,7 +202,26 @@ angular.module('starter.controllers', [])
     }
 
 })
-.controller('FirstTimeCtrl', function($scope) {})
+.controller('FirstTimeCtrl', function($scope) {
+    $scope.status = {};
+    $scope.$on('$ionicView.enter', function(e) {
+
+    });
+
+    if($scope.$parent.upload_data[$scope.$parent.patientID])
+    {
+        if($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
+            $scope.status.initial_assessment = true;
+        if($scope.$parent.upload_data[$scope.$parent.patientID].V_MEDICAL_ASSESSMENT)
+            $scope.status.medical_assessment = true;
+        if($scope.$parent.upload_data[$scope.$parent.patientID].V_SOCIAL_ASSESSMENT)
+            $scope.status.social_assessment = true;
+        if($scope.$parent.upload_data[$scope.$parent.patientID].V_GENERAL_EXAMINATION)
+            $scope.status.general_examination = true;
+        if($scope.$parent.upload_data[$scope.$parent.patientID].V_CURR_MEDICATION_CHART)
+            $scope.status.curr_medication = true;
+    }
+})
 .controller('ContinuousCtrl', function($scope) {})
 .controller('FormContinuousCtrl', function($scope) {})
 
@@ -322,7 +341,7 @@ angular.module('starter.controllers', [])
 
 })
 .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal) {
-    $scope.patientID = $stateParams.patientID;
+    $scope.patientID = parseInt($stateParams.patientID);
     $scope.patient = [];
     $localForage.getItem('patients').then(function(dataf){
         $scope.patients = dataf;
@@ -743,6 +762,23 @@ angular.module('starter.controllers', [])
 })
 .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
     $scope.social_assessment = {};
+    $scope.social_assessment.socio_diagram = 'img/f09.png';
+
+    $scope.editImage = function(){
+        var img = $scope.social_assessment.socio_diagram;
+        if(img.startsWith('img'))
+            img = 'www/'+img;
+        handdrawing.openDraw(img, function(data){
+            if(data)
+            {
+                $scope.$apply(function () {
+                    $scope.social_assessment.socio_diagram = 'file://'+data;
+                    $scope.social_assessment.tmp_hand1 = 'file://'+data;
+                });
+            }
+        });
+    };
+
 
     $localForage.getItem('upload_data').then(function(data){
         if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_SOCIAL_ASSESSMENT )
@@ -861,7 +897,7 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
+.controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal, $ionicPopup) {
 
     $scope.curr_medication = {};
 
@@ -913,6 +949,21 @@ angular.module('starter.controllers', [])
     $scope.$on('modal.removed', function() {
         // Execute action
     });
+
+    $scope.deleteItem = function(index) {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Remove medication',
+            template: 'Are you sure you want remove this medication?'
+        });
+
+        confirmPopup.then(function(res) {
+            if(res) {
+                $scope.curr_medication.medications.splice(index, 1)
+            } else {
+                console.log('You are not sure');
+            }
+        });
+    };
 })
 .controller('f14Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
     $scope.general_examination = {};
