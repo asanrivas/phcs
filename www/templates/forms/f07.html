@@ -20,8 +20,8 @@
 						<input type="text" placeholder="How do you like to be addresses" ng-model="initial_assessment.address">
 				</label>
 				<label class="item item-input item-stacked-label">
-					<span class="input-label">Referring Doctor</span>
-						<input type="text" placeholder="Referring Doctor" ng-model="initial_assessment.ref_doctor">
+					<span class="input-label">Referring Doctor</span></br>
+					 <input type="text" ng-model="patient.DOCTOR_NAME">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Other Consultants involved</span>
@@ -80,6 +80,11 @@
 					<ion-checkbox ng-model="initial_assessment.initial_reason.equipment_rental">Equipment rental</ion-checkbox>
 					<ion-checkbox ng-model="initial_assessment.initial_reason.dressing">Dressing</ion-checkbox>
 					<ion-checkbox ng-model="initial_assessment.initial_reason.others">Others</ion-checkbox>
+					<label class="item item-input item-stacked-label">
+					<span class="input-label">Others Remarks:</span>
+						<input type="text" placeholder="Location of Assessment" ng-model="initial_assessment.location">
+				</label>
+		</div>
 				</ion-list>
 		</div>
 		<div class="list card">
