@@ -91,6 +91,33 @@ angular.module('starter.services', [])
         {
 
         },
+        data_selector: function(patientID, table, section_table)
+        {
+            var q = $q.defer();
+            $localForage.getItem('upload_data').then(function(data){
+                console.log("patient: "+patientID);
+                if( data && data[patientID] && data[patientID][table] )
+                {
+                    q.resolve(data[patientID][table]);
+                }
+                else
+                {
+                    $localForage.getItem(section_table).then(function(vdata){
+                        if(vdata && vdata[table])
+                        {
+                            for (var i = vdata[table].length-1; i >= 0; i--) {
+                                if(vdata[table][i].patient_id == patientID)
+                                {
+                                    q.resolve(vdata[table][i]);
+                                    break;
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+            return q.promise;
+        },
         append_data_patient_id: function(patientID, table, datum)
         {
             var q = $q.defer();

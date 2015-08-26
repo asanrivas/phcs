@@ -756,24 +756,9 @@ angular.module('starter.controllers', [])
 .controller('f07Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
     $scope.initial_assessment = {};
 
-    $localForage.getItem('upload_data').then(function(data){
-        console.log("patient: "+$scope.initial_assessment.patient_id);
-        if( data && data[$stateParams.patientID] && data[$stateParams.patientID].V_INITIAL_ASSESSMENT )
-            $scope.initial_assessment = data[$stateParams.patientID].V_INITIAL_ASSESSMENT;
-        else
-        {
-            $localForage.getItem('V_FIRST_VISIT').then(function(vdata){
-                if(vdata && vdata['V_INITIAL_ASSESSMENT'])
-                {
-                    for (var i = vdata['V_INITIAL_ASSESSMENT'].length-1; i >= 0; i--) {
-                        if(vdata['V_INITIAL_ASSESSMENT'][i].patient_id == $stateParams.patientID)
-                        {
-                            $scope.initial_assessment = vdata['V_INITIAL_ASSESSMENT'][i];
-                        }
-                    }
-                }
-            });
-        }
+    UploadData.data_selector($stateParams.patientID, 'V_INITIAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
+        $scope.initial_assessment = data;
+        // body...
     });
 
     $scope.saveAndNext = function(){
@@ -785,7 +770,8 @@ angular.module('starter.controllers', [])
 .controller('f08Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
 
     $scope.medical_assessment = {};
-    $scope.medical_assessment.body_diagram = 'img/f08.png';
+    $scope.img_default = 'img/f08.png';
+    $scope.medical_assessment.body_diagram = $scope.img_default;
 
     $scope.editImage = function(){
         var img = $scope.medical_assessment.body_diagram;
@@ -808,25 +794,33 @@ angular.module('starter.controllers', [])
     });
 
     $scope.saveAndNext = function(){
-        var filepath = $scope.medical_assessment.body_diagram;
-        var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+        if(img_default!=$scope.medical_assessment.body_diagram)
+        {
+            var filepath = $scope.medical_assessment.body_diagram;
+            var images = filepath.substr(filepath.lastIndexOf('/') + 1);
 
-        $scope.medical_assessment.body_diagram = images;
+            $scope.medical_assessment.body_diagram = images;
 
-        var patient_gallery = {};
-        patient_gallery.patient_id = $stateParams.patientID;
-        patient_gallery.title = 'Diagram';
-        patient_gallery.gallery_type_code = "0";
-        patient_gallery.gallery_status_code = "1";
-        patient_gallery.description = "";
-        patient_gallery.image = images;
-        patient_gallery.filename = filepath;
+            var patient_gallery = {};
+            patient_gallery.patient_id = $stateParams.patientID;
+            patient_gallery.title = 'Diagram';
+            patient_gallery.gallery_type_code = "0";
+            patient_gallery.gallery_status_code = "1";
+            patient_gallery.description = "";
+            patient_gallery.image = images;
+            patient_gallery.filename = filepath;
 
-        UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function(){
+            UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function(){
+                UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function(){
+                    $state.go('formfirstvisit.f09');
+                });
+            });
+        }
+        else {
             UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function(){
                 $state.go('formfirstvisit.f09');
             });
-        });
+        }
     }
 })
 .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
