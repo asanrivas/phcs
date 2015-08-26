@@ -488,8 +488,8 @@ angular.module('starter.controllers', [])
 
     $scope.GSC_change = function(){
         if($scope.continuous_pt20.neurological.glasgow_coma_scale){
-            $state.go('tab.glassgow');
-            console.log("GCS: "+$scope.continuous_pt20.neurological.glasgow_coma_scale);
+            $state.go('tab.glasgow');
+            // console.log("GCS: "+$scope.continuous_pt20.neurological.glasgow_coma_scale);
         };
     };
 
@@ -507,13 +507,22 @@ angular.module('starter.controllers', [])
     }
 })
 
-.controller('glassgowCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
-     $scope.save_glassgow = function(){
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_GSC', $scope.continuous_pt20).then(function(){
-            $state.go('tab.sp01');
+.controller('glasgowCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+     $scope.save_glasgow = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_GSC', $scope.gsc).then(function(){
+            $state.go('tab.continuouspt20');
         });
     }
 })
+
+.controller('stagesCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    //  $scope.save_stages = function(){
+    //     UploadData.save_data_patient_id($stateParams.patientID, 'V_GSC', $scope.continuous_pt20).then(function(){
+    //         $state.go('tab.sp01');
+    //     });
+    // }
+})
+
 
 .controller('woundCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
 
@@ -537,6 +546,7 @@ angular.module('starter.controllers', [])
     });
 
     $scope.save_wound = function(){
+        $scope.allwound.patient_id = $stateParams.patientID;
         $scope.allwound[$stateParams.woundtype] = $scope.wound;
         UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', $scope.allwound).then(function(){
             $state.go('tab.continuouspt20');
