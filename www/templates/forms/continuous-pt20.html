@@ -10,7 +10,27 @@
 
         <div class="list card" ng-init="continuous_pt20.patient_id=$parent.patientID">
 
-            <div class="item item-divider">P1 – Neurological</div>
+            <div class="item item-divider">P14 – Wound</div>
+            <div class="item item-body">
+                <div>Select the nearest wound condition of patient:</div>
+            </div>
+            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="continuous_pt20.wound">
+               <ion-checkbox class="positive" ng-model="continuous_pt20.wound.no_wound" ng-click="continuous_pt20.wound = {};continuous_pt20.wound.no_wound=true"> No wound</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.post_op_wound" ng-change="open_wound('post_op_wound')">PO-Post op wound</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.pressure">P-Pressure</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.fumigating">F-Fumigating</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.redness">S1-Redness</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.partial_thickness">S2-Partial thickness</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.full_thickness">S3-Full thickness</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.cavity">S4-Cavity</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.unstageble">S5-Unstageble</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.clean">CL-Clean</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.granulating">G-Granulating</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.odor">O-Odor</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.exudations">E-Exudations</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.bleeding">B-Bleeding</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.sloughs">Sl-Sloughs</ion-checkbox>            </div>
+            <div class="item item-divider">P2 – Neurological</div>
             <div class="item item-body">
                 <div>Select the nearest neorological condition of patient:</div>
             </div>
@@ -21,7 +41,7 @@
               <ion-checkbox ng-model="continuous_pt20.neurological.seizures">S - Seizures</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P2 – Emotional</div>
+            <div class="item item-divider">P3 – Emotional</div>
             <div class="item item-body">
                 <div>Select the nearest emotional condition of patient:</div>
             </div>
@@ -37,7 +57,7 @@
               <ion-checkbox ng-model="continuous_pt20.emotional.denial">Dn-Denial</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P3 – Spiritual</div>
+            <div class="item item-divider">P4 – Spiritual</div>
             <div class="item item-body">
                 <div>Select the nearest spiritual condition of patient:</div>
             </div>
@@ -56,7 +76,7 @@
                     RS- Display religious symbols</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P4 – Comfort</div>
+            <div class="item item-divider">P5 – Comfort</div>
             <div class="item item-body">
                 <div>Select the nearest comfort condition of patient:</div>
             </div>
@@ -67,7 +87,7 @@
               <ion-checkbox ng-model="continuous_pt20.comfort.on_movement">M- On movement</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P5 – Sleeping</div>
+            <div class="item item-divider">P6 – Sleeping</div>
             <div class="item item-body">
                 <div>Select the nearest sleeping condition of patient:</div>
             </div>
@@ -79,7 +99,7 @@
               <ion-checkbox ng-model="continuous_pt20.sleeping.restless">R-Restless</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P6 – Breathing</div>
+            <div class="item item-divider">P7 – Breathing</div>
             <div class="item item-body">
                 <div>Select the nearest breathing condition of patient:</div>
             </div>
@@ -91,7 +111,7 @@
               <ion-checkbox ng-model="continuous_pt20.breathing.others">O-Others</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P7 – Circulation</div>
+            <div class="item item-divider">P8 – Circulation</div>
             <div class="item item-body">
                 <div>Select the nearest circulation condition of patient:</div>
             </div>
@@ -103,7 +123,7 @@
               <ion-checkbox ng-model="continuous_pt20.circulation.edema">E-Edema</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P8 – Temperature</div>
+            <div class="item item-divider">P9 – Temperature</div>
             <div class="item item-body">
                 <div>Select the nearest temperature condition of patient:</div>
             </div>
@@ -115,7 +135,7 @@
               <ion-checkbox ng-model="continuous_pt20.temperature.cool_to_touch">C-Cool to touch</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P9 – Oral (Mouth)</div>
+            <div class="item item-divider">P10 – Oral (Mouth)</div>
             <div class="item item-body">
                 <div>Select the nearest oral (mouth) condition of patient:</div>
             </div>
@@ -130,7 +150,7 @@
               <ion-checkbox ng-model="continuous_pt20.oral_mouth.dry_mouth">D-Dry mouth</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P10 – Nutrition</div>
+            <div class="item item-divider">P11 – Nutrition</div>
             <div class="item item-body">
                 <div>Select the nearest nutrition condition of patient:</div>
             </div>
@@ -143,7 +163,7 @@
               <ion-checkbox ng-model="continuous_pt20.nutrition.supplement">SP-Supplement</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P11 – Elimination Bowel</div>
+            <div class="item item-divider">P12 – Elimination Bowel</div>
             <div class="item item-body">
                 <div>Select the nearest elimination bowel condition of patient:</div>
             </div>
@@ -157,7 +177,7 @@
               <ion-checkbox ng-model="continuous_pt20.elimination_bowel.incontinence">I-Incontinence</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P12 – Elimination Bladder</div>
+            <div class="item item-divider">P13 – Elimination Bladder</div>
             <div class="item item-body">
                 <div>Select the nearest elimination bladder condition of patient:</div>
             </div>
@@ -186,21 +206,28 @@
               <ion-checkbox ng-model="continuous_pt20.elimination_bladder.concentrated">CN-Concentrated</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P13 – Wound</div>
+            <div class="item item-divider">P14 – Wound</div>
             <div class="item item-body">
                 <div>Select the nearest wound condition of patient:</div>
             </div>
             <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="continuous_pt20.wound">
-              <ion-checkbox class="positive" ng-model="continuous_pt20.wound.bowel_open">BO-Bowel open</ion-checkbox>
-              <ion-checkbox ng-model="continuous_pt20.wound.bowel_not_open">BNO-Bowel not open</ion-checkbox>
-              <ion-checkbox ng-model="continuous_pt20.wound.stoma">ST-Stoma</ion-checkbox>
-              <ion-checkbox ng-model="continuous_pt20.wound.diarrhea">D-Diarrhea</ion-checkbox>
-              <ion-checkbox ng-model="continuous_pt20.wound.enema">E-Enema</ion-checkbox>
-              <ion-checkbox ng-model="continuous_pt20.wound.maleana">M-Maleana</ion-checkbox>
-              <ion-checkbox ng-model="continuous_pt20.wound.incontinence">I-Incontinence</ion-checkbox>
-            </div>
+               <ion-checkbox class="positive" ng-model="continuous_pt20.wound.no_wound" ng-click="continuous_pt20.wound = {};continuous_pt20.wound.no_wound=true"> No wound</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.post_op_wound" ng-change="open_wound('post_op_wound')">PO-Post op wound</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.pressure">P-Pressure</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.fumigating">F-Fumigating</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.redness">S1-Redness</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.partial_thickness">S2-Partial thickness</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.full_thickness">S3-Full thickness</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.cavity">S4-Cavity</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.unstageble">S5-Unstageble</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.clean">CL-Clean</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.granulating">G-Granulating</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.odor">O-Odor</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.exudations">E-Exudations</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.bleeding">B-Bleeding</ion-checkbox>
+               <ion-checkbox ng-model="continuous_pt20.wound.sloughs">Sl-Sloughs</ion-checkbox>            </div>
 
-            <div class="item item-divider">P14 – Activities For Daily Living And Sexuality</div>
+            <div class="item item-divider">P15 – Activities For Daily Living And Sexuality</div>
             <div class="item item-body">
                 <div>Select the nearest activities for daily living and sexuality condition of patient:</div>
             </div>
@@ -213,7 +240,7 @@
               <ion-checkbox ng-model="continuous_pt20.activities.low_self_esteem">SE-Low self esteem</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P15 – End Of Life Issues</div>
+            <div class="item item-divider">P16 – End Of Life Issues</div>
             <div class="item item-body">
                 <div>Select the nearest end of life issues condition of patient:</div>
             </div>
@@ -223,7 +250,7 @@
               <ion-checkbox ng-model="continuous_pt20.life_issue.eolcp_active_eolcp">EOLCP-Active EOLCP</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P16 – Client Support Issues</div>
+            <div class="item item-divider">P17 – Client Support Issues</div>
             <div class="item item-body">
                 <div>Select the nearest client support issues condition of patient:</div>
             </div>
@@ -234,7 +261,7 @@
               <ion-checkbox ng-model="continuous_pt20.client_support_issue.financial_form_8_a">SF-Financial FORM 8 A</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P17 – Mobilization And Activity</div>
+            <div class="item item-divider">P18 – Mobilization And Activity</div>
             <div class="item item-body">
                 <div>Select the nearest mobilization and activity condition of patient:</div>
             </div>
@@ -248,7 +275,7 @@
               <ion-checkbox ng-model="continuous_pt20.mobilization.patient_location_in_home">PL-Patient location in home</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P18 – Palliative Massage Therapy (PMT)</div>
+            <div class="item item-divider">P19 – Palliative Massage Therapy (PMT)</div>
             <div class="item item-body">
                 <div>Select the nearest palliative massage therapy (PMT) condition of patient:</div>
             </div>

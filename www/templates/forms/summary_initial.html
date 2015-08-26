@@ -1,43 +1,75 @@
 <ion-view view-title="Summary Of Initial Assessment">
     <ion-content class="padding">
-        <div class="list card">
+        <div class="list card" ng-init="continuous_sp01.patient_id=$parent.patientID">
             <div class="item item-divider">Summary Of Initial Assessment / Problem / Actions / Plan</div>
-
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Special Instruction (dressing, cath/tube, PMT, etc)</span>
+                        <input type="text" placeholder="Special Mention" ng-model="continuous_sp02.special">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date Started/Initial</span>
+                        <input type="date" placeholder="Date Started/Initial" ng-model="continuous_sp02.date_start">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date Complete/Initial</span>
+                        <input type="date" placeholder="Date Complete/Initial"  ng-model="continuous_sp02.date_complete">
+                </label>
+        </div>
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="SP02Next()">Save and Next</a>
         </div>
 
-        <div class="list card">
-             <label class="item item-input item-select">
+    </ion-content>
+</ion-view>
+
+
+<ion-view view-title="Summary Of Initial Assessment">
+    <ion-content class="padding">
+        <div class="list card" ng-init="initial_assessment.patient_id=$parent.patientID">
+            <div class="item item-divider">Summary Of Initial Assessment / Problem / Actions / Plan</div>
+        </div>
+
+                <label class="item item-input item-select">
                     <div class="input-label">
                         Client Classified on Admission as
                     </div>
-                        <select ng-model="initial_assessment.patient_aware_diagnosis">
+                        <select ng-model="continuous_summary.client_classified">
                             <option value="S0">S0</option>
                             <option value="S1">S1</option>
                             <option value="S1">S2</option>
                             <option value="S1">U1</option>
                             <option value="S1">U2</option>
                         </select>
-                        </label>
+                </label>
 
-            <label class="item item-input item-select">
+                <label class="item item-input item-select">
                     <div class="input-label">
                        Assess need for referral
                     </div>
-                        <select ng-model="initial_assessment.patient_aware_diagnosis">
+                        <select ng-model="continuous_summary.assess_need">
                             <option value="S0">Pallative Massage Therapy</option>
                             <option value="S1">Play Therapy</option>
                             <option value="S1">Physical Therapy</option>
                             <option value="S1">Occupational Therapy</option>
                             <option value="S1">Dental as appropriated</option>
                         </select>
-                        </label>
+                </label>
 
-                        <div class="list card">
+            <!-- <div class="item item-divider">Summary</div> -->
+<!--                 <label class="item item-input item-stacked-label">
+                    <span class="input-label">Summary</span>
+                        <input type="text" placeholder="Summary" ng-model="continuous_summary.summary">
+                </label>
+ -->
             <div class="item item-divider">Summary</div>
                 <label class="item item-input item-stacked-label">
-                    <textarea rows="4"></textarea>
+                    <textarea rows="4" placeholder="Summary" ng-model="continuous_summary.summary"></textarea>
                 </label>
         </div>
+
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="ContinuousSaveAndClose()">Save and Close</a>
+        </div>
+
     </ion-content>
-    <a class="button button-positive button-full">Save and Close</a>
 </ion-view>

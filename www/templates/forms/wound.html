@@ -1,0 +1,86 @@
+<ion-view>
+    <ion-content>
+
+		<h2 class="title">  <b>Wound Monitoring Flow Chart</b></h2>
+
+		<label class="item item-input item-stacked-label">
+			<span class="input-label"><b>Date</b></span>
+			<input type="date" placeholder="Date" ng-model="wound.monitoring.date">
+		</label>
+
+		<div class="row">
+			<div class="col col-50"><b>Appearance</b><br>
+				<ion-checkbox name="1" ng-model="wound.appearance.pink">Epithelizing - Pink</ion-checkbox>
+				<ion-checkbox name="2" ng-model="wound.appearance.red">Granulating - Red</ion-checkbox>
+				<ion-checkbox name="3" ng-model="wound.appearance.yellow">Sloughy - Yellow</ion-checkbox>
+				<ion-checkbox name="4" ng-model="wound.appearance.green">Infected - Green</ion-checkbox>
+				<ion-checkbox name="5" ng-model="wound.appearance.black">Necrotic - Black</ion-checkbox>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-50"><b>Discharge/Drainage Amount - sl, +, ++,+++</b><br>
+				<ion-checkbox name="1" ng-model="wound.discharge.serous">Serous / Haemoserous</ion-checkbox>
+				<ion-checkbox name="2" ng-model="wound.discharge.blood">Blood</ion-checkbox>
+				<ion-checkbox name="3" ng-model="wound.discharge.yellowish">Yellowish / Greenish</ion-checkbox>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col col-50"><b>Pain / Present</b><br>
+				<ion-checkbox name="1" ng-model="wound.pain.intensity">Intensity (use pain measurement scale)</ion-checkbox>
+			</div>
+		</div>
+
+		<div class="row">   
+			<div class="col col-50"><b>Swelling / Redness</b><br>
+				<ion-checkbox name="1" ng-model="wound.swelling.present">Present</ion-checkbox>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-50"><b>Odour</b><br>
+				<ion-checkbox name="1" ng-model="wound.odour.present">Present</ion-checkbox>
+			</div>
+		</div>     
+
+		<div class="row">
+			<div class="col col-50"><b>Cleansing Solutions</b><br>
+				<ion-checkbox name="1" ng-model="wound.cleansing.normal_saline">Normal Saline 0.9%</ion-checkbox>
+				<ion-checkbox name="2" ng-model="wound.cleansing.tap_water">Tap Water</ion-checkbox>
+				<ion-checkbox name="3" ng-model="wound.cleansing.others">Others:</ion-checkbox>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-50"><b>Dressing Products</b><br>
+				<ion-checkbox name="1" ng-model="wound.dressing.duoderm">Duoderm Water</ion-checkbox>
+				<ion-checkbox name="2" ng-model="wound.dressing.intrasite">Intrasite Gel</ion-checkbox>
+				<ion-checkbox name="3" ng-model="wound.dressing.kaltostat">Kaltostat</ion-checkbox>
+				<ion-checkbox name="4" ng-model="wound.dressing.opsite__tegaderm__primapore">Opsite/Tegaderm/Primapore</ion-checkbox>
+				<ion-checkbox name="5" ng-model="wound.dressing.solcoseryl__purilon">Solcoseryl / Purilon</ion-checkbox>
+				<ion-checkbox name="6" ng-model="wound.dressing.melonin">Melonin</ion-checkbox>
+				<ion-checkbox name="7" ng-model="wound.dressing.foam">Foam</ion-checkbox>
+				<ion-checkbox name="8" ng-model="wound.dressing.others">Others :</ion-checkbox>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col col-50"><b>Date of dressing</b><br>
+				<label class="item item-input item-stacked-label">
+					<!-- <span class="input-label"><b>Date of dressing</b></span> -->
+					<input type="date" placeholder="Date" ng-model="wound.dressing.date">
+				</label>
+			</div>
+		</div>
+<!-- 		 <div class="bar bar-footer tabs bar-positive">
+	        <a class="tab-item" ng-click="save_wound()">Save &amp; Back</a>
+	    </div>
+ -->        
+ 		<div class="list">
+            <a class="button button-positive button-full" ng-click="save_wound()">Save and Back</a>
+        </div>
+
+    </ion-content>
+</ion-view>

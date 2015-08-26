@@ -1,0 +1,46 @@
+<ion-view view-title="Summary Of Initial Assessment">
+    <ion-content class="padding">
+       
+       <div class="item item-divider">
+           Client of initial on admission
+          </div>
+          <ion-item>
+              <ion-checkbox name="si4">HV/N</ion-checkbox>
+              <ion-checkbox name="si4">PCU/Visit</ion-checkbox>
+              <ion-checkbox name="si4">Tel/C</ion-checkbox>
+              <ion-checkbox name="si4">Tel/R</ion-checkbox>
+              <ion-checkbox name="si4">Others</ion-checkbox>  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Remarks</span>
+                        <input type="text" placeholder="Others Remarks">
+                </label>
+          </ion-item>
+       <div class="list card">
+            <div class="item item-divider">Assessment/Problem</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea placeholder="Assessment/Problems" rows="4"></textarea>
+                </label>
+        </div>
+     <div class="item item-divider">Date</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="date" placeholder="Date" ng-model="initial_summary.date">
+               </label>
+        </div>
+      <div class="item item-divider">Time</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Time" ng-model="initial_summary.time">
+                </label>
+        </div>
+             <div class="item item-divider">Code & Category</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Code & Category" ng-model="initial_summary.code_category">
+                   </label>
+        </div>
+         <div class="item item-divider">Action/Plan</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Action/Plan" ng-model="initial_summary.action_plan">
+                   </label>
+        </div>
+                  <a class="button button-positive button-full" ng-click="ContinuousSaveAndClose()">Save and Close</a>
+        </ion-content>
+      
+    </ion-view>

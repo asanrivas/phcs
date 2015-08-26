@@ -498,23 +498,92 @@ angular.module('starter.controllers', [])
             $state.go('tab.sp01');
         });
     }
+
+    $scope.open_wound = function(item)
+    {
+        // console.log("open_wound: "+item);
+        $state.go('tab.wound', {woundtype:item});
+        // console.log(this);
+    }
+})
+
+.controller('glassgowCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+     $scope.save_glassgow = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_GSC', $scope.continuous_pt20).then(function(){
+            $state.go('tab.sp01');
+        });
+    }
+})
+
+.controller('woundCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.wound = { itemtype:$stateParams.woundtype };
+    $scope.allwound;
+    var is_edit = false;
+    var patientid = $stateParams.patientID;
+    $localForage.getItem('upload_data').then(function(data){
+        if(data[patientid] && data[patientid]['V_WOUND'] )
+        {
+            $scope.allwound = data[patientid]['V_WOUND'];
+            if(data[patientid]['V_WOUND'][$stateParams.woundtype])
+            {
+                $scope.wound = data[patientid]['V_WOUND'][$stateParams.woundtype];
+                is_edit = true;
+            }
+        } else if(data[patientid]) {
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', $scope.allwound);
+
+        }
+    });
+
+    $scope.save_wound = function(){
+        console.log("b41");
+        $scope.allwound[$stateParams.woundtype] = $scope.wound;
+        console.log("b4");
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', $scope.allwound).then(function(){
+            $state.go('tab.continuouspt20');
+        });
+        console.log("after");
+    }
 })
 
 .controller('sp01Ctrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.SP01Next = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_sp01).then(function(){
+            $state.go('tab.sp02');
+        });
+    }
+
 })
 
 .controller('sp02Ctrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.SP02Next = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_sp02).then(function(){
+            $state.go('tab.continous');
+        });
+    }
+
+})
+
+.controller('summary_initialCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+            console.log("CONTINUE_VISIT_");
+    $scope.ContinuousSaveAndClose = function(){
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_summary).then(function(){
+            console.log("CONTINUE_VISIT_4---");
+            $state.go('tab.continous');
+        });
+    }
+
 })
 
 .controller('fsummaryinitialCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
 
     $scope.ContinuousSaveAndClose = function(){
-        console.log("CONTINUE_VISIT_4");
-        // UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function(){
-        //     console.log("CONTINUE_VISIT_4---");
-        //     $state.go('tab.sp01');
-        // });
-            $state.go('tab.continous');
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_summary).then(function(){
+            console.log("CONTINUE_VISIT_4---");
+            $state.go('tab.continuous');
+        });
     }
 
 })
@@ -552,32 +621,32 @@ angular.module('starter.controllers', [])
 
 
     //Modal
-    $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
+    // $ionicModal.fromTemplateUrl('templates/forms/modal-glassgow.html', {
+    //     scope: $scope,
+    //     animation: 'slide-in-up'
+    // }).then(function(modal) {
+    //     $scope.modal = modal;
+    // });
 
-    $scope.openModal = function() {
-        $scope.modal.show();
-        return false;
-    };
-    $scope.closeModal = function() {
-        $scope.modal.hide();
-    };
-    //Cleanup the modal when we're done with it!
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
-    // Execute action on hide modal
-    $scope.$on('modal.hidden', function() {
-        // Execute action
-    });
-    // Execute action on remove modal
-    $scope.$on('modal.removed', function() {
-        // Execute action
-    });
+    // $scope.openModal = function() {
+    //     $scope.modal.show();
+    //     return false;
+    // };
+    // $scope.closeModal = function() {
+    //     $scope.modal.hide();
+    // };
+    // //Cleanup the modal when we're done with it!
+    // $scope.$on('$destroy', function() {
+    //     $scope.modal.remove();
+    // });
+    // // Execute action on hide modal
+    // $scope.$on('modal.hidden', function() {
+    //     // Execute action
+    // });
+    // // Execute action on remove modal
+    // $scope.$on('modal.removed', function() {
+    //     // Execute action
+    // });
 
 
     $ionicModal.fromTemplateUrl('templates/forms/wound_monitoring.html', {
