@@ -537,13 +537,10 @@ angular.module('starter.controllers', [])
     });
 
     $scope.save_wound = function(){
-        console.log("b41");
         $scope.allwound[$stateParams.woundtype] = $scope.wound;
-        console.log("b4");
         UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', $scope.allwound).then(function(){
             $state.go('tab.continuouspt20');
         });
-        console.log("after");
     }
 })
 
