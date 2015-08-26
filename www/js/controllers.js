@@ -518,7 +518,7 @@ angular.module('starter.controllers', [])
 .controller('woundCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
 
     $scope.wound = { itemtype:$stateParams.woundtype };
-    $scope.allwound;
+    $scope.allwound = {};
     var is_edit = false;
     var patientid = $stateParams.patientID;
     $localForage.getItem('upload_data').then(function(data){
