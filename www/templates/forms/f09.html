@@ -11,7 +11,10 @@
                 <ion-checkbox ng-model="social_assessment.family_attitude.supportive" >Supportive</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_attitude.rejection" >Rejection</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_attitude.empathic" >Empathic</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.family_attitude.Others" >Others</ion-checkbox>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Others Remark:</span>
+                        <input type="text" placeholder="Others Remark" ng-model="social_assessment.family_attitude.Others">
+                </label>
             </ion-list>
         </div>
 
@@ -27,7 +30,10 @@
                 <ion-checkbox ng-model="social_assessment.family_response.denying" >Denying</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_response.anxious" >Anxious</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_response.grieving" >Grieving</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.family_response.others" >Others</ion-checkbox>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Others Remark:</span>
+                        <input type="text" placeholder="Others Remark" ng-model="social_assessment.family_response.others">
+                </label>
             </ion-list>
         </div>
 
@@ -48,7 +54,10 @@
                 <ion-checkbox ng-model="social_assessment.religion.Hinduism">Hinduism</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.religion.Islam">Islam</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.religion.Taiosm">Taiosm</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.religion.Others">Others</ion-checkbox>
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Others Remark:</span>
+                        <input type="text" placeholder="Others Remark" ng-model="social_assessment.religion.Others">
+                </label>
             </ion-list>
         </div>
 
