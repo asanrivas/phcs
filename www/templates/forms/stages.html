@@ -4,222 +4,224 @@
     </ion-header-bar>
 
     <ion-content>
+        <div class="list card" ng-init="continuous_stages.patient_id=$parent.patientID">
 
-        <ion-item ng-show="page1">
-            <div class="row">
-                <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b>
-                </div>
-                <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Stage I:</b>
-                </div>
-                <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+            <ion-item ng-show="page1">
+                <div class="row">
+                    <div class="col" style="background-color: lightgrey;"><b>Pressure Ulcer Staging</b>
+                    </div>
+                    <div class="col" style="background-color: lightgrey;"><b>Staging of Pressure Ulcers is done <br>ONCE only on admission or <br>when new ulcers occur</b>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="row">
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Date</b></span>
-                        <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage1">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">No</span>
-                        <input type="text" ng-model="continuous_stages.no_stage1">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Size</span>
-                        <input type="text" ng-model="continuous_stages.size_stage1">
-                    </label>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Location</span>
-                        <input type="text" ng-model="continuous_stages.location_stage1">
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Stage II:</b>
-                </div>
-                <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                <div class="row">
+                    <div class="col "><b>Stage I:</b>
+                    </div>
+                    <div class="col "><b>Superficial layers of the epidermis are <br>intact but there is erythema <br>or discolouration</b>
+                    </div>
                 </div>
 
-            </div>
+                <div class="row">
+                    <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                    </div>
 
-            <div class="row">
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Date</span>
-                        <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage2">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">No</span>
-                        <input type="text" ng-model="continuous_stages.no_stage2">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Size</span>
-                        <input type="text" ng-model="continuous_stages.size_stage2">
-                    </label>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Location</span>
-                        <input type="text" ng-model="continuous_stages.location_stage2">
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Stage III:</b>
-                </div>
-                <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Enter Date and Location/Size No of Wound</b>
                 </div>
 
-            </div>
-
-            <div class="row">
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Date</span>
-                        <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage3">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">No</span>
-                        <input type="text" ng-model="continuous_stages.no_stage3">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Size</span>
-                        <input type="text" ng-model="continuous_stages.size_stage3">
-                    </label>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Location</span>
-                        <input type="text" ng-model="continuous_stages.location_stage3">
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Stage IV:</b>
-                </div>
-                <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                <div class="row">
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Date</b></span>
+                            <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage1">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">No</span>
+                            <input type="text" ng-model="continuous_stages.no_stage1">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" ng-model="continuous_stages.size_stage1">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Location</span>
+                            <input type="text" ng-model="continuous_stages.location_stage1">
+                        </label>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="row">
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Date</span>
-                        <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage4">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">No</span>
-                        <input type="text" ng-model="continuous_stages.no_stage4">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Size</span>
-                        <input type="text" ng-model="continuous_stages.size_stage4">
-                    </label>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Location</span>
-                        <input type="text" ng-model="continuous_stages.location_stage4">
-                    </label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Unstaged</b>
-                </div>
-                <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                <div class="row">
+                    <div class="col "><b>Stage II:</b>
+                    </div>
+                    <div class="col "><b>Partial thickness loss involving epidermis and/or dermis.<br>The ulcer is superficial and presents Clinically<br>as an abrasion, blister, or shallow</b>
+                    </div>
                 </div>
 
-            </div>
+                <div class="row">
+                    <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                    </div>
 
-            <div class="row">
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Date</span>
-                        <input type="date" placeholder="Date" ng-model="continuous_stages.date_unstaged">
-                    </label>
                 </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">No</span>
-                        <input type="text" ng-model="continuous_stages.no_unstaged">
-                    </label>
-                </div>
-                <div class="col ">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Size</span>
-                        <input type="text" ng-model="continuous_stages.size_unstaged">
-                    </label>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">Location</span>
-                        <input type="text" ng-model="continuous_stages.location_unstaged">
-                    </label>
-                </div>
-            </div>
 
-        <div class="list">
-            <a class="button button-positive button-full" ng-click="SaveAndClose()">Save and Close</a>
+                <div class="row">
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Date</span>
+                            <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage2">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">No</span>
+                            <input type="text" ng-model="continuous_stages.no_stage2">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" ng-model="continuous_stages.size_stage2">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Location</span>
+                            <input type="text" ng-model="continuous_stages.location_stage2">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col "><b>Stage III:</b>
+                    </div>
+                    <div class="col "><b>Full thickness skin loss involving <br>subcutaneous tissue that may estend <br>down to underlying tascia. The ulcer<br> may present as a deep crater <br>with or without undermining of <br>adjacent tissues.</b>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Date</span>
+                            <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage3">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">No</span>
+                            <input type="text" ng-model="continuous_stages.no_stage3">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" ng-model="continuous_stages.size_stage3">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Location</span>
+                            <input type="text" ng-model="continuous_stages.location_stage3">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col "><b>Stage IV:</b>
+                    </div>
+                    <div class="col "><b>Full Thickness skin loss with <br>extensive damage to underlying structures <br>such as muscle bones and supporting structures.</b>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Date</span>
+                            <input type="date" placeholder="Date" ng-model="continuous_stages.date_stage4">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">No</span>
+                            <input type="text" ng-model="continuous_stages.no_stage4">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" ng-model="continuous_stages.size_stage4">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Location</span>
+                            <input type="text" ng-model="continuous_stages.location_stage4">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col "><b>Unstaged</b>
+                    </div>
+                    <div class="col "><b>Necrotic tissue/black eschar present therefore cannot confirm stage at this time</b>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col "><b>Enter Date and Location/Size No of Wound</b>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Date</span>
+                            <input type="date" placeholder="Date" ng-model="continuous_stages.date_unstaged">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">No</span>
+                            <input type="text" ng-model="continuous_stages.no_unstaged">
+                        </label>
+                    </div>
+                    <div class="col ">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" ng-model="continuous_stages.size_unstaged">
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Location</span>
+                            <input type="text" ng-model="continuous_stages.location_unstaged">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <a class="button button-positive button-full" ng-click="SaveAndClose()">Save and Close</a>
+                </div>
+
         </div>
-
     </ion-content>
 
-<!--     <ion-footer-bar>
+    <!--     <ion-footer-bar>
         <button class="btn btn-primary" ng-click="showDiv=true;page1=false;page2=true" ng-show="!showDiv">Next</button>
 
         <button class="btn btn-primary" ng-show="showDiv">Save</button>
