@@ -150,10 +150,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     .state('tab.continous', {
         url: '/continous',
+        cache: false,
         views: {
             'tab-continous': {
                 templateUrl: 'templates/tab-continous.html',
-                controller: 'AccountCtrl'
+                controller: 'ContinousCtrl'
             }
         }
     })
@@ -163,13 +164,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.sp02', { url: '/sp02', views: { 'tab-continous': { templateUrl: 'templates/forms/sp02.html', controller: 'sp02Ctrl' } } })
     .state('tab.collapsible', { url: '/collapsible', views: { 'tab-continous': { templateUrl: 'templates/forms/collapsible.html' } } })
 
-    .state('tab.glassgow', { url: '/glassgow', views: { 'tab-continous': { templateUrl: 'templates/forms/modal-glassgow.html', controller: 'glassgowCtrl' } } })
+    .state('tab.glasgow', { url: '/glasgow', views: { 'tab-continous': { templateUrl: 'templates/forms/glasgow.html', controller: 'glasgowCtrl' } } })
     .state('tab.wound', { url: '/wound/:woundtype/:index', views: { 'tab-continous': { templateUrl: 'templates/forms/wound.html', controller: 'woundCtrl' } } })
 
-    .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'PointCtrl'} } })
+    .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'stagesCtrl'} } })
     .state('tab.summary_initial', { url: '/summary_initial', views: { 'tab-continous': { templateUrl: 'templates/forms/summary_initial.html'}, controller: 'summary_initialCtrl' } })
 
-    .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'}, controller: 'fsummaryinitialCtrl' } })
+    // .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'}, controller: 'fsummaryinitialCtrl' } })
 
     .state('tab.multi_team', { url: '/multi_team', views: { 'tab-home': { templateUrl: 'templates/forms/multi_team.html'}, controller: 'multi_teamCtrl' } })
 

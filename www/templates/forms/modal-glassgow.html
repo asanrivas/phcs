@@ -175,9 +175,14 @@
     </ion-content>
 
     <ion-footer-bar>
-    <button class="btn btn-primary" ng-click="showDiv=true;page1=false;page2=true" ng-show="!showDiv">Next</button>
+
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="showDiv=true;page1=false;page2=true">Save and Next</a>
+        </div>
+    
+<!--     <button class="btn btn-primary" ng-click="showDiv=true;page1=false;page2=true" ng-show="!showDiv">Save and Next</button>
   
-        <button class="btn btn-primary" ng-show="showDiv">Save</button>
+ -->        <button class="btn btn-primary" ng-show="showDiv">Save</button>
 
     </ion-footer-bar>
     <div class="bar bar-footer tabs bar-positive">
