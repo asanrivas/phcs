@@ -1,45 +1,45 @@
 <ion-view view-title="Continue Visit">
-  <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
-    <div class="list card">
-      <div class="item item-divider">Action</div>
-      <div class="item item-body">
-        <div>
-            <p>The Continue Visit will start with :</p>
-                <a class="button button-full button-positive" ui-sref="tab.continuouspt20">
+    <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
+        <div class="list card">
+            <div class="item item-divider">Action</div>
+            <div class="item item-body">
+                <div>
+                    <p>The Continue Visit will start with :</p>
+                    <a class="button button-full button-positive" ui-sref="tab.continuouspt20">
                     Multidisciplinary PT20 point
                 </a>
-                <a class="button button-full button-positive" ui-sref="tab.sp01">
+                    <a class="button button-full button-positive" ui-sref="tab.sp01">
                     SP 01 - Special Mention
                 </a>
-                <a class="button button-full button-positive" ui-sref="tab.sp02">
+                    <a class="button button-full button-positive" ui-sref="tab.sp02">
                     SP 02 - Special Instruction
                 </a>
-                 <a class="button button-full button-positive" ui-sref="tab.summary_initial">
+                    <a class="button button-full button-positive" ui-sref="tab.summary_initial">
                     Summary Of Initial Assessment / Problem / Actions / Plan
                 </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-        <div class="item item-divider">Multidisciplinary PT20 point check List</div>
+        <div class="item item-divider">Multidisciplinary PT20 point check list</div>
         <ion-list ng-init="data.f01 = true;" class="capital">
-        <ion-checkbox ng-model="data.p01" class="checkbox-balanced" checked="true" ng-disabled="true">p1 – neurological</ion-checkbox>
-        <ion-checkbox ng-model="data.p02" class="checkbox-balanced" checked="true" ng-disabled="true">p2 – emotional</ion-checkbox>
-        <ion-checkbox ng-model="data.p03" class="checkbox-balanced" checked="true" ng-disabled="true">p3 – spiritual</ion-checkbox>
-        <ion-checkbox ng-model="data.f04" class="checkbox-balanced" checked="true" ng-disabled="true">p4 - comfort</ion-checkbox>
-        <ion-checkbox ng-model="data.f05" class="checkbox-balanced" checked="true" ng-disabled="true">p5 - sleeping</ion-checkbox>
-        <ion-checkbox ng-model="data.f06" class="checkbox-balanced" checked="true" ng-disabled="true">p6 - breathing</ion-checkbox>
-        <ion-checkbox ng-model="data.f07" class="checkbox-balanced" checked="true" ng-disabled="true">p7 - temperature</ion-checkbox>
-        <ion-checkbox ng-model="data.f08" class="checkbox-balanced" checked="true" ng-disabled="true">p8 - circulation</ion-checkbox>
-        <ion-checkbox ng-model="data.f09" class="checkbox-balanced" checked="true" ng-disabled="true">p9 - oral (mouth)</ion-checkbox>
-        <ion-checkbox ng-model="data.f10" class="checkbox-balanced" checked="true" ng-disabled="true">p10 - nutrition</ion-checkbox>
-        <ion-checkbox ng-model="data.f11" class="checkbox-balanced" checked="true" ng-disabled="true">p11 - elimination bowel</ion-checkbox>
-        <ion-checkbox ng-model="data.f12" class="checkbox-balanced" checked="true" ng-disabled="true">p12 - elimination bladder</ion-checkbox>
-        <ion-checkbox ng-model="data.f13" class="checkbox-balanced" checked="true" ng-disabled="true">p13 - wound</ion-checkbox>
-        <ion-checkbox ng-model="data.f14" class="checkbox-balanced" checked="true" ng-disabled="true">p14 - activities for daily living and sexuality</ion-checkbox>
-        <ion-checkbox ng-model="data.f15" class="checkbox-balanced" checked="true" ng-disabled="true">p15 - end of life issue</ion-checkbox>
-        <ion-checkbox ng-model="data.f16" class="checkbox-balanced" checked="true" ng-disabled="true">p16 - client support issues</ion-checkbox>
-        <ion-checkbox ng-model="data.f17" class="checkbox-balanced" checked="true" ng-disabled="true">p17 - mobilization and activity</ion-checkbox>
-        <ion-checkbox ng-model="data.f18" class="checkbox-balanced" checked="true" ng-disabled="true">p18 - palliative massage therapty (PMT)</ion-checkbox>
-    </ion-list>
-  </ion-content>
+            <ion-checkbox ng-model="data.f01" class="checkbox-balanced" ng-checked="status.neurological" ng-disabled="true">p1 – neurological</ion-checkbox>
+            <ion-checkbox ng-model="data.f02" class="checkbox-balanced" ng-checked="status.emotional" ng-disabled="true">p2 – emotional</ion-checkbox>
+            <ion-checkbox ng-model="data.f03" class="checkbox-balanced" ng-checked="status.spiritual" ng-disabled="true">p3 – spiritual</ion-checkbox>
+            <ion-checkbox ng-model="data.f04" class="checkbox-balanced" ng-checked="status.comfort" ng-disabled="true">p4 - comfort</ion-checkbox>
+            <ion-checkbox ng-model="data.f05" class="checkbox-balanced" ng-checked="status.sleeping" ng-disabled="true">p5 - sleeping</ion-checkbox>
+            <ion-checkbox ng-model="data.f06" class="checkbox-balanced" ng-checked="status.breathing" ng-disabled="true">p6 - breathing</ion-checkbox>
+            <ion-checkbox ng-model="data.f07" class="checkbox-balanced" ng-checked="status.temperature" ng-disabled="true">p7 - temperature</ion-checkbox>
+            <ion-checkbox ng-model="data.f08" class="checkbox-balanced" ng-checked="status.circulation" ng-disabled="true">p8 - circulation</ion-checkbox>
+            <ion-checkbox ng-model="data.f09" class="checkbox-balanced" ng-checked="status.oral" ng-disabled="true">p9 - oral (mouth)</ion-checkbox>
+            <ion-checkbox ng-model="data.f10" class="checkbox-balanced" ng-checked="status.nutrition" ng-disabled="true">p10 - nutrition</ion-checkbox>
+            <ion-checkbox ng-model="data.f11" class="checkbox-balanced" ng-checked="status.eliminationbowel" ng-disabled="true">p11 - elimination bowel</ion-checkbox>
+            <ion-checkbox ng-model="data.f12" class="checkbox-balanced" ng-checked="status.eliminationbladder" ng-disabled="true">p12 - elimination bladder</ion-checkbox>
+            <ion-checkbox ng-model="data.f13" class="checkbox-balanced" ng-checked="status.wound" ng-disabled="true">p13 - wound</ion-checkbox>
+            <ion-checkbox ng-model="data.f14" class="checkbox-balanced" ng-checked="status.activities" ng-disabled="true">p14 - activities for daily living and sexuality</ion-checkbox>
+            <ion-checkbox ng-model="data.f15" class="checkbox-balanced" ng-checked="status.end" ng-disabled="true">p15 - end of life issue</ion-checkbox>
+            <ion-checkbox ng-model="data.f16" class="checkbox-balanced" ng-checked="status.client" ng-disabled="true">p16 - client support issues</ion-checkbox>
+            <ion-checkbox ng-model="data.f17" class="checkbox-balanced" ng-checked="status.mobilization" ng-disabled="true">p17 - mobilization and activity</ion-checkbox>
+            <ion-checkbox ng-model="data.f18" class="checkbox-balanced" ng-checked="status.palliative" ng-disabled="true">p18 - palliative massage therapty (PMT)</ion-checkbox>
+        </ion-list>
+    </ion-content>
 </ion-view>

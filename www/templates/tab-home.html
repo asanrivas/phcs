@@ -32,7 +32,15 @@
                         Date of Birth <span class="item-note black capital">{{patient.DATE_OF_BIRTH}}</span>
                     </div>
                     <div class="item ion-icon">
-                        Patient Status <span class="item-note black capital">{{patient.CATEGORY_CODE_DESC}}</span>
+                        <!-- Patient Status <span class="item-note black capital">{{patient.CATEGORY_CODE_DESC}} -->
+                        Patient Status <span class="item-note black capital">
+                        <p ng-show="patient.CATEGORY_CODE=='01'">HOMECARE</p>
+                        <p ng-show="patient.CATEGORY_CODE=='02'">OPP</p>
+                        <p ng-show="patient.CATEGORY_CODE=='03'">SUNSHINE</p>
+                        <p ng-show="patient.CATEGORY_CODE=='04'">KIV</p>
+                        <p ng-show="patient.CATEGORY_CODE=='05'">DIED</p>
+                        <p ng-show="patient.CATEGORY_CODE=='06'">EQUIPMENT LOAN</p>
+                        </span>
                     </div>
 
 					<div class="item ion-icon">
@@ -40,7 +48,12 @@
                     </div>
 
 					<div class="item ion-icon">
-                        Marital Status <span class="item-note black capital">{{patient.MARITAL_STATUS_DESC}}</span>
+                        <!-- Marital Status <span class="item-note black capital">{{patient.MARITAL_STATUS_DESC}} -->
+                        Marital Status <span class="item-note black capital">
+                        <p ng-show="patient.MARITAL_STATUS=='01'">SINGLE</p>
+                        <p ng-show="patient.MARITAL_STATUS=='02'">MARRIED</p>
+                        <p ng-show="patient.MARITAL_STATUS=='03'">WIDOW</p>
+                        </span>
                     </div>
 					<div class="item ion-icon">
                         Tel House Client <span class="item-note black capital">{{patient.TEL_HOUSE_CLIENT}}</span>
@@ -52,7 +65,13 @@
                     </div>
 
 					<div class="item ion-icon">
-                        Race <span class="item-note black capital">{{patient.RACE_DESC}}</span>
+                        <!-- Race <span class="item-note black capital">{{patient.RACE_DESC}}</span> -->
+                        Race <span class="item-note black capital">
+                        <p ng-show="patient.RACE=='1'">MALAY</p>
+                        <p ng-show="patient.RACE=='2'">CHINESE</p>
+                        <p ng-show="patient.RACE=='3'">INDIAN</p>
+                        <p ng-show="patient.RACE=='4'">OTHERS</p>
+                        </span>
                     </div>
 
                     <div class="item item-button-right">
