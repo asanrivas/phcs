@@ -623,17 +623,9 @@ angular.module('starter.controllers', [])
     $scope.SP02Next = function() {
         UploadData.save_data_patient_id($stateParams.patientID, 'V_SPECIAL_INSTRUCTION', $scope.continuous_sp02).then(function() {
             // $state.go('tab.summary_initial');
-            $state.go('tab.continous');
+            $state.go('tab.summary_initial');
         });
     };
-
-    $scope.continuous_stages = function() {
-        console.log("SaveAndClose");
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_SPECIAL_INSTRUCTION', $scope.continuous_sp02).then(function() {
-            $state.go('tab.stages');
-        });
-    }
-
 
 })
 
@@ -642,21 +634,21 @@ angular.module('starter.controllers', [])
     $scope.continuous_summary = {};
 
     $localForage.getItem('upload_data').then(function(data) {
-        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CONTINUE_SUMMARY)
-            $scope.continuous_summary = data[$stateParams.patientID].V_CONTINUE_SUMMARY;
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_SUMMARY_INITIAL)
+            $scope.continuous_summary = data[$stateParams.patientID].V_SUMMARY_INITIAL;
     });
 
     $scope.SaveAndClose = function() {
         console.log("SaveAndClose");
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_SUMMARY', $scope.continuous_summary).then(function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
             $state.go('tab.continous');
         });
     };
 
-    $scope.SP02Next = function() {
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_SUMMARY', $scope.continuous_summary).then(function() {
-            // $state.go('tab.summary_initial');
-            $state.go('tab.continous');
+    $scope.continuous_stages = function() {
+        console.log("SaveAndClose");
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SPECIAL_INSTRUCTION', $scope.continuous_sp02).then(function() {
+            $state.go('tab.stages');
         });
     }
 

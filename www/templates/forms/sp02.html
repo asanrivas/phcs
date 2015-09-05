@@ -1,19 +1,15 @@
 <ion-view view-title="F-10 – General Examination">
     <ion-content class="padding">
-		<div class="list card" ng-init="continuous_sp01.patient_id=$parent.patientID">
+		<div class="list card" ng-init="continuous_sp02.patient_id=$parent.patientID">
 			<div class="item item-divider">SP-02 Special Instruction</div>
-
-        <div class="list">
-            <a class="button button-positive button-full" ng-click="continuous_stages()">Stages</a>
-        </div>
 
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Special Instruction (dressing, cath/tube, PMT, etc)</span>
-						<input type="text" placeholder="Special Mention" ng-model="continuous_sp02.special">
+						<input type="text" placeholder="Special Mention" ng-model="continuous_sp02.special_instruction">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Date Started/Initial</span>
-						<input type="date" placeholder="Date Started/Initial" ng-model="continuous_sp02.date_start">
+						<input type="date" placeholder="Date Started/Initial" ng-model="continuous_sp02.date_started">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Date Complete/Initial</span>
