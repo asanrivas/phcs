@@ -19,10 +19,6 @@ angular.module('starter.controllers', [])
         //window.location.href = url;
         cordova.InAppBrowser.open(url, "_system");
     }
-    $scope.nurse_visit = [];
-    $localForage.getItem('nurse_visit').then(function(data) {
-        $scope.nurse_visit = data;
-    });
 
     $scope.logout = function() {
         window.localStorage.removeItem('user:userid');
@@ -36,6 +32,10 @@ angular.module('starter.controllers', [])
             $state.go('tab.home');
         });
     }
+    $scope.nurse_visit = [];
+    $localForage.getItem('nurse_visit').then(function(data) {
+        $scope.nurse_visit = data;
+    });
 })
 
 .controller('DashCtrl', function($scope, $localForage, $state) {
@@ -57,10 +57,6 @@ angular.module('starter.controllers', [])
             //window.location.href = url;
             cordova.InAppBrowser.open(url, "_system");
         }
-        $scope.nurse_visit = [];
-        $localForage.getItem('nurse_visit').then(function(data) {
-            $scope.nurse_visit = data;
-        });
 
         $scope.logout = function() {
             window.localStorage.removeItem('user:userid');
