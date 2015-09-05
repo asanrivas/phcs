@@ -89,7 +89,7 @@
                     <div class="item" ng-show="dashboard.detail">
                         Nurse Name <span class="item-note black">{{patient.NURSE_NAME}}</span>
                     </div>
-                    
+
 					<div class="item ion-icon">
                         Primary Mobile <span class="item-note black capital">{{patient.PRIMARY_MOBILE}}</span>
                     </div>
@@ -118,8 +118,11 @@
                     <div class="item">
                         Last visit: <span class="item-note">27/04/2015</span>
                     </div>
-                    <div class="item" ng-repeat="nurse in nurse_visit | filter:{PATIENT_ID:$parent.patientID}">
+                    <div class="item" ng-repeat="nurse in nurse_visit | filter:{PATIENT_ID:$parent.patientID} | limitTo:50">
                         {{$index+1}}. Visit by <strong>{{nurse.NAME}}</strong> on {{nurse.DATE}} {{nurse.TIME}}
+                    </div>
+                    <div class="item" ng-hide="nurse_visit">
+                        Patient have no visit.
                     </div>
                 </div>
             </div>

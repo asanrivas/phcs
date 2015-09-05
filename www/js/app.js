@@ -169,6 +169,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.wound', { url: '/wound/:woundtype/:index', views: { 'tab-continous': { templateUrl: 'templates/forms/wound.html', controller: 'woundCtrl' } } })
 
     .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'stagesCtrl'} } })
+<<<<<<< HEAD
+=======
+    .state('tab.summary_initial', { url: '/summary_initial', views: { 'tab-continous': { templateUrl: 'templates/forms/summary_initial.html', controller: 'summary_initialCtrl'} } })
+>>>>>>> origin/master
 
     // .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'}, controller: 'fsummaryinitialCtrl' } })
 
