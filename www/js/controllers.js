@@ -643,7 +643,7 @@ angular.module('starter.controllers', [])
 
     $scope.continuous_stages = function() {
         console.log("SaveAndClose");
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_SPECIAL_INSTRUCTION', $scope.continuous_sp02).then(function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
             $state.go('tab.stages');
         });
     }
