@@ -108,7 +108,16 @@ angular.module('starter.services', [])
                             for (var i = vdata[table].length-1; i >= 0; i--) {
                                 if(vdata[table][i].patient_id == patientID)
                                 {
-                                    q.resolve(vdata[table][i]);
+                                    var obj = {};
+                                    angular.forEach(vdata[table][i], function(value, key){
+                                        try {
+                                            obj[key] = JSON.parse(value);
+                                        }
+                                        catch(err) {
+                                            obj[key] = value;
+                                        }
+                                    });
+                                    q.resolve(obj);
                                     break;
                                 }
                             }
@@ -211,6 +220,64 @@ angular.module('starter.services', [])
                     }, fail);
                 }
             }
+    }
+})
+.factory('Canvas', function($ionicModal, $rootScope, $q){
+    var background = new Image();
+    var canvasModal;
+    var sketch;
+    var openedImage;
+    var init = function($scope, img_default) {
+        var promise;
+        $scope = $scope || $rootScope.$new();
+
+        background.src = img_default;
+
+        // Make sure the image is loaded first otherwise nothing will draw.
+
+        promise = $ionicModal.fromTemplateUrl("templates/canvas.html", {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+            canvasModal = modal;
+            return modal;
+        });
+
+
+        $scope.openModal = function() {
+            $scope.modal.show();
+        };
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+        };
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
+
+        $scope.base_image = img_default;
+
+        $scope.save = function(img){
+            $('#tools_sketch')[0].getContext("2d").globalCompositeOperation = 'destination-over';
+            $('#tools_sketch')[0].getContext("2d").drawImage(background, 0, 0, 800, 600);
+            $scope.modal.hide();
+            openedImage.resolve( $('#tools_sketch')[0].toDataURL('image/png') );
+        };
+
+        return promise;
+    }
+
+    return {
+        init: init,
+        open: function(img){
+            openedImage = $q.defer();
+            canvasModal.show();
+            sketch = $('#tools_sketch').sketch({background: background});
+
+            return openedImage.promise;
+        },
+        save: function(){
+        }
     }
 })
 .factory('Camera', function($q) {

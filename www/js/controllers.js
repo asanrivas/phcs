@@ -221,13 +221,12 @@ angular.module('starter.controllers', [])
     })
     .controller('FirstTimeCtrl', function($scope) {
         $scope.status = {};
-        $scope.$on('$ionicView.enter', function(e) {
-
-        });
-
-        console.log("xyz2: " + $scope.$parent.upload_data[$scope.$parent.patientID]);
 
         if ($scope.$parent.upload_data[$scope.$parent.patientID]) {
+            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
+                $scope.status.f04 = true;
+            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
+                $scope.status.f05 = true;
             if ($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
                 $scope.status.initial_assessment = true;
             if ($scope.$parent.upload_data[$scope.$parent.patientID].V_MEDICAL_ASSESSMENT)
@@ -577,7 +576,6 @@ angular.module('starter.controllers', [])
             }
         } else if (data[patientid]) {
             UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', $scope.allwound);
-
         }
     });
 
@@ -809,15 +807,13 @@ angular.module('starter.controllers', [])
         $scope.img_default = 'img/f08.png';
         $scope.medical_assessment.body_diagram = $scope.img_default;
 
-        UploadData.data_selector($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
-            $scope.medical_assessment = data;
-        });
-
-
         $scope.editImage = function() {
             var img = $scope.medical_assessment.body_diagram;
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if (!img.startsWith('file://'))
+                img = cordova.file.externalDataDirectory+$scope.medical_assessment.body_diagram;
+
             handdrawing.openDraw(img, function(data) {
                 if (data) {
                     $scope.$apply(function() {
@@ -827,6 +823,12 @@ angular.module('starter.controllers', [])
                 }
             });
         };
+
+        UploadData.data_selector($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
+            if(data.body_diagram && window.cordova)
+                data.body_diagram = cordova.file.externalDataDirectory + data.body_diagram;
+            angular.extend($scope.medical_assessment, data);
+        });
 
         $scope.saveAndNext = function() {
             if ($scope.img_default != $scope.medical_assessment.body_diagram) {
@@ -856,32 +858,52 @@ angular.module('starter.controllers', [])
             }
         }
     })
-    .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+    .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage, Canvas) {
         $scope.social_assessment = {};
-        $scope.social_assessment.socio_diagram = 'img/f09.png';
+        $scope.social_assessment.family_tree = 'img/f09.png';
 
         $scope.editImage = function() {
-            var img = $scope.social_assessment.famiy_diagram;
+            var img = $scope.social_assessment.family_tree;
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if (!img.startsWith('file://'))
+                img = cordova.file.externalDataDirectory+$scope.social_assessment.family_tree;
+
             handdrawing.openDraw(img, function(data) {
                 if (data) {
                     $scope.$apply(function() {
-                        $scope.social_assessment.famiy_diagram = 'file://' + data;
+                        $scope.social_assessment.family_tree = 'file://' + data;
                         $scope.social_assessment.tmp_hand1 = 'file://' + data;
                     });
                 }
             });
         };
 
-
         UploadData.data_selector($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
-            $scope.social_assessment = data;
+            if(data.family_tree&& window.cordova)
+                data.family_tree = cordova.file.externalDataDirectory + data.family_tree;
+            angular.extend($scope.social_assessment, data);
         });
 
         $scope.saveAndNext = function() {
-            UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function() {
-                $state.go('formfirstvisit.f10');
+            var filepath = $scope.social_assessment.family_tree;
+            var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+
+            $scope.social_assessment.family_tree = images;
+
+            var patient_gallery = {};
+            patient_gallery.patient_id = $stateParams.patientID;
+            patient_gallery.title = 'Diagram';
+            patient_gallery.gallery_type_code = "0";
+            patient_gallery.gallery_status_code = "1";
+            patient_gallery.description = "";
+            patient_gallery.image = images;
+            patient_gallery.filename = filepath;
+
+            UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
+                UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function() {
+                    $state.go('formfirstvisit.f10');
+                });
             });
         }
     })
@@ -906,17 +928,24 @@ angular.module('starter.controllers', [])
         $scope.general_examination.abdomen_image = "img/f10_3.png";
 
         UploadData.data_selector($stateParams.patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT').then(function (data) {
-            $scope.general_examination = data;
+            if(data.respiratory_system_image&& window.cordova)
+                data.respiratory_system_image = cordova.file.externalDataDirectory + data.respiratory_system_image;
+
+            if(data.abdomen_image&& window.cordova)
+                data.abdomen_image = cordova.file.externalDataDirectory + data.abdomen_image;
+            angular.extend($scope.general_examination, data);
+            // $scope.general_examination = data;
         });
 
         $scope.editImage = function() {
             var img = $scope.general_examination.respiratory_system_image;
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if (!img.startsWith('file://'))
+                img = cordova.file.externalDataDirectory+$scope.general_examination.respiratory_system_image;
+
             handdrawing.openDraw(img, function(data) {
-                console.log(data);
                 if (data) {
-                    console.log(data);
                     $scope.$apply(function() {
                         $scope.general_examination.respiratory_system_image = 'file://' + data;
                         $scope.general_examination.tmp_hand1 = 'file://' + data;
@@ -929,12 +958,14 @@ angular.module('starter.controllers', [])
             var img = $scope.general_examination.abdomen_image;
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if (!img.startsWith('file://'))
+                img = cordova.file.externalDataDirectory+$scope.general_examination.abdomen_image;
+
             handdrawing.openDraw(img, function(data) {
-                console.log(data);
                 if (data) {
                     $scope.$apply(function() {
                         $scope.general_examination.abdomen_image = 'file://' + data;
-                        $scope.general_examination.tmp_hand2 = 'file://' + data;
+                        $scope.general_examination.tmp_hand1 = 'file://' + data;
                     });
                 }
             });

@@ -61,18 +61,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'TabCtrl'
     })
 
-    // Each tab has its own nav history stack:
-
-    // .state('tab.dash', {
-    //     url: '/dash',
-    //     views: {
-    //         'tab-dash': {
-    //             templateUrl: 'templates/tab-dash.html',
-    //             controller: 'DashCtrl'
-    //         }
-    //     }
-    // })
-
     .state('tab.gallery', {
         url: '/gallery',
         views: {
@@ -94,6 +82,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     .state('formfirstvisit', {
         url: "/formsfirstvisit/:patientID",
+        cache: false,
         abstract: true,
         templateUrl: "templates/tab-firsttime-forms.html",
         controller: "FormFirstVisitCtrl"
@@ -243,9 +232,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 controller: 'AccountCtrl'
             }
         }
+    })
+    .state('canvas', {
+        url: '/canvas/:baseImage',
+        cache: false,
+        templateUrl: "templates/canvas.html",
+        controller: 'CanvasCtrl'
     });
-
-
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/');

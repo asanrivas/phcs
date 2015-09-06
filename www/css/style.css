@@ -157,3 +157,23 @@
 .checkbox input:disabled:before, .checkbox input:disabled + .checkbox-icon:before {
     border-color: #33cd5f;
 }
+
+@media (min-width: 680px) {
+  .modal.canvas {
+    top: 0px !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+  }
+  .platform-ios.platform-cordova .modal-wrapper .modal.canvas .bar-header:not(.bar-subheader) > * {
+    margin-top: 20px;
+  }
+  .platform-ios.platform-cordova .modal-wrapper .modal.canvas .bar-header:not(.bar-subheader) {
+    height: 64px;
+  }
+  .platform-ios.platform-cordova .modal-wrapper .modal.canvas .has-header,
+  .platform-ios.platform-cordova .modal-wrapper .modal.canvas .bar-subheader {
+    top: 64px;
+  }
+}
