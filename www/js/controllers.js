@@ -360,11 +360,15 @@ angular.module('starter.controllers', [])
         };
 
     })
-    .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal) {
+    .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal, UploadData) {
         $scope.patientID = parseInt($stateParams.patientID);
         $scope.patient = [];
+
         $localForage.getItem('patients').then(function(dataf) {
-            $scope.patients = dataf;
+            if($scope.upload_data && $scope.upload_data[$stateParams.patientID] && $scope.upload_data[$stateParams.patientID].patients)
+                $scope.upload_data[$stateParams.patientID].patients;
+            else
+                $scope.patients = dataf;
             $scope.patient = $scope.patients[parseInt($stateParams.patientID)];
             if($scope.patient.CATEGORY_CODE=="04")
                 $scope.setting.eol = true;
