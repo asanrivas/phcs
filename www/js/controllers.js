@@ -223,11 +223,11 @@ angular.module('starter.controllers', [])
         $scope.status = {};
         var patientID = $scope.$parent.patientID
 
-        UploadData.data_selector(patientID, 'first_visit', 'V_FIRST_VISIT').then(function(data) {
-            if(data)
+        if($scope.$parent.visit_data.admission)
             $scope.status.f04 = true;
+        if($scope.$parent.visit_data.photog)
             $scope.status.f05 = true;
-        });
+
         UploadData.data_selector(patientID, 'V_INITIAL_ASSESSMENT', 'V_FIRST_VISIT', false).then(function(data) {
             if(data)
                 $scope.status.initial_assessment = true;
@@ -379,6 +379,23 @@ angular.module('starter.controllers', [])
         $scope.setting = {
             eol: false
         };
+
+        $scope.visit_data = {};
+        $localForage.getItem('V_FIRST_VISIT').then(function(data) {
+            if(data && data.first_visit)
+            {
+                for (var i = data.first_visit.length-1; i >= 0; i--) {
+                    if($scope.patientID==data.first_visit[i].PATIENT_ID)
+                    {
+                        if(data.first_visit[i].CATEGORY_FORM == "1" && !$scope.visit_data.admission)
+                            $scope.visit_data.admission = data.first_visit[i];
+                        else if(data.first_visit[i].CATEGORY_FORM == "2" && !$scope.visit_data.photog)
+                            $scope.visit_data.photog = data.first_visit[i];
+
+                    }
+                }
+            }
+        });
 
         // Load upload data
         $scope.upload_data = [];
@@ -722,7 +739,7 @@ angular.module('starter.controllers', [])
         if ($scope.$parent.upload_data[$stateParams.patientID] && $scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT)
             source = $scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT;
         else if ($localForage.getItem('V_FIRST_VISIT'))
-            source = $localForage.getItem('V_FIRST_VISIT')
+            source = $localForage.getItem('V_FIRST_VISIT')['first_visit'];
         for (var i = 0; i < source.length; i++) {
             if (window.cordova && source[i].category_form == 1)
                 $scope.lastPhoto = cordova.file.externalDataDirectory + source[i].image_form;
