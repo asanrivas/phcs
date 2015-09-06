@@ -219,25 +219,39 @@ angular.module('starter.controllers', [])
         }
 
     })
-    .controller('FirstTimeCtrl', function($scope) {
+    .controller('FirstTimeCtrl', function($scope, UploadData) {
         $scope.status = {};
+        var patientID = $scope.$parent.patientID
 
-        if ($scope.$parent.upload_data[$scope.$parent.patientID]) {
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
-                $scope.status.f04 = true;
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
-                $scope.status.f05 = true;
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_INITIAL_ASSESSMENT)
+        UploadData.data_selector(patientID, 'first_visit', 'V_FIRST_VISIT').then(function(data) {
+            if(data)
+            $scope.status.f04 = true;
+            $scope.status.f05 = true;
+        });
+        UploadData.data_selector(patientID, 'V_INITIAL_ASSESSMENT', 'V_FIRST_VISIT', false).then(function(data) {
+            if(data)
                 $scope.status.initial_assessment = true;
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_MEDICAL_ASSESSMENT)
+        });
+        UploadData.data_selector(patientID, 'V_MEDICAL_ASSESSMENT', 'V_FIRST_VISIT', false).then(function(data) {
+            if(data)
                 $scope.status.medical_assessment = true;
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_SOCIAL_ASSESSMENT)
+        });
+        UploadData.data_selector(patientID, 'V_SOCIAL_ASSESSMENT', 'V_FIRST_VISIT', false).then(function(data) {
+            if(data)
                 $scope.status.social_assessment = true;
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_GENERAL_EXAMINATION)
+        });
+        UploadData.data_selector(patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT', false).then(function(data) {
+            if(data)
                 $scope.status.general_examination = true;
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CURR_MEDICATION_CHART)
+        });
+        UploadData.data_selector(patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT', false).then(function(data) {
+            if(data&&(data.respiratory_system_image||data.abdomen_image))
+                $scope.status.general_examination2 = true;
+        });
+        UploadData.data_selector(patientID, 'V_CURR_MEDICATION_CHART', 'V_FIRST_VISIT', false).then(function(data) {
+            if(data)
                 $scope.status.curr_medication = true;
-        }
+        });
     })
     .controller('ContinuousCtrl', function($scope) {})
     .controller('FormContinuousCtrl', function($scope) {})
@@ -273,20 +287,10 @@ angular.module('starter.controllers', [])
         });
 
         $scope.savePhoto = function() {
-            // UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(){
-            //     $scope.closeModal();
-            // });
-            //
             $scope.patient_gallery.patient_id = $stateParams.patientID;
             $scope.patient_gallery.image = $scope.filename;
             $scope.patient_gallery.filename = $scope.photoURL; //'img/ionic.png';//
 
-            // if(!$scope.$parent.upload_data[$scope.$parent.patientID])
-            //     $scope.$parent.upload_data[$scope.$parent.patientID] = {};
-            // if(!Array.isArray($scope.$parent.upload_data[$scope.$parent.patientID].PRO_PATIENT_GALLERY))
-            //     $scope.$parent.upload_data[$scope.$parent.patientID].PRO_PATIENT_GALLERY = [];
-            //
-            // $scope.$parent.upload_data[$scope.$parent.patientID].PRO_PATIENT_GALLERY.push($scope.patient_gallery);
             UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function(data) {
                 console.log(data);
                 var images = data[$scope.patientID].PRO_PATIENT_GALLERY;

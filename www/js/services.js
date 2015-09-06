@@ -91,9 +91,10 @@ angular.module('starter.services', [])
         {
 
         },
-        data_selector: function(patientID, table, section_table)
+        data_selector: function(patientID, table, section_table, convertJSON)
         {
             var q = $q.defer();
+            convertJSON = typeof convertJSON !== 'undefined' ? convertJSON : true;
             $localForage.getItem('upload_data').then(function(data){
                 console.log("patient: "+patientID);
                 if( data && data[patientID] && data[patientID][table] )
@@ -106,17 +107,22 @@ angular.module('starter.services', [])
                         if(vdata && vdata[table])
                         {
                             for (var i = vdata[table].length-1; i >= 0; i--) {
-                                if(vdata[table][i].patient_id == patientID)
+                                if(vdata[table][i].patient_id == patientID||vdata[table][i].PATIENT_ID == patientID)
                                 {
                                     var obj = {};
-                                    angular.forEach(vdata[table][i], function(value, key){
-                                        try {
-                                            obj[key] = JSON.parse(value);
-                                        }
-                                        catch(err) {
-                                            obj[key] = value;
-                                        }
-                                    });
+                                    if(convertJSON) {
+                                        angular.forEach(vdata[table][i], function(value, key){
+                                            try {
+                                                obj[key] = JSON.parse(value);
+                                            }
+                                            catch(err) {
+                                                obj[key] = value;
+                                            }
+                                        });
+                                    } else {
+                                        obj = vdata[table][i];
+                                    }
+
                                     q.resolve(obj);
                                     break;
                                 }
