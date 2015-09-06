@@ -162,17 +162,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.continuouspt20', { url: '/pt20', views: { 'tab-continous': { templateUrl: 'templates/forms/continuous-pt20.html', controller: 'pt20Ctrl' } } })
     .state('tab.sp01', { url: '/sp01', views: { 'tab-continous': { templateUrl: 'templates/forms/sp01.html', controller: 'sp01Ctrl' } } })
     .state('tab.sp02', { url: '/sp02', views: { 'tab-continous': { templateUrl: 'templates/forms/sp02.html', controller: 'sp02Ctrl' } } })
-    .state('tab.summary_initial', { url: '/summary_initial', views: { 'tab-continous': { templateUrl: 'templates/forms/summary_initial.html', controller: 'summary_initialCtrl' } } })
     .state('tab.collapsible', { url: '/collapsible', views: { 'tab-continous': { templateUrl: 'templates/forms/collapsible.html' } } })
 
     .state('tab.glasgow', { url: '/glasgow', views: { 'tab-continous': { templateUrl: 'templates/forms/glasgow.html', controller: 'glasgowCtrl' } } })
     .state('tab.wound', { url: '/wound/:woundtype/:index', views: { 'tab-continous': { templateUrl: 'templates/forms/wound.html', controller: 'woundCtrl' } } })
 
     .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'stagesCtrl'} } })
-<<<<<<< HEAD
-=======
+
     .state('tab.summary_initial', { url: '/summary_initial', views: { 'tab-continous': { templateUrl: 'templates/forms/summary_initial.html', controller: 'summary_initialCtrl'} } })
->>>>>>> origin/master
 
     // .state('tab.fsummaryinitial', { url: '/fsummaryinitial', views: { 'tab-continous': { templateUrl: 'templates/forms/fsummaryinitial.html'}, controller: 'fsummaryinitialCtrl' } })
 
