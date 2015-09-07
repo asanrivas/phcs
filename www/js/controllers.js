@@ -546,10 +546,211 @@ angular.module('starter.controllers', [])
 
     $scope.open_wound = function(item) {
         // console.log("open_wound: "+item);
-        $state.go('tab.wound', {
-            woundtype: item
-        });
-        // console.log(this);
+        switch (item) {
+            case 'post_op_wound':
+                switch ($scope.continuous_pt20.wound.post_op_wound) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'pressure':
+                switch ($scope.continuous_pt20.wound.pressure) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'fumigating':
+                switch ($scope.continuous_pt20.wound.fumigating) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'redness':
+                switch ($scope.continuous_pt20.wound.redness) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'partial_thickness':
+                switch ($scope.continuous_pt20.wound.partial_thickness) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'full_thickness':
+                switch ($scope.continuous_pt20.wound.full_thickness) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'cavity':
+                switch ($scope.continuous_pt20.wound.cavity) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'unstageble':
+                switch ($scope.continuous_pt20.wound.unstageble) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'clean':
+                switch ($scope.continuous_pt20.wound.clean) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'granulating':
+                switch ($scope.continuous_pt20.wound.granulating) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'odor':
+                switch ($scope.continuous_pt20.wound.odor) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'exudations':
+                switch ($scope.continuous_pt20.wound.exudations) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'bleeding':
+                switch ($scope.continuous_pt20.wound.bleeding) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+            case 'sloughs':
+                switch ($scope.continuous_pt20.wound.sloughs) {
+                    case true:
+                        // statements // they are executed if variable == c1
+                        // console.log("true: odor");
+                        $state.go('tab.wound', {
+                            woundtype: item
+                        });
+                        break;
+                    case false:
+                        // statements // they are executed if variable == c2
+                        // console.log("false: odor");
+                        break;
+                };
+
+        };
+
+        // // console.log("open_wound: "+item);
+        // $state.go('tab.wound', {
+        //     woundtype: item
+        // });
+        // // console.log(this);
     }
 })
 
