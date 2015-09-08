@@ -219,13 +219,13 @@ angular.module('starter.controllers', [])
         }
 
     })
-    .controller('FirstTimeCtrl', function($scope, UploadData) {
+    .controller('FirstTimeCtrl', function($scope, UploadData, $rootScope) {
         $scope.status = {};
         var patientID = $scope.$parent.patientID
 
-        if($scope.$parent.visit_data.admission)
+        if($rootScope.visit_data.admission)
             $scope.status.f04 = true;
-        if($scope.$parent.visit_data.photog)
+        if($rootScope.visit_data.photog)
             $scope.status.f05 = true;
 
         UploadData.data_selector(patientID, 'V_INITIAL_ASSESSMENT', 'V_FIRST_VISIT', false).then(function(data) {
@@ -360,18 +360,21 @@ angular.module('starter.controllers', [])
         };
 
     })
-    .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal, UploadData) {
+    .controller('TabCtrl', function($scope, $stateParams, $localForage, $rootScope, $ionicModal) {
         $scope.patientID = parseInt($stateParams.patientID);
-        $scope.patient = [];
+        // $scope.patients = [];
+        $scope.patient = {};
 
         $localForage.getItem('patients').then(function(dataf) {
-            if($scope.upload_data && $scope.upload_data[$stateParams.patientID] && $scope.upload_data[$stateParams.patientID].patients)
-                $scope.upload_data[$stateParams.patientID].patients;
-            else
-                $scope.patients = dataf;
+            $scope.patients = dataf;
             $scope.patient = $scope.patients[parseInt($stateParams.patientID)];
             if($scope.patient.CATEGORY_CODE=="04")
                 $scope.setting.eol = true;
+        });
+
+        $scope.$watch('upload_data', function(newValue, oldValue) {
+            if(newValue[$stateParams.patientID] && newValue[$stateParams.patientID].patients)
+            $scope.patient = newValue[$stateParams.patientID].patients;
         });
 
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
@@ -384,7 +387,7 @@ angular.module('starter.controllers', [])
             eol: false
         };
 
-        $scope.visit_data = {};
+        $rootScope.visit_data = {};
         $localForage.getItem('V_FIRST_VISIT').then(function(data) {
             if(data && data.first_visit)
             {
@@ -392,9 +395,9 @@ angular.module('starter.controllers', [])
                     if($scope.patientID==data.first_visit[i].PATIENT_ID)
                     {
                         if(data.first_visit[i].CATEGORY_FORM == "1" && !$scope.visit_data.admission)
-                            $scope.visit_data.admission = data.first_visit[i];
+                            $rootScope.visit_data.admission = data.first_visit[i];
                         else if(data.first_visit[i].CATEGORY_FORM == "2" && !$scope.visit_data.photog)
-                            $scope.visit_data.photog = data.first_visit[i];
+                            $rootScope.visit_data.photog = data.first_visit[i];
 
                     }
                 }
@@ -927,7 +930,7 @@ angular.module('starter.controllers', [])
             $scope.modal.hide();
         };
     })
-    .controller('f04Controller', function($scope, $stateParams, $state, UploadData, Camera, $localForage) {
+    .controller('f04Controller', function($scope, $stateParams, $state, UploadData, Camera, $rootScope) {
         $scope.getPhoto = function() {
             console.log('Getting camera');
             Camera.getPhoto().then(function(data) {
@@ -940,14 +943,9 @@ angular.module('starter.controllers', [])
         $scope.patient_gallery = {};
         $scope.first_visit = {};
 
-        var source = [];
-        if ($scope.$parent.upload_data[$stateParams.patientID] && $scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT)
-            source = $scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT;
-        else if ($localForage.getItem('V_FIRST_VISIT'))
-            source = $localForage.getItem('V_FIRST_VISIT')['first_visit'];
-        for (var i = 0; i < source.length; i++) {
-            if (window.cordova && source[i].category_form == 1)
-                $scope.lastPhoto = cordova.file.externalDataDirectory + source[i].image_form;
+        if(window.cordova && $rootScope.visit_data && $rootScope.visit_data.admission)
+        {
+            $scope.lastPhoto = cordova.file.externalDataDirectory + $rootScope.visit_data.admission.IMAGE_FORM;
         }
 
         $scope.save = function() {
@@ -959,9 +957,9 @@ angular.module('starter.controllers', [])
             $scope.patient_gallery.image = $scope.filename;
             $scope.patient_gallery.filename = $scope.lastPhoto;
 
-            $scope.first_visit.patient_id = $stateParams.patientID;
-            $scope.first_visit.image_form = $scope.filename;
-            $scope.first_visit.category_form = 1;
+            $scope.first_visit.PATIENT_ID = $stateParams.patientID;
+            $scope.first_visit.IMAGE_FORM = $scope.filename;
+            $scope.first_visit.CATEGORY_FORM = 1;
 
             UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function() {
                 UploadData.append_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function() {
@@ -971,7 +969,7 @@ angular.module('starter.controllers', [])
 
         };
     })
-    .controller('f05Controller', function($scope, $stateParams, $state, UploadData, Camera, $localForage) {
+    .controller('f05Controller', function($scope, $stateParams, $state, UploadData, Camera, $localForage, $rootScope) {
         $scope.getPhoto = function() {
             console.log('Getting camera');
             Camera.getPhoto().then(function(data) {
@@ -984,12 +982,9 @@ angular.module('starter.controllers', [])
         $scope.patient_gallery = {};
         $scope.first_visit = {};
 
-        if ($scope.$parent.upload_data[$stateParams.patientID] && $scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT) {
-            var id = $scope.$parent.upload_data[$stateParams.patientID].V_FIRST_VISIT;
-            for (var i = 0; i < id.length; i++) {
-                if (window.cordova && id[i].category_form == 2)
-                    $scope.lastPhoto = cordova.file.externalDataDirectory + id[i].image_form;
-            }
+        if(window.cordova && $rootScope.visit_data && $rootScope.visit_data.photog)
+        {
+            $scope.lastPhoto = cordova.file.externalDataDirectory + $rootScope.visit_data.photog.IMAGE_FORM;
         }
 
         $scope.save = function() {
@@ -1001,9 +996,9 @@ angular.module('starter.controllers', [])
             $scope.patient_gallery.image = $scope.filename;
             $scope.patient_gallery.filename = $scope.lastPhoto;
 
-            $scope.first_visit.patient_id = $stateParams.patientID;
-            $scope.first_visit.image_form = $scope.filename;
-            $scope.first_visit.category_form = 2;
+            $scope.first_visit.PATIENT_ID = $stateParams.patientID;
+            $scope.first_visit.IMAGE_FORM = $scope.filename;
+            $scope.first_visit.CATEGORY_FORM = 2;
 
             UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function() {
                 UploadData.append_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function() {

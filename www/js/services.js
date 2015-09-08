@@ -51,6 +51,7 @@ angular.module('starter.services', [])
 
 .factory('UploadData', function($q, $localForage){
     var userid;
+    var current_patient;
 
     return {
         init_upload_data: function(patientID){
@@ -87,9 +88,13 @@ angular.module('starter.services', [])
             });
             return q.promise;
         },
-        update_data_patient_id: function(patientID, table, datum)
+        set_current_patient: function(patient)
         {
-
+            current_patient = patient;
+        },
+        get_current_patient: function(patient)
+        {
+            return current_patient;
         },
         data_selector: function(patientID, table, section_table, convertJSON)
         {
