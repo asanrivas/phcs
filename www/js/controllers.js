@@ -151,6 +151,7 @@ angular.module('starter.controllers', [])
                                     UploadData.download_gallery(gallery[i].filename);
                             }
                         }
+                        UploadData.clear_directory(cordova.file.externalRootDirectory+".handdrawing");
 
                         $localForage.setItem("PRO_PATIENT_GALLERY", gallery);
                         $localForage.setItem("V_FIRST_VISIT", data.first_visit);
@@ -984,7 +985,7 @@ angular.module('starter.controllers', [])
 
         if(window.cordova && $rootScope.visit_data && $rootScope.visit_data.admission)
         {
-            $scope.lastPhoto = cordova.file.externalDataDirectory + $rootScope.visit_data.admission.IMAGE_FORM;
+            $scope.lastPhoto = cordova.file.externalDataDirectory + $rootScope.visit_data.admission.IMAGE_FORM.replace('upload/', '');
         }
 
         $scope.save = function() {
@@ -1023,7 +1024,7 @@ angular.module('starter.controllers', [])
 
         if(window.cordova && $rootScope.visit_data && $rootScope.visit_data.photog)
         {
-            $scope.lastPhoto = cordova.file.externalDataDirectory + $rootScope.visit_data.photog.IMAGE_FORM;
+            $scope.lastPhoto = cordova.file.externalDataDirectory + $rootScope.visit_data.photog.IMAGE_FORM.replace('upload/', '');
         }
 
         $scope.save = function() {
