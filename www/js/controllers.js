@@ -558,9 +558,9 @@ angular.module('starter.controllers', [])
     $scope.PT20Next = function() {
         console.log("PT20Next: " + JSON.stringify($scope.continuous_pt20));
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function() {
+            $scope.$parent.reload_upload_data();
             $state.go('tab.sp01');
         });
-        // $scope.$parent.reload_upload_data();
 
     }
 
@@ -1512,8 +1512,8 @@ angular.module('starter.controllers', [])
             $scope.status.circulation = true;
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.temperature)
             $scope.status.temperature = true;
-        if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.oral)
-            $scope.status.oral = true;
+        if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.oral_mouth)
+            $scope.status.oral_mouth = true;
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.nutrition)
             $scope.status.nutrition = true;
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.elimination_bowel)
