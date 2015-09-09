@@ -1,14 +1,16 @@
 angular.module('starter.services', [])
 
-.directive('fallbackSrc', function() {
+.directive('fallbackSrc', function($rootScope) {
 	return {
     restrict: 'A',
     link: function(scope, element, attrs){
+			$rootScope.imgerror = [];
 			if(attrs.ngSrc===""){
 				element.attr('src', attrs.fallbackSrc);
 			}
 			element.bind('error', function(){
 				element.attr('src', attrs.fallbackSrc);
+				$rootScope.imgerror.push(attrs.fallbackSrc);
 			});
     }
   };

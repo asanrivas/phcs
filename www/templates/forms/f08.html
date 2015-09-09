@@ -8,7 +8,7 @@
                 <div class="item item-divider">Physical Symptoms (Patient's complaints)</div>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Pain</span>
-<input type="text" placeholder="state site, nature (eg. Nociceptive/neuropathic/bony/incident)" ng-model="medical_assessment.physical_symptoms.pain">
+                    <input type="text" placeholder="state site, nature (eg. Nociceptive/neuropathic/bony/incident)" ng-model="medical_assessment.physical_symptoms.pain">
                 </label>
                 <label class="item item-input item-select">
                     <div class="input-label">
@@ -30,7 +30,10 @@
                 </label>
 
             </div>
-            <img src="{{img_default}}" ng-click="editImage()" style="max-width: 100%" ng-src="{{medical_assessment.tmp_hand1?medical_assessment.tmp_hand1:medical_assessment.body_diagram}}"/>
+            <div class="list card">
+                <a class="button button-small newimage" ng-click="editImage(true)" style="top:20px">Renew</a>
+                <img src="{{img_default}}" ng-click="editImage()" style="max-width: 100%" ng-src="{{medical_assessment.tmp_hand1?medical_assessment.tmp_hand1:medical_assessment.body_diagram}}" fallback-src="{{img_default}}"/>
+            </div>
             <div class="row">
                 <div class="col">
                     <ion-list ng-init="medical_assessment.patient_id=$parent.patientID">

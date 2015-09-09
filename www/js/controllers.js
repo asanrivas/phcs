@@ -1045,10 +1045,14 @@ angular.module('starter.controllers', [])
         $scope.img_default = 'img/f08.png';
         $scope.medical_assessment.body_diagram = $scope.img_default;
 
-        $scope.editImage = function() {
+        $scope.editImage = function(reload) {
             var img = $scope.medical_assessment.body_diagram;
+            if(reload)
+                img = $scope.img_default;
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if($scope.medical_assessment.tmp_hand1)
+                img = $scope.medical_assessment.tmp_hand1;
             else if (!img.startsWith('file://'))
                 img = cordova.file.externalDataDirectory+$scope.medical_assessment.body_diagram;
 
@@ -1098,12 +1102,17 @@ angular.module('starter.controllers', [])
     })
     .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage, Canvas) {
         $scope.social_assessment = {};
-        $scope.social_assessment.family_tree = 'img/f09.png';
+        $scope.img_default = 'img/f09.png'
+        $scope.social_assessment.family_tree = $scope.img_default;
 
-        $scope.editImage = function() {
+        $scope.editImage = function(reload) {
             var img = $scope.social_assessment.family_tree;
+            if(reload)
+                img = $scope.img_default;
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if($scope.social_assessment.tmp_hand1)
+                img = $scope.social_assessment.tmp_hand1;
             else if (!img.startsWith('file://'))
                 img = cordova.file.externalDataDirectory+$scope.social_assessment.family_tree;
 
@@ -1162,8 +1171,9 @@ angular.module('starter.controllers', [])
     .controller('f11Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
 
         $scope.general_examination = {};
-        $scope.general_examination.respiratory_system_image = "img/f10_2.png";
-        $scope.general_examination.abdomen_image = "img/f10_3.png";
+        $scope.img_default = ["img/f10_2.png", "img/f10_3.png"];
+        $scope.general_examination.respiratory_system_image = $scope.img_default[0];
+        $scope.general_examination.abdomen_image = $scope.img_default[1];
 
         UploadData.data_selector($stateParams.patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT').then(function (data) {
             if(data.respiratory_system_image&& window.cordova)
@@ -1175,10 +1185,14 @@ angular.module('starter.controllers', [])
             // $scope.general_examination = data;
         });
 
-        $scope.editImage = function() {
+        $scope.editImage = function(reload) {
             var img = $scope.general_examination.respiratory_system_image;
+            if(reload)
+                img = $scope.img_default[0];
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if($scope.general_examination.tmp_hand1)
+                img = $scope.general_examination.tmp_hand1;
             else if (!img.startsWith('file://'))
                 img = cordova.file.externalDataDirectory+$scope.general_examination.respiratory_system_image;
 
@@ -1192,10 +1206,14 @@ angular.module('starter.controllers', [])
             });
         };
 
-        $scope.editImage2 = function() {
+        $scope.editImage2 = function(reload) {
             var img = $scope.general_examination.abdomen_image;
+            if(reload)
+                img = $scope.img_default[1];
             if (img.startsWith('img'))
                 img = 'www/' + img;
+            else if($scope.general_examination.tmp_hand2)
+                img = $scope.general_examination.tmp_hand2;
             else if (!img.startsWith('file://'))
                 img = cordova.file.externalDataDirectory+$scope.general_examination.abdomen_image;
 
@@ -1203,7 +1221,7 @@ angular.module('starter.controllers', [])
                 if (data) {
                     $scope.$apply(function() {
                         $scope.general_examination.abdomen_image = 'file://' + data;
-                        $scope.general_examination.tmp_hand1 = 'file://' + data;
+                        $scope.general_examination.tmp_hand2 = 'file://' + data;
                     });
                 }
             });
@@ -1217,7 +1235,7 @@ angular.module('starter.controllers', [])
             var images2 = filepath2.substr(filepath2.lastIndexOf('/') + 1);
 
             $scope.general_examination.respiratory_system_image = images;
-            $scope.general_examination.abdomen_image = images;
+            $scope.general_examination.abdomen_image = images2;
 
             var patient_gallery = {};
             patient_gallery.patient_id = $stateParams.patientID;

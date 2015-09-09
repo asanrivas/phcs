@@ -158,6 +158,13 @@
     border-color: #33cd5f;
 }
 
+.newimage {
+    position: absolute;
+    right: 20px;
+    left: auto;
+    top: 60px;
+}
+
 @media (min-width: 680px) {
   .modal.canvas {
     top: 0px !important;
