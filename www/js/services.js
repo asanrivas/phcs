@@ -82,6 +82,7 @@ angular.module('starter.services', [])
 
                 angular.extend(extended, datum, defaultObj);
                 data[patientID][table] = extended;
+                // console.log("save data: "+JSON.stringify(data));
                 $localForage.setItem('upload_data', data).then(function(){
                     q.resolve(data);
                 });

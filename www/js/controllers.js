@@ -414,6 +414,8 @@ angular.module('starter.controllers', [])
 
         $scope.reload_upload_data = function() {
             $localForage.bind($scope, 'upload_data');
+            console.log('refresher');
+
         };
     })
     .controller('FormFirstVisitCtrl', function($scope, $stateParams, $localForage, $ionicModal) {
@@ -545,10 +547,14 @@ angular.module('starter.controllers', [])
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function() {
             $state.go('tab.sp01');
         });
+        $scope.$parent.reload_upload_data();
+
     }
 
     $scope.open_wound = function(item) {
         // console.log("open_wound: "+item);
+        $localForage.getItem('upload_data').then(function(data){
+            var save_wound = false;
         switch (item) {
             case 'post_op_wound':
                 switch ($scope.continuous_pt20.wound.post_op_wound) {
@@ -560,6 +566,8 @@ angular.module('starter.controllers', [])
                         });
                         break;
                     case false:
+                        delete data[$stateParams.patientID]['V_WOUND'].post_op_wound;
+                        save_wound = true;
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
                         break;
@@ -576,6 +584,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].pressure;
+                        save_wound = true;
                         break;
                 };
             case 'fumigating':
@@ -590,6 +600,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].fumigating;
+                        save_wound = true;
                         break;
                 };
             case 'redness':
@@ -604,6 +616,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].redness;
+                        save_wound = true;
                         break;
                 };
             case 'partial_thickness':
@@ -618,6 +632,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].partial_thickness;
+                        save_wound = true;
                         break;
                 };
             case 'full_thickness':
@@ -632,6 +648,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].full_thickness;
+                        save_wound = true;
                         break;
                 };
             case 'cavity':
@@ -646,6 +664,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].cavity;
+                        save_wound = true;
                         break;
                 };
             case 'unstageble':
@@ -660,6 +680,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].unstageble;
+                        save_wound = true;
                         break;
                 };
             case 'clean':
@@ -674,6 +696,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].clean;
+                        save_wound = true;
                         break;
                 };
             case 'granulating':
@@ -688,6 +712,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].granulating;
+                        save_wound = true;
                         break;
                 };
             case 'odor':
@@ -702,6 +728,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].odor;
+                        save_wound = true;
                         break;
                 };
             case 'exudations':
@@ -716,6 +744,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].exudations;
+                        save_wound = true;
                         break;
                 };
             case 'bleeding':
@@ -730,6 +760,8 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].bleeding;
+                        save_wound = true;
                         break;
                 };
             case 'sloughs':
@@ -744,10 +776,17 @@ angular.module('starter.controllers', [])
                     case false:
                         // statements // they are executed if variable == c2
                         // console.log("false: odor");
+                        delete data[$stateParams.patientID]['V_WOUND'].sloughs;
+                        save_wound = true;
                         break;
                 };
 
-        };
+            };
+
+            //save wound
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', data);
+        })
+        
 
         // // console.log("open_wound: "+item);
         // $state.go('tab.wound', {
@@ -1477,12 +1516,7 @@ angular.module('starter.controllers', [])
 .controller('ContinousCtrl', function($scope) {
     $scope.status = {};
     $scope.$on('$ionicView.enter', function(e) {
-
-    });
-
-    // console.log("xyz: "+$scope.$parent.upload_data[$scope.$parent.patientID]);
-
-    if ($scope.$parent.upload_data[$scope.$parent.patientID]) {
+ if ($scope.$parent.upload_data[$scope.$parent.patientID]) {
         // console.log("abc: "+$scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT);
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.neurological)
             $scope.status.neurological = true;
@@ -1521,6 +1555,11 @@ angular.module('starter.controllers', [])
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.palliative_msg_therapy)
             $scope.status.palliative_msg_therapy = true;
     }
+    });
+
+    // console.log("xyz: "+$scope.$parent.upload_data[$scope.$parent.patientID]);
+
+   
 
 })
 
