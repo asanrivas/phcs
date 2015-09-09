@@ -557,11 +557,30 @@ angular.module('starter.controllers', [])
         $localForage.getItem('upload_data').then(function(data){
             var save_wound = false;
         switch (item) {
+            case 'no_wound':
+                switch ($scope.continuous_pt20.wound.no_wound) {
+                    case true:
+                        console.log('no_wound: '+$scope.continuous_pt20.wound.no_wound);
+                        delete data[$stateParams.patientID]['V_WOUND'].post_op_wound;
+                        delete data[$stateParams.patientID]['V_WOUND'].pressure;
+                        delete data[$stateParams.patientID]['V_WOUND'].fumigating;
+                        delete data[$stateParams.patientID]['V_WOUND'].redness;
+                        delete data[$stateParams.patientID]['V_WOUND'].partial_thickness;
+                        delete data[$stateParams.patientID]['V_WOUND'].full_thickness;
+                        delete data[$stateParams.patientID]['V_WOUND'].cavity;
+                        delete data[$stateParams.patientID]['V_WOUND'].unstageble;
+                        delete data[$stateParams.patientID]['V_WOUND'].clean;
+                        delete data[$stateParams.patientID]['V_WOUND'].granulating;
+                        delete data[$stateParams.patientID]['V_WOUND'].odor;
+                        delete data[$stateParams.patientID]['V_WOUND'].exudations;
+                        delete data[$stateParams.patientID]['V_WOUND'].bleeding;
+                        delete data[$stateParams.patientID]['V_WOUND'].sloughs;
+                        save_wound = true;
+                        break;
+                };
             case 'post_op_wound':
                 switch ($scope.continuous_pt20.wound.post_op_wound) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
@@ -569,22 +588,16 @@ angular.module('starter.controllers', [])
                     case false:
                         delete data[$stateParams.patientID]['V_WOUND'].post_op_wound;
                         save_wound = true;
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         break;
                 };
             case 'pressure':
                 switch ($scope.continuous_pt20.wound.pressure) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].pressure;
                         save_wound = true;
                         break;
@@ -592,15 +605,11 @@ angular.module('starter.controllers', [])
             case 'fumigating':
                 switch ($scope.continuous_pt20.wound.fumigating) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].fumigating;
                         save_wound = true;
                         break;
@@ -608,15 +617,11 @@ angular.module('starter.controllers', [])
             case 'redness':
                 switch ($scope.continuous_pt20.wound.redness) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].redness;
                         save_wound = true;
                         break;
@@ -624,15 +629,11 @@ angular.module('starter.controllers', [])
             case 'partial_thickness':
                 switch ($scope.continuous_pt20.wound.partial_thickness) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].partial_thickness;
                         save_wound = true;
                         break;
@@ -640,15 +641,11 @@ angular.module('starter.controllers', [])
             case 'full_thickness':
                 switch ($scope.continuous_pt20.wound.full_thickness) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].full_thickness;
                         save_wound = true;
                         break;
@@ -656,15 +653,11 @@ angular.module('starter.controllers', [])
             case 'cavity':
                 switch ($scope.continuous_pt20.wound.cavity) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].cavity;
                         save_wound = true;
                         break;
@@ -672,15 +665,11 @@ angular.module('starter.controllers', [])
             case 'unstageble':
                 switch ($scope.continuous_pt20.wound.unstageble) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].unstageble;
                         save_wound = true;
                         break;
@@ -688,15 +677,11 @@ angular.module('starter.controllers', [])
             case 'clean':
                 switch ($scope.continuous_pt20.wound.clean) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].clean;
                         save_wound = true;
                         break;
@@ -704,15 +689,11 @@ angular.module('starter.controllers', [])
             case 'granulating':
                 switch ($scope.continuous_pt20.wound.granulating) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].granulating;
                         save_wound = true;
                         break;
@@ -720,15 +701,11 @@ angular.module('starter.controllers', [])
             case 'odor':
                 switch ($scope.continuous_pt20.wound.odor) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].odor;
                         save_wound = true;
                         break;
@@ -736,15 +713,11 @@ angular.module('starter.controllers', [])
             case 'exudations':
                 switch ($scope.continuous_pt20.wound.exudations) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].exudations;
                         save_wound = true;
                         break;
@@ -752,15 +725,11 @@ angular.module('starter.controllers', [])
             case 'bleeding':
                 switch ($scope.continuous_pt20.wound.bleeding) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].bleeding;
                         save_wound = true;
                         break;
@@ -768,8 +737,6 @@ angular.module('starter.controllers', [])
             case 'sloughs':
                 switch ($scope.continuous_pt20.wound.sloughs) {
                     case true:
-                        // statements // they are executed if variable == c1
-                        // console.log("true: odor");
                         $state.go('tab.wound', {
                             woundtype: item
                         });
@@ -902,14 +869,14 @@ angular.module('starter.controllers', [])
     });
 
     $scope.SaveAndClose = function() {
-        console.log("SaveAndClose");
+        // console.log("SaveAndClose");
         UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
             $state.go('tab.continous');
         });
     };
 
     $scope.continuous_stages = function() {
-        console.log("SaveAndClose");
+        // console.log("SaveAndClose");
         UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
             $state.go('tab.stages');
         });
