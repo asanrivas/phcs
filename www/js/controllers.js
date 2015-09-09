@@ -1485,7 +1485,7 @@ angular.module('starter.controllers', [])
 .controller('ContinousCtrl', function($scope) {
     $scope.status = {};
     $scope.$on('$ionicView.enter', function(e) {
- if ($scope.$parent.upload_data[$scope.$parent.patientID]) {
+ if (($scope.$parent.upload_data[$scope.$parent.patientID]) && ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT)) {
         // console.log("abc: "+$scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT);
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.neurological)
             $scope.status.neurological = true;
