@@ -541,6 +541,17 @@ angular.module('starter.controllers', [])
         if ($scope.continuous_pt20.neurological.glasgow_coma_scale) {
             $state.go('tab.glasgow');
             // console.log("GCS: "+$scope.continuous_pt20.neurological.glasgow_coma_scale);
+        } else {
+            // if (data[$stateParams.patientID].V_GSC) {
+            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_GSC) {
+                // save_wound = true;
+                $localForage.getItem('upload_data').then(function(data){
+                    delete data[$stateParams.patientID]['V_GSC'];
+                    $localForage.setItem('upload_data', data);
+                })
+
+            };
+
         };
     };
 
@@ -549,7 +560,7 @@ angular.module('starter.controllers', [])
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CONTINUE_VISIT', $scope.continuous_pt20).then(function() {
             $state.go('tab.sp01');
         });
-        $scope.$parent.reload_upload_data();
+        // $scope.$parent.reload_upload_data();
 
     }
 
@@ -743,8 +754,6 @@ angular.module('starter.controllers', [])
                         });
                         break;
                     case false:
-                        // statements // they are executed if variable == c2
-                        // console.log("false: odor");
                         delete data[$stateParams.patientID]['V_WOUND'].sloughs;
                         save_wound = true;
                         break;
