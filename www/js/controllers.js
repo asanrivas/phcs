@@ -151,7 +151,8 @@ angular.module('starter.controllers', [])
                                     UploadData.download_gallery(gallery[i].filename);
                             }
                         }
-                        UploadData.clear_directory(cordova.file.externalRootDirectory+".handdrawing");
+                        if(window.cordova)
+                            UploadData.clear_directory(cordova.file.externalRootDirectory+".handdrawing");
 
                         $localForage.setItem("PRO_PATIENT_GALLERY", gallery);
                         $localForage.setItem("V_FIRST_VISIT", data.first_visit);
@@ -754,7 +755,7 @@ angular.module('starter.controllers', [])
             //save wound
             UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND', data);
         })
-        
+
 
         // // console.log("open_wound: "+item);
         // $state.go('tab.wound', {
@@ -1527,7 +1528,7 @@ angular.module('starter.controllers', [])
 
     // console.log("xyz: "+$scope.$parent.upload_data[$scope.$parent.patientID]);
 
-   
+
 
 })
 

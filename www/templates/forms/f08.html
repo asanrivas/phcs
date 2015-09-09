@@ -30,7 +30,7 @@
                 </label>
 
             </div>
-            <img src="{{img_default}}" ng-click="editImage()" style="max-width: 100%" ng-src="{{img_default?img_default:medical_assessment.body_diagram}}" fallback-src="{{img_default}}"/>
+            <img src="{{img_default}}" ng-click="editImage()" style="max-width: 100%" ng-src="{{medical_assessment.tmp_hand1?medical_assessment.tmp_hand1:medical_assessment.body_diagram}}"/>
             <div class="row">
                 <div class="col">
                     <ion-list ng-init="medical_assessment.patient_id=$parent.patientID">
