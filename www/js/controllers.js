@@ -981,6 +981,7 @@ angular.module('starter.controllers', [])
             UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function() {
                 UploadData.append_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function() {
                     $state.go('formfirstvisit.f05');
+                    $rootScope.visit_data.admission = $scope.first_visit;
                 });
             });
 
@@ -1020,6 +1021,7 @@ angular.module('starter.controllers', [])
             UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', $scope.patient_gallery).then(function() {
                 UploadData.append_data_patient_id($stateParams.patientID, 'V_FIRST_VISIT', $scope.first_visit).then(function() {
                     $state.go('formfirstvisit.f07');
+                    $rootScope.visit_data.photog = $scope.first_visit;
                 });
             });
 
