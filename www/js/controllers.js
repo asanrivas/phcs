@@ -1041,13 +1041,17 @@ angular.module('starter.controllers', [])
             });
         }
     })
-    .controller('f08Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+    .controller('f08Controller', function($scope, $stateParams, $state, UploadData, $localForage, Canvas) {
 
         $scope.medical_assessment = {};
         $scope.img_default = 'img/f08.png';
         $scope.medical_assessment.body_diagram = $scope.img_default;
+        $scope.$on('$ionicView.enter', function(e) {
+            Canvas.init($scope, $scope.img_default);
+        });
 
         $scope.editImage = function(reload) {
+
             var img = $scope.medical_assessment.body_diagram;
             if(reload)
                 img = $scope.img_default;
@@ -1058,13 +1062,17 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://'))
                 img = cordova.file.externalDataDirectory+$scope.medical_assessment.body_diagram;
 
-            handdrawing.openDraw(img, function(data) {
-                if (data) {
-                    $scope.$apply(function() {
-                        $scope.medical_assessment.body_diagram = 'file://' + data;
-                        $scope.medical_assessment.tmp_hand1 = 'file://' + data;
-                    });
-                }
+            // handdrawing.openDraw(img, function(data) {
+            //     if (data) {
+            //         $scope.$apply(function() {
+            //             $scope.medical_assessment.body_diagram = 'file://' + data;
+            //             $scope.medical_assessment.tmp_hand1 = 'file://' + data;
+            //         });
+            //     }
+            // });
+            Canvas.open(img, $scope.img_default).then(function(data){
+                $scope.medical_assessment.body_diagram = data;
+                $scope.medical_assessment.tmp_hand1 = data;
             });
         };
 
@@ -1106,7 +1114,9 @@ angular.module('starter.controllers', [])
         $scope.social_assessment = {};
         $scope.img_default = 'img/f09.png'
         $scope.social_assessment.family_tree = $scope.img_default;
-        Canvas.init($scope, $scope.img_default);
+        $scope.$on('$ionicView.enter', function(e) {
+            Canvas.init($scope, $scope.img_default);
+        });
         $scope.editImage = function(reload) {
             var img = $scope.social_assessment.family_tree;
             if(reload)
@@ -1126,7 +1136,10 @@ angular.module('starter.controllers', [])
             //         });
             //     }
             // });
-            Canvas.open(img);
+            Canvas.open(img, $scope.img_default).then(function(data){
+                $scope.social_assessment.family_tree = data;
+                $scope.social_assessment.tmp_hand1 = data;
+            });
         };
 
         UploadData.data_selector($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {

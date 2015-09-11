@@ -65,6 +65,9 @@
             if ($(this).attr('data-download')) {
               sketch.download($(this).attr('data-download'));
             }
+            if ($(this).attr('data-clear')) {
+                sketch.clear();
+            }
             return false;
           });
         }
@@ -78,6 +81,13 @@
         }
         mime = "image/" + format;
         return window.open(this.el.toDataURL(mime));
+      };
+
+      Sketch.prototype.clear = function() {
+          this.context.clearRect(0, 0, 800, 600);
+
+          this.actions = [];
+          return this.redraw();
       };
 
       Sketch.prototype.set = function(key, value) {
@@ -116,7 +126,7 @@
 
       Sketch.prototype.redraw = function() {
         var sketch;
-        this.el.width = this.canvas.width();
+        // this.el.width = this.canvas.width();
         this.context = this.el.getContext('2d');
         sketch = this;
         $.each(this.actions, function() {

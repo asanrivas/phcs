@@ -2,6 +2,7 @@
     <ion-content class="padding">
         <div class="list card">
             <div class="item item-divider">Social Assessment</div>
+            <a class="button button-small newimage" ng-click="editImage(true)">Renew</a>
             <img src="img/f09.png" ng-click="editImage()" style="max-width: 100%" ng-src="{{social_assessment.tmp_hand1?social_assessment.tmp_hand1:social_assessment.family_tree}}" fallback-src="{{img_default}}"/>
         </div>
 
@@ -73,7 +74,7 @@
                 <ion-checkbox ng-model="social_assessment.type_of_housing.split_level">Split Level</ion-checkbox>
             </ion-list>
         </div>
-        
+
         <div class="list card">
             <div class="item item-divider">Home Enviroment</div>
             <ion-list ng-init="social_assessment.patient_id=$parent.patientID">

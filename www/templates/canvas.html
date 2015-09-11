@@ -29,20 +29,21 @@
     </ion-header-bar>
     <ion-content data-tap-disabled="true">
         <div class="tools">
-            <a href="#tools_sketch" data-color="#f00" style="width: 10px; background: #f00;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#ff0" style="width: 10px; background: #ff0;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#0f0" style="width: 10px; background: #0f0;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#0ff" style="width: 10px; background: #0ff;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#00f" style="width: 10px; background: #00f;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#f0f" style="width: 10px; background: #f0f;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#000" style="width: 10px; background: #000;" onclick="event.preventDefault()"></a>
-            <a href="#tools_sketch" data-color="#fff" style="width: 10px; background: #fff;" onclick="event.preventDefault()"></a>
+            <a href="#tools_sketch" data-color="#f00" style="width: 10px; background: #f00;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#ff0" style="width: 10px; background: #ff0;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#0f0" style="width: 10px; background: #0f0;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#0ff" style="width: 10px; background: #0ff;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#00f" style="width: 10px; background: #00f;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#f0f" style="width: 10px; background: #f0f;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#000" style="width: 10px; background: #000;" onclick="event.preventDefault()" data-tool="marker"></a>
+            <a href="#tools_sketch" data-color="#fff" style="width: 10px; background: #fff;" onclick="event.preventDefault()" data-tool="marker"></a>
             <a href="#tools_sketch" data-size="3" style="background: #ccc" onclick="event.preventDefault()">3</a>
             <a href="#tools_sketch" data-size="5" style="background: #ccc" onclick="event.preventDefault()">5</a>
             <a href="#tools_sketch" data-size="10" style="background: #ccc" onclick="event.preventDefault()">10</a>
             <a href="#tools_sketch" data-size="15" style="background: #ccc" onclick="event.preventDefault()">15</a>
             <a href="#tools_sketch" data-tool="eraser" onclick="event.preventDefault()">Eraser</a>
+            <a href="#tools_sketch" data-clear="true" onclick="event.preventDefault()">Clear</a>
         </div>
-        <canvas id="tools_sketch" width="800" height="600" style="background: url({{base_image}}) no-repeat center center;max-width:100%;height:100%;background-size:contain;"></canvas>
+        <canvas id="tools_sketch" width="800" height="600" style="width:800px;height:600px;/*background: url({{base_image}}) no-repeat top left;background-size:100%*/"></canvas>
     </ion-content>
 </ion-modal-view>

@@ -207,20 +207,26 @@ angular.module('starter.services', [])
     var sketch;
     var openedImage;
     var init = function($scope, img_default) {
-        var promise;
+		if($scope.modal)
+		{
+			return q.promise;
+		}
+
+		var q = $q.defer();
         $scope = $scope || $rootScope.$new();
 
         background.src = img_default;
 
         // Make sure the image is loaded first otherwise nothing will draw.
 
-        promise = $ionicModal.fromTemplateUrl("templates/canvas.html", {
+
+        $ionicModal.fromTemplateUrl("templates/canvas.html", {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function(modal) {
             $scope.modal = modal;
             canvasModal = modal;
-            return modal;
+			q.resolve(modal);
         });
 
 
@@ -230,28 +236,39 @@ angular.module('starter.services', [])
         $scope.closeModal = function() {
             $scope.modal.hide();
         };
-        $scope.$on('$destroy', function() {
-            $scope.modal.remove();
-        });
+        // $scope.$on('$destroy', function() {
+        //     $scope.modal.remove();
+        // });
 
         $scope.base_image = img_default;
 
         $scope.save = function(img){
-            $('#tools_sketch')[0].getContext("2d").globalCompositeOperation = 'destination-over';
-            $('#tools_sketch')[0].getContext("2d").drawImage(background, 0, 0, 800, 600);
+			ctx = $('#tools_sketch')[0].getContext("2d");
+            ctx.globalCompositeOperation = 'destination-over';
+            ctx.drawImage(background, 0, 0, 800, background.height*(800/background.width));
+			ctx.globalCompositeOperation = 'source-over';
             $scope.modal.hide();
             openedImage.resolve( $('#tools_sketch')[0].toDataURL('image/png') );
         };
 
-        return promise;
+        return q.promise;
     }
 
     return {
         init: init,
         open: function(img){
             openedImage = $q.defer();
+			var image = new Image();
             canvasModal.show();
-            sketch = $('#tools_sketch').sketch();
+			image.onload = function () {
+				ctx = $('#tools_sketch')[0].getContext("2d");
+				ctx.globalCompositeOperation = 'source-over';
+				ctx.drawImage(this, 0, 0, 800, 600);
+			}
+			image.src = img;
+
+			if(!sketch)
+            	sketch = $('#tools_sketch').sketch();
 
             return openedImage.promise;
         },
