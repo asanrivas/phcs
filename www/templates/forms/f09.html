@@ -12,7 +12,9 @@
                 <ion-checkbox ng-model="social_assessment.family_attitude.supportive" >Supportive</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_attitude.rejection" >Rejection</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_attitude.empathic" >Empathic</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.family_attitude.Others" >Others</ion-checkbox>
+                <label class="item item-input item-stacked-label">Others :
+                    <input type="text" placeholder="Others" ng-model="social_assessment.family_attitude.Others" >
+                </label>
             </ion-list>
         </div>
 
@@ -28,7 +30,9 @@
                 <ion-checkbox ng-model="social_assessment.family_response.denying" >Denying</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_response.anxious" >Anxious</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.family_response.grieving" >Grieving</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.family_response.others" >Others</ion-checkbox>
+                <label class="item item-input item-stacked-label">Others :
+                    <input type="text" placeholder="Others" ng-model="social_assessment.family_response.others" >
+                </label>
             </ion-list>
         </div>
 
@@ -49,7 +53,9 @@
                 <ion-checkbox ng-model="social_assessment.religion.Hinduism">Hinduism</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.religion.Islam">Islam</ion-checkbox>
                 <ion-checkbox ng-model="social_assessment.religion.Taiosm">Taiosm</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.religion.Others">Others</ion-checkbox>
+                <label class="item item-input item-stacked-label">Others :
+                    <input type="text" placeholder="Others" ng-model="social_assessment.religion.Others">
+                </label>
             </ion-list>
         </div>
 
@@ -68,29 +74,26 @@
                 <ion-checkbox ng-model="social_assessment.type_of_housing.split_level">Split Level</ion-checkbox>
             </ion-list>
         </div>
+        
         <div class="list card">
             <div class="item item-divider">Home Enviroment</div>
             <ion-list ng-init="social_assessment.patient_id=$parent.patientID">
-                <ion-checkbox ng-model="social_assessment.home_enviroment.Clean">Clean</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.home_enviroment.Cluttered">Cluttered</ion-checkbox>
-                <ion-checkbox ng-model="social_assessment.home_enviroment.Dirty">Dirty</ion-checkbox>
-            </div>
-            <div class="list card">
+                <ion-checkbox ng-model="social_assessment.home_environment.Clean">Clean</ion-checkbox>
+                <ion-checkbox ng-model="social_assessment.home_environment.Cluttered">Cluttered</ion-checkbox>
+                <ion-checkbox ng-model="social_assessment.home_environment.Dirty">Dirty</ion-checkbox>
                 <label class="item item-input item-select">
                     <div class="input-label">
                         Electricity
                     </div>
-                    <select>
-                        <option selected>Yes</option>
-                        <option>No</option>
+                    <select ng-model="social_assessment.home_environment.Electricity">
+                        <option selected value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </label>
-
-                <ion-list ng-init="social_assessment.patient_id=$parent.patientID">
-                    <ion-checkbox ng-model="social_assessment.electricity.Municipal_water_supply">Municipal water supply</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.electricity.Other_water_source">Other water source</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.electricity.Dark">Dark</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.electricity.Poor_Ventilation">Poor Ventilation</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.home_environment.Municipal_water_supply">Municipal water supply</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.home_environment.Other_water_source">Other water source</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.home_environment.Dark">Dark</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.home_environment.Poor_Ventilation">Poor Ventilation</ion-checkbox>
                 </ion-list>
 
             </div>
@@ -99,93 +102,56 @@
                 <div class="item item-divider">Stairs</div>
             </div>
 
-            <div class="list card">
-                <div class="item item-divider">Stairs entering home</div>
-                <div class="list">
-                    <label class="item item-radio">
-                        <input type="radio" name="group" ng-model="social_assessment.stairs_entering_home.yes">
-                        <div class="item-content">
-                            Yes
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                    <label class="item item-radio">
-                        <input type="radio" name="group" ng-model="social_assessment.stairs_entering_home.no">
-                        <div class="item-content">
-                            No
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                </div>
-            </div>
+           <label class="item item-input item-select">
+                    <div class="input-label">
+                        Stair Entering Home
+                    </div>
+                        <select ng-model="social_assessment.stairs_entering_home">
+                            <option selected value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </label>
 
-            <div class="list card">
-                <div class="item item-divider">Stairs inside home</div>
-                <div class="list">
-                    <label class="item item-radio">
-                        <input type="radio" name="group1" ng-model="social_assessment.stairs_inside_home.yes">
-                        <div class="item-content">
-                            Yes
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                    <label class="item item-radio">
-                        <input type="radio" name="group1" ng-model="social_assessment.stairs_inside_home.no">
-                        <div class="item-content">
-                            No
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                </div>
-            </div>
+             <label class="item item-input item-select">
+                    <div class="input-label">
+                        Stair Inside Home
+                    </div>
+                        <select ng-model="social_assessment.stairs_inside_home">
+                            <option selected value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </label>
 
-            <div class="list card">
-                <div class="item item-divider">Split level</div>
-                <div class="list">
-                    <label class="item item-radio">
-                        <input type="radio" name="group2" ng-model="social_assessment.split_level.yes">
-                        <div class="item-content">
-                            Yes
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                    <label class="item item-radio">
-                        <input type="radio" name="group2" ng-model="social_assessment.split_level.no">
-                        <div class="item-content">
-                            No
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                </div>
-            </div>
+             <label class="item item-input item-select">
+                    <div class="input-label">
+                        Split Level
+                    </div>
+                        <select ng-model="social_assessment.split_level">
+                            <option selected value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </label>
 
-            <div class="list card">
-                <div class="item item-divider">Client using</div>
-                <div class="list">
-                    <label class="item item-radio">
-                        <input type="radio" name="group3" ng-model="social_assessment.client_using.yes">
-                        <div class="item-content">
-                            Yes
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                    <label class="item item-radio">
-                        <input type="radio" name="group3" ng-model="social_assessment.client_using.no">
-                        <div class="item-content">
-                            No
-                        </div>
-                        <i class="radio-icon ion-checkmark"></i>
-                    </label>
-                </div>
-            </div>
+             <label class="item item-input item-select">
+                    <div class="input-label">
+                       Client Using
+                    </div>
+                        <select ng-model="social_assessment.client_using">
+                            <option selected value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        </label>
+
+
+
             <div class="list card">
                 <div class="item item-divider">Sanitary</div>
                 <ion-list ng-init="social_assessment.patient_id=$parent.patientID">
-                    <ion-checkbox ng-model="social_assessment.sanitary.Squat_toilet">Squat toilet</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.sanitary.Sit">Sit</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.sanitary.Attached_toilet">Attached toilet</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.sanitary.Commode">Commode</ion-checkbox>
-                    <ion-checkbox ng-model="social_assessment.sanitary.Out_House">Out House</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary_facilities.Squat_toilet">Squat toilet</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary_facilities.Sit">Sit</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary_facilities.Attached_toilet">Attached toilet</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary_facilities.Commode">Commode</ion-checkbox>
+                    <ion-checkbox ng-model="social_assessment.sanitary_facilities.Out_House">Out House</ion-checkbox>
                 </ion-list>
 
             </div>

@@ -9,7 +9,7 @@
 			<div class="item item-divider">Perak palliative care society initial assessment form</div>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Date</span>
-						<input type="date" placeholder="Date" ng-model="initial_assessment.date">
+						<input type="date" placeholder="Date" ng-model="initial_assessment.date_initial">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Location of Assessment</span>
@@ -17,7 +17,7 @@
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">How do you like to be addresses</span>
-						<input type="text" placeholder="How do you like to be addresses" ng-model="initial_assessment.address">
+						<input type="text" placeholder="How do you like to be addresses" ng-model="initial_assessment.addressed">
 				</label>
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Referring Doctor</span></br>
@@ -69,7 +69,7 @@
 		<div class="list card">
 			<div class="item item-divider">History of current illness</div>
 				<label class="item item-input item-stacked-label">
-					<textarea placeholder="(Surgery, Radiotherapy, Chemotherapy)" rows="4"></textarea>
+					<textarea placeholder="(Surgery, Radiotherapy, Chemotherapy)" rows="4" ng-model="initial_assessment.curr_illness_history"></textarea>
 				</label>
 		</div>
 		<div class="list card">

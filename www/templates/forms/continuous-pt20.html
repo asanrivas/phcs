@@ -4,48 +4,9 @@
            <div class="item item-divider">COMFORT MEASURES</div>
         </div>
  -->
-        <div class="list">
-            <a class="button button-positive button-full" ng-click="PT20Next()">Save and Next</a>
-        </div>
+        
 
-        <div class="list card" ng-init="continuous_pt20.patient_id=$parent.patientID">
-
-            <div class="item item-divider">P13 – Wound</div>
-            <div class="item item-body">
-                <div>Select the nearest wound condition of patient:</div>
-            </div>
-            <!-- <div class="list" class="capital"> -->
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="continuous_pt20.wound">
-                <ion-checkbox class="positive" ng-model="continuous_pt20.wound.no_wound" ng-click="continuous_pt20.wound = {};continuous_pt20.wound.no_wound=true"> No wound</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.post_op_wound" ng-change="open_wound('post_op_wound');continuous_pt20.wound.no_wound=false">PO-Post op wound</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.pressure" ng-change="open_wound('pressure');continuous_pt20.wound.no_wound=false">P-Pressure</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.fumigating" ng-change="open_wound('fumigating');continuous_pt20.wound.no_wound=false">F-Fumigating</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.redness" ng-change="open_wound('redness');continuous_pt20.wound.no_wound=false">S1-Redness</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.partial_thickness" ng-change="open_wound('partial_thickness');continuous_pt20.wound.no_wound=false">S2-Partial thickness</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.full_thickness" ng-change="open_wound('full_thickness');continuous_pt20.wound.no_wound=false">S3-Full thickness</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.cavity" ng-change="open_wound('cavity');continuous_pt20.wound.no_wound=false">S4-Cavity</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.unstageble" ng-change="open_wound('unstageble');continuous_pt20.wound.no_wound=false">S5-Unstageble</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.clean" ng-change="open_wound('clean');continuous_pt20.wound.no_wound=false">CL-Clean</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.granulating" ng-change="open_wound('granulating');continuous_pt20.wound.no_wound=false">G-Granulating</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.odor" ng-change="open_wound('odor');continuous_pt20.wound.no_wound=false">O-Odor</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.exudations" ng-change="open_wound('exudations');continuous_pt20.wound.no_wound=false">E-Exudations</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.bleeding" ng-change="open_wound('bleeding');continuous_pt20.wound.no_wound=false">B-Bleeding</ion-checkbox>
-
-                <ion-checkbox ng-model="continuous_pt20.wound.sloughs" ng-change="open_wound('sloughs');continuous_pt20.wound.no_wound=false">Sl-Sloughs</ion-checkbox>
-            </div>
+        
 
             <div class="item item-divider">P1 – Neurological</div>
             <div class="item item-body">
@@ -221,6 +182,47 @@
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.clear">C-Clear</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.cloudy">CLD-Cloudy</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.concentrated">CN-Concentrated</ion-checkbox>
+            </div>
+
+            
+
+            <div class="list card" ng-init="continuous_pt20.patient_id=$parent.patientID">
+
+            <div class="item item-divider">P13 – Wound</div>
+            <div class="item item-body">
+                <div>Select the nearest wound condition of patient:</div>
+            </div>
+            <!-- <div class="list" class="capital"> -->
+            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="continuous_pt20.wound">
+                <ion-checkbox class="positive" ng-model="continuous_pt20.wound.no_wound" ng-click="continuous_pt20.wound = {};continuous_pt20.wound.no_wound=true"> No wound</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.post_op_wound" ng-change="open_wound('post_op_wound');continuous_pt20.wound.no_wound=false">PO-Post op wound</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.pressure" ng-change="open_wound('pressure');continuous_pt20.wound.no_wound=false">P-Pressure</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.fumigating" ng-change="open_wound('fumigating');continuous_pt20.wound.no_wound=false">F-Fumigating</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.redness" ng-change="open_wound('redness');continuous_pt20.wound.no_wound=false">S1-Redness</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.partial_thickness" ng-change="open_wound('partial_thickness');continuous_pt20.wound.no_wound=false">S2-Partial thickness</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.full_thickness" ng-change="open_wound('full_thickness');continuous_pt20.wound.no_wound=false">S3-Full thickness</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.cavity" ng-change="open_wound('cavity');continuous_pt20.wound.no_wound=false">S4-Cavity</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.unstageble" ng-change="open_wound('unstageble');continuous_pt20.wound.no_wound=false">S5-Unstageble</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.clean" ng-change="open_wound('clean');continuous_pt20.wound.no_wound=false">CL-Clean</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.granulating" ng-change="open_wound('granulating');continuous_pt20.wound.no_wound=false">G-Granulating</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.odor" ng-change="open_wound('odor');continuous_pt20.wound.no_wound=false">O-Odor</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.exudations" ng-change="open_wound('exudations');continuous_pt20.wound.no_wound=false">E-Exudations</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.bleeding" ng-change="open_wound('bleeding');continuous_pt20.wound.no_wound=false">B-Bleeding</ion-checkbox>
+
+                <ion-checkbox ng-model="continuous_pt20.wound.sloughs" ng-change="open_wound('sloughs');continuous_pt20.wound.no_wound=false">Sl-Sloughs</ion-checkbox>
             </div>
 
             <div class="item item-divider">P14 – Activities For Daily Living And Sexuality</div>
