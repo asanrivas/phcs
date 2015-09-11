@@ -6,12 +6,10 @@
         <div class="list" ng-init="general_examination.patient_id=$parent.patientID">
             <div class="list card">
                 <div class="item item-divider">Respiratory System:</div>
-                <a class="button button-small newimage" ng-click="editImage(true)">Renew</a>
                 <img src="img/f10_2.png" ng-click="editImage()" style="max-width: 100%" ng-src="{{general_examination.tmp_hand1?general_examination.tmp_hand1:general_examination.respiratory_system_image}}" fallback-src="{{img_default[0]}}"/>
             </div>
             <div class="list card">
                 <div class="item item-divider">Abdomen/GU System:</div>
-                <a class="button button-small newimage" ng-click="editImage2(true)">Renew</a>
                 <img src="img/f10_3.png" ng-click="editImage2()" style="max-width: 100%" ng-src="{{general_examination.tmp_hand2?general_examination.tmp_hand2:general_examination.abdomen_image}}" fallback-src="{{img_default[1]}}"/>
             </div>
         </div>

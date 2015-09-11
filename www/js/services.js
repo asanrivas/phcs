@@ -251,7 +251,7 @@ angular.module('starter.services', [])
         open: function(img){
             openedImage = $q.defer();
             canvasModal.show();
-            sketch = $('#tools_sketch').sketch({background: background});
+            sketch = $('#tools_sketch').sketch();
 
             return openedImage.promise;
         },

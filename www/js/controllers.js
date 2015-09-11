@@ -1106,7 +1106,7 @@ angular.module('starter.controllers', [])
         $scope.social_assessment = {};
         $scope.img_default = 'img/f09.png'
         $scope.social_assessment.family_tree = $scope.img_default;
-
+        Canvas.init($scope, $scope.img_default);
         $scope.editImage = function(reload) {
             var img = $scope.social_assessment.family_tree;
             if(reload)
@@ -1118,14 +1118,15 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://'))
                 img = cordova.file.externalDataDirectory+$scope.social_assessment.family_tree;
 
-            handdrawing.openDraw(img, function(data) {
-                if (data) {
-                    $scope.$apply(function() {
-                        $scope.social_assessment.family_tree = 'file://' + data;
-                        $scope.social_assessment.tmp_hand1 = 'file://' + data;
-                    });
-                }
-            });
+            // handdrawing.openDraw(img, function(data) {
+            //     if (data) {
+            //         $scope.$apply(function() {
+            //             $scope.social_assessment.family_tree = 'file://' + data;
+            //             $scope.social_assessment.tmp_hand1 = 'file://' + data;
+            //         });
+            //     }
+            // });
+            Canvas.open(img);
         };
 
         UploadData.data_selector($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
