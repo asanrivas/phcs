@@ -1457,16 +1457,21 @@ angular.module('starter.controllers', [])
 
 .controller('TabMedicationCtrl', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
 
+//Important: Compare this with f13Controller
     $scope.curr_medication = {};
 
-    $localForage.getItem('upload_data').then(function(data) {
-        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CURR_MEDICATION_CHART)
-            $scope.curr_medication = data[$stateParams.patientID].V_CURR_MEDICATION_CHART;
-    });
+    // $localForage.getItem('upload_data').then(function(data) {
+    //     if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CURR_MEDICATION_CHART)
+    //         $scope.curr_medication = data[$stateParams.patientID].V_CURR_MEDICATION_CHART;
+    // });
+
+        UploadData.data_selector($stateParams.patientID, 'V_CURR_MEDICATION_CHART', 'V_FIRST_VISIT').then(function (data) {
+            $scope.curr_medication = data;
+        });
 
     $scope.saveAndNext = function() {
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_CHART', $scope.curr_medication).then(function() {
-            $state.go('tab.firsttime', {
+            $state.go('tab.eol', {
                 patientID: $scope.$parent.patientID
             });
         });
@@ -1510,6 +1515,22 @@ angular.module('starter.controllers', [])
     $scope.$on('modal.removed', function() {
         // Execute action
     });
+
+        $scope.deleteItem = function(index) {
+            var confirmPopup = $ionicPopup.confirm({
+                title: 'Remove medication',
+                template: 'Are you sure you want remove this medication?'
+            });
+
+            confirmPopup.then(function(res) {
+                if (res) {
+                    $scope.curr_medication.medications.splice(index, 1)
+                } else {
+                    console.log('You are not sure');
+                }
+            });
+        };
+
 })
 
 .controller('ContinousCtrl', function($scope) {
