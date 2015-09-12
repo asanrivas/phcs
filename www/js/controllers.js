@@ -389,7 +389,9 @@ angular.module('starter.controllers', [])
             eol: false
         };
 
-        $rootScope.visit_data = {};
+        if(!$rootScope.visit_data)
+            $rootScope.visit_data = {};
+
         $localForage.getItem('V_FIRST_VISIT').then(function(data) {
             if(data && data.first_visit)
             {
@@ -1059,7 +1061,7 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.medical_assessment.tmp_hand1)
                 img = $scope.medical_assessment.tmp_hand1;
-            else if (!img.startsWith('file://'))
+            else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.medical_assessment.body_diagram;
 
             // handdrawing.openDraw(img, function(data) {
@@ -1125,7 +1127,7 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.social_assessment.tmp_hand1)
                 img = $scope.social_assessment.tmp_hand1;
-            else if (!img.startsWith('file://'))
+            else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.social_assessment.family_tree;
 
             // handdrawing.openDraw(img, function(data) {
@@ -1209,7 +1211,7 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.general_examination.tmp_hand1)
                 img = $scope.general_examination.tmp_hand1;
-            else if (!img.startsWith('file://'))
+            else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.general_examination.respiratory_system_image;
 
             handdrawing.openDraw(img, function(data) {
@@ -1230,7 +1232,7 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.general_examination.tmp_hand2)
                 img = $scope.general_examination.tmp_hand2;
-            else if (!img.startsWith('file://'))
+            else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.general_examination.abdomen_image;
 
             handdrawing.openDraw(img, function(data) {
