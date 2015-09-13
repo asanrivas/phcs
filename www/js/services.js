@@ -201,18 +201,18 @@ angular.module('starter.services', [])
             }
     }
 })
-.factory('Canvas', function($ionicModal, $rootScope, $q){
+.service('Canvas', function($ionicModal, $rootScope, $q){
     var background = new Image();
     var canvasModal;
     var sketch;
     var openedImage;
     var init = function($scope, img_default) {
+		var q = $q.defer();
 		if($scope.modal)
 		{
 			return q.promise;
 		}
 
-		var q = $q.defer();
         $scope = $scope || $rootScope.$new();
 
         background.src = img_default;
@@ -234,11 +234,12 @@ angular.module('starter.services', [])
             $scope.modal.show();
         };
         $scope.closeModal = function() {
+			 $('#tools_sketch').sketch('actions',[]);
             $scope.modal.hide();
         };
-        // $scope.$on('$destroy', function() {
-        //     $scope.modal.remove();
-        // });
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
 
         $scope.base_image = img_default;
 

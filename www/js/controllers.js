@@ -1033,6 +1033,8 @@ angular.module('starter.controllers', [])
         $scope.initial_assessment = {};
 
         UploadData.data_selector($stateParams.patientID, 'V_INITIAL_ASSESSMENT', 'V_FIRST_VISIT').then(function(data) {
+            if(!(data.date_initial instanceof Date))
+                data.date_initial = new Date(data.date_initial);
             $scope.initial_assessment = data;
             // body...
         });
