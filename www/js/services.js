@@ -276,7 +276,7 @@ angular.module('starter.services', [])
 
 			image.src = img;
 			//if(!sketch)
-            sketch = $('#tools_sketch').sketch();
+            sketch = $('#tools_sketch').sketch({defaultSize:1});
 
 
             return openedImage.promise;
