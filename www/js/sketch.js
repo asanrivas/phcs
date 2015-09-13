@@ -85,7 +85,6 @@
 
       Sketch.prototype.clear = function() {
           this.context.clearRect(0, 0, 800, 600);
-
           this.actions = [];
           return this.redraw();
       };

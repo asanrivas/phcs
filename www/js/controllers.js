@@ -1066,14 +1066,6 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.medical_assessment.body_diagram;
 
-            // handdrawing.openDraw(img, function(data) {
-            //     if (data) {
-            //         $scope.$apply(function() {
-            //             $scope.medical_assessment.body_diagram = 'file://' + data;
-            //             $scope.medical_assessment.tmp_hand1 = 'file://' + data;
-            //         });
-            //     }
-            // });
             Canvas.open(img, $scope.img_default).then(function(data){
                 $scope.medical_assessment.body_diagram = data;
                 $scope.medical_assessment.tmp_hand1 = data;
@@ -1132,14 +1124,6 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.social_assessment.family_tree;
 
-            // handdrawing.openDraw(img, function(data) {
-            //     if (data) {
-            //         $scope.$apply(function() {
-            //             $scope.social_assessment.family_tree = 'file://' + data;
-            //             $scope.social_assessment.tmp_hand1 = 'file://' + data;
-            //         });
-            //     }
-            // });
             Canvas.open(img, $scope.img_default).then(function(data){
                 $scope.social_assessment.family_tree = data;
                 $scope.social_assessment.tmp_hand1 = data;
@@ -1188,7 +1172,7 @@ angular.module('starter.controllers', [])
             });
         }
     })
-    .controller('f11Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
+    .controller('f11Controller', function($scope, $stateParams, $state, UploadData, $localForage, Canvas) {
 
         $scope.general_examination = {};
         $scope.img_default = ["img/f10_2.png", "img/f10_3.png"];
@@ -1206,6 +1190,13 @@ angular.module('starter.controllers', [])
         });
 
         $scope.editImage = function(reload) {
+            Canvas.init($scope, $scope.img_default[0]).then(function(){
+                Canvas.open(img, $scope.img_default[0]).then(function(data){
+                    $scope.general_examination.respiratory_system_image = data;
+                    $scope.general_examination.tmp_hand1 = data;
+                });
+            });
+
             var img = $scope.general_examination.respiratory_system_image;
             if(reload)
                 img = $scope.img_default[0];
@@ -1216,17 +1207,19 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.general_examination.respiratory_system_image;
 
-            handdrawing.openDraw(img, function(data) {
-                if (data) {
-                    $scope.$apply(function() {
-                        $scope.general_examination.respiratory_system_image = 'file://' + data;
-                        $scope.general_examination.tmp_hand1 = 'file://' + data;
-                    });
-                }
-            });
+            // handdrawing.openDraw(img, function(data) {
+            //     if (data) {
+            //         $scope.$apply(function() {
+            //             $scope.general_examination.respiratory_system_image = 'file://' + data;
+            //             $scope.general_examination.tmp_hand1 = 'file://' + data;
+            //         });
+            //     }
+            // });
+
         };
 
         $scope.editImage2 = function(reload) {
+
             var img = $scope.general_examination.abdomen_image;
             if(reload)
                 img = $scope.img_default[1];
@@ -1237,14 +1230,21 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.general_examination.abdomen_image;
 
-            handdrawing.openDraw(img, function(data) {
-                if (data) {
-                    $scope.$apply(function() {
-                        $scope.general_examination.abdomen_image = 'file://' + data;
-                        $scope.general_examination.tmp_hand2 = 'file://' + data;
-                    });
-                }
+            Canvas.init($scope, $scope.img_default[1]).then(function(){
+                Canvas.open(img, $scope.img_default[1]).then(function(data){
+                    $scope.general_examination.abdomen_image = data;
+                    $scope.general_examination.tmp_hand2 = data;
+                });
             });
+            // handdrawing.openDraw(img, function(data) {
+            //     if (data) {
+            //         $scope.$apply(function() {
+            //             $scope.general_examination.abdomen_image = 'file://' + data;
+            //             $scope.general_examination.tmp_hand2 = 'file://' + data;
+            //         });
+            //     }
+            // });
+
         };
 
         $scope.saveAndNext = function() {

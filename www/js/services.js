@@ -201,25 +201,21 @@ angular.module('starter.services', [])
             }
     }
 })
-.service('Canvas', function($ionicModal, $rootScope, $q){
+.factory('Canvas', function($ionicModal, $rootScope, $q){
     var background = new Image();
     var canvasModal;
     var sketch;
     var openedImage;
     var init = function($scope, img_default) {
 		var q = $q.defer();
-		if($scope.modal)
-		{
-			return q.promise;
-		}
-
         $scope = $scope || $rootScope.$new();
 
+		if(canvasModal)
+		{
+			canvasModal.remove();
+			openedImage, sketch, canvasModal = null;
+		}
         background.src = img_default;
-
-        // Make sure the image is loaded first otherwise nothing will draw.
-
-
         $ionicModal.fromTemplateUrl("templates/canvas.html", {
             scope: $scope,
             animation: 'slide-in-up'
@@ -260,16 +256,17 @@ angular.module('starter.services', [])
         open: function(img){
             openedImage = $q.defer();
 			var image = new Image();
-            canvasModal.show();
+			canvasModal.show();
 			image.onload = function () {
 				ctx = $('#tools_sketch')[0].getContext("2d");
+				console.log(sketch);
+				ctx.clearRect(0, 0, 800, 600);
 				ctx.globalCompositeOperation = 'source-over';
 				ctx.drawImage(this, 0, 0, 800, 600);
 			}
 			image.src = img;
+            sketch = $('#tools_sketch').sketch();
 
-			if(!sketch)
-            	sketch = $('#tools_sketch').sketch();
 
             return openedImage.promise;
         },
