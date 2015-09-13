@@ -1190,12 +1190,7 @@ angular.module('starter.controllers', [])
         });
 
         $scope.editImage = function(reload) {
-            Canvas.init($scope, $scope.img_default[0]).then(function(){
-                Canvas.open(img, $scope.img_default[0]).then(function(data){
-                    $scope.general_examination.respiratory_system_image = data;
-                    $scope.general_examination.tmp_hand1 = data;
-                });
-            });
+
 
             var img = $scope.general_examination.respiratory_system_image;
             if(reload)
@@ -1207,14 +1202,12 @@ angular.module('starter.controllers', [])
             else if (!img.startsWith('file://') && window.cordova)
                 img = cordova.file.externalDataDirectory+$scope.general_examination.respiratory_system_image;
 
-            // handdrawing.openDraw(img, function(data) {
-            //     if (data) {
-            //         $scope.$apply(function() {
-            //             $scope.general_examination.respiratory_system_image = 'file://' + data;
-            //             $scope.general_examination.tmp_hand1 = 'file://' + data;
-            //         });
-            //     }
-            // });
+            Canvas.init($scope, $scope.img_default[0]).then(function(){
+                Canvas.open(img).then(function(data){
+                    $scope.general_examination.respiratory_system_image = data;
+                    $scope.general_examination.tmp_hand1 = data;
+                });
+            });
 
         };
 
@@ -1231,7 +1224,7 @@ angular.module('starter.controllers', [])
                 img = cordova.file.externalDataDirectory+$scope.general_examination.abdomen_image;
 
             Canvas.init($scope, $scope.img_default[1]).then(function(){
-                Canvas.open(img, $scope.img_default[1]).then(function(data){
+                Canvas.open(img).then(function(data){
                     $scope.general_examination.abdomen_image = data;
                     $scope.general_examination.tmp_hand2 = data;
                 });

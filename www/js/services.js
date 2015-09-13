@@ -214,7 +214,9 @@ angular.module('starter.services', [])
 		{
 			canvasModal.remove();
 			openedImage, sketch, canvasModal = null;
+			delete sketch;
 		}
+
         background.src = img_default;
         $ionicModal.fromTemplateUrl("templates/canvas.html", {
             scope: $scope,
@@ -258,13 +260,22 @@ angular.module('starter.services', [])
 			var image = new Image();
 			canvasModal.show();
 			image.onload = function () {
-				ctx = $('#tools_sketch')[0].getContext("2d");
 				console.log(sketch);
+				var ctx = $('#tools_sketch')[0].getContext("2d");
 				ctx.clearRect(0, 0, 800, 600);
 				ctx.globalCompositeOperation = 'source-over';
 				ctx.drawImage(this, 0, 0, 800, 600);
 			}
+			image.onerror = function (error) {
+				console.log(sketch);
+				var ctx = $('#tools_sketch')[0].getContext("2d");
+				ctx.clearRect(0, 0, 800, 600);
+				ctx.globalCompositeOperation = 'source-over';
+				ctx.drawImage(background, 0, 0, 800, 600);
+			}
+
 			image.src = img;
+			//if(!sketch)
             sketch = $('#tools_sketch').sketch();
 
 
