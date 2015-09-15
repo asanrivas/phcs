@@ -308,11 +308,12 @@ angular.module('starter.controllers', [])
                 for (var i = images.length - 1; i >= 0; i--) {
                     if (images[i] && images[i].gallery_type_code == "5") {
                         found_pic = true;
-                        $scope.$parent.upload_data[$scope.patientID]['profile_images'] = images[i].image;
-                        // UploadData.save_data_patient_id($stateParams.patientID, 'profile_images', images[i].image).then(function() {
-                        //     $scope.$parent.reload_upload_data();
+                        // $scope.$parent.upload_data[$scope.patientID]['profile_images'] = images[i].image;
+                        UploadData.save_data_patient_id($stateParams.patientID, 'profile_images', images[i].image).then(function() {
+                            $scope.$parent.reload_upload_data();
                             $scope.closeModal();
-                        // });
+                        });
+                        
                         break;
                     }
                 }
@@ -1112,8 +1113,6 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.medical_assessment.tmp_hand1)
                 img = $scope.medical_assessment.tmp_hand1;
-            else if (!img.startsWith('file://') && window.cordova)
-                img = cordova.file.externalDataDirectory+$scope.medical_assessment.body_diagram;
 
             Canvas.open(img, $scope.img_default).then(function(data){
                 $scope.medical_assessment.body_diagram = data;
@@ -1170,8 +1169,6 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.social_assessment.tmp_hand1)
                 img = $scope.social_assessment.tmp_hand1;
-            else if (!img.startsWith('file://') && window.cordova)
-                img = cordova.file.externalDataDirectory+$scope.social_assessment.family_tree;
 
             Canvas.open(img, $scope.img_default).then(function(data){
                 $scope.social_assessment.family_tree = data;
@@ -1224,8 +1221,6 @@ angular.module('starter.controllers', [])
                 img = 'www/' + img;
             else if($scope.general_examination.tmp_hand1)
                 img = $scope.general_examination.tmp_hand1;
-            else if (!img.startsWith('file://') && window.cordova)
-                img = cordova.file.externalDataDirectory+$scope.general_examination.respiratory_system_image;
 
             Canvas.open(img).then(function(data){
                 $scope.general_examination.respiratory_system_image = data;

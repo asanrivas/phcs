@@ -46,8 +46,11 @@ angular.module('starter.services', [])
                 }
                 var defaultObj = {patient_id: patientID, date: theDate.format("yyyy-mm-dd HH:MM")};
                 var extended = {};
-
-                angular.extend(extended, datum, defaultObj);
+				if(typeof datum === "string")
+					extended = datum;
+				else
+                	angular.extend(extended, datum, defaultObj);
+					
                 data[patientID][table] = extended;
                 // console.log("save data: "+JSON.stringify(data));
                 $localForage.setItem('upload_data', data).then(function(){
