@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
     };
 
     $scope.saveAndNext = function() {
-        console.log("patient: " + $scope.patient);
+        // console.log("patient: " + $scope.patient);
         UploadData.save_data_patient_id($stateParams.patientID, 'patients', $scope.patient).then(function() {
             $state.go('tab.home');
         });
@@ -539,6 +539,13 @@ angular.module('starter.controllers', [])
             $scope.continuous_pt20 = data[$stateParams.patientID].V_CONTINUE_VISIT;
     });
 
+    $scope.continuous_stages = function() {
+        // console.log("SaveAndClose");
+        // UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
+            $state.go('tab.stages');
+        // });
+    }
+
     $scope.GSC_change = function() {
         if ($scope.continuous_pt20.neurological.glasgow_coma_scale) {
             $state.go('tab.glasgow');
@@ -842,7 +849,7 @@ angular.module('starter.controllers', [])
 
     $scope.SaveAndClose = function(){
         UploadData.save_data_patient_id($stateParams.patientID, 'V_WOUND_MONITORING_STAGES', $scope.continuous_stages).then(function(){
-            $state.go('tab.sp02');
+            $state.go('tab.continuouspt20');
         });
     }
 })
@@ -927,13 +934,6 @@ angular.module('starter.controllers', [])
             $state.go('tab.continous');
         });
     };
-
-    $scope.continuous_stages = function() {
-        // console.log("SaveAndClose");
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
-            $state.go('tab.stages');
-        });
-    }
 
 })
 
