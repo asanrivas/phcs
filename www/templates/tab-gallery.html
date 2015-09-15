@@ -7,10 +7,10 @@
             <img ng-src="{{lastPhoto}}" style="max-width: 100%">
         </div>
         <div class="row row-wrap responsive-sd">
-            <div class="col col-25" style="" ng-repeat="item in $parent.upload_data[$parent.patientID].PRO_PATIENT_GALLERY|filter:gallery_type_code != '0'" ng-click="previewImage(item.filename)">
+            <div class="col col-25" style="" ng-repeat="item in $parent.upload_data[$parent.patientID].PRO_PATIENT_GALLERY|filter:{gallery_type_code:'!0'}" ng-click="previewImage(item.filename)">
                 <img ng-src="{{item.filename?item.filename:'https://placehold.it/150x150'}}" width="100%"/>
             </div>
-            <div class="col col-25" style="" ng-repeat="item in db_gallery | filter:gallery_type_code != '0'" ng-click="previewImage(item.fullname)">
+            <div class="col col-25" style="" ng-repeat="item in db_gallery | filter:{GALLERY_TYPE_CODE:'!0'}" ng-click="previewImage(item.fullname)">
                 <img ng-src="{{item.fullname?item.fullname:'https://placehold.it/150x150'}}" width="100%"/>
             </div>
         </div>

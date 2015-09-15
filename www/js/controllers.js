@@ -130,7 +130,7 @@ angular.module('starter.controllers', [])
                 }
 
                 $http.post(url_get, send_data, {
-                    timeout: 60000
+                    timeout: 180000
                 }).success(function(data) {
                     $ionicLoading.hide();
                     //success
@@ -280,9 +280,9 @@ angular.module('starter.controllers', [])
             for (var i = 0; i < data.length; i++) {
                 if (!data[i]) return;
                 if (data[i].PATIENT_ID == $stateParams.patientID && data[i].filename) {
-                    $scope.db_gallery.push(angular.extend({
-                        fullname: cordova.file.externalDataDirectory + data[i].filename
-                    }, data[i]));
+                    if(window.cordova)
+                        data[i].fullname = cordova.file.externalDataDirectory + data[i].filename
+                    $scope.db_gallery.push(data[i]);
                 }
 
             }
@@ -300,11 +300,11 @@ angular.module('starter.controllers', [])
                 for (var i = images.length - 1; i >= 0; i--) {
                     if (images[i] && images[i].gallery_type_code == "5") {
                         found_pic = true;
-                        // $scope.$parent.upload_data[$scope.patientID]['profile_images'] = images[i].filename;
-                        UploadData.save_data_patient_id($stateParams.patientID, 'profile_images', images[i].image).then(function() {
-                            $scope.$parent.reload_upload_data();
+                        $scope.$parent.upload_data[$scope.patientID]['profile_images'] = images[i].image;
+                        // UploadData.save_data_patient_id($stateParams.patientID, 'profile_images', images[i].image).then(function() {
+                        //     $scope.$parent.reload_upload_data();
                             $scope.closeModal();
-                        });
+                        // });
                         break;
                     }
                 }
@@ -1180,13 +1180,8 @@ angular.module('starter.controllers', [])
         $scope.$on('$ionicView.enter', function(e) {
             Canvas.init($scope, $scope.img_default);
         });
-        
-        UploadData.data_selector($stateParams.patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT').then(function (data) {
-            if(data.respiratory_system_image && window.cordova)
-                data.respiratory_system_image = cordova.file.externalDataDirectory + data.respiratory_system_image;
 
-            if(data.abdomen_image && window.cordova)
-                data.abdomen_image = cordova.file.externalDataDirectory + data.abdomen_image;
+        UploadData.data_selector($stateParams.patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT').then(function (data) {
             angular.extend($scope.general_examination, data);
             // $scope.general_examination = data;
         });
