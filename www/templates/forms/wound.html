@@ -3,10 +3,14 @@
 
 		<h2 class="title">  <b>Pressure Sore Monitoring Flow Chart</b></h2>
 
-		<label class="item item-input item-stacked-label">
-			<span class="input-label"><b>Date</b></span>
-			<input type="date" placeholder="Date" ng-model="wound.monitoring_date">
-		</label>
+		<div class="row">
+			<div class="col col-50"><b>Monitoring</b><br>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label"><b>Date</b></span>
+					<input type="date" placeholder="Monitoring Date" ng-model="wound.monitoring_date">
+				</label>
+			</div>
+		</div>
 
 		<div class="row">
 			<div class="col col-50"><b>Appearance</b><br>
@@ -69,7 +73,7 @@
 		<div class="row">
 			<div class="col col-50"><b>Date of Next dressing</b><br>
 				<label class="item item-input item-stacked-label">
-					<!-- <span class="input-label"><b>Date of dressing</b></span> -->
+					<span class="input-label"><b>Date of dressing</b></span>
 					<input type="date" placeholder="Date" ng-model="wound.dressing_date">
 				</label>
 			</div>

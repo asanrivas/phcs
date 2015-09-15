@@ -82,7 +82,7 @@
                     <div class="item item-input">
                         <span class="input-label">Nurse Name</span>
                         <select class="item item-input" ng-model="patient.NURSE_NAME">
-                            <option ng-repeat="x in nurse_name" value="{{ x.userid }}" ng-selected="x.userid==nurse_name.USERID">{{ x.NAME }}</option>
+                            <option ng-repeat="x in nurse_name" value="{{ x.userid }}" ng-selected="x.USERID==patient.NURSE_NAME">{{ x.NAME }}</option>
                         </select>                        
 
                         <input type="text" ng-model="patient.NURSE_NAME_DESC">
