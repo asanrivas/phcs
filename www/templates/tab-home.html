@@ -73,13 +73,12 @@
                         <p ng-show="patient.RACE=='4'">OTHERS</p>
                         </span>
                     </div>
-
-                    <div class="item item-button-right">
+                    <!-- <div class="item item-button-right">
                         Travel to address
                         <a class="button button-positive button-outline" ng-click="open_loc(patient.ADDRESS)" target="_blank">
                             <i class="icon ion-navigate"></i>
                         </a>
-                    </div>
+                    </div> -->
                     <div class="item">
                         Decision maker contact <span class="item-note black">{{patient.DECISION_MAKER_CONTACT}}</span>
                     </div>
@@ -87,7 +86,7 @@
                         Language <span class="item-note black">{{patient.LANGUAGE}}</span>
                     </div>
                     <div class="item" ng-show="dashboard.detail">
-                        Nurse Name 
+                        Nurse Name
                         <!-- <select class="item-note black" ng-model="patient.NURSE_NAME"> -->
                             <span class="item-note black" ng-repeat="x in nurse_name" value="{{ x.USERID }}" ng-show="x.USERID==patient.NURSE_NAME">{{ x.NAME }}</span>
                         <!-- </select>                         -->
