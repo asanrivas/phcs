@@ -313,7 +313,7 @@ angular.module('starter.controllers', [])
                             $scope.$parent.reload_upload_data();
                             $scope.closeModal();
                         });
-                        
+
                         break;
                     }
                 }
@@ -1121,37 +1121,13 @@ angular.module('starter.controllers', [])
         };
 
         UploadData.data_selector($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
-            if(data.body_diagram && window.cordova)
-                data.body_diagram = cordova.file.externalDataDirectory + data.body_diagram;
             angular.extend($scope.medical_assessment, data);
         });
 
         $scope.saveAndNext = function() {
-            // if ($scope.img_default != $scope.medical_assessment.body_diagram) {
-            //     var filepath = $scope.medical_assessment.body_diagram;
-            //     var images = filepath.substr(filepath.lastIndexOf('/') + 1);
-            //
-            //     $scope.medical_assessment.body_diagram = images;
-            //
-            //     var patient_gallery = {};
-            //     patient_gallery.patient_id = $stateParams.patientID;
-            //     patient_gallery.title = 'Diagram';
-            //     patient_gallery.gallery_type_code = "0";
-            //     patient_gallery.gallery_status_code = "1";
-            //     patient_gallery.description = "";
-            //     patient_gallery.image = images;
-            //     patient_gallery.filename = filepath;
-            //
-            //     UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
-            //         UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function() {
-            //             $state.go('formfirstvisit.f09');
-            //         });
-            //     });
-            // } else {
-                UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function() {
-                    $state.go('formfirstvisit.f09');
-                });
-            // }
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function() {
+                $state.go('formfirstvisit.f09');
+            });
         }
     })
     .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage, Canvas) {
