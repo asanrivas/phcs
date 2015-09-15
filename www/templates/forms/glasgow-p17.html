@@ -1,0 +1,210 @@
+<ion-view ng-init="gsc = { motor: 0, eye:0, verbal:0};page1=true; page2=false">
+    <ion-header-bar>
+        <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list card" ng-init="gsc_mobilization.patient_id=$parent.patientID">
+
+            <ion-item ng-show="page1">
+                <div class="list" ng-init="data.f01 = true;" class="capital">
+                    <div class="item item-divider">
+                        <i>E</i>ye opening behavior
+                    </div>
+                    <ion-radio name="eye" ng-model="gsc_mobilization.eyes" ng-value=4>Spontaneously +4</ion-radio>
+                    <ion-radio name="eye" ng-model="gsc_mobilization.eyes" ng-value=3>To speech +3</ion-radio>
+                    <ion-radio name="eye" ng-model="gsc_mobilization.eyes" ng-value=2>To pain +2</ion-radio>
+                    <ion-radio name="eye" ng-model="gsc_mobilization.eyes" ng-value=1>No Response +1</ion-radio>
+                    <ion-radio name="eye" ng-model="gsc_mobilization.eyes" ng-value=0></ion-radio>
+
+                    <div class="item item-divider">
+                        Best <b>V</b>erbal Response
+                    </div>
+
+                    <ion-radio name="verbal" ng-model="gsc_mobilization.verbal" ng-value=5>Oriented on time, place and person +5</ion-radio>
+                    <ion-radio name="verbal" ng-model="gsc_mobilization.verbal" ng-value=4>Confused +4</ion-radio>
+                    <ion-radio name="verbal" ng-model="gsc_mobilization.verbal" ng-value=3>Inappropriate words +3</ion-radio>
+                    <ion-radio name="verbal" ng-model="gsc_mobilization.verbal" ng-value=2>Incomprehensible sounds +2</ion-radio>
+                    <ion-radio name="verbal" ng-model="gsc_mobilization.verbal" ng-value=1>No responses +1</ion-radio>
+
+                    <div class="item item-divider">
+                        Best <b>M</b>otor Response
+                    </div>
+
+                    <ion-radio name="motor" ng-model="gsc_mobilization.motor" ng-value=6>Obey commands +6</ion-radio>
+                    <ion-radio name="motor" ng-model="gsc_mobilization.motor" ng-value=5>Movers to localized pain +5</ion-radio>
+                    <ion-radio name="motor" ng-model="gsc_mobilization.motor" ng-value=4>Flexion withdrawal from pain +4</ion-radio>
+                    <ion-radio name="motor" ng-model="gsc_mobilization.motor" ng-value=3>Abnormal flexion (decorticate) +3</ion-radio>
+                    <ion-radio name="motor" ng-model="gsc_mobilization.motor" ng-value=2>Abnormal extension (decerebrate) +2</ion-radio>
+                    <ion-radio name="motor" ng-model="gsc_mobilization.motor" ng-value=1>No response +1</ion-radio>
+                </div>
+                <div class="item item-divider">
+                    <p>Total score (E+V+M): {{totalpoint = gsc_mobilization.motor+gsc_mobilization.eyes+gsc_mobilization.verbal}}</p>
+                </div>
+                <div class="item item-divider">
+                    <p ng-show="totalpoint<=15&&totalpoint>8">Best response</p>
+                    <p ng-show="totalpoint<=8&&totalpoint>3">Comatose client</p>
+                    <p ng-show="totalpoint<=3">Totally unresponsive</p>
+                </div>
+
+            </ion-item>
+
+            <ion-item ng-show="page2">
+                <div class="list" ng-init="data.f01 = true;" class="capital">
+                    <div class="item item-divider">
+                        Reaction
+                    </div>
+                    <ion-radio name="reaction" ng-model="gsc_mobilization.reaction" ng-value="5">B-Brisk</ion-radio>
+                    <ion-radio name="reaction" ng-model="gsc_mobilization.reaction" ng-value="4">S-Sluggish</ion-radio>
+                    <ion-radio name="reaction" ng-model="gsc_mobilization.reaction" ng-value="3">H-Hippus</ion-radio>
+                    <ion-radio name="reaction" ng-model="gsc_mobilization.reaction" ng-value="2">F-Fixed</ion-radio>
+                    <ion-radio name="reaction" ng-model="gsc_mobilization.reaction" ng-value="1">C-Closed</ion-radio>
+
+                    <div class="item item-divider">
+                        Pupils
+                    </div>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            R:
+                        </div>
+                        <select ng-model="gsc_mobilization.pupil_r">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            L:
+                        </div>
+                        <select ng-model="gsc_mobilization.pupil_l">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+
+
+                    <div class="item item-divider">
+                        Grip
+                    </div>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            R:
+                        </div>
+                        <select ng-model="gsc_mobilization.grip_r">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            L:
+                        </div>
+                        <select ng-model="gsc_mobilization.grip_l">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <div class="item item-divider">
+                        Arms
+                    </div>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            R:
+                        </div>
+                        <select ng-model="gsc_mobilization.arms_r">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            L:
+                        </div>
+                        <select ng-model="gsc_mobilization.arms_l">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <div class="item item-divider">
+                        Legs
+                    </div>
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            R:
+                        </div>
+                        <select ng-model="gsc_mobilization.leg_r">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            L:
+                        </div>
+                        <select ng-model="gsc_mobilization.leg_l">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                </div>
+            </ion-item>
+
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="showDiv=true;page1=false;page2=true" ng-show="!showDiv">Continue</a>
+        </div>
+
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="save_glasgow()" ng-show="showDiv">Save and Close</a>
+        </div>
+        </div>
+
+    </ion-content>
+
+<!--     <ion-footer-bar>
+
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="showDiv=true;page1=false;page2=true">Save and Next</a>
+        </div>
+
+        <button class="btn btn-primary" ng-show="showDiv">Save</button>
+
+    </ion-footer-bar>
+    <div class="bar bar-footer tabs bar-positive">
+        <a class="tab-item" ng-click="saveAndNext()">Save &amp; Close</a>
+    </div>
+ -->
+</ion-view>
