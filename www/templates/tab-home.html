@@ -87,7 +87,10 @@
                         Language <span class="item-note black">{{patient.LANGUAGE}}</span>
                     </div>
                     <div class="item" ng-show="dashboard.detail">
-                        Nurse Name <span class="item-note black">{{patient.NURSE_NAME}}</span>
+                        Nurse Name <span class="item-note black">{{patient.NURSE_NAME_DESC}}</span>
+                        <select class="item-note black" ng-model="patient.NURSE_NAME">
+                            <option ng-repeat="x in nurse_name" value="{{ x.userid }}" ng-selected="x.userid==nurse_name.USERID">{{ x.NAME }}</option>
+                        </select>                        
                     </div>
 
 					<div class="item ion-icon">

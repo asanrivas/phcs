@@ -81,7 +81,11 @@
                     </div>
                     <div class="item item-input">
                         <span class="input-label">Nurse Name</span>
-                        <input type="text" ng-model="patient.NURSE_NAME">
+                        <select class="item item-input" ng-model="patient.NURSE_NAME">
+                            <option ng-repeat="x in nurse_name" value="{{ x.userid }}" ng-selected="x.userid==nurse_name.USERID">{{ x.NAME }}</option>
+                        </select>                        
+
+                        <input type="text" ng-model="patient.NURSE_NAME_DESC">
                     </div>
                     <div class="item item-input">
                         <div class="input-label">Patient Status</div>

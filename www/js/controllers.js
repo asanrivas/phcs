@@ -36,6 +36,13 @@ angular.module('starter.controllers', [])
     $localForage.getItem('nurse_visit').then(function(data) {
         $scope.nurse_visit = data;
     });
+
+    $scope.nurse_name = [];
+    $localForage.getItem('nurse_name').then(function(data) {
+        $scope.nurse_name = data;
+        console.log("nurses: "+JSON.stringify(data));
+    });
+
 })
 
 .controller('DashCtrl', function($scope, $localForage, $state) {
@@ -140,6 +147,7 @@ angular.module('starter.controllers', [])
                         $localForage.setItem("patients", reorder(data.patients, 'PATIENT_ID'));
                         $localForage.setItem("pruser", data.pruser);
                         $localForage.setItem("nurse_visit", data.nurse_visit);
+                        $localForage.setItem("nurse_name", data.nurse_name);
 
                         var gallery = data.gallery;
                         for (var i = 0; gallery && i < gallery.length; i++) {
