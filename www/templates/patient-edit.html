@@ -20,13 +20,15 @@
                         <span class="input-label">Name</span>
                         <input type="text" ng-model="patient.NAME">
                     </div>
-                    <div class="item">
-                        Register No. <span class="item-note black capital">{{patient.PATIENT_ID}}</span>
+                    <div class="item item-input">
+                        <span class="input-label">Register No. </span>
+                        <input readonly="true" type="text" ng-model="patient.PATIENT_ID">
                     </div>
                     <div class="item item-input">
                         <span class="input-label">IC</span>
-                        <input type="text" ng-model="patient.IC">
+                        <input readonly="true" type="text" ng-model="patient.IC">
                     </div>
+
                     <div class="item item-input">
                         <span class="input-label">Address</span>
                         <input type="text" ng-model="patient.ADDRESS">
@@ -37,8 +39,9 @@
                     </div>
                     <div class="item item-input">
                         <span class="input-label">Date of Birth</span>
-                        <input type="text" ng-model="patient.DATE_OF_BIRTH">
+                        <input readonly="true" type="text" ng-model="patient.DATE_OF_BIRTH">
                     </div>
+
                     <div class="item item-input">
                         <span class="input-label">Occupation</span>
                         <input type="text" ng-model="patient.OCCUPATION">
@@ -80,8 +83,8 @@
                         <input type="text" ng-model="patient.LANGUAGE">
                     </div>
                     <div class="item item-input">
-                        <span class="input-label">Nurse Name</span>
-                        <select class="item item-input" ng-model="patient.NURSE_NAME">
+                        <div class="input-label">Nurse Name</div>
+                        <select ng-model="patient.NURSE_NAME">
                             <option ng-repeat="x in nurse_name" value="{{ x.USERID }}" ng-selected="x.USERID==patient.NURSE_NAME">{{ x.NAME }}</option>
                         </select>                        
 <!--                         <input type="text" ng-model="patient.NURSE_NAME_DESC">
