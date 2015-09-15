@@ -24,6 +24,52 @@
             </div>
 
             <a class="button button-positive button-full" ng-click="openModal()">Add Medication</a>
+            <h4 ng-show="drug_medication.medications.length">Medications</h4>
+            <div class="list" ng-repeat="medication in drug_medication">
+                <div class="item item-divider">Medication #{{$index + 1}}</div>
+                <div class="item item-button-right">
+                  <div class="col col-50 positive">Name of Drugs/Medication</div>
+                  <div class="col ">{{medication.medication_name}}</div>
+<!--                   <button class="button button-positive" ng-click="deleteItem($index)">
+                     <i class="icon ion-ios-trash"></i>
+                   </button>
+ -->
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Dose</div>
+                  <div class="col col-67">{{medication.dose}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Route</div>
+                  <div class="col col-67">{{medication.route}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Frequency</div>
+                  <div class="col col-67"><p ng-repeat="(key, data) in medication.frequency">{{key}}</p></div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">What for</div>
+                  <div class="col col-67">{{medication.what_for}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Side Effects</div>
+                  <div class="col col-67">{{medication.drug_side_effect}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Started by PPCS/Other</div>
+                  <div class="col col-67">{{medication.started_by}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">Start Date</div>
+                  <div class="col col-67">{{medication.start_day|date:"dd/MM/yyyy"}}</div>
+                </div>
+                <div class="row item">
+                  <div class="col col-33 positive">End date</div>
+                  <div class="col col-67">{{medication.end_date|date:"dd/MM/yyyy"}}</div>
+                </div>
+      </div>
+
+            <a class="button button-positive button-full" ng-click="openModal()">Add Medication</a>
             <h4 ng-show="curr_medication.medications.length">Medications</h4>
             <div class="list" ng-repeat="medication in curr_medication.medications">
                 <div class="item item-divider">Medication #{{$index + 1}}</div>

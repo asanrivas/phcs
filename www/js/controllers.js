@@ -1202,9 +1202,8 @@ angular.module('starter.controllers', [])
     .controller('f10Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
         $scope.general_examination = {};
 
-        $localForage.getItem('upload_data').then(function(data) {
-            if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GENERAL_EXAMINATION)
-                $scope.general_examination = data[$stateParams.patientID].V_GENERAL_EXAMINATION;
+        UploadData.data_selector($stateParams.patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT').then(function (data) {
+            $scope.general_examination = data;
         });
 
         $scope.saveAndNext = function() {
@@ -1284,6 +1283,20 @@ angular.module('starter.controllers', [])
 .controller('f13Controller', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal, $ionicPopup) {
 
         $scope.curr_medication = {};
+        $scope.drug_medication = [];
+
+        $localForage.getItem('V_FIRST_VISIT').then(function(data) {
+            if(data && data.V_CURR_MEDICATION_DRUG)
+            {
+                for (var i = data.V_CURR_MEDICATION_DRUG.length-1; i >= 0; i--) {
+                    if($scope.patientID==data.V_CURR_MEDICATION_DRUG[i].patient_id)
+                    {
+                        $scope.drug_medication.push(data.V_CURR_MEDICATION_DRUG[i]);
+                    }
+                }
+            }
+        });
+
 
         UploadData.data_selector($stateParams.patientID, 'V_CURR_MEDICATION_CHART', 'V_FIRST_VISIT').then(function (data) {
             $scope.curr_medication = data;
@@ -1461,11 +1474,24 @@ angular.module('starter.controllers', [])
 
 //Important: Compare this with f13Controller
     $scope.curr_medication = {};
+    $scope.drug_medication = [];
 
     // $localForage.getItem('upload_data').then(function(data) {
     //     if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_CURR_MEDICATION_CHART)
     //         $scope.curr_medication = data[$stateParams.patientID].V_CURR_MEDICATION_CHART;
     // });
+
+        $localForage.getItem('V_FIRST_VISIT').then(function(data) {
+            if(data && data.V_CURR_MEDICATION_DRUG)
+            {
+                for (var i = data.V_CURR_MEDICATION_DRUG.length-1; i >= 0; i--) {
+                    if($scope.patientID==data.V_CURR_MEDICATION_DRUG[i].patient_id)
+                    {
+                        $scope.drug_medication.push(data.V_CURR_MEDICATION_DRUG[i]);
+                    }
+                }
+            }
+        });
 
         UploadData.data_selector($stateParams.patientID, 'V_CURR_MEDICATION_CHART', 'V_FIRST_VISIT').then(function (data) {
             $scope.curr_medication = data;
