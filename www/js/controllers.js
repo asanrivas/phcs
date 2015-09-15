@@ -29,7 +29,6 @@ angular.module('starter.controllers', [])
     $scope.saveAndNext = function() {
         // console.log("patient: " + $scope.patient);
         UploadData.save_data_patient_id($stateParams.patientID, 'patients', $scope.patient).then(function() {
-            console.log("data: "+JSON.stringify($scope.patient));
             $state.go('tab.home');
         });
     }
