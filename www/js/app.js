@@ -154,6 +154,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     .state('tab.collapsible', { url: '/collapsible', views: { 'tab-continous': { templateUrl: 'templates/forms/collapsible.html' } } })
 
     .state('tab.glasgow', { url: '/glasgow', views: { 'tab-continous': { templateUrl: 'templates/forms/glasgow.html', controller: 'glasgowCtrl' } } })
+    .state('tab.glasgow_p17', { url: '/glasgow_p17', views: { 'tab-continous': { templateUrl: 'templates/forms/glasgow-p17.html', controller: 'glasgowp17Ctrl' } } })
     .state('tab.wound', { url: '/wound/:woundtype/:index', views: { 'tab-continous': { templateUrl: 'templates/forms/wound.html', controller: 'woundCtrl' } } })
 
     .state('tab.stages', { url: '/stages', views: { 'tab-continous': { templateUrl: 'templates/forms/stages.html' , controller: 'stagesCtrl'} } })

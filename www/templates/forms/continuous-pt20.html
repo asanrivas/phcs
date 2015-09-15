@@ -265,7 +265,7 @@
             </div>
             <div class="list" ng-init="data.f17 = true;" class="capital" ng-model="continuous_pt20.mobilization">
                 <ion-checkbox ng-model="continuous_pt20.mobilization.ambulatory">A-Ambulatory</ion-checkbox>
-                <ion-checkbox ng-model="continuous_pt20.mobilization.weakness_GSC" class="assertive">WE-Weakness GSC</ion-checkbox>
+                <ion-checkbox ng-change="GSCP17_change()" ng-model="continuous_pt20.mobilization.weakness_GSC" class="assertive">WE-Weakness GSC</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.mobilization.walking_aid">WA-Walking Aid</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.mobilization.sit_in_chair">S-Sit in chair</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.mobilization.wheelchair">WC-Wheelchair</ion-checkbox>

@@ -545,14 +545,40 @@ angular.module('starter.controllers', [])
             // console.log("GCS: "+$scope.continuous_pt20.neurological.glasgow_coma_scale);
         } else {
             // if (data[$stateParams.patientID].V_GSC) {
-            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_GSC) {
-                // save_wound = true;
                 $localForage.getItem('upload_data').then(function(data){
                     delete data[$stateParams.patientID]['V_GSC'];
                     $localForage.setItem('upload_data', data);
                 })
+            // if ($scope.$parent.upload_data[$scope.$parent.patientID].V_GSC) {
+            //     // save_wound = true;
+            //     $localForage.getItem('upload_data').then(function(data){
+            //         delete data[$stateParams.patientID]['V_GSC'];
+            //         $localForage.setItem('upload_data', data);
+            //     })
 
-            };
+            // };
+
+        };
+    };
+
+    $scope.GSCP17_change = function() {
+        if ($scope.continuous_pt20.mobilization.weakness_GSC) {
+            $state.go('tab.glasgow_p17');
+            // console.log("GCS: "+$scope.continuous_pt20.neurological.glasgow_coma_scale);
+        } else {
+            // if (data[$stateParams.patientID].V_GSC) {
+                $localForage.getItem('upload_data').then(function(data){
+                    delete data[$stateParams.patientID]['V_GSC_MOBILIZATION'];
+                    $localForage.setItem('upload_data', data);
+                })
+            // if ($scope.$parent.upload_data[$scope.$parent.patientID].V_GSC) {
+            //     // save_wound = true;
+            //     $localForage.getItem('upload_data').then(function(data){
+            //         delete data[$stateParams.patientID]['V_GSC'];
+            //         $localForage.setItem('upload_data', data);
+            //     })
+
+            // };
 
         };
     };
@@ -786,6 +812,21 @@ angular.module('starter.controllers', [])
 
     $scope.save_glasgow = function() {
         UploadData.save_data_patient_id($stateParams.patientID, 'V_GSC', $scope.gsc).then(function() {
+            $state.go('tab.continuouspt20');
+        });
+    }
+})
+
+.controller('glasgowp17Ctrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.gsc_mobilization = {};
+
+    $localForage.getItem('upload_data').then(function(data) {
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_GSC_MOBILIZATION)
+            $scope.gsc_mobilization = data[$stateParams.patientID].V_GSC_MOBILIZATION;
+    });
+
+    $scope.save_glasgow = function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_GSC_MOBILIZATION', $scope.gsc_mobilization).then(function() {
             $state.go('tab.continuouspt20');
         });
     }
@@ -1079,31 +1120,31 @@ angular.module('starter.controllers', [])
         });
 
         $scope.saveAndNext = function() {
-            if ($scope.img_default != $scope.medical_assessment.body_diagram) {
-                var filepath = $scope.medical_assessment.body_diagram;
-                var images = filepath.substr(filepath.lastIndexOf('/') + 1);
-
-                $scope.medical_assessment.body_diagram = images;
-
-                var patient_gallery = {};
-                patient_gallery.patient_id = $stateParams.patientID;
-                patient_gallery.title = 'Diagram';
-                patient_gallery.gallery_type_code = "0";
-                patient_gallery.gallery_status_code = "1";
-                patient_gallery.description = "";
-                patient_gallery.image = images;
-                patient_gallery.filename = filepath;
-
-                UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
-                    UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function() {
-                        $state.go('formfirstvisit.f09');
-                    });
-                });
-            } else {
+            // if ($scope.img_default != $scope.medical_assessment.body_diagram) {
+            //     var filepath = $scope.medical_assessment.body_diagram;
+            //     var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+            //
+            //     $scope.medical_assessment.body_diagram = images;
+            //
+            //     var patient_gallery = {};
+            //     patient_gallery.patient_id = $stateParams.patientID;
+            //     patient_gallery.title = 'Diagram';
+            //     patient_gallery.gallery_type_code = "0";
+            //     patient_gallery.gallery_status_code = "1";
+            //     patient_gallery.description = "";
+            //     patient_gallery.image = images;
+            //     patient_gallery.filename = filepath;
+            //
+            //     UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
+            //         UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function() {
+            //             $state.go('formfirstvisit.f09');
+            //         });
+            //     });
+            // } else {
                 UploadData.save_data_patient_id($stateParams.patientID, 'V_MEDICAL_ASSESSMENT', $scope.medical_assessment).then(function() {
                     $state.go('formfirstvisit.f09');
                 });
-            }
+            // }
         }
     })
     .controller('f09Controller', function($scope, $stateParams, $state, UploadData, $localForage, Canvas) {
@@ -1137,25 +1178,25 @@ angular.module('starter.controllers', [])
         });
 
         $scope.saveAndNext = function() {
-            var filepath = $scope.social_assessment.family_tree;
-            var images = filepath.substr(filepath.lastIndexOf('/') + 1);
-
-            $scope.social_assessment.family_tree = images;
-
-            var patient_gallery = {};
-            patient_gallery.patient_id = $stateParams.patientID;
-            patient_gallery.title = 'Diagram';
-            patient_gallery.gallery_type_code = "0";
-            patient_gallery.gallery_status_code = "1";
-            patient_gallery.description = "";
-            patient_gallery.image = images;
-            patient_gallery.filename = filepath;
-
-            UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
+            // var filepath = $scope.social_assessment.family_tree;
+            // var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+            //
+            // $scope.social_assessment.family_tree = images;
+            //
+            // var patient_gallery = {};
+            // patient_gallery.patient_id = $stateParams.patientID;
+            // patient_gallery.title = 'Diagram';
+            // patient_gallery.gallery_type_code = "0";
+            // patient_gallery.gallery_status_code = "1";
+            // patient_gallery.description = "";
+            // patient_gallery.image = images;
+            // patient_gallery.filename = filepath;
+            //
+            // UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
                 UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function() {
                     $state.go('formfirstvisit.f10');
                 });
-            });
+            // });
         }
     })
     .controller('f10Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
@@ -1207,26 +1248,26 @@ angular.module('starter.controllers', [])
 
 
         $scope.saveAndNext = function() {
-            var filepath = $scope.general_examination.respiratory_system_image;
-            var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+            // var filepath = $scope.general_examination.respiratory_system_image;
+            // var images = filepath.substr(filepath.lastIndexOf('/') + 1);
+            //
+            // $scope.general_examination.respiratory_system_image = images;
+            //
+            // var patient_gallery = {};
+            // patient_gallery.patient_id = $stateParams.patientID;
+            // patient_gallery.title = 'Diagram';
+            // patient_gallery.gallery_type_code = "0";
+            // patient_gallery.gallery_status_code = "1";
+            // patient_gallery.description = "";
+            // patient_gallery.image = images;
+            // patient_gallery.filename = filepath;
 
-            $scope.general_examination.respiratory_system_image = images;
 
-            var patient_gallery = {};
-            patient_gallery.patient_id = $stateParams.patientID;
-            patient_gallery.title = 'Diagram';
-            patient_gallery.gallery_type_code = "0";
-            patient_gallery.gallery_status_code = "1";
-            patient_gallery.description = "";
-            patient_gallery.image = images;
-            patient_gallery.filename = filepath;
-
-
-            UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
+            // UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
                 UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function() {
                     $state.go('formfirstvisit.f13');
                 });
-            });
+            // });
         }
     })
 
