@@ -1172,31 +1172,13 @@ angular.module('starter.controllers', [])
         };
 
         UploadData.data_selector($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', 'V_FIRST_VISIT').then(function (data) {
-            if(data.family_tree&& window.cordova)
-                data.family_tree = cordova.file.externalDataDirectory + data.family_tree;
             angular.extend($scope.social_assessment, data);
         });
 
         $scope.saveAndNext = function() {
-            // var filepath = $scope.social_assessment.family_tree;
-            // var images = filepath.substr(filepath.lastIndexOf('/') + 1);
-            //
-            // $scope.social_assessment.family_tree = images;
-            //
-            // var patient_gallery = {};
-            // patient_gallery.patient_id = $stateParams.patientID;
-            // patient_gallery.title = 'Diagram';
-            // patient_gallery.gallery_type_code = "0";
-            // patient_gallery.gallery_status_code = "1";
-            // patient_gallery.description = "";
-            // patient_gallery.image = images;
-            // patient_gallery.filename = filepath;
-            //
-            // UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
-                UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function() {
-                    $state.go('formfirstvisit.f10');
-                });
-            // });
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_SOCIAL_ASSESSMENT', $scope.social_assessment).then(function() {
+                $state.go('formfirstvisit.f10');
+            });
         }
     })
     .controller('f10Controller', function($scope, $stateParams, $state, UploadData, $localForage) {
@@ -1223,7 +1205,6 @@ angular.module('starter.controllers', [])
 
         UploadData.data_selector($stateParams.patientID, 'V_GENERAL_EXAMINATION', 'V_FIRST_VISIT').then(function (data) {
             angular.extend($scope.general_examination, data);
-            // $scope.general_examination = data;
         });
 
         $scope.editImage = function(reload) {
@@ -1247,26 +1228,9 @@ angular.module('starter.controllers', [])
 
 
         $scope.saveAndNext = function() {
-            // var filepath = $scope.general_examination.respiratory_system_image;
-            // var images = filepath.substr(filepath.lastIndexOf('/') + 1);
-            //
-            // $scope.general_examination.respiratory_system_image = images;
-            //
-            // var patient_gallery = {};
-            // patient_gallery.patient_id = $stateParams.patientID;
-            // patient_gallery.title = 'Diagram';
-            // patient_gallery.gallery_type_code = "0";
-            // patient_gallery.gallery_status_code = "1";
-            // patient_gallery.description = "";
-            // patient_gallery.image = images;
-            // patient_gallery.filename = filepath;
-
-
-            // UploadData.append_data_patient_id($stateParams.patientID, 'PRO_PATIENT_GALLERY', patient_gallery).then(function() {
-                UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function() {
-                    $state.go('formfirstvisit.f13');
-                });
-            // });
+            UploadData.save_data_patient_id($stateParams.patientID, 'V_GENERAL_EXAMINATION', $scope.general_examination).then(function() {
+                $state.go('formfirstvisit.f13');
+            });
         }
     })
 
