@@ -1413,7 +1413,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('TabMedicationCtrl', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal) {
+.controller('TabMedicationCtrl', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal, $ionicPopup) {
 
 //Important: Compare this with f13Controller
     $scope.curr_medication = {};
