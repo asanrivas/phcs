@@ -1,33 +1,32 @@
 <ion-view view-title="Palliative Massage Therapy">
-    <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
-        <div class="list card">
-            <div class="item item-divider">Palliative Massage Therapy (PMT)</div>
-            <div class="item item-body">
-                <div>
-                    <p>If problem noted from P2, P3, P4, P5, P6, P8, P15 massage therapy <b>maybe</b> appropriate.</p>
-                    <!-- <p>This form will be used for two type of situation
-                        1. On first visit – found the
-                        patient is not suitable for continue visit
-                        2. On repeating visit – found
-                        the patient need consultation of a doctor</p> 
-                    -->
-                    <a class="button button-full button-positive" ui-sref="tab.multi">
+  <ion-content class="padding" ng-class="$parent.setting.eol?'is-disabled':''">
+    <div class="list card">
+      <div class="item item-divider">Palliative Massage Therapy (PMT)</div>
+      <div class="item item-body">
+        <div>
+            <p>If problem noted from P2, P3, P4, P5, P6, P8, P15 massage therapy <b>maybe</b> appropriate.</p>
+            <!-- <p>This form will be used for two type of situation
+1. On first visit – found the
+patient is not suitable for continue visit
+2. On repeating visit – found
+the patient need consultation of a doctor</p> -->
+                <a class="button button-full button-positive" href="#/tab/{{$parent.patientID}}/multi">
                     Multidisciplinary Referral 
                 </a>
-                    <a class="button button-full button-positive" ui-sref="tab.complimentary">
+                <a class="button button-full button-positive" href="#/tab/{{$parent.patientID}}/complimentary">
                     Complementary Therapy for Palliative Massage Referral Form
                 </a>
-                    <a class="button button-full button-positive" ui-sref="tab.pmt_diagram">
+                 <a class="button button-full button-positive" href="#/tab/{{$parent.patientID}}/pmt_diagram">
                     PMT Diagram
                 </a>
-                </div>
-            </div>
         </div>
-        <div class="item item-divider">Initial Assessment Check List</div>
-        <ion-list ng-init="data.f01 = true;" class="capital">
-            <ion-checkbox ng-model="data.f07" class="checkbox-balanced" ng-checked="status.mrf" ng-disabled="true">Multidisciplinary Referral</ion-checkbox>
-            <ion-checkbox ng-model="data.f08" class="checkbox-balanced" ng-checked="status.ct" ng-disabled="true">Complementary Therapy for Palliative Massage Referral Form</ion-checkbox>
-            <ion-checkbox ng-model="data.f09" class="checkbox-balanced" ng-checked="status.diagram" ng-disabled="true">PMT Diagram</ion-checkbox>
-        </ion-list>
-    </ion-content>
+      </div>
+    </div>
+    <div class="item item-divider" ng-init="data = {f07:true, f08:true}">Initial Assessment Check List</div>
+
+    <ion-checkbox ng-model="data.f07" checked="true" ng-disabled="true">Multidisciplinary Referral</ion-checkbox>
+    <ion-checkbox ng-model="data.f08" checked="true" ng-disabled="true">Complementary Therapy for Palliative Massage Referral Form</ion-checkbox>
+    <ion-checkbox ng-model="data.f09" checked="true" ng-disabled="true">PMT Diagram</ion-checkbox>
+    </ion-list>
+  </ion-content>
 </ion-view>

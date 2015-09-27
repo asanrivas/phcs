@@ -1,179 +1,185 @@
 <ion-view view-title="Multidisciplinary Referral Form">
     <ion-content class="padding">
-        <a class="button button-positive button-full" ng-click="mrfsave()">Save and Close</a>
+         
+               <div class="item item-divider">
+         Diagnosis
+          </div>
+          <ion-item>
+              <input type="text" placeholder="Diagnosis">
+          </ion-item>
 
-        <div class="item item-divider">
-            Diagnosis
-        </div>
-        <ion-item>
-            <input type="text" placeholder="Diagnosis">
-        </ion-item>
+            <div class="item item-divider">
+    Reason for and why referral :
+          </div>
 
-        <div class="item item-divider">
-            Reason for and why referral :
-        </div>
-
-        <ion-item>
+          <ion-item>
             <div class="item item-divider">Dietician: (phone consults only)</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.dietician">
-              <ion-checkbox ng-model="pmt_mrf.dietician.Nutrition_Counseling">Nutrition Counseling</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.dietician.Diabetic_Teaching">Diabetic Teaching</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.dietician.Other">Other</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Remarks:</span>
-                <input type="text" placeholder="Remarks" ng-model="pmt_mrf.dietician_remarks">
-            </label>
-            </div>
-        </ion-item>
-
-        <ion-item>
+              <ion-checkbox>Nutrition Counseling</ion-checkbox>
+              <ion-checkbox>Diabetic Teaching</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
+           
+        
+          <ion-item>
             <div class="item item-divider">Occupational Therapy</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.occupational_therapy">
-              <ion-checkbox ng-model="pmt_mrf.occupational_therapy.Home_Safety">Home Safety</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.occupational_therapy.ADL_Teaching">ADL Teaching</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.occupational_therapy.Carer_Training">Carer Training</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.occupational_therapy.Other">Other</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Remarks :</span>
-                <input type="text" placeholder="Remarks" ng-model="pmt_mrf.occupational_therapy_remarks">
-            </label>
-            </div>
-        </ion-item>
+              <ion-checkbox>Home Safety</ion-checkbox>
+              <ion-checkbox>ADL Teaching</ion-checkbox>
+              <ion-checkbox>Carer Training</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
 
-        <ion-item>
-            <div class="item item-divider">Physio Therapy</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.physio_therapy">
-              <ion-checkbox ng-model="pmt_mrf.physio_therapy.Muscle_Strengthening">Muscle Strengthening</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.physio_therapy.Transfers_from_bed__chair_etc">Transfers from bed / chair etc</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.physio_therapy.Carer_Training">Carer Training</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.physio_therapy.Other">Other</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Remarks:</span>
-                <input type="text" placeholder="Remarks" ng-model="pmt_mrf.physio_therapy_remarks">
-            </label>
-            </div>
-        </ion-item>
+          <ion-item>
+            <div class="item item-divider">Pysio Therapy</div>
+              <ion-checkbox>Muscle Strengthening</ion-checkbox>
+              <ion-checkbox>Transfers from bed / chair etc</ion-checkbox>
+              <ion-checkbox>Carer Training</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
 
-        <ion-item>
+          <ion-item>
             <div class="item item-divider">Play Therapy (age less than 18)</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.play_therapy">
-              <ion-checkbox ng-model="pmt_mrf.play_therapy.Games">Games</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.play_therapy.Art_and_Crafts">Art and Crafts</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.play_therapy.Other">Other</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Remarks:</span>
-                <input type="text" placeholder="Remarks" ng-model="pmt_mrf.play_therapy_remarks">
-            </label>
-            </div>
-        </ion-item>
+              <ion-checkbox>Games</ion-checkbox>
+              <ion-checkbox>Art and Crafts</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
 
-        <ion-item>
+          <ion-item>
+            <div class="item item-divider">Play Therapy (age less than 18)</div>
+              <ion-checkbox>Games</ion-checkbox>
+              <ion-checkbox>Art and Crafts</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
+
+          <ion-item>
+            <div class="item item-divider">Play Therapy (age less than 18)</div>
+              <ion-checkbox>Games</ion-checkbox>
+              <ion-checkbox>Art and Crafts</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
+
+          <ion-item>
             <div class="item item-divider">Social Services</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.social_services">
-              <ion-checkbox ng-model="pmt_mrf.social_services.Finances">Finances</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.social_services.Referral_to_Social_Welfare">Referral to Social Welfare</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.social_services.Food_Bank">Food Bank</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.social_services.Other">Other</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Remarks:</span>
-                <input type="text" placeholder="Remarks" ng-model="pmt_mrf.social_services_remarks">
-            </label>
-            </div>
-        </ion-item>
+              <ion-checkbox>Finances</ion-checkbox>
+              <ion-checkbox>Referral to Social Welfare</ion-checkbox>
+              <ion-checkbox>Food Bank</ion-checkbox>
+              <ion-checkbox>Other</ion-checkbox>
+               <label class="item item-input item-stacked-label">
+          <span class="input-label">Remarks :</span>
+            <input type="text" >
+        </label>
+              </div>
+          </ion-item>
 
-        <ion-item>
+          <ion-item>
             <div class="item item-divider">Social Work</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.social_work">
-              <ion-checkbox ng-model="pmt_mrf.social_work.Client_Counselling">Client Counselling</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.social_work.Family_Counselling">Family Counselling</ion-checkbox>
-            </div>
-        </ion-item>
+              <ion-checkbox>Client Counselling</ion-checkbox>
+              <ion-checkbox>Family Counselling</ion-checkbox>
+          </ion-item>
 
-        <ion-item>
+          <ion-item>
             <div class="item item-divider">Volunteer</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.volunteer">
-              <ion-checkbox ng-model="pmt_mrf.volunteer.Client_Companion">Client Companion</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.volunteer.Driving">Driving</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.volunteer.Errands">Errands</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.volunteer.Respite_Care">Respite Care</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.volunteer.Nursing__Aide">Nursing / Aide</ion-checkbox>
-            </div>
-        </ion-item>
+              <ion-checkbox>Client Companion</ion-checkbox>
+              <ion-checkbox>Driving</ion-checkbox>
+              <ion-checkbox>Errands</ion-checkbox>
+              <ion-checkbox>Respite Care</ion-checkbox>
+              <ion-checkbox>Nursing / Aide</ion-checkbox>     
+          </ion-item>
 
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Others/Remarks:</span>
-                <input type="text" placeholder="Others/Remarks" ng-model="pmt_mrf.other_remarks">
-            </label>
-        </ion-item>
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Others/Remarks</span>
+            <input type="text">
+        </label>
+          </ion-item>
 
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Referred by:</span>
-                <input type="text" placeholder="Referred By" ng-model="pmt_mrf.referred_by">
-            </label>
-        </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Referred By</span>
+            <input type="text">
+        </label>
+          </ion-item>
 
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Telephone:</span>
-                <input type="tel" placeholder="Telephone" ng-model="pmt_mrf.telephone">
-            </label>
-        </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Tel</span>
+            <input type="text">
+        </label>
+          </ion-item>
 
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Referred Date:</span>
-                <input type="date" placeholder="Date" ng-model="pmt_mrf.referred_date">
-            </label>
-        </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Date</span>
+            <input type="date" placeholder="Date">
+        </label>
+          </ion-item>
 
-        <ion-item>
+          <ion-item>
             <div class="item item-divider">Best Time For Initial Joint ( visit for introduction)</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.best_time">
-              <ion-checkbox ng-model="pmt_mrf.best_time.Morning">Morning</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.best_time.Afternoon">Afternoon</ion-checkbox>
-            </div>
-        </ion-item>
+              <ion-checkbox>Morning</ion-checkbox>
+              <ion-checkbox>Afternoon</ion-checkbox>
+          </ion-item>
 
-        <ion-item>
+          <ion-item>
             <div class="item item-divider">How MDT Member Informed</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_mrf.mdt">
-              <ion-checkbox ng-model="pmt_mrf.mdt.By_Hand">By Hand</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.mdt.Phone">Phone</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.mdt.Fax">Fax</ion-checkbox>
-              <ion-checkbox ng-model="pmt_mrf.mdt.Email">email</ion-checkbox>
-            </div>
-        </ion-item>
+              <ion-checkbox>By Hand</ion-checkbox>
+              <ion-checkbox>Phone</ion-checkbox>
+               <ion-checkbox>Fax</ion-checkbox>
+                <ion-checkbox>E-mail</ion-checkbox>
+          </ion-item>
 
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Received by:</span>
-                <input type="text" placeholder="Received by" ng-model="pmt_mrf.received_by">
-            </label>
-        </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Received by</span>
+            <input type="text">
+        </label>
+          </ion-item>
 
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Received Date:</span>
-                <input type="date" placeholder="Received Date" ng-model="pmt_mrf.received_date">
-            </label>
-        </ion-item>
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Date</span>
+            <input type="date" placeholder="Date">
+        </label>
+          </ion-item>
 
-        <ion-item>
-            <div class="item item-divider">Initial Assessment & Plan (sign & date at end of note):</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Enter here" ng-model="pmt_mrf.initial_assessment"></textarea>
-            </label>
-        </ion-item>
+            <ion-item>
+           <div class="item item-divider">Initial Assessment & Plan (sign & date at end of note)</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4" ></textarea>
+                </label>
+          </ion-item>
 
 
-        <a class="button button-positive button-full" ng-click="mrfsave()">Save and Close</a>
-    </ion-content>
-
-</ion-view>
+                  <a class="button button-positive button-full" ng-click="p01next()">Save and Close</a>
+        </ion-content>
+      
+    </ion-view>

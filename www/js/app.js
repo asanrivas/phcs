@@ -165,11 +165,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     .state('tab.multi_team', { url: '/multi_team', views: { 'tab-home': { templateUrl: 'templates/forms/multi_team.html'}, controller: 'multi_teamCtrl' } })
 
-    .state('tab.complimentary', { url: '/complimentary', views: { 'tab-pmt': { templateUrl: 'templates/forms/complimentary.html', controller: 'pmt_ctCtrl' } } })
+    .state('tab.complimentary', { url: '/complimentary', views: { 'tab-pmt': { templateUrl: 'templates/forms/complimentary.html'} } })
 
-    .state('tab.multi', { url: '/multi', views: { 'tab-pmt': { templateUrl: 'templates/forms/multi.html', controller: 'pmt_mrfCtrl' } } })
+    .state('tab.multi', { url: '/multi', views: { 'tab-pmt': { templateUrl: 'templates/forms/multi.html'} } })
 
-    .state('tab.pmt_diagram', { url: '/pmt_diagram', views: { 'tab-pmt': { templateUrl: 'templates/forms/pmt_diagram.html', controller: 'pmt_diagramCtrl' } } })
+    .state('tab.pmt_diagram', { url: '/pmt_diagram', views: { 'tab-pmt': { templateUrl: 'templates/forms/pmt_diagram.html'} } })
 
     .state('tab.medication', {
         url: '/medication',
@@ -215,7 +215,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         views: {
             'tab-pmt': {
                 templateUrl: 'templates/tab-pmt.html',
-                controller: 'PMTControl'
+                controller: 'AccountCtrl'
             }
         }
     })

@@ -1,149 +1,178 @@
 <ion-view view-title="PMT Diagram">
     <ion-content class="padding">
-        <a class="button button-positive button-full" ng-click="diagramsave()">Save and Close</a>
 
-        <div class="item item-divider">Name of Patient</div>
-        <ion-item>
-            <input type="text" placeholder="Name of Patient" ng-model="pmt_diagram.patientname">
-        </ion-item>
+        <div class="item item-divider">
+          Name of Patient
+          </div>
+          <ion-item>
+              <input type="text" placeholder="Name of Patients">
+          </ion-item>
+         
+               <div class="item item-divider">
+         Diagnosis
+          </div>
+          <ion-item>
+              <input type="text" placeholder="Diagnosis">
+          </ion-item>
 
-        <div class="item item-divider">Diagnosis</div>
-        <ion-item>
-            <input type="text" placeholder="Diagnosis" ng-model="pmt_diagram.diagnosis">
-        </ion-item>
+          <div class="item item-divider">
+          Where
+          </div>
 
-        <div class="item item-divider">Where</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Primary</span>
-                <input type="text" ng-model="pmt_diagram.primary_w">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Metastasis</span>
-                <input type="text" ng-model="pmt_diagram.metastasis">
-            </label>
-        </ion-item>
-
-        <div class="item item-divider">Risks</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Bone</span>
-                <input type="text" ng-model="pmt_diagram.bone">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Lymphedema</span>
-                <input type="text" ng-model="pmt_diagram.lymphedema">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">DVT</span>
-                <input type="text" ng-model="pmt_diagram.dvt">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Others</span>
-                <input type="text" ng-model="pmt_diagram.others_risk">
-            </label>
-        </ion-item>
-
-        <div class="item item-divider">Risks</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Organ Function Effects</span>
-                <textarea rows="4" ng-model="pmt_diagram.organ_function_effect"></textarea>
-            </label>
-        </ion-item>
-
-        <div class="item item-divider">Tissue Instability</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Tissue Instability</span>
-                <textarea rows="4" ng-model="pmt_diagram.tissue_instability"></textarea>
-            </label>
-        </ion-item>
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Primary</span>
+            <input type="text">
+        </label>
+          </ion-item>
+                    <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Metastasis</span>
+            <input type="text">
+        </label>
+          </ion-item>
 
 
-        <div class="item item-divider">Lubricant</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Massage Oil / Cream</span>
-                <input type="text" ng-model="pmt_diagram.massage_oil">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Aqueous Cream</span>
-                <input type="text" ng-model="pmt_diagram.aqueous_cream">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Others : Emu Oil / Cream</span>
-                <input type="text" ng-model="pmt_diagram.emu_oil_cream">
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Others</span>
-                <input type="text" ng-model="pmt_diagram.others_lubricant">
-            </label>
-        </ion-item>
+          <div class="item item-divider">
+          Risks
+          </div>
+
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Bone</span>
+            <input type="text">
+        </label>
+          </ion-item>
+                    <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Lymphedema</span>
+            <input type="text">
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">DVT</span>
+            <input type="text">
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Others</span>
+            <input type="text">
+        </label>
+          </ion-item>
+
+           <div class="item item-divider">
+          Risks
+          </div>
+
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Organ Function Effects</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
+
+           <div class="item item-divider">
+         Tissue Instability
+          </div>
+
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Tissue Instability</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
 
 
-        <div class="item item-divider">Effects</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Effects</span>
-                <textarea rows="4" ng-model="pmt_diagram.effects"></textarea>
-            </label>
-        </ion-item>
+          <div class="item item-divider">
+          Lubricant
+          </div>
+
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Massage Oil / Cream</span>
+            <input type="text">
+        </label>
+          </ion-item>
+                    <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Aqueous Cream</span>
+            <input type="text">
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Others : Emu Oil / Cream</span>
+            <input type="text">
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Others</span>
+            <input type="text">
+        </label>
+          </ion-item>
+                   
+
+                   <div class="item item-divider">
+         Effects
+          </div>
+
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Effects</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
 
 
-        <div class="item item-divider">Massage Adjustments</div>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Pressure</span>
-                <textarea rows="4" ng-model="pmt_diagram.pressure"></textarea>
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Joint Movement</span>
-                <textarea rows="4" ng-model="pmt_diagram.joint_movement"></textarea>
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Session Length</span>
-                <textarea rows="4" ng-model="pmt_diagram.session_length"></textarea>
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Session Intent</span>
-                <textarea rows="4" ng-model="pmt_diagram.session_intent"></textarea>
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Position</span>
-                <textarea rows="4" ng-model="pmt_diagram.position"></textarea>
-            </label>
-        </ion-item>
-        <ion-item>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Others</span>
-                <textarea rows="4" ng-model="pmt_diagram.other_massage_adjustment"></textarea>
-            </label>
-        </ion-item>
+          <div class="item item-divider">
+          Massage Adjustments
+          </div>
 
-        <a class="button button-positive button-full" ng-click="diagramsave()">Save and Close</a>
-    </ion-content>
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Pressure</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
+                    <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Joint Movement</span>
+           <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Session Length</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Session Intent</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
+           <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Position</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
+          <ion-item>
+          <label class="item item-input item-stacked-label">
+          <span class="input-label">Others</span>
+            <textarea rows="4" ></textarea>
+        </label>
+          </ion-item>
 
-</ion-view>
+
+          
+
+
+                  <a class="button button-positive button-full" ng-click="p01next()">Save and Close</a>
+        </ion-content>
+      
+    </ion-view>

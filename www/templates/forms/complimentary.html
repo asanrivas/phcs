@@ -1,131 +1,120 @@
 <ion-view view-title="Complementary Therapy for Palliative Massage Referral Form">
     <ion-content class="padding">
-        <a class="button button-positive button-full" ng-click="ctsave()">Save and Close</a>
-
-        <div class="item item-divider">
-            Reason For The Referral
-        </div>
-
-
-        <ion-item>
+       
+       <div class="item item-divider">
+           Reason For The Referral 
+          </div>
+         
+               
+          <ion-item>
             <div class="item item-divider">Physical</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_ct.physical">
-              <ion-checkbox ng-model="pmt_ct.physical.Pain">Pain</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.physical.Nausea__Vomiting">Nausea / Vomiting</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.physical.Circulation">Circulation</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.physical.Edema">Edema</ion-checkbox>
-            </div>
-            <div class="item item-divider">Comments:</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Comments" ng-model="pmt_ct.physical_comment"></textarea>
-            </label>
-            </div>
-        </ion-item>
+              <ion-checkbox name="si4">Pain</ion-checkbox>
+              <ion-checkbox name="si4">Nausea / Vomiting</ion-checkbox>
+              <ion-checkbox name="si4">Circulation</ion-checkbox>
+              <ion-checkbox name="si4">Edema</ion-checkbox>
+                  <div class="item item-divider">Comments</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4"></textarea>
+                </label>
+                  </div>
+          </ion-item>
 
 
-        <ion-item>
-            <div class="item item-divider">Emotional</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_ct.emotional">
-              <ion-checkbox ng-model="pmt_ct.emotional.Pain">Pain</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.emotional.Insomnia">Insomnia</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.emotional.Depresion">Depresion</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.emotional.Fatigue">Fatigue</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.emotional.Mood_disorder">Mood disorder</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.emotional.Anxiety">Anxiety</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.emotional.Stress">Stress</ion-checkbox>
-            </div>
-            <div class="item item-divider">Comments:</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Comments" ng-model="pmt_ct.emotional_comment"></textarea>
-            </label>
-            </div>
-        </ion-item>
+          <ion-item>
+           <div class="item item-divider">Physical</div>
+              <ion-checkbox name="si4">Pain</ion-checkbox>
+              <ion-checkbox name="si4">Insomnia</ion-checkbox>
+              <ion-checkbox name="si4">Depresion</ion-checkbox>
+              <ion-checkbox name="si4">Fatigue</ion-checkbox>
+               <ion-checkbox name="si4">Mood disorder</ion-checkbox>
+                <ion-checkbox name="si4">Anxiety</ion-checkbox>
+                 <ion-checkbox name="si4">Stress</ion-checkbox>
+                  <div class="item item-divider">Comments</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4"></textarea>
+                </label>
+                </div>
+          </ion-item>
+           
+        
+          <ion-item>
+           <div class="item item-divider">Social</div>
+              <ion-checkbox name="si4">Companion (Loneliness)</ion-checkbox>
+              <ion-checkbox name="si4">Carer Fatigue</ion-checkbox>
+                  <div class="item item-divider">Comments</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4"></textarea>
+                </label>
+                </div>
+          </ion-item>
+
+          <ion-item>
+           <div class="item item-divider">Spiritual</div>
+              <ion-checkbox name="si4">Assistance with Spiritual Desolation</ion-checkbox>
+              <label class="item item-input item-stacked-label">
+                      <span class="input-label">Religion :</span>
+                      <input type="text">
+              </label>
+                  <div class="item item-divider">Comments</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4"></textarea>
+                </label>
+                </div>
+          </ion-item>
+
+           <ion-item>
+           <div class="item item-divider">Bereavement Massage</div>
+              <ion-checkbox name="si4">Unresolved Grief</ion-checkbox>
+              <ion-checkbox name="si4">Support</ion-checkbox>
+              <label class="item item-input item-stacked-label">
+                      <span class="input-label">Relationship of recipient/carer:</span>
+                      <input type="text">
+              </label>
+                  <div class="item item-divider">Comments</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4"></textarea>
+                </label>
+                </div>
+          </ion-item>
+
+          <ion-item>
+           <div class="item item-divider">Remarks (Special Instruction / Precautions)</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4"></textarea>
+                </label>
+          </ion-item>
+
+          <ion-item>
+           <div class="item item-divider">Referred by</div>
+                <label class="item item-input item-stacked-label">
+                    <input type="text">
+                </label>
+               <label class="item item-input item-stacked-label">
+                <span class="input-label">Date</span>
+                    <input type="date" placeholder="Date">
+              </label>
+          </ion-item>
+
+          <ion-item>
+           <div class="item item-divider">Received by</div>
+                <label class="item item-input item-stacked-label">
+                    <input type="text" placeholder="Received by">
+                </label>
+               <label class="item item-input item-stacked-label">
+                <span class="input-label">Date</span>
+                    <input type="date" placeholder="Date">
+              </label>
+          </ion-item>
+
+          <ion-item>
+           <div class="item item-divider">Initial Assessment & Plan (sign & date at end of note)</div>
+                <label class="item item-input item-stacked-label">
+                    <textarea rows="4" ></textarea>
+                </label>
+          </ion-item>
 
 
-        <ion-item>
-            <div class="item item-divider">Social</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_ct.social">
-              <ion-checkbox ng-model="pmt_ct.social.Companion_Loneliness">Companion (Loneliness)</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.social.Carer_Fatigue">Carer Fatigue</ion-checkbox>
-            </div>
-            <div class="item item-divider">Comments:</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Comments" ng-model="pmt_ct.social_comment"></textarea>
-            </label>
-            </div>
-        </ion-item>
-
-        <ion-item>
-            <div class="item item-divider">Spiritual</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_ct.spiritual">
-              <ion-checkbox ng-model="pmt_ct.spiritual.Assistance_with_Spiritual_Desolation">Assistance with Spiritual Desolation</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Religion:</span>
-                <input type="text" placeholder="Religion" ng-model="pmt_ct.religion">
-            </label>
-            <div class="item item-divider">Comments</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Comments" ng-model="pmt_ct.spiritual_comment"></textarea>
-            </label>
-            </div>
-        </ion-item>
-
-        <ion-item>
-            <div class="item item-divider">Bereavement Massage</div>
-            <div class="list" ng-init="data.f01 = true;" class="capital" ng-model="pmt_ct.bereavement">
-              <ion-checkbox ng-model="pmt_ct.bereavement.Unresolved_Grief">Unresolved Grief</ion-checkbox>
-              <ion-checkbox ng-model="pmt_ct.bereavement.Support">Support</ion-checkbox>
-            </div>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Relationship of recipient/carer:</span>
-                <input type="text" placeholder="Relationship" ng-model="pmt_ct.relationship">
-            </label>
-            <div class="item item-divider">Comments:</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Comments" ng-model="pmt_ct.bereavement_comment"></textarea>
-            </label>
-            </div>
-        </ion-item>
-
-        <ion-item>
-            <div class="item item-divider">Remarks (Special Instruction / Precautions):</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Remarks" ng-model="pmt_ct.remarks"></textarea>
-            </label>
-        </ion-item>
-
-        <ion-item>
-            <div class="item item-divider">Referred by:</div>
-            <label class="item item-input item-stacked-label">
-                <input type="text" placeholder="Referred By" ng-model="pmt_ct.referred_by">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Date:</span>
-                <input type="date" placeholder="Date" ng-model="pmt_ct.referred_date">
-            </label>
-        </ion-item>
-
-        <ion-item>
-            <div class="item item-divider">Received by:</div>
-            <label class="item item-input item-stacked-label">
-                <input type="text" placeholder="Received by" ng-model="pmt_ct.received_by">
-            </label>
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">Date:</span>
-                <input type="date" placeholder="Received Date" ng-model="pmt_ct.received_date">
-            </label>
-        </ion-item>
-
-        <ion-item>
-            <div class="item item-divider">Initial Assessment & Plan (sign & date at end of note):</div>
-            <label class="item item-input item-stacked-label">
-                <textarea rows="4" placeholder="Initial Assessment & Plan" ng-model="pmt_ct.initial_assessment"></textarea>
-            </label>
-        </ion-item>
-
-
-        <a class="button button-positive button-full" ng-click="ctsave()">Save and Close</a>
-    </ion-content>
-
-</ion-view>
+                  <a class="button button-positive button-full" ng-click="p01next()">Save and Close</a>
+        </ion-content>
+      
+    </ion-view>
