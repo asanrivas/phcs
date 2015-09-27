@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
     $scope.nurse_name = [];
     $localForage.getItem('nurse_name').then(function(data) {
         $scope.nurse_name = data;
-        console.log("nurses: "+JSON.stringify(data));
+        // console.log("nurses: "+JSON.stringify(data));
     });
 
 })
@@ -1554,8 +1554,73 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AccountCtrl', function($scope) {
-    $scope.settings = {
-        enableFriends: true
-    };
-});
+.controller('pmt_mrfCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.pmt_mrf = {};
+
+    $localForage.getItem('upload_data').then(function(data) {
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_MRF)
+            $scope.pmt_mrf = data[$stateParams.patientID].V_PMT_MRF;
+    });
+
+    $scope.mrfsave = function() {
+        console.log("mrfsave: " + JSON.stringify($scope.pmt_mrf));
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_MRF', $scope.pmt_mrf).then(function() {
+            $scope.$parent.reload_upload_data();
+            $state.go('tab.complimentary');
+        });
+    }
+
+})
+
+.controller('pmt_ctCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.pmt_ct = {};
+
+    $localForage.getItem('upload_data').then(function(data) {
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_CT)
+            $scope.pmt_ct = data[$stateParams.patientID].V_PMT_CT;
+    });
+
+    $scope.ctsave = function() {
+        console.log("ctsave: " + JSON.stringify($scope.pmt_ct));
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_CT', $scope.pmt_ct).then(function() {
+            $scope.$parent.reload_upload_data();
+            $state.go('tab.pmt_diagram');
+        });
+    }
+
+})
+
+.controller('pmt_diagramCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+    $scope.pmt_diagram = {};
+
+    $localForage.getItem('upload_data').then(function(data) {
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_DIAGRAM)
+            $scope.pmt_diagram = data[$stateParams.patientID].V_PMT_DIAGRAM;
+    });
+
+    $scope.diagramsave = function() {
+        console.log("diagramsave: " + JSON.stringify($scope.pmt_diagram));
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_DIAGRAM', $scope.pmt_diagram).then(function() {
+            $scope.$parent.reload_upload_data();
+            $state.go('tab.pmt');
+        });
+    }
+
+})
+
+.controller('PMTControl', function($scope) {
+    $scope.status = {};
+    $scope.$on('$ionicView.enter', function(e) {
+        if ($scope.$parent.upload_data[$scope.$parent.patientID]) {
+            // console.log("MRF: "+$scope.$parent.upload_data[$scope.$parent.patientID].V_PMT_MRF);
+            // console.log("CT: "+$scope.$parent.upload_data[$scope.$parent.patientID].V_PMT_CT);
+            // console.log("DIAGRAM: "+$scope.$parent.upload_data[$scope.$parent.patientID].V_PMT_DIAGRAM);
+            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_PMT_MRF)
+                $scope.status.mrf = true;
+            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_PMT_CT)
+                $scope.status.ct = true;
+            if ($scope.$parent.upload_data[$scope.$parent.patientID].V_PMT_DIAGRAM)
+                $scope.status.diagram = true;
+        }
+    });
+})
