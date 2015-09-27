@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
     $scope.nurse_name = [];
     $localForage.getItem('nurse_name').then(function(data) {
         $scope.nurse_name = data;
-        // console.log("nurses: "+JSON.stringify(data));
+        console.log("nurses: "+JSON.stringify(data));
     });
 
 })
