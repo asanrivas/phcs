@@ -90,9 +90,6 @@
             <div class="list card">
                 <div class="item item-divider">Visit History</div>
                 <div class="item item-body">
-                    <div class="item">
-                        Last visit: <span class="item-note">27/04/2015</span>
-                    </div>
                     <div class="item" ng-repeat="nurse in nurse_visit | filter:{PATIENT_ID:$parent.patientID}">
                         {{$index+1}}. Visit by <strong>{{nurse.NAME}}</strong> on {{nurse.DATE}} {{nurse.TIME}}
                     </div>

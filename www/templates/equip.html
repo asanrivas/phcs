@@ -1,25 +1,78 @@
 <ion-view view-title="Loan Equipment">
-  <ion-content>
-      <div class="list card">
-        <div class="item item-divider">Recent Updates</div>
-        <div class="item item-body">
-          <div>
-            There is a fire in <b>sector 3</b>
-          </div>
-        </div>
-      </div>
-    <ion-list>
-    <ion-toggle ng-model="settings.enableFriends">
-        Commdoe</a>
-    </ion-toggle>
-    <ion-toggle  ng-model="settings.x1">
-        Urinal
-    </ion-toggle>
-    <ion-toggle  ng-model="settings.x2">
-        Bed Pan
-    </ion-toggle>
-    </ion-list>
-    <a class="button button-positive button-full" href="#/patient">Save</a>
+    <ion-content class="padding">
+       <div class="list card" >
+			<div class="item item-divider">Borrower Detail</div>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Name</span>
+						<input type="Text" placeholder="Name">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">IC</span>
+						<input type="text" placeholder="IC">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Address</span>
+						<input type="text" placeholder="Address">
+				</label>
 
-  </ion-content>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Phone Number</span>
+						<input type="text" placeholder="Phone Number">
+				</label>
+
+				<div class="item item-input">
+                        <div class="input-label">Equipment</div>
+                      
+ 
+                    </div>
+
+					<label class="item item-input item-stacked-label">
+					<span class="input-label">Description of Equipment</span>
+						<input type="text" placeholder="Description of Equipment">
+				</label>
+				</div>
+
+				<div class="list card" >
+					<div class="item item-divider">Deposit</div>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Date</span>
+						<input type="date" placeholder="Date">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Tag No</span>
+						<input type="text" placeholder="Tag No">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Amt</span>
+						<input type="text" placeholder="Amt">
+				</label>
+
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Loan Authorised</span>
+						<input type="text" placeholder="Loan Authorised">
+				</label>
+				</div>
+
+				<div class="list card" >
+					<div class="item item-divider">Refund</div>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Date</span>
+						<input type="date" placeholder="Date">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Amt</span>
+						<input type="text" placeholder="Amt">
+				</label>
+
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Rec'd By</span>
+						<input type="text" placeholder="Rec'd By">
+				</label>
+			</div>
+			
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+        </div>
+    </ion-content>
+
 </ion-view>

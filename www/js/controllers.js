@@ -1624,3 +1624,20 @@ angular.module('starter.controllers', [])
         }
     });
 })
+
+.controller('loanEquipment', function($scope, $stateParams, $state, UploadData, $localForage) {
+
+    $scope.eolcp_initial_pain_assessment = {};
+
+    $localForage.getItem('upload_data').then(function(data) {
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_EOLCP_IPA)
+            $scope.eolcp_initial_pain_assessment = data[$stateParams.patientID].V_PMT_EOLCP_IPA;
+    });
+
+    $scope.saveAndNext = function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP_IPA', $scope.eolcp_initial_pain_assessment).then(function() {
+            $state.go('tab.e03');
+        });
+    }
+})
+

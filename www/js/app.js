@@ -186,7 +186,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         views: {
             'tab-eol': {
                 templateUrl: 'templates/eol.html',
-                controller: 'AccountCtrl'
+                controller: 'e01Controller'
             }
         }
     })
@@ -230,7 +230,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         views: {
             'tab-equipment': {
                 templateUrl: 'templates/equip.html',
-                controller: 'AccountCtrl'
+                controller: 'loanEquipment'
             }
         }
     })

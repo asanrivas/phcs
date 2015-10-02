@@ -107,9 +107,7 @@
             <div class="list card">
                 <div class="item item-divider">Upcoming Visit</div>
                 <div class="item item-body">
-                    <div>
-                        Patient next visit is on <strong>Sunday, 29 May 2015</strong>. Scheduled by hariyati.
-                    </div>
+                   
                     <a class="button button-block button-positive" ui-sref="tab.multi_team">Schedule next visit</a>
 
                 </div>
@@ -118,7 +116,7 @@
                 <div class="item item-divider">Visit History</div>
                 <div class="item item-body">
                     <div class="item">
-                        Last visit: <span class="item-note">27/04/2015</span>
+                        Last visit: 
                     </div>
                     <div class="item" ng-repeat="nurse in nurse_visit | filter:{PATIENT_ID:$parent.patientID} | limitTo:50">
                         {{$index+1}}. Visit by <strong>{{nurse.NAME}}</strong> on {{nurse.DATE}} {{nurse.TIME}}
