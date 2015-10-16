@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
     $scope.nurse_name = [];
     $localForage.getItem('nurse_name').then(function(data) {
         $scope.nurse_name = data;
-        console.log("nurses: "+JSON.stringify(data));
+        // console.log("nurses: "+JSON.stringify(data));
     });
 
 })
@@ -148,6 +148,7 @@ angular.module('starter.controllers', [])
                         $localForage.setItem("pruser", data.pruser);
                         $localForage.setItem("nurse_visit", data.nurse_visit);
                         $localForage.setItem("nurse_name", data.nurse_name);
+                        $localForage.setItem("loan_equipment_list", data.loan_equipment_list);
 
                         var gallery = data.gallery;
                         for (var i = 0; gallery && i < gallery.length; i++) {
@@ -1625,18 +1626,24 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('loanEquipment', function($scope, $stateParams, $state, UploadData, $localForage) {
+.controller('LoanEquipmentCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
 
-    $scope.eolcp_initial_pain_assessment = {};
+    $scope.equipmentloan = {};
+
+    $scope.loan_equipment_list = [];
+    $localForage.getItem('loan_equipment_list').then(function(data) {
+        $scope.loan_equipment_list = data;
+        // console.log("loan_equipment_list: "+JSON.stringify(data));
+    });
 
     $localForage.getItem('upload_data').then(function(data) {
-        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_PMT_EOLCP_IPA)
-            $scope.eolcp_initial_pain_assessment = data[$stateParams.patientID].V_PMT_EOLCP_IPA;
+        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].PRO_EQUIPMENT_LOAN)
+            $scope.equipmentloan = data[$stateParams.patientID].PRO_EQUIPMENT_LOAN;
     });
 
     $scope.saveAndNext = function() {
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_PMT_EOLCP_IPA', $scope.eolcp_initial_pain_assessment).then(function() {
-            $state.go('tab.e03');
+        UploadData.save_data_patient_id($stateParams.patientID, 'PRO_EQUIPMENT_LOAN', $scope.equipmentloan).then(function() {
+            $state.go('tab.home');
         });
     }
 })

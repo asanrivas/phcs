@@ -230,7 +230,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         views: {
             'tab-equipment': {
                 templateUrl: 'templates/equip.html',
-                controller: 'loanEquipment'
+                controller: 'LoanEquipmentCtrl'
             }
         }
     })
