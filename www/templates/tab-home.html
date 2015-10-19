@@ -25,6 +25,12 @@
                     <div class="item ion-icon">
                         IC <span class="item-note black capital">{{patient.IC}}</span>
                     </div>
+                     <div class="item ion-icon">
+                        Age <span class="item-note black capital">{{patient.AGE}}</span>
+                    </div>
+                     <div class="item ion-icon">
+                        Gender <span class="item-note black capital">{{patient.SEX_DESC}}</span>
+                    </div>
                     <div class="item ion-icon">
                         Address <span class="item-note black capital">{{patient.ADDRESS}} {{patient.POSTCODE}}</span>
                     </div>
@@ -104,14 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="list card">
-                <div class="item item-divider">Upcoming Visit</div>
-                <div class="item item-body">
-                   
-                    <a class="button button-block button-positive" ui-sref="tab.multi_team">Schedule next visit</a>
-
-                </div>
-            </div>
+            
             <div class="list card">
                 <div class="item item-divider">Visit History</div>
                 <div class="item item-body">

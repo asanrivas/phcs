@@ -28,6 +28,18 @@
                         <span class="input-label">IC</span>
                         <input readonly="true" type="text" ng-model="patient.IC">
                     </div>
+                    <div class="item item-input">
+                        <span class="input-label">Age</span>
+                        <input readonly="true" type="text" ng-model="patient.AGE">
+                    </div>
+                    <div class="item item-input">
+                        <div class="input-label">Sex</div>
+                        <select ng-model="patient.SEX">
+                            <option value="01" ng-selected="patient.SEX=='01'">MALE</option>
+                            <option value="02" ng-selected="patient.SEX=='02'">FEMALE</option>
+                        </select>
+                    </div>
+
 
                     <div class="item item-input">
                         <span class="input-label">Address</span>

@@ -3,34 +3,84 @@
         <div class="list card" ng-init="continuous_summary.patient_id=$parent.patientID">
             <div class="item item-divider">Summary Of Initial Assessment / Problem / Actions / Plan</div>
 
+            <div class="item item-divider">Date</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="date" placeholder="Date" ng-model="initial_summary.date">
+               </label>
+        </div>
+
+         <div class="item item-divider">Time</div>
+                <label class="item item-input item-stacked-label">
+                        <input type="text" placeholder="Time" ng-model="initial_summary.time">
+                </label>
+        </div>
+
+        <div class="item item-divider">
+           Client of initial on admission
+          </div>
+          <ion-item>
+              <ion-checkbox name="si4">HV/N</ion-checkbox>
+              <ion-checkbox name="si4">PCU/Visit</ion-checkbox>
+              <ion-checkbox name="si4">Tel/C</ion-checkbox>
+              <ion-checkbox name="si4">Tel/R</ion-checkbox>
+          <label class="item item-input item-stacked-label">
+                    <span class="input-label">Remarks</span>
+                        <input type="text" placeholder="Others Remarks">
+                </label>
+          </ion-item>
+
             <label class="item item-input item-select">
-                <div class="input-label">Client Classified on Admission as</div>
+                <div class="input-label">Code & Category</div>
                 <select ng-model="continuous_summary.client_classified">
-                    <option value="S0">S0</option>
-                    <option value="S1">S1</option>
+                    <option value="S0 A">S0 A</option>
+                    <option value="S0 B">S0 B</option>
+                    <option value="S1 A">S1 A</option>
+                    <option value="S1 B">S1 B</option>
+                    <option value="S1 C">S1 C</option>
                     <option value="S2">S2</option>
-                    <option value="U1">U1</option>
-                    <option value="U2">U2</option>
+                    <option value="U1 A">U1 A</option>
+                    <option value="U1 B">U1 B</option>
+                    <option value="U2 Activate EOLCP">U2 (Activate EOLCP)</option>
                 </select>
             </label>
+
             <label class="item item-input item-select">
-                <div class="input-label">
-                    Assess need for referral
-                </div>
-                <select ng-model="continuous_summary.assess_need">
-                    <option value="Pallative Massage Therapy">Pallative Massage Therapy</option>
-                    <option value="Play Therapy">Play Therapy</option>
-                    <option value="Physical Therapy">Physical Therapy</option>
-                    <option value="Occupational Therapy">Occupational Therapy</option>
-                    <option value="Dental as appropriated">Dental as appropriated</option>
+                <div class="input-label">Assessment/Problem</div>
+                <select ng-model="">
+                    <option value=" "></option>
+                    <option value="PT1">PT 1</option>
+                    <option value="PT2">PT 2</option>
+                    <option value="PT3">PT 3</option>
+                    <option value="PT4">PT 4</option>
+                    <option value="PT5">PT 5</option>
+                    <option value="PT6">PT 6</option>
+                    <option value="PT7">PT 7</option>
+                    <option value="PT8">PT 8</option>
+                    <option value="PT9">PT 9</option>
+                    <option value="PT10">PT 10</option>
+                    <option value="PT11">PT 11</option>
+                    <option value="PT12">PT 12</option>
+                    <option value="PT13">PT 13</option>
+                    <option value="PT14">PT 14</option>
+                    <option value="PT15">PT 15</option>
+                    <option value="PT16">PT 16</option>
+                    <option value="PT17">PT 17</option>
+                    <option value="PT18">PT 18</option>
+                    <option value="PT19">PT 19</option>
+
+                   
                 </select>
             </label>
-            <div class="item item-divider">
-                Remarks
-            </div>
-            <label class="item item-input">
-                <textarea rows="4" placeholder="Remarks" ng-model="continuous_summary.remarks"></textarea>
-            </label>
+
+         <div class="item item-divider">Team Progress Note</div>
+                <label class="item item-input item-stacked-label">
+                        <textarea placeholder="Assessment/Problems" rows="10"></textarea>
+                   </label>
+        </div>
+
+
+           
+          
 
         </div>
         <div class="list">
