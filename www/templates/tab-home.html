@@ -20,7 +20,7 @@
                         Name <span class="item-note black capital">{{patient.NAME}}</span>
                     </div>
                     <div class="item">
-                        Register No. <span class="item-note black capital">{{patient.PATIENT_ID}}</span>
+                        Register No. <span class="item-note black capital">{{patient.REG_NO_PATIENT}}</span>
                     </div>
                     <div class="item ion-icon">
                         IC <span class="item-note black capital">{{patient.IC}}</span>
@@ -28,8 +28,12 @@
                      <div class="item ion-icon">
                         Age <span class="item-note black capital">{{patient.AGE}}</span>
                     </div>
-                     <div class="item ion-icon">
-                        Gender <span class="item-note black capital">{{patient.SEX_DESC}}</span>
+                    <div class="item ion-icon">
+                        Gender<span class="item-note black capital">
+                        
+                            <p ng-show="patient.SEX=='01'">MALE</p>
+                            <p ng-show="patient.SEX=='02'">FEMALE</p>
+                        </span>
                     </div>
                     <div class="item ion-icon">
                         Address <span class="item-note black capital">{{patient.ADDRESS}} {{patient.POSTCODE}}</span>
@@ -59,6 +63,7 @@
                         <p ng-show="patient.MARITAL_STATUS=='01'">SINGLE</p>
                         <p ng-show="patient.MARITAL_STATUS=='02'">MARRIED</p>
                         <p ng-show="patient.MARITAL_STATUS=='03'">WIDOW</p>
+                        <p ng-show="patient.MARITAL_STATUS=='04'">WIDOWER</p>
                         </span>
                     </div>
 					<div class="item ion-icon">
