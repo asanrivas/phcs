@@ -22,7 +22,7 @@
                     </div>
                     <div class="item item-input">
                         <span class="input-label">Register No. </span>
-                        <input readonly="true" type="text" ng-model="patient.PATIENT_ID">
+                        <input readonly="true" type="text" ng-model="patient.REG_NO_PATIENT">
                     </div>
                     <div class="item item-input">
                         <span class="input-label">IC</span>
@@ -33,7 +33,7 @@
                         <input readonly="true" type="text" ng-model="patient.AGE">
                     </div>
                     <div class="item item-input">
-                        <div class="input-label">Sex</div>
+                        <div class="input-label">Gender</div>
                         <select ng-model="patient.SEX">
                             <option value="01" ng-selected="patient.SEX=='01'">MALE</option>
                             <option value="02" ng-selected="patient.SEX=='02'">FEMALE</option>
@@ -65,6 +65,7 @@
                             <option value="01" ng-selected="patient.MARITAL_STATUS=='01'">SINGLE</option>
                             <option value="02" ng-selected="patient.MARITAL_STATUS=='02'">MARRIED</option>
                             <option value="03" ng-selected="patient.MARITAL_STATUS=='03'">WIDOW</option>
+                            <option value="04" ng-selected="patient.MARITAL_STATUS=='04'">WIDOWER</option>
                         </select>
                     </div>
                     <div class="item item-input">

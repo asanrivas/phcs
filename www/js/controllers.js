@@ -1392,6 +1392,25 @@ angular.module('starter.controllers', [])
             console.log('date setted ' + date);
             $scope.$apply(function() {
                 $scope.eolcp_treatments_procedures.death_date_time = extractDate(date);
+
+            });
+
+        }, function(error) { // Android only
+            alert('Error: ' + error);
+        });
+    };
+
+    $scope.newdate = "";
+
+    $scope.onclick = function() {
+        var options = {
+            date: new Date(),
+            mode: 'datetime'
+        };
+        datePicker.show(options, function(date) {
+            console.log('date setted ' + date);
+            $scope.$apply(function() {
+                $scope.continuous_summary.date_time = extractDate(date);
             });
 
         }, function(error) { // Android only
@@ -1534,6 +1553,8 @@ angular.module('starter.controllers', [])
             $scope.status.elimination_bowel = true;
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.elimination_bladder)
             $scope.status.elimination_bladder = true;
+        if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.skin)
+            $scope.status.skin = true;
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.wound)
             $scope.status.wound = true;
         if ($scope.$parent.upload_data[$scope.$parent.patientID].V_CONTINUE_VISIT.activities)

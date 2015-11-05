@@ -184,11 +184,28 @@
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.concentrated">CN-Concentrated</ion-checkbox>
             </div>
 
+
+            <div class="item item-divider">P13 – Skin</div>
+            <div class="item item-body">
+                <div>Select the nearest skin condition of patient:</div>
+            </div>
+            <div class="list" ng-init="data.f13 = true;" class="capital" ng-model="continuous_pt20.skin">
+                <ion-checkbox class="positive" ng-model="continuous_pt20.skin.normal">N-Normal</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.dry_skin">D-Dry Skin</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.bruise">B-Bruise</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.redness">R-Redness</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.rash">RS-Rash</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.excoriation">E-Excoriation</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.jaundice">J-Jaundice</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.skin.petechiae">P-Petechiae</ion-checkbox>
+
+            </div>
+
             
 
             <div class="list card" ng-init="continuous_pt20.patient_id=$parent.patientID">
 
-            <div class="item item-divider">P13 – Wound</div>
+            <div class="item item-divider">P14 – Wound</div>
             <div class="list">
                 <a class="button button-positive button-full" ng-click="continuous_stages()">Stages</a>
             </div>
@@ -229,7 +246,7 @@
                 <ion-checkbox ng-model="continuous_pt20.wound.sloughs" ng-change="open_wound('sloughs');continuous_pt20.wound.no_wound=false">Sl-Sloughs</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P14 – Activities For Daily Living And Sexuality</div>
+            <div class="item item-divider">P15 – Activities For Daily Living And Sexuality</div>
             <div class="item item-body">
                 <div>Select the nearest activities for daily living and sexuality condition of patient:</div>
             </div>
@@ -242,7 +259,7 @@
                 <ion-checkbox ng-model="continuous_pt20.activities.low_self_esteem">SE-Low self esteem</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P15 – End Of Life Issues</div>
+            <div class="item item-divider">P16 – End Of Life Issues</div>
             <div class="item item-body">
                 <div>Select the nearest end of life issues condition of patient:</div>
             </div>
@@ -252,7 +269,7 @@
                 <ion-checkbox ng-model="continuous_pt20.life_issue.eolcp_active_eolcp">EOLCP-Active EOLCP</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P16 – Client Support Issues</div>
+            <div class="item item-divider">P17 – Client Support Issues</div>
             <div class="item item-body">
                 <div>Select the nearest client support issues condition of patient:</div>
             </div>
@@ -263,7 +280,7 @@
                 <ion-checkbox ng-model="continuous_pt20.client_support_issue.financial_form_8_a">SF-Financial FORM 8 A</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P17 – Mobilization And Activity</div>
+            <div class="item item-divider">P18 – Mobilization And Activity</div>
             <div class="item item-body">
                 <div>Select the nearest mobilization and activity condition of patient:</div>
             </div>
@@ -277,7 +294,7 @@
                 <ion-checkbox ng-model="continuous_pt20.mobilization.patient_location_in_home">PL-Patient location in home</ion-checkbox>
             </div>
 
-            <div class="item item-divider">P18 – Palliative Massage Therapy (PMT)</div>
+            <div class="item item-divider">P19 – Palliative Massage Therapy (PMT)</div>
             <div class="item item-body">
                 <div>Select the nearest palliative massage therapy (PMT) condition of patient:</div>
             </div>

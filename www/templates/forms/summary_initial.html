@@ -3,35 +3,32 @@
         <div class="list card" ng-init="continuous_summary.patient_id=$parent.patientID">
             <div class="item item-divider">Summary Of Initial Assessment / Problem / Actions / Plan</div>
 
-            <div class="item item-divider">Date</div>
-                <label class="item item-input item-stacked-label">
-                        <input type="date" placeholder="Date" ng-model="initial_summary.date">
-               </label>
-        </div>
-
-         <div class="item item-divider">Time</div>
-                <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Time" ng-model="initial_summary.time">
-                </label>
-        </div>
+                  <label class="item item-input item-stacked-label">
+                    <span class="input-label">Date and Time:</span>
+<!--
+                        <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.death_date_time">
+-->
+                    <label class="item item-input">
+                        <input type="text" ng-model="continuous_summary.date_time" ng-click="onclick()" ng-maxlength="10">
+                    </label>
 
         <div class="item item-divider">
            Client of initial on admission
           </div>
           <ion-item>
-              <ion-checkbox name="si4">HV/N</ion-checkbox>
-              <ion-checkbox name="si4">PCU/Visit</ion-checkbox>
-              <ion-checkbox name="si4">Tel/C</ion-checkbox>
-              <ion-checkbox name="si4">Tel/R</ion-checkbox>
+              <ion-checkbox ng-model="continuous_summary.HV/N">HV/N</ion-checkbox>
+              <ion-checkbox ng-model="continuous_summary.PCU/Visit">PCU/Visit</ion-checkbox>
+              <ion-checkbox ng-model="continuous_summary.Tel/C">Tel/C</ion-checkbox>
+              <ion-checkbox ng-model="continuous_summary.Tel/R">Tel/R</ion-checkbox>
           <label class="item item-input item-stacked-label">
                     <span class="input-label">Remarks</span>
-                        <input type="text" placeholder="Others Remarks">
+                        <input type="text" placeholder="Others Remarks" ng-model="continuous_summary.remarks">
                 </label>
           </ion-item>
 
             <label class="item item-input item-select">
                 <div class="input-label">Code & Category</div>
-                <select ng-model="continuous_summary.client_classified">
+                <select ng-model="continuous_summary.code_category">
                     <option value="S0 A">S0 A</option>
                     <option value="S0 B">S0 B</option>
                     <option value="S1 A">S1 A</option>
@@ -46,7 +43,7 @@
 
             <label class="item item-input item-select">
                 <div class="input-label">Assessment/Problem</div>
-                <select ng-model="">
+                <select ng-model="continuous_summary.assessment_problem">
                     <option value=" "></option>
                     <option value="PT1">PT 1</option>
                     <option value="PT2">PT 2</option>
@@ -74,7 +71,7 @@
 
          <div class="item item-divider">Team Progress Note</div>
                 <label class="item item-input item-stacked-label">
-                        <textarea placeholder="Assessment/Problems" rows="10"></textarea>
+                        <textarea placeholder="Team Progress Note" rows="10" ng-model="continuous_summary.team_progress_note"></textarea>
                    </label>
         </div>
 

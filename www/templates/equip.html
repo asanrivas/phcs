@@ -20,15 +20,18 @@
                 <input type="tel" placeholder="Phone Number" ng-model="equipmentloan.borrower_phone">
             </label>
 
-            <div class="item item-input">
-                <div class="input-label">Equipment</div>
-            </div>
+            
 
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Description of Equipment</span>
+                <span class="input-label">Equipment</span>
 				<select ng-model="equipmentloan.equipment_id">
                 	<option ng-repeat="x in loan_equipment_list" value="{{ x.EQUIPMENT_ID }}" ng-selected="x.EQUIPMENT_ID==equipmentloan.EQUIPMENT_NAME">{{ x.EQUIPMENT_NAME }}</option>
                 </select>                        
+            </label>
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Description of Equipment</span>
+                <input type="text" placeholder="Description of Equipment" ng-model="equipmentloan.description_equipment">
             </label>
 <!-- 
                         <select ng-model="patient.NURSE_NAME">
