@@ -931,16 +931,58 @@ angular.module('starter.controllers', [])
 
 .controller('summary_initialCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
 
-    $scope.continuous_summary = {};
+    function addZero(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    function extractDate(date) {
+        // console.log("extractDate: " + date);
+        var mm = date.getMonth() + 1;
+        mm = (mm < 10) ? '0' + mm : mm;
+        var dd = date.getDate();
+        dd = (dd < 10) ? '0' + dd : dd;
+        var yyyy = date.getFullYear();
+        var hrs = addZero(date.getHours());
+        var mins = addZero(date.getMinutes());
+        var secs = addZero(date.getSeconds());
+        // return  dd + '-' + mm + '-' +  yyyy + ' ' + hrs + ':' + mins + ':' + secs;
+        console.log('time :' + hrs + ':' + mins + ':' + secs);
+        return hrs + ':' + mins + ':' + secs;
+    }
+
+    // new time picker
+    $scope.newtime = "";
+
+    $scope.onclick = function() {
+        var options = {
+            date: new Date(),
+            mode: 'time'
+        };
+        datePicker.show(options, function(date) {
+            // console.log('time setted ' + date);
+            $scope.$apply(function() {
+                $scope.initial_summary.time = extractDate(date);
+                console.log('$scope.initial_summary.time: ' + $scope.initial_summary.time);
+            });
+
+        }, function(error) { // Android only
+            alert('Error: ' + error);
+        });
+    };
+
+    $scope.initial_summary = {};
 
     $localForage.getItem('upload_data').then(function(data) {
         if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_SUMMARY_INITIAL)
-            $scope.continuous_summary = data[$stateParams.patientID].V_SUMMARY_INITIAL;
+            $scope.initial_summary = data[$stateParams.patientID].V_SUMMARY_INITIAL;
     });
 
     $scope.SaveAndClose = function() {
         // console.log("SaveAndClose");
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continuous_summary).then(function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.initial_summary).then(function() {
             $state.go('tab.continous');
         });
     };

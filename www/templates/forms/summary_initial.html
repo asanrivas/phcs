@@ -1,6 +1,6 @@
 <ion-view view-title="Summary Of Initial Assessment">
     <ion-content class="padding">
-        <div class="list card" ng-init="continuous_summary.patient_id=$parent.patientID">
+        <div class="list card" ng-init="initial_summary.patient_id=$parent.patientID">
             <div class="item item-divider">Summary Of Initial Assessment / Problem / Actions / Plan</div>
 
             <div class="item item-divider">Date</div>
@@ -11,7 +11,8 @@
 
          <div class="item item-divider">Time</div>
                 <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Time" ng-model="initial_summary.time">
+                        <!-- <input type="text" placeholder="Time" ng-model="initial_summary.time"> -->
+                        <input type="text" placeholder="Time" ng-model="initial_summary.time" ng-click="onclick()" ng-maxlength="10">
                 </label>
         </div>
 
