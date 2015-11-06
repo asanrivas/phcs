@@ -13,69 +13,62 @@
                 <label class="item item-input item-stacked-label">
                         <input type="text" placeholder="Time" ng-model="initial_summary.time" ng-click="onclick()" ng-maxlength="10">
                 </label>
-        </div>
-                  <label class="item item-input item-stacked-label">
-                    <span class="input-label">Date and Time:</span>
-<!--
-                        <input type="date" placeholder="Date" ng-model="eolcp_treatments_procedures.death_date_time">
--->
-                    <label class="item item-input">
-                        <input type="text" ng-model="continuous_summary.date_time" ng-click="onclick()" ng-maxlength="10">
-                    </label>
->>>>>>> origin/master
+    
+        
+
 
         <div class="item item-divider">
            Client of initial on admission
           </div>
           <ion-item>
-              <ion-checkbox ng-model="continuous_summary.HV/N">HV/N</ion-checkbox>
-              <ion-checkbox ng-model="continuous_summary.PCU/Visit">PCU/Visit</ion-checkbox>
-              <ion-checkbox ng-model="continuous_summary.Tel/C">Tel/C</ion-checkbox>
-              <ion-checkbox ng-model="continuous_summary.Tel/R">Tel/R</ion-checkbox>
+              <ion-checkbox ng-model="initial_summary.client_of_initial.HV_N">HV/N</ion-checkbox>
+              <ion-checkbox ng-model="initial_summary.client_of_initial.PCU_Visit">PCU/Visit</ion-checkbox>
+              <ion-checkbox ng-model="initial_summary.client_of_initial.Tel_C">Tel/C</ion-checkbox>
+              <ion-checkbox ng-model="initial_summary.client_of_initial.Tel_R">Tel/R</ion-checkbox>
           <label class="item item-input item-stacked-label">
                     <span class="input-label">Remarks</span>
-                        <input type="text" placeholder="Others Remarks" ng-model="continuous_summary.remarks">
+                        <input type="text" placeholder="Others Remarks" ng-model="initial_summary.remarks">
                 </label>
           </ion-item>
 
             <label class="item item-input item-select">
                 <div class="input-label">Code & Category</div>
-                <select ng-model="continuous_summary.code_category">
-                    <option value="S0 A">S0 A</option>
-                    <option value="S0 B">S0 B</option>
-                    <option value="S1 A">S1 A</option>
-                    <option value="S1 B">S1 B</option>
-                    <option value="S1 C">S1 C</option>
-                    <option value="S2">S2</option>
-                    <option value="U1 A">U1 A</option>
-                    <option value="U1 B">U1 B</option>
-                    <option value="U2 Activate EOLCP">U2 (Activate EOLCP)</option>
+                <select ng-model="initial_summary.code_category">
+                    <option>S0 A</option>
+                    <option>S0 B</option>
+                    <option>S1 A</option>
+                    <option>S1 B</option>
+                    <option>S1 C</option>
+                    <option>S2</option>
+                    <option>U1 A</option>
+                    <option>U1 B</option>
+                    <option>U2 (Activate EOLCP)</option>
                 </select>
             </label>
 
             <label class="item item-input item-select">
                 <div class="input-label">Assessment/Problem</div>
-                <select ng-model="continuous_summary.assessment_problem">
-                    <option value=" "></option>
-                    <option value="PT1">PT 1</option>
-                    <option value="PT2">PT 2</option>
-                    <option value="PT3">PT 3</option>
-                    <option value="PT4">PT 4</option>
-                    <option value="PT5">PT 5</option>
-                    <option value="PT6">PT 6</option>
-                    <option value="PT7">PT 7</option>
-                    <option value="PT8">PT 8</option>
-                    <option value="PT9">PT 9</option>
-                    <option value="PT10">PT 10</option>
-                    <option value="PT11">PT 11</option>
-                    <option value="PT12">PT 12</option>
-                    <option value="PT13">PT 13</option>
-                    <option value="PT14">PT 14</option>
-                    <option value="PT15">PT 15</option>
-                    <option value="PT16">PT 16</option>
-                    <option value="PT17">PT 17</option>
-                    <option value="PT18">PT 18</option>
-                    <option value="PT19">PT 19</option>
+                <select ng-model="initial_summary.assessment_problem">
+                    <option></option>
+                    <option>PT 1</option>
+                    <option>PT 2</option>
+                    <option>PT 3</option>
+                    <option>PT 4</option>
+                    <option>PT 5</option>
+                    <option>PT 6</option>
+                    <option>PT 7</option>
+                    <option>PT 8</option>
+                    <option>PT 9</option>
+                    <option>PT 10</option>
+                    <option>PT 11</option>
+                    <option>PT 12</option>
+                    <option>PT 13</option>
+                    <option>PT 14</option>
+                    <option>PT 15</option>
+                    <option>PT 16</option>
+                    <option>PT 17</option>
+                    <option>PT 18</option>
+                    <option>PT 19</option>
 
                    
                 </select>
@@ -83,15 +76,10 @@
 
          <div class="item item-divider">Team Progress Note</div>
                 <label class="item item-input item-stacked-label">
-                        <textarea placeholder="Team Progress Note" rows="10" ng-model="continuous_summary.team_progress_note"></textarea>
+                        <textarea placeholder="Team Progress Note" rows="10" ng-model="initial_summary.team_progress_note"></textarea>
                    </label>
-        </div>
 
-
-           
-          
-
-        </div>
+        
         <div class="list">
             <a class="button button-positive button-full" ng-click="SaveAndClose()">Save and Close</a>
         </div>
