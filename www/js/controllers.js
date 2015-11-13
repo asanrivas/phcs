@@ -1442,23 +1442,23 @@ angular.module('starter.controllers', [])
         });
     };
 
-    $scope.newdate = "";
+    //$scope.newdate = "";
 
-    $scope.onclick = function() {
-        var options = {
-            date: new Date(),
-            mode: 'datetime'
-        };
-        datePicker.show(options, function(date) {
-            console.log('date setted ' + date);
-            $scope.$apply(function() {
-                $scope.continuous_summary.date_time = extractDate(date);
-            });
+   // $scope.onclick = function() {
+       // var options = {
+            //date: new Date(),
+            //mode: 'datetime'
+        //};
+        //datePicker.show(options, function(date) {
+           // console.log('date setted ' + date);
+           // $scope.$apply(function() {
+            //    $scope.continuous_summary.date_time = extractDate(date);
+           // });
 
-        }, function(error) { // Android only
-            alert('Error: ' + error);
-        });
-    };
+       // }, function(error) { // Android only
+        //    alert('Error: ' + error);
+        //});
+    //};
 
     $scope.eolcp_treatments_procedures = {};
 
