@@ -28,6 +28,11 @@
                 	<option ng-repeat="x in loan_equipment_list" value="{{ x.EQUIPMENT_ID }}" ng-selected="x.EQUIPMENT_ID==equipmentloan.EQUIPMENT_NAME">{{ x.EQUIPMENT_NAME }}</option>
                 </select>                        
             </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Quantity</span>
+                <input type="tel" placeholder="Quantity" ng-model="equipmentloan.quantity_equipment">
+            </label>
+
 
             <label class="item item-input item-stacked-label">
                 <span class="input-label">Description of Equipment</span>

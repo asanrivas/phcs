@@ -160,13 +160,13 @@
                 <div>Select the nearest elimination bladder condition of patient:</div>
             </div>
             <div class="list" ng-init="data.f12 = true;" class="capital" ng-model="continuous_pt20.elimination_bowel">
-                <ion-checkbox class="positive" ng-model="continuous_pt20.elimination_bladder.self">S-Self</ion-checkbox>
-                <ion-checkbox class="item item-checkbox" ng-model="continuous_pt20.elimination_bladder.assisted" ng-click="collapsed1=!collapsed1">A-Assisted</ion-checkbox>
-                <div ng-show="collapsed1">
-                    <ion-checkbox class="balanced" name="c12" ng-model="continuous_pt20.elimination_bladder.assist.incontinence">Incontinence</ion-checkbox>
-                    <ion-checkbox class="balanced" name="c12" ng-model="continuous_pt20.elimination_bladder.assist.retention">Retention</ion-checkbox>
-                    <ion-checkbox class="balanced" name="c12" ng-model="continuous_pt20.elimination_bladder.assist.noctural">Noctural</ion-checkbox>
-                    <ion-checkbox class="balanced" name="c12" ng-model="continuous_pt20.elimination_bladder.assist.urgency">Urgency</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.elimination_bladder.self">S-Self</ion-checkbox>
+                <ion-checkbox ng-model="continuous_pt20.elimination_bladder.assisted" >A-Assisted</ion-checkbox>
+                
+                    <ion-checkbox ng-model="continuous_pt20.elimination_bladder.incontinence">Incontinence</ion-checkbox>
+                    <ion-checkbox ng-model="continuous_pt20.elimination_bladder.assistretention">Retention</ion-checkbox>
+                    <ion-checkbox ng-model="continuous_pt20.elimination_bladder.noctural">Noctural</ion-checkbox>
+                    <ion-checkbox ng-model="continuous_pt20.elimination_bladder.urgency">Urgency</ion-checkbox>
 
                     <!--                 <ion-checkbox class="balanced" ng-model="continuous_pt20.elimination_bladder.assisted.frequency">Frequency</ion-checkbox>
                 <ion-checkbox class="balanced" ng-model="continuous_pt20.elimination_bladder.assisted.incontinence">Incontinence</ion-checkbox>
@@ -174,7 +174,7 @@
                 <ion-checkbox class="balanced" ng-model="continuous_pt20.elimination_bladder.assisted.noctural">Noctural</ion-checkbox>
                 <ion-checkbox class="balanced" ng-model="continuous_pt20.elimination_bladder.assisted.urgency">Urgency</ion-checkbox>
  -->
-                </div>
+               
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.diapers">P-Diapers</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.catheter__mc">C-Catheter/MC</ion-checkbox>
                 <ion-checkbox ng-model="continuous_pt20.elimination_bladder.bedpan__urinal">B-Bedpan/urinal</ion-checkbox>
