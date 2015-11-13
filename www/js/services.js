@@ -41,7 +41,8 @@ angular.module('starter.services', [])
                         date: theDate.format("yyyy-mm-dd"),
                         time: theDate.format("H:MM:SS"),
                         remark: "",
-                        userid: 1 //hardcoded admin
+                        // userid: 1 //hardcoded admin
+                        userid: window.localStorage.getItem('user:userid')
                     };
                 }
                 var defaultObj = {patient_id: patientID, date: theDate.format("yyyy-mm-dd HH:MM")};
@@ -122,7 +123,8 @@ angular.module('starter.services', [])
                         date: theDate.format("yyyy-mm-dd"),
                         time: theDate.format("H:MM"),
                         remark: "",
-                        userid: 1 //hardcoded admin
+                        // userid: 1 //hardcoded admin
+                        userid: window.localStorage.getItem('user:userid')
                     };
                 }
                 if(!Array.isArray(data[patientID][table]))
