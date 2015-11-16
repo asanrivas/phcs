@@ -1573,6 +1573,9 @@ angular.module('starter.controllers', [])
                     {
                         datum = data.V_CURR_MEDICATION_DRUG[i];
                         datum.frequency = datum.frequency ? JSON.parse(datum.frequency) : '';
+                        datum.end_date = new Date(datum.end_date);
+                        // if()
+                        //     datum.end_date = new_end
                         $scope.drug_medication.push(datum);
                     }
                 }
@@ -1589,6 +1592,28 @@ angular.module('starter.controllers', [])
                 patientID: $scope.$parent.patientID
             });
         });
+    }
+
+    $scope.changedate = function(data) {
+        console.log(JSON.stringify(data));
+        if (!$scope.curr_medication.enddates)
+            $scope.curr_medication.enddates = [];
+        $scope.curr_medication.enddates.push(data);
+
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_ENDDATE', $scope.curr_medication).then(function() {
+            $state.go('tab.medication', {
+                patientID: $scope.$parent.patientID
+            });
+        });
+
+        var alertPopup = $ionicPopup.alert({
+            title: 'Update',
+            template: 'Changes saved.'
+        });
+        alertPopup.then(function(res) {
+            console.log('not ok');
+        });
+
     }
 
     $ionicModal.fromTemplateUrl('templates/forms/f14.html', {
@@ -1644,49 +1669,6 @@ angular.module('starter.controllers', [])
                 }
             });
         };
-
-
-    $ionicModal.fromTemplateUrl('templates/forms/medication-chgdate.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-
-    $scope.medicationchg = {};
-    $scope.saveModal2 = function() {
-        if (!$scope.curr_medication.medicationchgs)
-            $scope.curr_medication.medicationchgs = [];
-        console.log('1: '+JSON.stringify($scope.curr_medication.medicationchgs));
-        console.log('2: '+JSON.stringify($scope.medicationchg));
-        $scope.curr_medication.medicationchgs.push($scope.medicationchg);
-
-        $scope.modal.hide();
-        return true;
-    }
-
-    $scope.change_enddate = function() {
-        $scope.medicationchg = {};
-        $scope.modal.show();
-        return false;
-    };
-    $scope.closeModal2 = function() {
-        $scope.modal.hide();
-    };
-    //Cleanup the modal when we're done with it!
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-        $scope.preview.remove();
-    });
-    // Execute action on hide modal
-    $scope.$on('modal.hidden', function() {
-        // Execute action
-    });
-    // Execute action on remove modal
-    $scope.$on('modal.removed', function() {
-        // Execute action
-    });
 
 })
 

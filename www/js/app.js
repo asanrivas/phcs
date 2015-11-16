@@ -180,6 +180,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
+    .state('tab.medication-edit', {
+        url: '/medication-edit/:id',
+        views: {
+            'tab-medication': {
+                templateUrl: 'templates/medication-edit.html',
+                controller: 'TabMedicationCtrl'
+            }
+        }
+    })
 
     .state('tab.eol', {
         url: '/eol',

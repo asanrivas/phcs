@@ -1,0 +1,65 @@
+<ion-view view-title="Current Medication Chart">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">Current Medication Chart</div>
+        </div>
+        <a class="button button-positive button-full" ng-click="openModal()">Add Medication</a>
+        <h4 ng-show="drug_medication.medications.length">Medications</h4>
+        <div class="list" ng-repeat="medication in drug_medication|filter:{id:141}">
+            <div class="item item-divider">Medication #{{$index + 1}}</div>
+            <div class="item item-button-right">
+                <div class="col col-50 positive">Name of Drugs/Medication</div>
+                <div class="col ">{{medication.medication_name}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">Dose</div>
+                <div class="col col-67">{{medication.dose}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">Route</div>
+                <div class="col col-67">{{medication.route}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">Frequency</div>
+                <div class="col col-67">
+                    <p ng-repeat="(key, data) in medication.frequency">{{key}}</p>
+                </div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">What for</div>
+                <div class="col col-67">{{medication.what_for}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">Side Effects</div>
+                <div class="col col-67">{{medication.drug_side_effect}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">Started by PPCS/Other</div>
+                <div class="col col-67">{{medication.started_by}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">Start Date</div>
+                <div class="col col-67">{{medication.start_day|date:"dd/MM/yyyy"}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">End date</div>
+                <div class="col">{{medication.end_date|date:"dd/MM/yyyy"}}</div>
+            </div>
+            <div class="row item">
+                <div class="col col-33 positive">New End date</div>
+                <label class="item item-input item-stacked-label">
+                    <input type="date" placeholder="Date" ng-model="medication.date">
+                </label>
+            </div>
+        </div>
+        <br/>
+        <div class="list">
+            <a class="button button-positive button-full" ng-click="saveAndNext()">Save and Next</a>
+        </div>
+
+    </ion-content>
+    <!--     <div class="bar bar-footer tabs bar-positive">
+        <a class="tab-item" ng-click="saveAndNext()">Save &amp; Close</a>
+    </div>
+ -->
+</ion-view>
