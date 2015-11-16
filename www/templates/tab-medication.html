@@ -65,11 +65,14 @@
                 </div>
                 <div class="row item">
                   <div class="col col-33 positive">End date</div>
-                  <div class="col col-67">{{medication.end_date|date:"dd/MM/yyyy"}}</div>
+                  <div class="col">{{medication.end_date|date:"dd/MM/yyyy"}}</div>
+                  <button class="button button-positive" ng-click="change_enddate($index)">
+                     <i class="icon ion-calendar"></i>
+                   </button>
                 </div>
 			</div>
       <div class="list" ng-repeat="medication in curr_medication.medications">
-                <div class="item item-divider">Medication #{{$index + 1}}</div>
+                <div class="item item-divider">Medication #{{$index + 1 + drug_medication.length}}</div>
                 <div class="item item-button-right">
                   <div class="col col-50 positive">Name of Drugs/Medication</div>
                   <div class="col ">{{medication.medication_name}}</div>

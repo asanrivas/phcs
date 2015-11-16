@@ -165,6 +165,7 @@ angular.module('starter.controllers', [])
 
                         $localForage.setItem("PRO_PATIENT_GALLERY", gallery);
                         $localForage.setItem("V_FIRST_VISIT", data.first_visit);
+                        $localForage.setItem("V_CONTINUOUS_VISIT", data.continuous_visit);
                         // $localForage.setItem("V_PMT_EOLCP", data.first_visit);
                         // $localForage.setItem("V_PMT_EOLCP_IPA", data.first_visit);
                         // $localForage.setItem("V_EOLCP_COMFORT_MEASURES", data.first_visit);
@@ -264,7 +265,13 @@ angular.module('starter.controllers', [])
                 $scope.status.curr_medication = true;
         });
     })
-    .controller('ContinuousCtrl', function($scope) {})
+    .controller('ContinuousCtrl', function($scope) {
+        UploadData.data_selector(patientID, 'V_SUMMARY_INITIAL', 'V_CONTINUOUS_VISIT', false).then(function(data) {
+            if(data)
+                $scope.status.summary_initials = true;
+        });
+
+    })
     .controller('FormContinuousCtrl', function($scope) {})
 
 .controller('TabGalleryCtrl', function($scope, Camera, $localForage, $stateParams, $ionicModal, UploadData) {
@@ -929,7 +936,75 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('summary_initialCtrl', function($scope, $stateParams, $state, UploadData, $localForage) {
+.controller('summary_initialCtrl', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal, $ionicPopup) {
+
+    $scope.continue_visit = {};
+    $scope.summary_initial = [];
+
+        $localForage.getItem('V_CONTINUOUS_VISIT').then(function(data) {
+            if(data && data.V_SUMMARY_INITIAL)
+            {
+                for (var i = data.V_SUMMARY_INITIAL.length-1; i >= 0; i--) {
+                    if($scope.patientID==data.V_SUMMARY_INITIAL[i].patient_id)
+                    {
+                        datum = data.V_SUMMARY_INITIAL[i];
+                        datum.client_of_initial = datum.client_of_initial ? JSON.parse(datum.client_of_initial) : '';
+                        $scope.summary_initial.push(datum);
+                    }
+                }
+            }
+        });
+
+        UploadData.data_selector($stateParams.patientID, 'V_SUMMARY_INITIAL', 'V_CONTINUOUS_VISIT').then(function (data) {
+            $scope.continue_visit = data;
+        });
+
+    $scope.saveAndNext = function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continue_visit).then(function() {
+            $state.go('tab.continous', {
+                patientID: $scope.$parent.patientID
+            });
+        });
+    }
+
+    $ionicModal.fromTemplateUrl('templates/forms/summary_initial_add.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.initial_summary = {};
+    $scope.saveModal = function() {
+        if (!$scope.continue_visit.summary_initials)
+            $scope.continue_visit.summary_initials = [];
+        $scope.continue_visit.summary_initials.push($scope.initial_summary);
+
+        $scope.modal.hide();
+        return true;
+    }
+
+    $scope.openModal = function() {
+        $scope.initial_summary = {};
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+        $scope.preview.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
 
     function addZero(i) {
         if (i < 10) {
@@ -973,19 +1048,20 @@ angular.module('starter.controllers', [])
         });
     };
 
-    $scope.initial_summary = {};
+        $scope.deleteItem = function(index) {
+            var confirmPopup = $ionicPopup.confirm({
+                title: 'Remove Summary Initial',
+                template: 'Are you sure you want remove this summary initial?'
+            });
 
-    $localForage.getItem('upload_data').then(function(data) {
-        if (data && data[$stateParams.patientID] && data[$stateParams.patientID].V_SUMMARY_INITIAL)
-            $scope.initial_summary = data[$stateParams.patientID].V_SUMMARY_INITIAL;
-    });
-
-    $scope.SaveAndClose = function() {
-        // console.log("SaveAndClose");
-        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.initial_summary).then(function() {
-            $state.go('tab.continous');
-        });
-    };
+            confirmPopup.then(function(res) {
+                if (res) {
+                    $scope.continue_visit.summary_initials.splice(index, 1)
+                } else {
+                    console.log('You are not sure');
+                }
+            });
+        };
 
 })
 
@@ -1277,11 +1353,14 @@ angular.module('starter.controllers', [])
                 for (var i = data.V_CURR_MEDICATION_DRUG.length-1; i >= 0; i--) {
                     if($scope.patientID==data.V_CURR_MEDICATION_DRUG[i].patient_id)
                     {
-                        $scope.drug_medication.push(data.V_CURR_MEDICATION_DRUG[i]);
+                        datum = data.V_CURR_MEDICATION_DRUG[i];
+                        datum.frequency = datum.frequency ? JSON.parse(datum.frequency) : '';
+                        $scope.drug_medication.push(datum);
                     }
                 }
             }
         });
+
 
 
         UploadData.data_selector($stateParams.patientID, 'V_CURR_MEDICATION_CHART', 'V_FIRST_VISIT').then(function (data) {
@@ -1425,7 +1504,7 @@ angular.module('starter.controllers', [])
     // new date picker
     $scope.newdate = "";
 
-    $scope.onclick = function() {
+    $scope.onclickddt = function() {
         var options = {
             date: new Date(),
             mode: 'datetime'
@@ -1492,7 +1571,9 @@ angular.module('starter.controllers', [])
                 for (var i = data.V_CURR_MEDICATION_DRUG.length-1; i >= 0; i--) {
                     if($scope.patientID==data.V_CURR_MEDICATION_DRUG[i].patient_id)
                     {
-                        $scope.drug_medication.push(data.V_CURR_MEDICATION_DRUG[i]);
+                        datum = data.V_CURR_MEDICATION_DRUG[i];
+                        datum.frequency = datum.frequency ? JSON.parse(datum.frequency) : '';
+                        $scope.drug_medication.push(datum);
                     }
                 }
             }
@@ -1563,6 +1644,49 @@ angular.module('starter.controllers', [])
                 }
             });
         };
+
+
+    $ionicModal.fromTemplateUrl('templates/forms/medication-chgdate.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+
+    $scope.medicationchg = {};
+    $scope.saveModal2 = function() {
+        if (!$scope.curr_medication.medicationchgs)
+            $scope.curr_medication.medicationchgs = [];
+        console.log('1: '+JSON.stringify($scope.curr_medication.medicationchgs));
+        console.log('2: '+JSON.stringify($scope.medicationchg));
+        $scope.curr_medication.medicationchgs.push($scope.medicationchg);
+
+        $scope.modal.hide();
+        return true;
+    }
+
+    $scope.change_enddate = function() {
+        $scope.medicationchg = {};
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal2 = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+        $scope.preview.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
 
 })
 
@@ -1711,3 +1835,171 @@ angular.module('starter.controllers', [])
     }
 })
 
+.controller('TabTestCtrl', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal, $ionicPopup) {
+    $scope.continue_visit = {};
+    $scope.summary_initial = [];
+
+        $localForage.getItem('V_CONTINUOUS_VISIT').then(function(data) {
+            if(data && data.V_SUMMARY_INITIAL)
+            {
+                for (var i = data.V_SUMMARY_INITIAL.length-1; i >= 0; i--) {
+                    if($scope.patientID==data.V_SUMMARY_INITIAL[i].patient_id)
+                    {
+                        datum = data.V_SUMMARY_INITIAL[i];
+                        datum.client_of_initial = datum.client_of_initial ? JSON.parse(datum.client_of_initial) : '';
+                        $scope.summary_initial.push(datum);
+                    }
+                }
+            }
+        });
+
+        UploadData.data_selector($stateParams.patientID, 'V_SUMMARY_INITIAL', 'V_CONTINUOUS_VISIT').then(function (data) {
+            $scope.continue_visit = data;
+        });
+
+    $scope.saveAndNext = function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_SUMMARY_INITIAL', $scope.continue_visit).then(function() {
+            $state.go('tab.eol', {
+                patientID: $scope.$parent.patientID
+            });
+        });
+    }
+
+    $ionicModal.fromTemplateUrl('templates/forms/summary_initial_add.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.initial_summary = {};
+    $scope.saveModal = function() {
+        if (!$scope.continue_visit.summary_initials)
+            $scope.continue_visit.summary_initials = [];
+        $scope.continue_visit.summary_initials.push($scope.initial_summary);
+
+        $scope.modal.hide();
+        return true;
+    }
+
+    $scope.openModal = function() {
+        $scope.initial_summary = {};
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+        $scope.preview.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
+
+})
+
+.controller('TabTestCtrl_old', function($scope, $stateParams, $state, UploadData, $localForage, $ionicModal, $ionicPopup) {
+
+//Important: Compare this with f13Controller
+    // $scope.curr_medication = {};
+
+    $scope.curr_summary_initial = {};
+    $scope.summary_initial = [];
+
+        $localForage.getItem('summary_initial').then(function(data) {
+            if(data && data.V_SUMMARY_INITIAL)
+            {
+                var i = 0;
+                for (var i = data.V_SUMMARY_INITIAL.length-1; i >= 0; i--) {
+                    if($scope.patientID==data.V_SUMMARY_INITIAL[i].patient_id)
+                    {
+                        datum = data.V_SUMMARY_INITIAL[i];
+                        datum.client_of_initial = datum.client_of_initial ? JSON.parse(datum.client_of_initial) : '';
+                        $scope.summary_initial.push(datum);
+                    }
+                }
+            }
+        });
+
+        UploadData.data_selector($stateParams.patientID, 'V_CURR_SUMMARY_INITIAL', 'summary_initial', false).then(function(data) {
+            if(data)
+                $scope.status.curr_summary_initial = true;
+        });
+
+        UploadData.data_selector($stateParams.patientID, 'V_CURR_SUMMARY_INITIAL').then(function (data) {
+            $scope.curr_summary_initial = data;
+        });
+
+    $scope.saveAndNext = function() {
+        UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_SUMMARY_INITIAL', $scope.curr_summary_initial).then(function() {
+            $state.go('tab.eol', {
+                patientID: $scope.$parent.patientID
+            });
+        });
+    }
+
+    $ionicModal.fromTemplateUrl('templates/forms/summary_initial_add.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.initial_summary = {};
+    $scope.saveModal = function() {
+        console.log('summaries: '+JSON.stringify($scope.curr_summary_initial.summary_initial));
+        console.log('summary: '+JSON.stringify($scope.initial_summary));
+        if (!$scope.curr_summary_initial.summary_initial)
+            $scope.curr_summary_initial.summary_initial = [];
+        $scope.curr_summary_initial.summary_initial.push($scope.initial_summary);
+
+        $scope.modal.hide();
+        return true;
+    }
+
+    $scope.openModal = function() {
+        $scope.initial_summary = {};
+        $scope.modal.show();
+        return false;
+    };
+    $scope.closeModal = function() {
+        $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+        $scope.preview.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+        // Execute action
+    });
+
+        $scope.deleteItem = function(index) {
+            var confirmPopup = $ionicPopup.confirm({
+                title: 'Remove Summary Initial',
+                template: 'Are you sure you want remove this summary initial?'
+            });
+
+            confirmPopup.then(function(res) {
+                if (res) {
+                    $scope.initial_summaries.splice(index, 1)
+                } else {
+                    console.log('You are not sure');
+                }
+            });
+        };
+
+})

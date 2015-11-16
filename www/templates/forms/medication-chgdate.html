@@ -1,0 +1,21 @@
+<ion-modal-view view-title="">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons" ng-click="closeModal2()">
+            <button class="button button-clear">Cancel</button>
+        </div>
+        <h1 class="title">Modify Medication Chart</h1>
+        <div class="buttons" ng-click="saveModal2()">
+            <button class="button button-clear">Save</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="padding" ng-init="medication.initial=userid">
+        <div class="list">
+
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Enter End Date</span>
+                        <input type="date" placeholder="End Date" ng-model="medication.end_date">
+                </label>
+            </div>
+    </ion-content>
+</ion-modal-view>
