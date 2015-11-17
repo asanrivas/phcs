@@ -1355,6 +1355,9 @@ angular.module('starter.controllers', [])
                     {
                         datum = data.V_CURR_MEDICATION_DRUG[i];
                         datum.frequency = datum.frequency ? JSON.parse(datum.frequency) : '';
+                        datum.end_date = new Date(datum.end_date);
+                        // if()
+                        //     datum.end_date = new_end
                         $scope.drug_medication.push(datum);
                     }
                 }
