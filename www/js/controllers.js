@@ -1382,7 +1382,7 @@ angular.module('starter.controllers', [])
         $scope.curr_medication.enddates.push(data);
 
         UploadData.save_data_patient_id($stateParams.patientID, 'V_CURR_MEDICATION_ENDDATE', $scope.curr_medication).then(function() {
-            $state.go('tab.medication', {
+            $state.go('formfirstvisit.f13', {
                 patientID: $scope.$parent.patientID
             });
         });
