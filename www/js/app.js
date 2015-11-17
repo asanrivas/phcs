@@ -180,16 +180,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
-    .state('tab.medication-edit', {
-        url: '/medication-edit/:id',
-        views: {
-            'tab-medication': {
-                templateUrl: 'templates/medication-edit.html',
-                controller: 'TabMedicationCtrl'
-            }
-        }
-    })
-
     .state('tab.eol', {
         url: '/eol',
         views: {
@@ -240,15 +230,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             'tab-equipment': {
                 templateUrl: 'templates/equip.html',
                 controller: 'LoanEquipmentCtrl'
-            }
-        }
-    })
-    .state('tab.test', {
-        url: '/test',
-        views: {
-            'tab-test': {
-                templateUrl: 'templates/tab-test.html',
-                controller: 'TabTestCtrl'
             }
         }
     })
